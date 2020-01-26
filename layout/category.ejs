@@ -1,0 +1,23 @@
+<%
+    var title = '';
+    if (page.category) title = page.category;
+    if (page.tag) title = "#" + page.tag;
+    if (page.archive) {
+        if (page.year) title = page.year + (page.month ? '/' + page.month : '');
+        else title = __('archive_a');
+    }
+%>
+<div class="archive content-area">
+  <div class="container">
+    <h1 class="entry-title"><%- title %></h1>
+    <div class="main-container">
+        <% var groupObj = _.groupBy(page.posts.toArray(), function(p){return -p.date.format('YYYY')}) %>
+        <% for (var year in groupObj){ %>
+          <ul class="list">
+            <%- partial('_partial/article-archive', {posts: groupObj[year]}) %>
+          </ul>
+        <% } %>
+      <%- partial('_partial/index-pagination') %>
+    </div>
+  </div>
+</div>

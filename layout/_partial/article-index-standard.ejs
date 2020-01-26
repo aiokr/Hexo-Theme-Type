@@ -1,0 +1,25 @@
+<div class="mdui-card mdui-hoverable">
+  <% if (item.cover) { %>
+  <div class="mdui-card-media">
+    <a href="<%- config.root %><%- item.path %>">
+      <img src="<%- item.cover %>" alt="<%- item.title %>" class="attachment-post-thumbnail"
+        style="border-radius: 0px; object-fit: cover;">
+    </a>
+  </div>
+  <% } %>
+  <div class="mdui-card-primary">
+    <div class="mdui-card-primary-title"><a href="<%- config.root %><%- item.path %>"
+        style="color:#222831; font-size: 22px;text-decoration: none;"><%- item.title || theme.default_post_title || "Untitled" %></a>
+    </div>
+    <div class="mdui-card-primary-subtitle" style="padding-top: 5px; color:#222831" ;>
+      <%= item.date.format(config.date_format) %><span> · </span>
+
+      <% item.categories.each(function(categories){ %>
+      <a href="<%= config.root %>categories/<%= categories.name %>/" style="color:#222831;" rel="tag">
+        <%- categories.name %>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+  <%- partial('_partial/article-index-summary') %>
+</div>

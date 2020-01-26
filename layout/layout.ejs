@@ -1,0 +1,21 @@
+<% if(page.layout === 'gallery') { %>
+<!-- Single Gallery Page -->
+<%- partial('_partial/gallery') %>
+<% } else { %>
+
+<!DOCTYPE html>
+<html lang="<%= config.language ? config.language : 'en' %>">
+<!-- Head tag -->
+<%- partial('_partial/head') %>
+  <body>
+    <!-- Nav -->
+    <%- partial('_partial/nav') %>
+    <!-- Main Content -->
+    <%- body %>
+    <!-- Footer -->
+    <%- partial('_partial/footer') %>
+    <!-- After footer scripts -->
+    <%- partial('_partial/after-footer') %>
+  </body>
+</html>
+<% } %>

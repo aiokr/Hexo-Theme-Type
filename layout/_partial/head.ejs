@@ -1,0 +1,119 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!--360 使用 Google Chrome Frame-->
+    <meta name="renderer" content="webkit">
+    <!--百度禁止转码-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!--Description-->
+    <% if (page.description){ %>
+    <meta name="description" content="<%= page.description %>">
+    <% } else if (config.description){ %>
+    <meta name="description" content="<%= config.description %>">
+    <% } %>
+    <!--Author-->
+    <% if (config.author){ %>
+    <meta name="author" content="<%= config.author %>">
+    <% } %>
+    <!--Open Graph Title-->
+    <% if (page.title){ %>
+    <meta property="og:title" content="<%= page.title %>" />
+    <% } else { %>
+    <meta property="og:title" content="<%= config.title %>" />
+    <% } %>
+    <!--Open Graph Description-->
+    <% if (page.description){ %>
+    <meta property="og:description" content="<%= page.description %>" />
+    <% } else if (config.description) { %>
+    <meta property="og:description" content="<%= config.description %>" />
+    <% } %>
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="<%= config.title %>" />
+    <!--Type page-->
+    <% if(page.title) { %>
+    <meta property="og:type" content="article" />
+    <% } else { %>
+    <meta property="og:type" content="website" />
+    <% } %>
+    <!--Page Cover-->
+    <% if (page.cover) { %>
+    <meta property="og:image" content="<%= config.url %><%= page.share_cover %>" />
+    <% } else if (config.cover) { %>
+    <meta property="og:image" content="<%= config.url %><%= config.cover %>" />
+    <% } %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Title -->
+    <%
+  var title = [];
+  if (page.title) title.push(page.title);
+  if (page.category) title.push(page.category);
+  if (page.tag) title.push(page.tag);
+  if (page.archive) {
+      if (page.year) title.push(__('archive_b', page.year + (page.month ? '/' + page.month : '')));
+      else title.push(__('archive_a'));
+  }
+  title.push(config.title);
+  if (is_home() && config.subtitle) title.push(config.subtitle);
+  %>
+    <title><%= title.join(' - ') %></title>
+    <!-- 添加到主屏后的标题（iOS 6 新增） -->
+    <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
+    <!-- 是否启用 WebApp 全屏模式 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 禁止数字识自动别为电话号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="shortcut icon" href="<%- url_for(config.favicon || theme.favicon) %>">
+    <!-- Retina iPhone 和 Retina iTouch，114x114 像素 -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+        href="https://imgur.itypen.com/picgo/20190625163454.jpg_RetinaiPhone">
+    <!-- Retina iPad，144x144 像素 -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+        href="https://imgur.itypen.com/picgo/20190625163454.jpg_RetinaiPad">
+    <!-- iPhone6 Plus -->
+    <link rel="apple-touch-icon-precomposed" sizes="180x180"
+        href="https://imgur.itypen.com/picgo/20190625163454.jpg_iPhoneHD">
+    <!-- iPhone6 -->
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+        href="https://imgur.itypen.com/picgo/20190625163454.jpg_iPhone">
+    <!-- 添加 RSS 订阅 -->
+    <link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="/atom.xml" />
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- Custom CSS/Sass -->
+    <%- css('css/mdui.min') %>
+    <%- css('css/style') %>
+    <% if(theme.google_analytics) { %>
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', '<%= theme.google_analytics %>', 'auto', { 'siteSpeedSampleRate': 100 }, { 'alwaysSendReferrer': true });
+        ga('send', 'pageview');
+        ga('set', 'forceSSL', true);
+    </script>
+    <!-- End Google Analytics -->
+    <% } %>
+    <% if(theme.comment.use == 'gitment') { %>
+    <link rel="stylesheet" href="/css/gitment.css">
+    <script src="/js/gitment.js"></script>
+    <script src="/js/gitment-theme.js"></script>
+    <% } else if ( theme.comment.use == 'valine') { %>
+    <script src="/js/av-min.js"></script>
+    <script src='/js/Valine.min.js'></script>
+    <% } %>
+</head>

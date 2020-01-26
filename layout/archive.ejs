@@ -1,0 +1,47 @@
+<%
+    var title = '';
+    if (page.category) title = page.category;
+    if (page.tag) title = "#" + page.tag;
+    if (page.archive) {
+        if (page.year) title = page.year + (page.month ? '/' + page.month : '');
+        else title = __('archive_a');
+    }
+%>
+<div class="archive content-area">
+    <div class="post-container">
+      <div class="mdui-row">
+          <div class="mdui-card itp-post-card">
+              <div class="mdui-card-media itp-post-cover">
+                  <img src="https://qiehuan-img.itypen.com/2019/12/20191231_%E6%B8%8A%E6%A2%A6%E6%96%87%E5%8C%96%E6%89%8B%E5%86%8C.jpg" />
+              </div>
+            <div class="mdui-card-primary">
+              <div class="mdui-card-primary-title"><%- title %></div>
+            </div>
+            <div class="mdui-card-content categories">
+              <%- list_categories({
+            show_count: false,
+            amount: 5,
+            class: '',
+            style: '',
+            separator: ''
+        }) %>
+            </div>
+            <style>
+              .categories a {
+                padding: 0 5px 0 0;
+              }
+            </style>
+            <div class="mdui-card-content">
+              <% var groupObj = _.groupBy(page.posts.toArray(), function(p){return -p.date.format('YYYY')}) %>
+              <% for (var year in groupObj){ %>
+              <div class="mdui-card-primary-title"><%- -year %></div>
+              <ul class="list">
+                <%- partial('_partial/article-archive', {posts: groupObj[year]}) %>
+              </ul>
+              <% } %>
+              <%- partial('_partial/index-pagination') %>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

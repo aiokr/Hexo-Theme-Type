@@ -1,0 +1,34 @@
+<main class="content-area">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      <div class="mdui-col-md-2 mdui-col-xs-down"></div>
+      <div class="mdui-col-md-8 mdui-col-xs-12">
+        <!--index header-->
+        <div class="mdui-row itp-index-header">
+          <div class="mdui-text-center" style="color: #222831; font-size: 28px;">
+            <%= config.title %>
+          </div>
+          <div class="padding-15"></div>
+          <div class="mdui-text-center" style="color:#222831">
+            <%- config.subtitle %>
+          </div>
+          <div class="padding-25">
+            <div class="mdui-text-center">
+              <% for (var i in theme.nav) { %>
+              <a href="<%- theme.nav[i].link %>" class="mdui-ripple" style="color:#2196F3; padding: 10px;">
+                <%- i %>
+              </a>
+              <% } %>
+            </div>
+          </div>
+        </div>
+        <div class="padding-25 noprn"></div>
+        <% page.posts.each(function(item, itemIndex){ %>
+        <%- partial('_partial/article-index', {item: item}) %>
+        <% }); %>
+        <%- partial('_partial/index-pagination') %>
+      </div>
+      <div class="mdui-col-md-2 mdui-col-xs-down"></div>
+    </div>
+  </div>
+</main>

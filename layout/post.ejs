@@ -1,0 +1,62 @@
+<div class="content-area">
+    <div class="post">
+        <div class="post-container">
+            <div class="mdui-row">
+                <div class="mdui-card itp-post-card">
+                    <!--头图-->
+                    <div class="mdui-card-media itp-post-cover">
+                        <img src="<%- page.cover %>"
+                            style="border-radius: 0px; max-height: 300px; object-fit: cover;" />
+                    </div>
+                    <!--文章信息区-->
+                    <div class="mdui-card-primary">
+                        <div class="mdui-card-primary-title">
+                            <%- page.title %>
+                        </div>
+                        <div class="mdui-card-primary-subtitle" style="padding-top: 5px; font-size: 16px !important;">
+                            <%= page.date.format(config.date_format) %>
+                            <% if (page.categories && page.categories.length) { %>
+                            <span> · </span>
+                            <%- list_categories(page.categories, {
+                                show_count: false,
+                                separator: '<span class="itp-post-cat"></span>',
+                                style: 'none'
+                            }) %>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="mdui-divider"></div>
+                    <!--正文-->
+                    <div class="mdui-card-content mdui-typo article">
+                        <%- page.content %>
+                    </div>
+                    <!--文章底部信息-->
+                    <div class="mdui-card-content">
+                        <div class="mdui-text-center">本文发布于 <%= page.date.format(config.date_format) %></div>
+                        <% if (page.tags) { %>
+                        <div class="mdui-card-primary-subtitle" style="padding-top: 2px; font-size: .75rem !important;">
+                            <div class="tags-links">
+                                <% page.tags.each(function(tag){ %>
+                                <div class="mdui-chip">
+                                    <a class="mdui-chip-title" style="color:black"
+                                        href="<%= config.root %>tags/<%= tag.name %>/" rel="tag">
+                                        <%- tag.name %>
+                                    </a>
+                                </div>
+                                <% }); %>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+                    <div class="mdui-card-content itp-post-comment">
+                        <%- partial('_partial/comment') %>
+                    </div>
+                    <div class="mdui-card-content itp-page-select mdui-row">
+                        <%- partial('_partial/post-pagination') %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- partial('_partial/post-toc') %>

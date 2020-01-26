@@ -1,0 +1,88 @@
+# basic
+favicon: 
+avatar: 
+drawer_header: 
+
+# Nav link
+nav:
+  首页: 
+    link: /
+    color: '#2196F3'
+    icon: home
+  搜索: 
+    link: /search.html
+    icon: search
+    color: '#2196F3'
+  归档: 
+    link: /archives/
+    icon:   move_to_inbox
+    color: '#2196F3'
+  关于: 
+    link: /about.html
+    icon: person
+    color: '#2196F3'
+  友链:
+    link: /links.html
+    icon: link
+    color: '#2196F3'
+  渊梦:
+    link: 'https://www.itypen.com'
+    icon: insert_photo
+    color: '#2196F3'
+
+# footer
+# about
+start_time: 2016
+footer: 
+# info
+count: true
+busuanzi: true
+# ICP
+icp: 桂ICP备17001361号
+# CDN
+# Use upyun
+cdn: 
+  use: upyun
+  upyun: 
+    src: 
+
+# hexo-renderer-sass
+node_sass:
+  outputStyle: nested
+  precision: 5
+  sourceComments: false
+
+# Post
+default_post_title: Untitled
+auto_excerpt:
+  length: 120
+
+
+# Comment
+# Use gitment | valine | disqus | disqusjs
+comment:
+  use: disqusjs
+  gitment:
+    owner:
+    repo:
+    client_id:
+    client_secret:
+  valine:
+    appid:
+    appkey:
+  disqus:
+    src: 
+    # such as: https://xxx.disqus.com/embed.js
+  disqusjs:
+    shortname: 
+    siteName: 
+    api: 
+    apikey: 
+    admin: 
+    adminLabel: 
+
+# Random Pictures
+random_pics: 24
+
+# Google Analytics
+google_analytics: 
