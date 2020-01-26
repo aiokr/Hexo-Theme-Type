@@ -44,6 +44,12 @@ body {
   font-size: .625rem;
 }
 
+.itp-index-header {
+  @media screen and (max-width: 768px) {
+    padding-top: 65px;
+  }
+}
+
 .itp-post-card {
   margin-bottom: 140px;
 
@@ -53,6 +59,10 @@ body {
 
   @media screen and (max-width: 768px) {
     box-shadow: 0 0px 0px 0px #fff !important;
+
+    .itp-index-header {
+      padding-top: 65px;
+    }
 
     .mdui-card {
       width: 100vw;
