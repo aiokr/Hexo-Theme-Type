@@ -14,8 +14,8 @@ install:
   - git clone https://github.com/aiokr/hexo-theme-type.git landscrape
 script: 
   - cd ./
-  - npm run clean
-  - npm run generate
+  - hexo g
+  - hexo d
   - chmod +x ./assets/deploy.sh
   - ./assets/deploy.sh > /dev/null
   - npm run clean
