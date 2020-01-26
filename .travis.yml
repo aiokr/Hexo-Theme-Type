@@ -11,8 +11,10 @@ install:
   - cd blog
 download: 
   - cd theme
+  - rm -rf landscrape
   - git clone https://github.com/aiokr/hexo-theme-type.git landscrape
 script:
+  - cd../
   - npm run clean
   - npm run generate
   - chmod +x ./assets/deploy.sh
