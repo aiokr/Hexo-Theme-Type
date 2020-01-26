@@ -27,8 +27,8 @@ nav:
 start_time: 
 footer: 
 # info
-count: true
-busuanzi: true
+count: false
+busuanzi: false
 # ICP
 icp: 
 # CDN
@@ -46,7 +46,7 @@ auto_excerpt:
 # Comment
 # Use gitment | valine | disqus | disqusjs
 comment:
-  use: disqusjs
+  use:
   gitment:
     owner:
     repo:
