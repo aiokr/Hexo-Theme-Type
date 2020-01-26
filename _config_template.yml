@@ -21,24 +21,16 @@ nav:
     link: /about.html
     icon: person
     color: '#2196F3'
-  友链:
-    link: /links.html
-    icon: link
-    color: '#2196F3'
-  渊梦:
-    link: 'https://www.itypen.com'
-    icon: insert_photo
-    color: '#2196F3'
 
 # footer
 # about
-start_time: 2016
+start_time: 
 footer: 
 # info
 count: true
 busuanzi: true
 # ICP
-icp: 桂ICP备17001361号
+icp: 
 # CDN
 # Use upyun
 cdn: 
@@ -46,17 +38,10 @@ cdn:
   upyun: 
     src: 
 
-# hexo-renderer-sass
-node_sass:
-  outputStyle: nested
-  precision: 5
-  sourceComments: false
-
 # Post
 default_post_title: Untitled
 auto_excerpt:
   length: 120
-
 
 # Comment
 # Use gitment | valine | disqus | disqusjs
@@ -85,4 +70,4 @@ comment:
 random_pics: 24
 
 # Google Analytics
-google_analytics: 
+google_analytics: UA-XXXXXXXXX-A
