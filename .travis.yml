@@ -16,6 +16,6 @@ script:
   - cd ./
   - hexo g
   - hexo d
-  - chmod +x ./assets/deploy.sh
-  - ./assets/deploy.sh > /dev/null
+  - chmod +x /assets/deploy.sh
+  - /assets/deploy.sh > /dev/null
   - npm run clean
