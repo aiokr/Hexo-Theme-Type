@@ -9,12 +9,11 @@ install:
   - npm install hexo-cli -g
   - hexo init blog
   - cd blog
-download: 
-  - cd theme
+  - cd themes
   - rm -rf landscrape
   - git clone https://github.com/aiokr/hexo-theme-type.git landscrape
-script:
-  - cd../
+script: 
+  - cd ./
   - npm run clean
   - npm run generate
   - chmod +x ./assets/deploy.sh
