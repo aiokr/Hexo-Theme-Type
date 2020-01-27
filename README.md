@@ -2,7 +2,7 @@
 
 # hexo-theme-type
 
-![GitHub All Releases](https://img.shields.io/github/downloads/aiokr/hexo-theme-type/total?color=orange&style=flat-square) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/aiokr/hexo-theme-type?style=flat-square)
+![GitHub All Releases](https://img.shields.io/github/downloads/aiokr/hexo-theme-type/total?color=orange&style=flat-square) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/aiokr/hexo-theme-type?style=flat-square)](https://github.com/aiokr/hexo-theme-type/releases)
 
 A Material Design light HEXO theme
 
