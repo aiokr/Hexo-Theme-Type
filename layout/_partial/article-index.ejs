@@ -3,25 +3,24 @@ var isFullUrl = function(str) {
   return /^(https:|http:|ftp:)?\/\//.test(str);
 };
 %>
-<div class="padding-25"></div>
 <% if(item.style == 'cover') { %>
 <!--仅封面文章入口-->
-<div class="mdui-card mdui-hoverable itp-post-index-hero">
-  <% if (item.cover) { %>
+<% if (item.cover) { %>
+<div class="mdui-card mdui-hoverable itp-post-index itp-post-index-hero">
   <div class="mdui-card-media">
     <a href="<%- config.root %><%- item.path %>">
       <img src="<%- item.cover %>" alt="<%- item.title %>" class="attachment-post-thumbnail"
         style="border-radius: 0px; object-fit: cover;">
     </a>
   </div>
-  <% } else { %>
-  <%- partial('_partial/article-index-standard') %>
-  <% } %>
 </div>
+<% } else { %>
+<%- partial('_partial/article-index-standard') %>
+<% } %>
 <% } else if (item.style == 'hero') { %>
 <!--标题覆盖封面文章入口-->
 <% if (item.cover) { %>
-<div class="mdui-card mdui-hoverable itp-post-index-hero">
+<div class="mdui-card mdui-hoverable itp-post-index itp-post-index-hero">
   <div class="mdui-card-media">
     <a href="<%- config.root %><%- item.path %>">
       <img src="<%- item.cover %>" alt="<%- item.title %>" class="attachment-post-thumbnail"
@@ -30,8 +29,8 @@ var isFullUrl = function(str) {
   </div>
   <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
     <div class="mdui-card-primary">
-      <div class="mdui-card-primary-title"><a href="<%- config.root %><%- item.path %>"
-          style="color:#ffffff; font-size: 22px;text-decoration: none;"><%- item.title || theme.default_post_title || "Untitled" %></a>
+      <div class="mdui-card-primary-title itp-post-index-title"><a href="<%- config.root %><%- item.path %>"
+          ><%- item.title || theme.default_post_title || "Untitled" %></a>
       </div>
       <div class="mdui-card-primary-subtitle" style="padding-top: 5px; color:#ffffff" ;>
         <%= item.date.format(config.date_format) %><span> · </span>
@@ -49,10 +48,10 @@ var isFullUrl = function(str) {
 <% } %>
 <% } else if (item.style == 'smart') { %>
 <!--小图样式文章入口-->
-<div class="mdui-card mdui-hoverable">
-  <% if (item.cover) { %>
+<% if (item.cover) { %>
+<div class="mdui-card mdui-hoverable itp-post-index">
   <div class="mdui-row">
-    <div class="mdui-col-md-5 mdui-col-xs-12"  style="max-height: 250px;">
+    <div class="mdui-col-md-5 mdui-col-xs-12" style="max-height: 250px;">
       <div class="mdui-card-media">
         <a href="<%- config.root %><%- item.path %>">
           <img src="<%- item.cover %>" alt="<%- item.title %>" class="attachment-post-thumbnail"
@@ -62,13 +61,13 @@ var isFullUrl = function(str) {
     </div>
     <div class="mdui-col-md-7 mdui-col-xs-12">
       <div class="mdui-card-primary" style="padding: 24px 16px 0px 16px;">
-        <div class="mdui-card-primary-title"><a href="<%- config.root %><%- item.path %>"
-            style="color:#222831; font-size: 22px;text-decoration: none;"><%- item.title || theme.default_post_title || "Untitled" %></a>
+        <div class="mdui-card-primary-title itp-post-index-title"><a
+            href="<%- config.root %><%- item.path %>"><%- item.title || theme.default_post_title || "Untitled" %></a>
         </div>
-        <div class="mdui-card-primary-subtitle" style="padding-top: 5px; color:#222831" ;>
+        <div class="mdui-card-primary-subtitle itp-post-index-subtitle">
           <%= item.date.format(config.date_format) %><span> · </span>
           <% item.categories.each(function(categories){ %>
-          <a href="<%= config.root %>categories/<%= categories.name %>/" style="color:#222831;" rel="tag">
+          <a class="itp-post-index-categories" href="<%= config.root %>categories/<%= categories.name %>/" rel="tag">
             <%- categories.name %>
           </a>
           <% }); %>
@@ -77,26 +76,11 @@ var isFullUrl = function(str) {
       <%- partial('_partial/article-index-summary') %>
     </div>
   </div>
-  <% } else { %>
-  <div class="mdui-card-primary" style="padding: 24px 16px 0px 16px;">
-    <div class="mdui-card-primary-title"><a href="<%- config.root %><%- item.path %>"
-        style="color:#222831; font-size: 22px;text-decoration: none;"><%- item.title || theme.default_post_title || "Untitled" %></a>
-    </div>
-    <div class="mdui-card-primary-subtitle" style="padding-top: 5px; color:#222831" ;>
-      <%= item.date.format(config.date_format) %><span> · </span>
-
-      <% item.categories.each(function(categories){ %>
-      <a href="<%= config.root %>categories/<%= categories.name %>/" style="color:#222831;" rel="tag">
-        <%- categories.name %>
-      </a>
-      <% }); %>
-    </div>
-  </div>
-  <%- partial('_partial/article-index-summary') %>
-  <% } %>
 </div>
+<% } else { %>
+<%- partial('_partial/article-index-standard') %>
+<% } %>
 <% } else { %>
 <!--默认文章入口-->
 <%- partial('_partial/article-index-standard') %>
 <% } %>
-<div class="padding-25"></div>

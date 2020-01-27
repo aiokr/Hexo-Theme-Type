@@ -1,4 +1,4 @@
-<div class="mdui-card mdui-hoverable">
+<div class="mdui-card mdui-hoverable itp-post-index">
   <% if (item.cover) { %>
   <div class="mdui-card-media">
     <a href="<%- config.root %><%- item.path %>">
@@ -8,14 +8,14 @@
   </div>
   <% } %>
   <div class="mdui-card-primary">
-    <div class="mdui-card-primary-title"><a href="<%- config.root %><%- item.path %>"
-        style="color:#222831; font-size: 22px;text-decoration: none;"><%- item.title || theme.default_post_title || "Untitled" %></a>
+    <div class="mdui-card-primary-title itp-post-index-title"><a
+        href="<%- config.root %><%- item.path %>"><%- item.title || theme.default_post_title || "Untitled" %></a>
     </div>
-    <div class="mdui-card-primary-subtitle" style="padding-top: 5px; color:#222831" ;>
+    <div class="mdui-card-primary-subtitle itp-post-index-subtitle">
       <%= item.date.format(config.date_format) %><span> · </span>
 
       <% item.categories.each(function(categories){ %>
-      <a href="<%= config.root %>categories/<%= categories.name %>/" style="color:#222831;" rel="tag">
+      <a class="itp-post-index-categories" href="<%= config.root %>categories/<%= categories.name %>/" rel="tag">
         <%- categories.name %>
       </a>
       <% }); %>

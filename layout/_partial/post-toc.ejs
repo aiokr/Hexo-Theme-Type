@@ -4,12 +4,12 @@
   list_number: false,
 }) %>
 <% if(toc.length > 0) { %>
-<div class="itp-post-toc">
+<nav class="itp-post-toc noprn">
   <div class="mdui-fab-wrapper" mdui-menu="{target: '#toc'}">
       <button class="mdui-fab mdui-fab-fixed" style="background-color: white">
           <i class="mdui-icon material-icons">format_list_bulleted</i>
       </button>
   </div>
   <%-(toc) %>
-</div>
+</nav>
 <% } %>

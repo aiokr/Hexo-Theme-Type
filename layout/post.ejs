@@ -4,16 +4,16 @@
             <div class="mdui-row">
                 <div class="mdui-card itp-post-card">
                     <!--头图-->
-                    <div class="mdui-card-media itp-post-cover">
+                    <section class="mdui-card-media itp-post-cover">
                         <img src="<%- page.cover %>"
                             style="border-radius: 0px; max-height: 300px; object-fit: cover;" />
-                    </div>
+                    </section>
                     <!--文章信息区-->
-                    <div class="mdui-card-primary">
-                        <div class="mdui-card-primary-title">
+                    <section class="mdui-card-primary">
+                        <div class="mdui-card-primary-title itp-post-title">
                             <%- page.title %>
                         </div>
-                        <div class="mdui-card-primary-subtitle" style="padding-top: 5px; font-size: 16px !important;">
+                        <div class="mdui-card-primary-subtitle itp-post-subtitle" style="padding-top: 5px; font-size: 16px !important;">
                             <%= page.date.format(config.date_format) %>
                             <% if (page.categories && page.categories.length) { %>
                             <span> · </span>
@@ -24,15 +24,15 @@
                             }) %>
                             <% } %>
                         </div>
-                    </div>
+                    </section>
                     <div class="mdui-divider"></div>
                     <!--正文-->
-                    <div class="mdui-card-content mdui-typo article">
+                    <section class="mdui-card-content mdui-typo article" role="article">
                         <%- page.content %>
-                    </div>
+                    </section>
                     <!--文章底部信息-->
-                    <div class="mdui-card-content">
-                        <div class="mdui-text-center">本文发布于 <%= page.date.format(config.date_format) %></div>
+                    <section class="mdui-card-content">
+                        <div class="mdui-text-center noprn">本文发布于 <%= page.date.format(config.date_format) %></div>
                         <% if (page.tags) { %>
                         <div class="mdui-card-primary-subtitle" style="padding-top: 2px; font-size: .75rem !important;">
                             <div class="tags-links">
@@ -47,13 +47,13 @@
                             </div>
                         </div>
                         <% } %>
-                    </div>
-                    <div class="mdui-card-content itp-post-comment">
+                    </section>
+                    <section class="mdui-card-content itp-post-comment noprn">
                         <%- partial('_partial/comment') %>
-                    </div>
-                    <div class="mdui-card-content itp-page-select mdui-row">
+                    </section>
+                    <section class="mdui-card-content itp-page-select mdui-row">
                         <%- partial('_partial/post-pagination') %>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>

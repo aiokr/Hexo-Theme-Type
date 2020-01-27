@@ -1,4 +1,4 @@
-<div class="mdui-drawer mdui-color-white mdui-drawer-close" id="main-drawer">
+<aside class="mdui-drawer mdui-color-white mdui-drawer-close noprn itp-drawer" id="main-drawer">
   <div class="mdui-card mdui-shadow-0">
     <div class="mdui-card-media">
       <img src="<%= theme.drawer_header %>" />
@@ -13,10 +13,10 @@
         </div>
       </div>
     </div>
-    <div class="mdui-card-header">
+    <div class="mdui-card-header itp-drawer">
       <img class="mdui-card-header-avatar" src="<%= theme.avatar %>" />
-      <div class="mdui-card-header-title"><%- config.author %></div>
-      <div class="mdui-card-header-subtitle"><%- config.description %></div>
+      <div class="mdui-card-header-title itp-drawer-title"><%- config.author %></div>
+      <div class="mdui-card-header-subtitle itp-drawer-description"><%- config.description %></div>
     </div>
   </div>
   <ul class="mdui-list">
@@ -28,4 +28,4 @@
     </a>
     <% } %>
   </ul>
-</div>
+</aside>

@@ -8,16 +8,16 @@
             <img src="<%- page.cover %>" style="border-radius: 0px; max-height: 300px; object-fit: cover;" />
           </div>
           <!--文章信息区-->
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">
+          <section class="mdui-card-primary">
+            <div class="mdui-card-primary-title itp-post-title">
               <%- page.title %>
             </div>
-          </div>
+          </section>
           <!--链接-->
           <% if (site.data.links) { %>
           <% for (var i in site.data.links) { %>
           <a href="<%= site.data.links[i].url %>" title="<%= i %>" target="_blank">
-            <div class="mdui-card mdui-shadow-0">
+            <div class="mdui-card mdui-shadow-0 itp-link">
               <div class="mdui-card-header">
                 <img class="mdui-card-header-avatar" src="<%= site.data.links[i].img %>" />
                 <div class="mdui-card-header-title"><%= i %></div>

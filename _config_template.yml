@@ -1,0 +1,80 @@
+# basic
+favicon: 
+avatar: 
+drawer_header: 
+
+# Nav link
+nav:
+  首页: 
+    link: /
+    color: '#2196F3'
+    icon: home
+  搜索: 
+    link: /search.html
+    icon: search
+    color: '#2196F3'
+  归档: 
+    link: 
+    icon:
+    color:
+  关于: 
+    link:
+    icon:
+    color:
+
+# footer
+# about
+start_time:
+footer:
+# info
+count: true
+busuanzi: true
+# ICP
+icp:
+# CDN
+# Use upyun
+cdn: 
+  use:
+  upyun: 
+    src:
+
+# hexo-renderer-sass
+node_sass:
+  outputStyle: nested
+  precision: 5
+  sourceComments: false
+
+# Post
+default_post_title: Untitled
+auto_excerpt:
+  length: 120
+
+
+# Comment
+# Use gitment | valine | disqus | disqusjs
+comment:
+  use: disqusjs
+  gitment:
+    owner:
+    repo:
+    client_id:
+    client_secret:
+  valine:
+    appid:
+    appkey:
+  disqus:
+    src: 
+    # such as: https://xxx.disqus.com/embed.js
+  disqusjs:
+    shortname:
+    siteName:
+    api:
+    apikey:
+    admin:
+    adminLabel:
+
+# Random Pictures
+random_pics: 24
+
+# Google Analytics
+google_analytics:

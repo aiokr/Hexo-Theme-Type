@@ -1,9 +1,9 @@
 <% if (item.summary) { %>
-<div class="mdui-card-content"><a href="<%- config.root %><%- item.path %>"
-    style="color:#222831;text-decoration: none;"><%- item.summary %></a>
+<div class="mdui-card-content itp-post-index-summary"><a
+  href="<%- config.root %><%- item.path %>"><%- item.summary %></a>
 </div>
 <% } else { %>
-<div class="mdui-card-content"><a href="<%- config.root %><%- item.path %>"
-    style="color:#222831;text-decoration: none;"><%- strip_html(truncate(item.content, { length: theme.auto_excerpt.length })) %></a>
+<div class="mdui-card-content itp-post-index-summary"><a
+  href="<%- config.root %><%- item.path %>"><%- strip_html(truncate(item.content, { length: theme.auto_excerpt.length })) %></a>
 </div>
 <% } %>
