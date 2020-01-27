@@ -17,9 +17,10 @@ script:
   - npm install hexo-renderer-sass
   - npm install hexo-generator-search
   - cd ./
-  - chmod +x /blog
-  - \cp -f blog/themes/landscape/ci-assets/_config.hexo.yml blog/_config.hexo.yml
-  - mv _config.hexo.yml _config.yml
+  - chmod +x ./blog
+  - \cp -f ./blog/themes/landscape/ci-assets/_config.hexo.yml ./blog/_config.hexo.yml
+  - mv ./blog/_config.hexo.yml ./blog/_config.yml
+  - cd blog
   - hexo g
 after_script: 
   - cd ./public
