@@ -14,9 +14,9 @@ install:
   - git clone https://github.com/aiokr/hexo-theme-type.git landscape
   - cd ../
 script: 
-  - npm install --save hexo-renderer-sass
-  - npm install hexo-generator-search --save
-  - chmod +x .
+  - npm install hexo-renderer-sass
+  - npm install hexo-generator-search
+  - chmod +x /
   - \cp -f themes/landscape/ci-assets/_config.hexo.yml /
   - mv _config.hexo.yml _config.yml
   - hexo g
