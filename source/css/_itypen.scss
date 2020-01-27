@@ -28,8 +28,25 @@ body {
     color: #222831;
     font-size: 28px;
   }
+
   .itp-index-header-description {
-    color:#222831;
+    color: #222831;
+  }
+}
+
+.itp-post-index-hero {
+  .mdui-card-primary-title {
+    a {
+      color: #fff !important;
+      opacity: .87 !important;
+    }
+  }
+
+  .mdui-card-primary-subtitle {
+    a {
+      color: #fff !important;
+      opacity: .87 !important;
+    }
   }
 }
 

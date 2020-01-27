@@ -61,7 +61,25 @@ img {
 
 .itp-post-index-summary {
   a {
-    color: $subtitle-color
+    color: $subtitle-color;
+  }
+}
+
+.itp-post-index-hero {
+  .mdui-card-primary-title {
+    a {
+      color: $title-color;
+      opacity: .87;
+    }
+  }
+
+  .mdui-card-primary-subtitle {
+    color: $subtitle-color;
+    opacity: .87;
+    a {
+      color: $subtitle-color;
+      opacity: .87;
+    }
   }
 }
 

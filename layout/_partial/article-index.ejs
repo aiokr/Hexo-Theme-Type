@@ -29,13 +29,13 @@ var isFullUrl = function(str) {
   </div>
   <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
     <div class="mdui-card-primary">
-      <div class="mdui-card-primary-title itp-post-index-title"><a href="<%- config.root %><%- item.path %>"
+      <div class="mdui-card-primary-title"><a href="<%- config.root %><%- item.path %>"
           ><%- item.title || theme.default_post_title || "Untitled" %></a>
       </div>
-      <div class="mdui-card-primary-subtitle" style="padding-top: 5px; color:#ffffff" ;>
+      <div class="mdui-card-primary-subtitle" style="padding-top: 5px;">
         <%= item.date.format(config.date_format) %><span> · </span>
         <% item.categories.each(function(categories){ %>
-        <a href="<%= config.root %>categories/<%= categories.name %>/" style="color:#ffffff;" rel="tag">
+        <a href="<%= config.root %>categories/<%= categories.name %>/" rel="tag">
           <%- categories.name %>
         </a>
         <% }); %>
