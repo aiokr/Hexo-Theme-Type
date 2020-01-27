@@ -76,7 +76,7 @@ pagination_dir: page
 plugin:
  - hexo-generator-feed
  - hexo-generator-search
-theme: hexo-theme-type
+theme: landscape
 
 sitemap:
   path: sitemap.xml
