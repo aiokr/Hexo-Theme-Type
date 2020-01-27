@@ -10,7 +10,7 @@ install:
   - hexo init blog
   - cd blog
   - cd themes
-  - rm -rf /landscrape
+  - rm -rf landscrape
   - git clone https://github.com/aiokr/hexo-theme-type.git landscrape
   - cd ../
 script: 
