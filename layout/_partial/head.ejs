@@ -92,6 +92,20 @@
     <!-- Custom CSS/Sass -->
     <%- css('css/mdui.min') %>
     <%- css('css/style') %>
+    <% if(theme.highlight.use == true) { %>
+    <!--highlight.js CSS-->
+    <% if(theme.highlight.style == 'rainbow' ) { %>
+    <%- css('css/highlight/rainbow') %>
+    <% } else if (theme.highlight.style == 'tomorrow') { %>
+    <%- css('css/highlight/tomorrow') %>
+    <% } else if (theme.highlight.style == 'github') { %>
+    <%- css('css/highlight/github') %>
+    <% } else if (theme.highlight.style == 'tnightblue') { %>
+    <%- css('css/highlight/tomorrow-night-blue') %>
+    <% } else if (theme.highlight.style == 'default') { %>
+    <%- css('css/highlight/default') %>
+    <% } %>
+    <% } %>
     <% if(theme.google_analytics) { %>
     <!-- Google Analytics -->
     <script>

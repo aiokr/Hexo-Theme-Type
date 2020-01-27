@@ -28,13 +28,13 @@ start_time:
 footer: 
 # info
 count: false
-busuanzi: false
+busuanzi: true
 # ICP
 icp: 
 # CDN
 # Use upyun
 cdn: 
-  use: upyun
+  use: 
   upyun: 
     src: 
 
@@ -43,10 +43,16 @@ default_post_title: Untitled
 auto_excerpt:
   length: 120
 
+# highlight.js
+# style default | github | rainbow | tomorrow | tnightblue
+highlight:
+  use: true
+  style: github
+
 # Comment
 # Use gitment | valine | disqus | disqusjs
 comment:
-  use:
+  use: 
   gitment:
     owner:
     repo:

@@ -1,0 +1,154 @@
+$bg-color: #212121;
+$card-color: #424242;
+$title-color: #ffffff;
+$subtitle-color: #bdbdbd;
+$blue: #03A9F4;
+$green: #1db954;
+$lightgreen: #49b683;
+$yellow: #feda7a;
+
+body {
+  background-color: $bg-color !important;
+}
+
+img {
+  filter: brightness(.8);
+}
+
+.itp-drawer-btn {
+  color: #fff;
+}
+
+.itp-drawer {
+  background-color: $bg-color !important;
+
+  .itp-drawer-title {
+    color: $title-color;
+  }
+
+  .itp-drawer-description {
+    color: #e3e3e3;
+  }
+}
+
+.itp-index-header {
+  .itp-index-header-title {
+    color: $title-color;
+  }
+
+  .itp-index-header-description {
+    color: #e3e3e3;
+  }
+}
+
+.itp-post-index {
+  background-color: $card-color;
+}
+
+.itp-post-index-title {
+  a {
+    color: $title-color !important;
+  }
+}
+
+.itp-post-index-subtitle {
+  color: $subtitle-color !important;
+}
+
+.itp-post-index-categories {
+  color: $subtitle-color !important;
+}
+
+.itp-post-index-summary {
+  a {
+    color: $subtitle-color;
+  }
+}
+
+.itp-post-index-hero {
+  .mdui-card-primary-title {
+    a {
+      color: $title-color;
+      opacity: .87;
+    }
+  }
+
+  .mdui-card-primary-subtitle {
+    color: $subtitle-color;
+    opacity: .87;
+
+    a {
+      color: $subtitle-color;
+      opacity: .87;
+    }
+  }
+}
+
+.itp-post-card {
+  background-color: $card-color;
+}
+
+.itp-post-title {
+  color: $title-color;
+}
+
+.itp-post-subtitle {
+  color: $subtitle-color;
+
+  a {
+    color: $subtitle-color;
+  }
+}
+
+.article {
+  p {
+    color: $subtitle-color;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
+
+.itp-link {
+  background-color: $card-color;
+
+  .mdui-card-header-title {
+    color: $title-color;
+  }
+
+  .mdui-card-header-subtitle {
+    color: $subtitle-color;
+  }
+}
+
+.itp-search {
+  .mdui-textfield-label {
+    color: $subtitle-color;
+  }
+
+  .mdui-textfield-input {
+    color: $title-color;
+
+    border-bottom: 1px solid $subtitle-color;
+  }
+
+  .mdui-list-item {
+    a {
+      color: $title-color;
+    }
+  }
+
+  .mdui-list-item-title {
+    color: $title-color;
+  }
+
+  .mdui-list-item-text {
+    color: $subtitle-color;
+  }
+}

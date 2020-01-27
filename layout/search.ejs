@@ -8,13 +8,13 @@
             <img src="<%- page.cover %>" style="border-radius: 0px; max-height: 300px; object-fit: cover;" />
           </div>
           <!--文章信息区-->
-          <div class="mdui-card-primary">
-            <div class="mdui-card-primary-title">
+          <section class="mdui-card-primary">
+            <div class="mdui-card-primary-title itp-post-title">
               <%- page.title %>
             </div>
-          </div>
+          </section>
           <!--内容-->
-          <div class="mdui-card-content">
+          <section class="mdui-card-content itp-search">
               <!--搜索框-->
               <form autocomplete="off" id="search-form" method="post" action="">
                 <div class="mdui-textfield mdui-textfield-floating-label">
@@ -22,9 +22,10 @@
                   <input class="mdui-textfield-input" id="search" />
                 </div>
               </form>
+              <!--搜索结果-->
+              <div id="local-search-result" class="mdui-text-truncate"></div>
               <!--搜索推荐-->
               <ul class="mdui-list mdui-list-dense">
-                <div id="local-search-result" class="mdui-text-truncate"></div>
                 <% if (site.data.search) { %>
                 <% for (var i in site.data.search) { %>
                 <a href="<%- site.data.search[i].url %>">
@@ -39,7 +40,7 @@
                 <% } %>
                 <div class="padding-70"></div>
               </ul>
-            </div>
+            </section>
           </div>
       </div>
     </div>

@@ -2,6 +2,7 @@
 <% var toc = toc(page.content, {
   class: 'toc',
   list_number: false,
+  max_depth: 2,
 }) %>
 <% if(toc.length > 0) { %>
 <nav class="itp-post-toc noprn">

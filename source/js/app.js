@@ -27,5 +27,3 @@ var appDaily = {
 $(".toc li").replaceWith(function () { return "<li class='mdui-menu-item'>" + this.innerHTML + "</li>"; });
 
 $(".itp-post-toc ol").replaceWith(function () { return "<ul class='mdui-menu mdui-menu-cascade itp-toc-menu' id='toc'>" + this.innerHTML + "</ul>"; });
-
-
