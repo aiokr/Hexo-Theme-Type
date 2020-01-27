@@ -44,10 +44,10 @@ auto_excerpt:
   length: 120
 
 # highlight.js
-# style default | github | rainbow | tomorrow | tnightblue
+# style github | tomorrow | night | night-blue | night-bright | night-eighties
 highlight:
   use: true
-  style: github
+  style: night
 
 # Comment
 # Use gitment | valine | disqus | disqusjs

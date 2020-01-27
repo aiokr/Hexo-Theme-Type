@@ -94,16 +94,16 @@
     <%- css('css/style') %>
     <% if(theme.highlight.use == true) { %>
     <!--highlight.js CSS-->
-    <% if(theme.highlight.style == 'rainbow' ) { %>
-    <%- css('css/highlight/rainbow') %>
+    <% if(theme.highlight.style == 'github' ) { %>
+    <%- css('css/highlight/github') %>
     <% } else if (theme.highlight.style == 'tomorrow') { %>
     <%- css('css/highlight/tomorrow') %>
-    <% } else if (theme.highlight.style == 'github') { %>
-    <%- css('css/highlight/github') %>
-    <% } else if (theme.highlight.style == 'tnightblue') { %>
+    <% } else if (theme.highlight.style == 'night-blue') { %>
     <%- css('css/highlight/tomorrow-night-blue') %>
-    <% } else if (theme.highlight.style == 'default') { %>
-    <%- css('css/highlight/default') %>
+    <% } else if (theme.highlight.style == 'night-bright') { %>
+    <%- css('css/highlight/tomorrow-night-bright') %>
+    <% } else if (theme.highlight.style == 'night-eighties') { %>
+    <%- css('css/highlight/tomorrow-night-eighties') %>
     <% } %>
     <% } %>
     <% if(theme.google_analytics) { %>
