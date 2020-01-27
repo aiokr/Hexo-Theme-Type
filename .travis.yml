@@ -16,7 +16,8 @@ install:
 script: 
   - npm install --save hexo-renderer-sass
   - npm install hexo-generator-search --save
-  - cp -av themes/landscape/ci-assets/_config.hexo.yml /
+  - chmod +x .
+  - cp -avf themes/landscape/ci-assets/_config.hexo.yml /
   - mv _config.hexo.yml _config.yml
   - hexo g
 after_script: 
