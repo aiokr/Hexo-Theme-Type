@@ -18,8 +18,9 @@ script:
   - npm install hexo-generator-search
   - cd ./
   - ls
-  - rm -rf config.yml
-  - cd ./
+  - rm -rf _config.yml
+  - ls
+  - cd ../
   - ls
   - chmod +x /blog
   - \cp -f ./blog/themes/landscape/ci-assets/_config.hexo.yml ./blog/_config.hexo.yml
