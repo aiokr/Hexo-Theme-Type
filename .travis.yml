@@ -10,8 +10,8 @@ install:
   - hexo init blog
   - cd blog
   - cd themes
-  - rm -rfv /landscrape
-  - git clone https://github.com/aiokr/hexo-theme-type.git landscrape
+  - rm -rfv /landscape
+  - git clone https://github.com/aiokr/hexo-theme-type.git landscape
   - cd ../
 script: 
   - hexo g
