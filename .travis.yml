@@ -16,12 +16,10 @@ install:
 script: 
   - npm install hexo-renderer-sass
   - npm install hexo-generator-search
+  - npm install hexo-symbols-count-time
   - cd ./
-  - ls
   - rm -rf _config.yml
-  - ls
   - cd ../
-  - ls
   - chmod +x ./blog
   - \cp -f ./blog/themes/landscape/ci-assets/_config.hexo.yml ./blog/_config.hexo.yml
   - mv ./blog/_config.hexo.yml ./blog/_config.yml
