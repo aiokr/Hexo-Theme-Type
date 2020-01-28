@@ -1,14 +1,14 @@
-$bg-color: #212121;
-$card-color: #424242;
-$title-color: #ffffff;
-$subtitle-color: #bdbdbd;
-$blue: #03A9F4;
-$green: #1db954;
-$lightgreen: #49b683;
-$yellow: #feda7a;
+$dark-bg-color: #212121;
+$dark-card-color: #424242;
+$dark-title-color: #ffffff;
+$dark-subtitle-color: #bdbdbd;
+$dark-blue: #03A9F4;
+$dark-green: #1db954;
+$dark-lightgreen: #49b683;
+$dark-yellow: #feda7a;
 
 body {
-  background-color: $bg-color !important;
+  background-color: $dark-bg-color !important;
 }
 
 img {
@@ -20,10 +20,10 @@ img {
 }
 
 .itp-drawer {
-  background-color: $bg-color !important;
+  background-color: $dark-bg-color !important;
 
   .itp-drawer-title {
-    color: $title-color;
+    color: $dark-title-color;
   }
 
   .itp-drawer-description {
@@ -33,7 +33,7 @@ img {
 
 .itp-index-header {
   .itp-index-header-title {
-    color: $title-color;
+    color: $dark-title-color;
   }
 
   .itp-index-header-description {
@@ -41,68 +41,78 @@ img {
   }
 }
 
+.itp-index-header-card_style {
+  .itp-header-actions{
+    color: $dark-subtitle-color;
+  }
+}
+
+.mdui-card-actions {
+
+}
+
 .itp-post-index {
-  background-color: $card-color;
+  background-color: $dark-card-color;
 }
 
 .itp-post-index-title {
   a {
-    color: $title-color !important;
+    color: $dark-title-color !important;
   }
 }
 
 .itp-post-index-subtitle {
-  color: $subtitle-color !important;
+  color: $dark-subtitle-color !important;
 }
 
 .itp-post-index-categories {
-  color: $subtitle-color !important;
+  color: $dark-subtitle-color !important;
 }
 
 .itp-post-index-summary {
   a {
-    color: $subtitle-color;
+    color: $dark-subtitle-color;
   }
 }
 
 .itp-post-index-hero {
   .mdui-card-primary-title {
     a {
-      color: $title-color;
+      color: $dark-title-color;
       opacity: .87;
     }
   }
 
   .mdui-card-primary-subtitle {
-    color: $subtitle-color;
+    color: $dark-subtitle-color;
     opacity: .87;
 
     a {
-      color: $subtitle-color;
+      color: $dark-subtitle-color;
       opacity: .87;
     }
   }
 }
 
 .itp-post-card {
-  background-color: $card-color;
+  background-color: $dark-card-color;
 }
 
 .itp-post-title {
-  color: $title-color;
+  color: $dark-title-color;
 }
 
 .itp-post-subtitle {
-  color: $subtitle-color;
+  color: $dark-subtitle-color;
 
   a {
-    color: $subtitle-color;
+    color: $dark-subtitle-color;
   }
 }
 
 .article {
   p {
-    color: $subtitle-color;
+    color: $dark-subtitle-color;
   }
 
   h1,
@@ -116,39 +126,46 @@ img {
 }
 
 .itp-link {
-  background-color: $card-color;
+  background-color: $dark-card-color;
 
   .mdui-card-header-title {
-    color: $title-color;
+    color: $dark-title-color;
   }
 
   .mdui-card-header-subtitle {
-    color: $subtitle-color;
+    color: $dark-subtitle-color;
   }
 }
 
 .itp-search {
   .mdui-textfield-label {
-    color: $subtitle-color;
+    color: $dark-subtitle-color;
   }
 
   .mdui-textfield-input {
-    color: $title-color;
+    color: $dark-title-color;
 
-    border-bottom: 1px solid $subtitle-color;
+    border-bottom: 1px solid $dark-subtitle-color;
   }
 
   .mdui-list-item {
     a {
-      color: $title-color;
+      color: $dark-title-color;
     }
   }
 
   .mdui-list-item-title {
-    color: $title-color;
+    color: $dark-title-color;
   }
 
   .mdui-list-item-text {
-    color: $subtitle-color;
+    color: $dark-subtitle-color;
+  }
+}
+
+.mdui-chip {
+  background-color: $dark-bg-color;
+  a {
+    color: $dark-subtitle-color !important;
   }
 }

@@ -14,10 +14,6 @@ body {
   padding-top: 25px;
 }
 
-body {
-  font-display: swap;
-}
-
 .post-container {
   max-width: 800px;
   margin: 0 auto;
@@ -31,6 +27,22 @@ body {
 
   .itp-index-header-description {
     color: #222831;
+  }
+}
+
+.itp-index-header-card_style {
+  @media screen and (max-width: 816px) {
+    padding-top: 60px;
+  }
+
+  @media screen and (min-width: 816px) {
+    padding-top: 70px;
+  }
+
+  .itp-header-img {
+    height: 336px;
+    border-radius: 0px;
+    object-fit: cover;
   }
 }
 
@@ -131,7 +143,6 @@ body {
 }
 
 .itp-page-select {
-  background-color: #eeeeee;
   padding: 20px 20px 20px 20px;
 
   a {
@@ -269,4 +280,12 @@ footer {
   border-bottom-color: #2196f3 !important;
   box-shadow: 0 1px 0 0 #2196f3 !important;
   -webkit-box-shadow: 0 1px 0 0 #2196f3 !important;
+}
+
+.mdui-chip {
+  margin-right: 5px;
+
+  a {
+    color: #000;
+  }
 }

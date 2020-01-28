@@ -20,10 +20,10 @@
     </div>
   </div>
   <ul class="mdui-list">
-    <% for (var i in theme.nav) { %>
-    <a class="mdui-list-item mdui-ripple" href="<%- theme.nav[i].link %>">
+    <% for (var i in theme.aside) { %>
+    <a class="mdui-list-item mdui-ripple" href="<%- theme.aside[i].link %>">
       <i class="mdui-list-item-icon mdui-icon material-icons"
-        style="color: <%- theme.nav[i].color %>;"><%- theme.nav[i].icon %></i>
+        style="color: <%- theme.aside[i].color %>;"><%- theme.aside[i].icon %></i>
       <div class="mdui-list-item-content" style="font-size: 14px; color: #757575;"><%- i %></div>
     </a>
     <% } %>

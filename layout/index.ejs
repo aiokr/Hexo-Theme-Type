@@ -3,26 +3,51 @@
     <div class="mdui-row">
       <div class="mdui-col-md-2 mdui-col-xs-down"></div>
       <div class="mdui-col-md-8 mdui-col-xs-12">
-        <!--index header-->
-        <div class="mdui-row itp-index-header">
-          <div class="mdui-text-center itp-index-header-title">
-            <%= config.title %>
-          </div>
-          <div class="padding-15"></div>
-          <div class="mdui-text-center itp-index-header-description">
-            <%- config.description %>
-          </div>
-          <div class="padding-25">
-            <div class="mdui-text-center">
-              <% for (var i in theme.nav) { %>
-              <a href="<%- theme.nav[i].link %>" class="mdui-ripple" style="color:#2196F3; padding: 10px;">
-                <%- i %>
-              </a>
-              <% } %>
+        <header>
+          <!--index header-->
+          <% if(theme.header.style == 'default') { %>
+          <!--index header default-->
+          <div class="mdui-row itp-index-header">
+            <div class="mdui-text-center itp-index-header-title">
+              <%= config.title %>
+            </div>
+            <div class="padding-15"></div>
+            <div class="mdui-text-center itp-index-header-description">
+              <%- config.description %>
+            </div>
+            <div class="padding-25">
+              <div class="mdui-text-center">
+                <% for (var i in theme.nav) { %>
+                <a href="<%- theme.nav[i].link %>" class="mdui-ripple" style="color:#2196F3; padding: 10px;">
+                  <%- i %>
+                </a>
+                <% } %>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="padding-25 noprn"></div>
+          <% } else if (theme.header.style == 'card') { %>
+          <div class="itp-index-header-card_style">
+            <div class="mdui-card">
+              <div class="mdui-card-media">
+                <img class="itp-header-img" src="<%- theme.header.img %>" />
+                <div class="mdui-card-media-covered mdui-card-media-covered-transparent">
+                  <div class="mdui-card-primary">
+                    <div class="mdui-card-primary-title"><%- config.description %></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% if(theme.nav) { %>
+            <div class="mdui-card-actions itp-header-actions">
+              <% for (var l in theme.nav) { %>
+              <a href="<%- theme.nav[l].link %>" class="mdui-btn mdui-ripple"><%- l %></a>
+              <% } %>
+            </div>
+            <% } %>
+          </div>
+          <% } %>
+        </header>
+        <div class="padding-15 noprn"></div>
         <% page.posts.each(function(item, itemIndex){ %>
         <%- partial('_partial/article-index', {item: item}) %>
         <% }); %>

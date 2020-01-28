@@ -1,18 +1,41 @@
 # basic
-favicon: 
-avatar: 
-drawer_header: 
+favicon: https://imgur.itypen.com/picgo/typelogo.png_avatar
+avatar: https://imgur.itypen.com/picgo/gff.jpg
+drawer_header: https://imgur.itypen.com/picgo/20190529224135.jpg_itp
 
-# Nav link
+  
+# ---------------------------------------------------------------
+# Style Setting
+# ---------------------------------------------------------------
+
+# Header Style
+# style deafult | card
+header: 
+  style: card
+  img: https://imgur.itypen.com/picgo/20200111230740.jpg_itp
+
+
+# Schemes
+schemes: column
+#schemes: docs
+
+# Header link
 nav:
-  首页: 
-    link: /
-    color: '#2196F3'
-    icon: home
   搜索: 
     link: /search.html
     icon: search
     color: '#2196F3'
+  友链:
+    link: /links.html
+    icon: link
+    color: '#2196F3'
+
+# aside link
+aside:
+  首页: 
+    link: /
+    color: '#2196F3'
+    icon: home
   归档: 
     link: /archives/
     icon:   move_to_inbox
@@ -21,22 +44,26 @@ nav:
     link: /about.html
     icon: person
     color: '#2196F3'
+  渊梦:
+    link: 'https://www.itypen.com'
+    icon: insert_photo
+    color: '#2196F3'
 
 # footer
 # about
-start_time: 
-footer: 
+start_time: 2016
+footer: 永远相信美好的事情即将发生<br><div class="padding-15"></div><a href="https://travis-ci.org/aiokr/iTypen-Hexo" target="_blank">渲染状态</a>&nbsp;&nbsp;<a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fblog.itypen.com%2F&tab=desktop" target="_blank">速度测试</a>
 # info
-count: false
+count: true
 busuanzi: true
 # ICP
-icp: 
+icp: 桂ICP备17001361号
 # CDN
 # Use upyun
 cdn: 
-  use: 
+  use: upyun
   upyun: 
-    src: 
+    src: https://imgur.itypen.com/picgo/20190506220004.png_itp
 
 # Post
 default_post_title: Untitled
@@ -49,10 +76,11 @@ highlight:
   use: true
   style: night
 
+
 # Comment
 # Use gitment | valine | disqus | disqusjs
 comment:
-  use: 
+  use: disqusjs
   gitment:
     owner:
     repo:
@@ -65,15 +93,15 @@ comment:
     src: 
     # such as: https://xxx.disqus.com/embed.js
   disqusjs:
-    shortname: 
-    siteName: 
-    api: 
-    apikey: 
-    admin: 
-    adminLabel: 
+    shortname: itpnblog
+    siteName: aiokr's blog
+    api: https://disqus-proxy.disqusapi.workers.dev/api/
+    apikey: ACUkOYE4R9hPhjn287JNMXWzlvdAGpIKLH4Kn8AITuclBETPKnU2j996mGXXxgnD
+    admin: aiokr
+    adminLabel: 站长
 
 # Random Pictures
 random_pics: 24
 
 # Google Analytics
-google_analytics: UA-XXXXXXXXX-A
+google_analytics: UA-141010711-2
