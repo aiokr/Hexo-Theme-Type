@@ -1,23 +1,35 @@
-# basic
-favicon: https://imgur.itypen.com/picgo/typelogo.png_avatar
-avatar: https://imgur.itypen.com/picgo/gff.jpg
-drawer_header: https://imgur.itypen.com/picgo/20190529224135.jpg_itp
+# ---------------------------------------------------------------
+# ICON Settings
+# ---------------------------------------------------------------
 
+favicon: 
+avatar: 
+apple_icon:
+  # iPhone 57x57 
+  iphone: 
+  # iPad 72x72
+  ipad: 
+  # Retina iPhone 114x114
+  iphone_hd: 
+  # Retina iPad 144x144
+  ipad_hd: 
   
 # ---------------------------------------------------------------
-# Style Setting
+# Style Settings
 # ---------------------------------------------------------------
-
-# Header Style
-# style deafult | card
-header: 
-  style: card
-  img: https://imgur.itypen.com/picgo/20200111230740.jpg_itp
-
 
 # Schemes
 schemes: column
-#schemes: docs
+
+# ---------------------------------------------------------------
+# Header Settings
+# ---------------------------------------------------------------
+
+# Header
+# style deafult | card
+header: 
+  style: card
+  img: 
 
 # Header link
 nav:
@@ -29,6 +41,12 @@ nav:
     link: /links.html
     icon: link
     color: '#2196F3'
+
+# ---------------------------------------------------------------
+# Aside Settings
+# ---------------------------------------------------------------
+
+drawer_header: 
 
 # aside link
 aside:
@@ -49,21 +67,28 @@ aside:
     icon: insert_photo
     color: '#2196F3'
 
-# footer
+# ---------------------------------------------------------------
+# Footer Settings
+# ---------------------------------------------------------------
+
 # about
 start_time: 2016
-footer: 永远相信美好的事情即将发生<br><div class="padding-15"></div><a href="https://travis-ci.org/aiokr/iTypen-Hexo" target="_blank">渲染状态</a>&nbsp;&nbsp;<a href="https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fblog.itypen.com%2F&tab=desktop" target="_blank">速度测试</a>
+footer: 
 # info
 count: true
 busuanzi: true
 # ICP
-icp: 桂ICP备17001361号
+icp: 
 # CDN
 # Use upyun
 cdn: 
   use: upyun
   upyun: 
-    src: https://imgur.itypen.com/picgo/20190506220004.png_itp
+    src: 
+
+# ---------------------------------------------------------------
+# Posts Settings
+# ---------------------------------------------------------------
 
 # Post
 default_post_title: Untitled
@@ -75,7 +100,6 @@ auto_excerpt:
 highlight:
   use: true
   style: night
-
 
 # Comment
 # Use gitment | valine | disqus | disqusjs
@@ -93,15 +117,19 @@ comment:
     src: 
     # such as: https://xxx.disqus.com/embed.js
   disqusjs:
-    shortname: itpnblog
-    siteName: aiokr's blog
-    api: https://disqus-proxy.disqusapi.workers.dev/api/
-    apikey: ACUkOYE4R9hPhjn287JNMXWzlvdAGpIKLH4Kn8AITuclBETPKnU2j996mGXXxgnD
-    admin: aiokr
-    adminLabel: 站长
+    shortname: 
+    siteName: 
+    api: 
+    apikey: 
+    admin: 
+    adminLabel: 
 
 # Random Pictures
 random_pics: 24
 
+# ---------------------------------------------------------------
+# Third Party Services Settings
+# ---------------------------------------------------------------
+
 # Google Analytics
-google_analytics: UA-141010711-2
+google_analytics: 

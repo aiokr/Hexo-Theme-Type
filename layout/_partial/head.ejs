@@ -63,18 +63,11 @@
     <!-- 禁止数字识自动别为电话号码 -->
     <meta name="format-detection" content="telephone=no" />
     <link rel="shortcut icon" href="<%- url_for(config.favicon || theme.favicon) %>">
-    <!-- Retina iPhone 和 Retina iTouch，114x114 像素 -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-        href="https://imgur.itypen.com/picgo/20190625163454.jpg_RetinaiPhone">
-    <!-- Retina iPad，144x144 像素 -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
-        href="https://imgur.itypen.com/picgo/20190625163454.jpg_RetinaiPad">
-    <!-- iPhone6 Plus -->
-    <link rel="apple-touch-icon-precomposed" sizes="180x180"
-        href="https://imgur.itypen.com/picgo/20190625163454.jpg_iPhoneHD">
-    <!-- iPhone6 -->
-    <link rel="apple-touch-icon-precomposed" sizes="120x120"
-        href="https://imgur.itypen.com/picgo/20190625163454.jpg_iPhone">
+    <!--Apple iOS Safari ICON-->
+    <link rel="apple-touch-icon" sizes="57x57" href="<%= theme.apple_icon.iphone %>" />
+    <link rel="apple-touch-icon" sizes="72x72" href="<%= theme.apple_icon.ipad %>" />
+    <link rel="apple-touch-icon" sizes="114x114" href="<%= theme.apple_icon.iphone_hd %>" />
+    <link rel="apple-touch-icon" sizes="144x144" href="<%= theme.apple_icon.ipad_hd %>" />
     <!-- 添加 RSS 订阅 -->
     <link rel="alternate" type="application/rss+xml" title="<%= config.title %>" href="/atom.xml" />
     <!-- uc强制竖屏 -->
