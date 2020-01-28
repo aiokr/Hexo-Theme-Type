@@ -3,11 +3,24 @@ p {
   font-size: 16px;
   color: #222831;
   line-height: 1.8em;
-  letter-spacing: 0.1em;
+  letter-spacing: 0;
+}
 
-  img {
-    border-radius: 5px;
-  }
+/*
+文字避头尾法则
+aiokr learn from https://blog.csdn.net/qq_23375733/article/details/99975659
+*/
+p {
+  table-layout: fixed !important;
+  /*文字避首尾 -- 防止撑开*/
+  word-wrap: break-word !important;
+  /*英文单字因自动换行*/
+  word-break: normal !important;
+  /*正常避头尾 */
+  text-align: justify !important;
+  /*文字左右对齐*/
+  text-justify: inter-ideograph !important;
+  /*用表意文本来排齐内容*/
 }
 
 h1,
@@ -20,7 +33,8 @@ h6 {
   padding: 0;
   font-style: bold !important;
   color: #2196f3 !important;
-  margin-top: 1.5em !important;
+  margin-top: 1.5em;
+  margin-bottom: .5em;
   text-align: left !important;
   font-family: sans-serif;
   font-weight: bold
@@ -40,15 +54,15 @@ h3 {
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 h5 {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 h6 {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 blockquote,
@@ -59,15 +73,9 @@ q {
   quotes: none;
 }
 
-/*
-aiokr learn from https://blog.csdn.net/qq_23375733/article/details/99975659
-*/
-p {
-  table-layout: fixed !important;   /*文字避首尾 -- 防止撑开*/
-  word-wrap: break-word !important; /*英文单字因自动换行*/
-  word-break: normal !important;    /*正常避头尾 */
-  text-align: justify !important;    /*文字左右对齐*/
-  text-justify: inter-ideograph !important;  /*用表意文本来排齐内容*/
+mark {
+  margin: 0 5px;
+  padding: 2px 4px;
+  border-bottom: 1px solid #ffedce;
+  background: #fffdd1;
 }
-
-
