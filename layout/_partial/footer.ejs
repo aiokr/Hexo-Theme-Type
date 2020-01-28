@@ -6,7 +6,7 @@
     <div class="mdui-row mdui-text-left">
       <div class="mdui-col-md-3 mdui-col-xs-12" style="padding-bottom: 20px;">
         <div class="mdui-typo-title-opacity">
-          关于
+            <%= __('footer.about') %>
         </div>
         <div class="padding-15"></div>
         <div class="mdui-typo-body-1">
@@ -27,30 +27,30 @@
       </div>
       <div class="mdui-col-md-3 mdui-col-xs-12" style="padding-bottom: 20px;">
         <div class="mdui-typo-title-opacity">
-          信息
+            <%= __('footer.info') %>
         </div>
         <% if (theme.count == true){ %>
         <div class="padding-15"></div>
         <div class="mdui-typo-body-1">
-          总字数
+            <%= __('footer.countTotal') %>
           <%- symbolsCountTotal(site) %>
         </div>
         <% } %>
         <% if (theme.busuanzi == true){ %>
         <div class="mdui-typo-body-1">
           <br />
-          UV <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span></span>
+          <%= __('footer.uv') %> <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span></span>
         </div>
         <div class="mdui-typo-body-1">
           <br />
-          PV <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span></span>
+          <%= __('footer.pv') %> <span id="busuanzi_container_site_pv"><span id="busuanzi_value_site_pv"></span></span>
         </div>
         <% } %>
       </div>
       <div class="mdui-col-md-3 mdui-col-xs-12" style="padding-bottom: 20px;">
         <% if (theme.icp){ %>
         <div class="mdui-typo-title-opacity">
-          备案
+            <%= __('footer.beian') %>
         </div>
         <div class="mdui-typo-body-1">
           <br />
@@ -61,16 +61,12 @@
       <div class="mdui-col-md-3 mdui-col-xs-12" style="padding-bottom: 20px;">
         <% if (theme.cdn.use == 'upyun'){ %>
         <div class="mdui-typo-title-opacity">
-          CDN
+            <%= __('footer.cdn') %>
         </div>
         <div class="padding-15"></div>
         <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img class="cdn-img"
             src="<%= theme.cdn.upyun.src %>"></a>
         <% } %>
-      </div>
-    </div>
-    <div class="mdui-row">
-      <div class="upyun">
       </div>
     </div>
   </div>
