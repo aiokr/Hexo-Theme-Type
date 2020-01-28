@@ -8,12 +8,16 @@
     }
 %>
 <div class="archive content-area">
-    <div class="post-container">
-      <div class="mdui-row">
+  <div class="post-container">
+    <div class="mdui-container">
+      <div class="mdui-col-md-2 mdui-col-xs-down"></div>
+      <div class="mdui-col-md-8 mdui-col-xs-12">
+        <div class="mdui-row">
           <div class="mdui-card itp-post-card">
-              <div class="mdui-card-media itp-post-cover">
-                  <img src="https://qiehuan-img.itypen.com/2019/12/20191231_%E6%B8%8A%E6%A2%A6%E6%96%87%E5%8C%96%E6%89%8B%E5%86%8C.jpg" />
-              </div>
+            <div class="mdui-card-media itp-post-cover">
+              <img
+                src="https://qiehuan-img.itypen.com/2019/12/20191231_%E6%B8%8A%E6%A2%A6%E6%96%87%E5%8C%96%E6%89%8B%E5%86%8C.jpg" />
+            </div>
             <div class="mdui-card-primary">
               <div class="mdui-card-primary-title"><%- title %></div>
             </div>
@@ -42,6 +46,9 @@
               <%- partial('_partial/index-pagination') %>
             </div>
           </div>
+        </div>
       </div>
+      <div class="mdui-col-md-2 mdui-col-xs-down"></div>
     </div>
   </div>
+</div>

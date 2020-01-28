@@ -1,61 +1,64 @@
 <div class="content-area">
   <div class="post">
     <div class="post-container">
-      <div class="mdui-row">
-        <div class="mdui-card itp-post-card">
-          <!--头图-->
-          <div class="mdui-card-media itp-post-cover">
-            <img src="<%- page.cover %>" style="border-radius: 0px; max-height: 300px; object-fit: cover;" />
-          </div>
-          <!--文章信息区-->
-          <section class="mdui-card-primary">
-            <div class="mdui-card-primary-title itp-post-title">
-              <%- page.title %>
-            </div>
-          </section>
-          <!--链接-->
-          <% if (site.data.links) { %>
-          <% for (var i in site.data.links) { %>
-          <a href="<%= site.data.links[i].url %>" title="<%= i %>" target="_blank">
-            <div class="mdui-card mdui-shadow-0 itp-link">
-              <div class="mdui-card-header">
-                <img class="mdui-card-header-avatar" src="<%= site.data.links[i].img %>" />
-                <div class="mdui-card-header-title"><%= i %></div>
-                <div class="mdui-card-header-subtitle"><%- site.data.links[i].descr %></div>
+
+      <div class="mdui-container">
+        <div class="mdui-row">
+          <div class="mdui-col-md-2 mdui-col-xs-down"></div>
+          <div class="mdui-col-md-8 mdui-col-xs-12">
+            <div class="mdui-card itp-post-card">
+              <!--头图-->
+              <div class="mdui-card-media itp-post-cover">
+                <img src="<%- page.cover %>" style="border-radius: 0px; max-height: 300px; object-fit: cover;" />
+              </div>
+              <!--文章信息区-->
+              <section class="mdui-card-primary">
+                <div class="mdui-card-primary-title itp-post-title">
+                  <%- page.title %>
+                </div>
+              </section>
+              <!--链接-->
+              <% if (site.data.links) { %>
+              <% for (var i in site.data.links) { %>
+              <a href="<%= site.data.links[i].url %>" title="<%= i %>" target="_blank">
+                <div class="mdui-card mdui-shadow-0 itp-link">
+                  <div class="mdui-card-header">
+                    <img class="mdui-card-header-avatar" src="<%= site.data.links[i].img %>" />
+                    <div class="mdui-card-header-title"><%= i %></div>
+                    <div class="mdui-card-header-subtitle"><%- site.data.links[i].descr %></div>
+                  </div>
+                </div>
+              </a>
+              <% } %>
+              <% } %>
+              <!--正文-->
+              <div class="mdui-card-content article">
+                <%- page.content %>
+              </div>
+              <!--评论-->
+              <div class="mdui-card-content itp-post-comment">
+                <%- partial('_partial/comment') %>
               </div>
             </div>
-          </a>
-          <% } %>
-          <% } %>
-          <!--正文-->
-          <div class="mdui-card-content article">
-            <%- page.content %>
           </div>
-          <!--评论-->
-          <div class="mdui-card-content itp-post-comment">
-            <%- partial('_partial/comment') %>
-          </div>
+          <div class="mdui-col-md-2 mdui-col-xs-down"></div>
         </div>
-        <!--主卡片-->
       </div>
-      <!--主行-->
     </div>
-    <!--主容器-->
   </div>
-</div>
 
-<% var toc = toc(page.content, {
+  <% var toc = toc(page.content, {
   class: 'toc',
   list_number: false,
 }) %>
-<% if(toc.length > 0) { %>
-<div class="itp-post-toc">
-  <div class="mdui-fab-wrapper" mdui-menu="{target: '#toc'}">
-    <button class="mdui-fab mdui-fab-fixed" style="background-color: white">
-      <!-- 默认显示的图标 -->
-      <i class="mdui-icon material-icons">format_list_bulleted</i>
-    </button>
+  <% if(toc.length > 0) { %>
+  <div class="itp-post-toc">
+    <div class="mdui-fab-wrapper" mdui-menu="{target: '#toc'}">
+      <button class="mdui-fab mdui-fab-fixed" style="background-color: white">
+        <!-- 默认显示的图标 -->
+        <i class="mdui-icon material-icons">format_list_bulleted</i>
+      </button>
+    </div>
+    <%-(toc) %>
   </div>
-  <%-(toc) %>
-</div>
-<% } %>
+  <% } %>
