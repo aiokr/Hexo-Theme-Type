@@ -60,7 +60,7 @@ nav:
 # Footer Settings 页脚设置
 # ---------------------------------------------------------------
 
-start_time: 2016
+start_time:
 count: true
 icp: 
 
