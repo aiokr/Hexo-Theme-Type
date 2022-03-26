@@ -1,0 +1,31 @@
+<% if(page.layout === 'html') { %>
+<%- page.content %>
+<% } else { %>
+
+<!DOCTYPE html>
+<html lang="<%= config.language ? config.language : 'en' %>">
+<!-- Head tag -->
+<%- partial('_partial/head') %>
+<% if(page.layout === 'layout') { %>
+  
+<body>
+  <%- page.content %>
+</body>
+<% } else { %>
+
+<body>
+  <!-- Nav -->
+  <%- partial('_partial/nav') %>
+  <!-- Cover -->
+  <%- partial('_partial/cover') %>
+  <!-- Main Content -->
+  <%- body %>
+  <!-- Footer -->
+  <%- partial('_partial/footer') %>
+  <!-- After footer scripts -->
+  <%- partial('_partial/after-footer') %>
+</body>
+<% } %>
+
+</html>
+<% } %>

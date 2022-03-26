@@ -1,0 +1,115 @@
+$dark-bg-color: #212121;
+$dark-card-color: #424242;
+$dark-title-color: #ffffff;
+$dark-subtitle-color: #bdbdbd;
+$dark-blue: #03A9F4;
+$dark-green: #1db954;
+$dark-lightgreen: #49b683;
+$dark-yellow: #feda7a;
+
+body,
+.itp-drawer,
+.mdui-chip,
+.mdui-toolbar {
+  background-color: $dark-bg-color !important;
+}
+
+.itp-index-title,
+.itp-index-header,
+.itp-index-header-title,
+.itp-post-entry-moment,
+.itp-post-title,
+.itp-post-entry-title,
+.itp-post-entry-title a,
+.itp-header-actions,
+.itp-link .mdui-card-header-title,
+.itp-search .mdui-textfield-input,
+.itp-search .mdui-list-item a,
+.mdui-list-item-title,
+.itp-header-title,
+.mdui-btn,
+.itp-gallery-title {
+  color: $dark-title-color !important;
+}
+
+.article p,
+.itp-toc span,
+.mdui-chip a,
+.itp-drawer-title,
+.itp-index-subtitle,
+.itp-post-subtitle,
+.category-link,
+.itp-post-entry-categories,
+.itp-post-entry-subtitle,
+.itp-post-entry-excerpt,
+.itp-post-entry-excerpt a,
+.itp-link .mdui-card-header-subtitle,
+.itp-search .mdui-textfield-label,
+.mdui-list-item-text,
+.itp-page-select-prev a,
+.itp-page-select-next a {
+  color: $dark-subtitle-color !important;
+}
+
+img {
+  filter: brightness(.8);
+}
+
+
+.itp-drawer-description,
+.itp-index-header-description {
+  color: #e3e3e3;
+}
+
+.itp-post-entry {
+  background-color: $dark-card-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.itp-search {
+  .mdui-textfield-input {
+    border-bottom: 1px solid $dark-subtitle-color;
+  }
+}
+
+.v {
+
+  .vcontent p a,
+  .power a {
+    color: $dark-title-color !important;
+  }
+
+  .veditor,
+  .vemoji-btn,
+  .vpreview-btn,
+  .markdown,
+  .vcontent p,
+  .vmeta .vat,
+  .vcount,
+  .vcount span {
+    color: $dark-subtitle-color !important;
+  }
+
+  .vbtn {
+    background: $dark-bg-color !important;
+    color: $dark-title-color !important;
+  }
+
+  .vsys {
+    background: $dark-bg-color !important;
+  }
+}
+
+.itp-post-card,
+.itp-index-card,
+.itp-link {
+  background-color: $dark-card-color;
+}

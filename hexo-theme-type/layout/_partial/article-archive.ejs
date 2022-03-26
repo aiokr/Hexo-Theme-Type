@@ -1,0 +1,31 @@
+<% posts.forEach(function(item) { %>
+  <% if (item.style == 'moment') { %>
+  <% } else if (item.noachieve == true) { %>
+  <% } else { %>
+    <a href="<%- url_for(item.path) %>">
+      <li class="mdui-list-item mdui-ripple mdui-col">
+        <i class="mdui-list-item-icon mdui-icon material-icons">
+          <% if (item.password) { %>
+          <%- item.icon || "https" %>
+          <% } else if (item.style == 'photos') { %>
+          <%- item.icon || "photo" %>
+          <% } else { %>
+          <%- item.icon || "bookmarks" %>
+          <% } %>
+        </i>
+        <div class="mdui-list-item-content" style="margin-left: 32px;">
+          <div class="mdui-list-item-one-line itp-achieve-title"><%- item.title || theme.default_post_title || "Untitled" %>
+          </div>
+          <div class="mdui-list-item-text mdui-list-item-one-line itp-achieve-subtitle">
+            <%= item.date.format(config.date_format) %><span> · </span>
+            <% item.categories.each(function(categories){ %>
+            <span class="itp-post-entry-categories" rel="tag">
+              <%- categories.name %>
+            </span>
+            <% }); %>
+          </div>
+        </div>
+      </li>
+    </a>
+  <% } %>
+<% }); %>

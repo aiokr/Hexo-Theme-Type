@@ -1,0 +1,187 @@
+p {
+    margin: 1.5em 0px !important;
+    font-size: 16px;
+    font-weight: 400;
+    color: #222831;
+    line-height: 1.8em;
+    letter-spacing: 0;
+}
+
+
+/*
+文字避头尾法则
+aiokr learn from https://blog.csdn.net/qq_23375733/article/details/99975659
+*/
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    table-layout: fixed !important;
+    /*文字避首尾 -- 防止撑开*/
+    word-wrap: break-word !important;
+    /*英文单字因自动换行*/
+    word-break: normal !important;
+    /*正常避头尾 */
+    /*text-align: justify !important;*/
+    /*文字左右对齐*/
+    text-justify: inter-ideograph !important;
+    /*用表意文本来排齐内容*/
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 20px 0 10px;
+    padding: 0;
+    font-style: bold !important;
+    color: $main-color !important;
+    margin-top: 1.5em;
+    margin-bottom: .5em;
+    text-align: left !important;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+h1 {
+    font-style: normal;
+    font-size: 26px;
+    line-height: 140%;
+    margin-top: 60px;
+    margin-bottom: 26px;
+    text-align: left !important;
+}
+
+h2 {
+    font-size: 24px !important;
+    margin-top: 60px;
+    margin-bottom: 26px;
+}
+
+h3 {
+    font-size: 18px;
+    margin-top: 60px;
+    margin-bottom: 16px;
+}
+
+h4 {
+    font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 16px;
+}
+
+h5 {
+    font-size: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 16px;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+strong {
+    font-weight: 700;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol li,
+ul li {
+    margin: 10px 0;
+    font-style: normal;
+    line-height: 31px;
+}
+
+blockquote {
+    padding: 0 48px 0 60px;
+    margin: 1.5em 0px !important;
+    quotes: none;
+    p {
+        color: $grey;
+    }
+}
+
+img {
+    max-width: 100%;
+    position: relative;
+    vertical-align: middle;
+}
+
+blockquote::before,
+.stressed-quote::before {
+    content: "\201C";
+    display: block;
+    font-family: times;
+    font-style: normal;
+    font-size: 48px;
+    color: $main-color;
+    font-weight: bold;
+    line-height: 30px;
+    margin-left: -50px;
+    position: absolute;
+}
+
+mark {
+    background: #9deeb0;
+}
+
+.right {
+    @media screen and (max-width: 768px) {
+        vertical-align: middle;
+        text-align: center
+    }
+    @media screen and (min-width: 768px) {
+        float: right;
+        padding: 15px;
+    }
+    @media print {
+        float: right;
+        padding: 15px;
+    }
+}
+
+.left {
+    @media screen and (max-width: 768px) {
+        vertical-align: middle;
+        text-align: center
+    }
+    @media screen and (min-width: 768px) {
+        float: left;
+        padding: 15px;
+    }
+    @media print {
+        float: left;
+        padding: 15px;
+    }
+}
+
+ol li,
+ul li {
+    font-size: 16px;
+    line-height: 1.8em;
+    letter-spacing: 0;
+}
+
+.footnotelist ol li {
+    span {
+        display: contents !important;
+    }
+}
