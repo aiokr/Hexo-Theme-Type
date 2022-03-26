@@ -1,0 +1,34 @@
+<div class="itp-cover noprn">
+  <div class="itp-cover-img">
+    <% if (page.blur == true){ %>
+    <img class="nofancy blur" src="<%- page.cover || theme.header.img %>">
+    <% } else { %>
+    <img class="nofancy" src="<%- page.cover || theme.header.img %>">
+    <% } %>
+  </div>
+  <div class="itp-cover-text">
+    <div class="itp-cover-title mdui-text-center"
+      style="color: <%- page.title_color || theme.header.title_color || '#fff' %>; opacity: 1;">
+      <%= page.title || config.title %></div>
+    <div class="itp-cover-subtitle mdui-text-center"
+      style="color: <%- page.title_color || theme.header.title_color || '#fff' %>; opacity: 0.8;">
+      <%- partial('_partial/subtitle') %></div>
+  </div>
+</div>
+<div class="itp-cover noscreen">
+  <div class="itp-cover-img">
+    <% if (page.blur == true){ %>
+    <img class="nofancy blur nodisplay" src="<%- page.cover || theme.header.img %>">
+    <% } else { %>
+    <img class="nofancy nodisplay" src="<%- page.cover || theme.header.img %>">
+    <% } %>
+  </div>
+  <div class="itp-cover-text">
+    <div class="itp-cover-title mdui-text-center"
+      style="color: #000; opacity: 1;">
+      <%= page.title || config.title %></div>
+    <div class="itp-cover-subtitle mdui-text-center"
+      style="color: #000 !important; opacity: 0.8;">
+      <%- partial('_partial/subtitle') %></div>
+  </div>
+</div>

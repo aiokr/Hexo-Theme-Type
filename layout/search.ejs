@@ -1,0 +1,60 @@
+<div class="mdui-container">
+  <div class="content-area">
+    <div class="mdui-row">
+      <div class="mdui-col-md-1 mdui-col-xs-down"></div>
+      <div class="mdui-col-md-10 mdui-col-xs-12">
+        <div class="mdui-card itp-post-card">
+          <!--文章信息区-->
+          <div class="itp-post-title">
+            <%- page.title %>
+          </div>
+          <!--内容-->
+          <section class="mdui-card-content itp-search itp-post-content">
+            <!--搜索框-->
+            <form autocomplete="off" id="search-form" method="post" action="">
+              <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label"><%= __('search') %></label>
+                <input class="mdui-textfield-input" id="search" />
+              </div>
+            </form>
+            <!--搜索结果-->
+            <div id="local-search-result" class="mdui-text-truncate"></div>
+            <!--搜索推荐-->
+            <ul class="mdui-list mdui-list-dense">
+              <% if (site.data.search) { %>
+              <% for (var i in site.data.search) { %>
+              <a href="<%- site.data.search[i].url %>">
+                <li class="mdui-list-item">
+                  <div class="mdui-list-item-content">
+                    <div class="mdui-list-item-title"><%= i %></div>
+                    <div class="mdui-list-item-text mdui-list-item-one-line"><%- site.data.search[i].descr %>
+                    </div>
+                  </div>
+                </li>
+              </a>
+              <% } %>
+              <% } %>
+              <div class="padding-70"></div>
+            </ul>
+          </section>
+        </div>
+      </div>
+
+      <div class="mdui-col-md-1 mdui-col-xs-down"></div>
+    </div>
+  </div>
+</div>
+<%- js('js/search.js') %>
+<script type="text/javascript">
+  var searchFunc = function (c, a, b) { $.ajax({ url: c, dataType: "xml", success: function (e) { var d = $("entry", e).map(function () { return { title: $("title", this).text(), content: $("content", this).text(), url: $("url", this).text() } }).get(); var g = document.getElementById(a); var f = document.getElementById(b); g.addEventListener("input", function () { var i = '<ul class="mdui-list mdui-list-dense">'; var h = this.value.trim().toLowerCase().split(/[\s\-]+/); f.innerHTML = ""; if (this.value.trim().length <= 0) { return } d.forEach(function (o) { var n = true; var s = []; var t = o.title.trim().toLowerCase(); var m = o.content.trim().replace(/<[^>]+>/g, "").toLowerCase(); var j = o.url; var u = -1; var q = -1; var p = -1; if (t !== "" && m !== "") { h.forEach(function (w, x) { u = t.indexOf(w); q = m.indexOf(w); if (u < 0 && q < 0) { n = false } else { if (q < 0) { q = 0 } if (x === 0) { p = q } } }) } if (n) { i += '<li class="mdui-list-item"><a href="' + j + '" target="_blank"><div class="mdui-list-item-content">' + t; var r = o.content.trim().replace(/<[^>]+>/g, ""); if (p >= 0) { var k = p - 6; var l = p + 6; if (k < 0) { k = 0 } if (k === 0) { l = 10 } if (l > r.length) { l = r.length } var v = r.substr(k, l); h.forEach(function (w) { var x = new RegExp(w, "gi"); v = v.replace(x, '<strong class="search-keyword">' + w + "</strong>") }); i += '<div class="mdui-list-item-text mdui-list-item-one-line">' + v + "...</div></a></div></li>" } } }); f.innerHTML = i }) } }) };
+  var inputArea = document.querySelector('#search');
+  var getSearchFile = function () {
+    var path = '/search.xml';
+    searchFunc(path, 'search', 'local-search-result');
+  }
+  if (inputArea) {
+    inputArea.onfocus = function () {
+      getSearchFile();
+    }
+  }
+</script>

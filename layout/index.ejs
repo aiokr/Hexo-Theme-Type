@@ -1,0 +1,95 @@
+<div class="mdui-container-fluid">
+  <div class="mdui-row">
+    <div class="mdui-col-lg-3 mdui-col-md-2 mdui-col-sm-1 mdui-col-xs-down"></div>
+    <div class="mdui-col-lg-6 mdui-col-md-8 mdui-col-sm-10 mdui-col-xs-12">
+      <!--<div class="itp-index-notice mdui-text-center">
+        向那些永远停留在这个冬天里的人致哀
+      </div>-->
+      <div class="itp-index">
+        <% if( (theme.social_link.use === true) && (page.current === 1) && (is_home()) ) { %>
+        <section id="index-links">
+          <div class="mdui-row-lg-3 mdui-row-md-3 mdui-row-sm-3 mdui-row-xs-1" style="padding-bottom: 10px;">
+            <% for (var a in site.data.index.links) { %>
+            <a class="mdui-col" href="<%= site.data.index.links[a].link %>"
+              title="<%= site.data.index.links[a].title %>" target="_blank">
+              <div class="mdui-card mdui-shadow-0 itp-index-link">
+                <div class="mdui-card-header">
+                  <img class="mdui-card-header-avatar" src="<%= site.data.index.links[a].avatar %>" />
+                  <div class="mdui-card-header-title"><%= site.data.index.links[a].title %></div>
+                  <div class="mdui-card-header-subtitle"><%- site.data.index.links[a].descr %></div>
+                </div>
+              </div>
+            </a>
+            <% } %>
+            <% if (theme.social_link.wechat_public.switch == true) { %>
+            <a class="mdui-col itp-link-item" data-fancybox data-src="#mp-wechat" href="javascript:;"
+              title="Wechat Public Account" target="_blank">
+              <div class="mdui-card mdui-shadow-0 itp-index-link">
+                <div class="mdui-card-header">
+                  <img class="mdui-card-header-avatar" src="//imgur.lzmun.com/picgo/20200324092946.jpg" />
+                  <div class="mdui-card-header-title">Wechat Public Account</div>
+                  <div class="mdui-card-header-subtitle">iTypen</div>
+                </div>
+              </div>
+            </a>
+            <% } %>
+            <% if (theme.social_link.wechat_personal.switch == true) { %>
+            <a class="mdui-col itp-link-item" data-fancybox data-src="#personal-wechat" href="javascript:;"
+              title="Wechat Personal Account" target="_blank">
+              <div class="mdui-card mdui-shadow-0 itp-index-link">
+                <div class="mdui-card-header">
+                  <img class="mdui-card-header-avatar" src="//imgur.lzmun.com/picgo/20200323120414.jpg" />
+                  <div class="mdui-card-header-title">Personal Wechat Account</div>
+                  <div class="mdui-card-header-subtitle">hiaiokr</div>
+                </div>
+              </div>
+            </a>
+            <% } %>
+          </div>
+        </section>
+        <% } %>
+        <% if( (theme.subscription_link.use === true) && (page.current === 1) && (is_home()) ) { %>
+        <section id="index-links index-subscription-link">
+          <div class="mdui-row-lg-3 mdui-row-md-3 mdui-row-sm-3 mdui-row-xs-1" style="padding-bottom: 10px;">
+            
+          </div>
+        </section>
+        <% } %>
+        <section id="index-post-entry">
+          <div class="mduimdui-card-primary itp-index-content">
+            <% page.posts.each(function(item, itemIndex){ %>
+            <% if (item.noindex !== true) { %>
+            <%- partial('_partial/post-entry', {item: item}) %>
+            <% } %>
+            <% }); %>
+            <div class="index-pagination">
+              <% if (page.prev){ %>
+              <a href="<%- config.root %><%- page.prev_link %>" class="index-pagination-btn"><%- __('prev')%></a>
+              <% } %>
+              <% if (page.next){ %>
+              <a href="<%- config.root %><%- page.next_link %>" class="index-pagination-btn"><%- __('next')%></a>
+              <% } %>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="mdui-col-lg-3 mdui-col-md-2 mdui-col-sm-1 mdui-col-xs-down"></div>
+  </div>
+</div>
+<% if( (theme.social_link.use === true) && (page.current === 1) && (is_home()) ) { %>
+<% if (theme.social_link.wechat_public.switch == true) { %>
+<!-- Wechat MP QRCode -->
+<div style="display: none;" id="mp-wechat">
+  <div class="mdui-dialog-title">Wechat Public Platform</div>
+  <img src="<%= theme.social_link.wechat_public.src %>" width="300px" class="mdui-center nofancy">
+</div>
+<% } %>
+<% if (theme.social_link.wechat_personal.switch == true) { %>
+<!-- Wechat Personal QRCode -->
+<div style="display: none;" id="personal-wechat">
+  <div class="mdui-dialog-title">Personal Wechat</div>
+  <img src="<%= theme.social_link.wechat_personal.src %>" width="300px" class="mdui-center nofancy">
+</div>
+<% } %>
+<% } %>

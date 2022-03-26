@@ -1,0 +1,40 @@
+<!--首页页面选择器-->
+<%
+  if (theme.random_pics !== false && theme.random_pics) {
+    var randomPicPrev = Math.floor(Math.random() * theme.random_pics + 1);
+    var randomPicNext = Math.floor(Math.random() * theme.random_pics + 1);
+  }
+%>
+<% if (page.prev){ %>
+<div class="padding-70"></div>
+<div class="index-pagination noprn">
+  <a href="<%- config.root %><%- page.prev_link %>">
+    <div class="mdui-card mdui-shadow-0 post-nav prev" style="background-image: url(<%= 'https://imgur.lzmun.com/random_img/picHD_' + randomPicPrev + '.png_itp' %>);">
+      <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title" style="color: white">
+            <%- __('prev')%>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</a>
+<% } %>
+<% if (page.next){ %>
+<div class="padding-70"></div>
+<div class="index-pagination noprn">
+  <a href="<%- config.root %><%- page.next_link %>">
+    <div class="mdui-card mdui-shadow-0 post-nav next" style="background-image: url(<%= 'https://imgur.lzmun.com/random_img/picHD_' + randomPicNext + '.png_itp' %>);">
+      <div class="mdui-card-media-covered mdui-card-media-covered-gradient">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title" style="color: white">
+            <%- __('next')%>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</a>
+<% } %>
+<div class="padding-70"></div>

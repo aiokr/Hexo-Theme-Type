@@ -1,0 +1,232 @@
+.mdui-card {
+    background-color: #ffffff00 !important;
+}
+
+.mdui-card-primary {
+    padding: 24px !important;
+}
+
+.itp-index {
+    @media (min-width: 816px) {
+        padding-top: 30px;
+    }
+    @media (max-width: 816px) {
+        padding-top: 20px;
+    }
+}
+
+.itp-cover {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.itp-cover-text {
+    position: relative;
+}
+
+.itp-cover-img {
+    height: 300px;
+    -webkit-filter: brightness(.9);
+    filter: brightness(.9) blur(0px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.blur {
+    transform: scale(1.5) !important;
+    filter: brightness(.8) blur(20px);
+}
+
+.itp-index-photo-card {
+    padding: 8px 8px;
+    .bg {
+        height: 30vh;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+.itp-index-header {
+    margin: 0px 0 0px 0;
+}
+
+.itp-cover-title {
+    font-size: 2.2rem;
+    /*text-shadow: $grey 0.1em 0.1em 0.2em;*/
+    @media (min-width: 816px) {
+        padding: 130px 20px 16px 20px;
+    }
+    @media (max-width: 816px) {
+        padding: 130px 16px 4px 16px;
+    }
+}
+
+.itp-cover-subtitle {
+    /*text-shadow: $grey 0.1em 0.1em 0.2em;*/
+    @media (min-width: 816px) {
+        padding: 0 20px 65px 20px;
+        font-size: 1rem;
+        line-height: 1.2rem;
+    }
+    @media (max-width: 816px) {
+        padding: 16px 16px 75px 16px;
+        font-size: 0.8rem;
+        line-height: 1rem;
+    }
+}
+
+.itp-index-notice {
+    background-color: #ede59a !important;
+    margin-top: 36px;
+    padding: 16px;
+}
+
+.itp-index-content {
+    @media (min-width: 816px) {
+        padding: 0 0 0 0;
+    }
+    @media (max-width: 816px) {
+        padding: 0 16px 0 16px;
+    }
+}
+
+.itp-post-entry-title {
+    color: $black;
+    font-weight: Medium;
+    a {
+        color: $black;
+        text-decoration: none;
+        transition: .2s, ;
+    }
+    @media (min-width: 816px) {
+        font-size: 32px;
+    }
+    @media (max-width: 816px) {
+        font-size: 28px;
+        line-height: 32px;
+    }
+}
+
+.itp-post-entry-subtitle {
+    color: $grey !important;
+    font-size: 16px;
+    padding: 16px 0 16px 0;
+    a {
+        color: #fff;
+        opacity: 0.8;
+        text-decoration: none;
+    }
+}
+
+.itp-post-entry-moment {
+    color: $black;
+    font-size: 26px;
+    line-height: 2rem;
+}
+
+.itp-post-entry {
+    border: solid 2px rgba(0, 0, 0, .06);
+    -webkit-transition: .2s cubic-bezier(.25, .46, .45, .94) all;
+    transition: .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin: 20px 0 50px 0;
+}
+
+.itp-post-entry:hover {
+    border: solid 2px $main-color;
+    -webkit-transition: .2s cubic-bezier(.25, .46, .45, .94) all;
+    transition: .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.itp-post-entry-cover {
+    height: 250px;
+    background-position: center;
+    background-size: cover;
+}
+
+.itp-post-entry-categories {
+    color: $grey !important;
+}
+
+.itp-post-entry-excerpt {
+    a {
+        color: $black;
+        text-decoration: none;
+        letter-spacing: .4px;
+    }
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.index-pagination {
+    padding: 100px 0 70px 0;
+    text-align: center;
+    .index-pagination-btn {
+        max-width: 168px;
+        background-color: $deep-grey;
+        transition: .15s;
+        color: #fff;
+        padding: 10px 60px 10px 60px;
+        margin: 0 auto;
+        @media screen and (max-width: 480px) {
+            padding: 10px 40px 10px 40px;
+        }
+        @media screen and (max-width: 320px) {
+            padding: 10px 20px 10px 20px;
+        }
+    }
+    .index-pagination-btn:hover {
+        transition: .15s;
+        -webkit-box-shadow: 0 15px 25px 0 rgba(131, 131, 131, 0.35);
+        box-shadow: 0 15px 25px 0 rgba(131, 131, 131, 0.35);
+    }
+    .index-pagination-btn:active {
+        background-color: $deep-grey;
+    }
+}
+
+.index-achieve-title {
+    color: $black;
+    @media (min-width: 816px) {
+        padding: 6% 0% 4px 0%;
+        font-size: 2.6rem;
+    }
+    @media (max-width: 816px) {
+        padding: 20px 0px 4px 0px;
+        font-size: 1.8rem;
+    }
+}
+
+.itp-achieve-title {
+    color: $black;
+}
+
+.itp-achieve-subtitle,
+.itp-achieve-subtitle a {
+    color: $black;
+    opacity: 0.8;
+}
+
+.itp-index-link {
+    border: solid 2px rgba(0, 0, 0, .06);
+    -webkit-transition: .2s cubic-bezier(.25, .46, .45, .94) all;
+    transition: .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.itp-index-link:hover {
+    border: solid 2px $main-color;
+    -webkit-transition: .2s cubic-bezier(.25, .46, .45, .94) all;
+    transition: .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
