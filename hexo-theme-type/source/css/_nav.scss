@@ -1,0 +1,93 @@
+.itp-appbar {
+  -webkit-transition: .2s;
+  transition: .2s;
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  backdrop-filter: saturate(180%) blur(18px);
+  height: 58px !important;
+}
+
+.mdui-appbar .mdui-toolbar {
+  height: 58px !important;
+  line-height: 58px !important;
+}
+
+.itp-appbar_index {
+  -webkit-transition: .2s cubic-bezier(.25, .46, .45, .94) all;
+  transition: .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  backdrop-filter: saturate(180%) blur(18px);
+  height: 58px !important;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.itp-appbar-color-pull-up {
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+}
+
+.itp-drawer-icon {
+  color: $main-color !important;
+}
+
+.itp-header-title {
+  color: #fff !important;
+  position: absolute;
+
+  @media (max-width: 816px) {
+    left: 40px;
+    top: 3px;
+  }
+
+  @media (min-width: 816px) {
+    left: 0;
+    top: 2px;
+  }
+}
+
+.itp-header-search-btn {
+  color: #fff !important;
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+}
+
+.itp-header-actions {
+  @media (max-width: 816px) {
+    display: none;
+  }
+
+  @media (min-width: 816px) {
+    position: relative;
+    display: inline-block;
+    min-width: 60px;
+    height: 58px;
+    line-height: 62px;
+    padding: 0 12px;
+    margin: 0;
+    top: -1px;
+    border-radius: 0px;
+  }
+}
+
+.itp-header-actions_menu {
+  @media (min-width: 816px) {
+    display: none;
+  }
+
+  @media (max-width: 816px) {
+    display: inline;
+    color: #fff !important;
+    position: absolute;
+    left: 0;
+  }
+}
+
+.itp-nav-menu {
+  width: 80% !important;
+  height: 50% !important;
+}
+
+.mdui-nav-list {
+  padding-top: 15px;
+}

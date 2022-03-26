@@ -1,0 +1,24 @@
+<div class="mdui-container">
+  <div class="mdui-row">
+    <div class="mdui-col-md-2 mdui-col-xs-down"></div>
+    <div class="mdui-col-md-8 mdui-col-xs-12">
+      <div class="itp-index">
+        <div class="mdui-row-lg-3 mdui-row-md-3 mdui-row-sm-3 mdui-row-xs-1 " style="padding-bottom: 10px;">
+          <% for (var a in site.data.index.tools) { %>
+          <a class="mdui-col" href="<%= site.data.index.tools[a].link %>" title="<%= site.data.index.tools[a].title %>"
+            target="_blank">
+            <div class="mdui-card mdui-shadow-0 itp-index-link">
+              <div class="mdui-card-header">
+                <img class="mdui-card-header-avatar" src="<%= site.data.index.tools[a].avatar %>" />
+                <div class="mdui-card-header-title"><%= site.data.index.tools[a].title %></div>
+                <div class="mdui-card-header-subtitle"><%- site.data.index.tools[a].descr %></div>
+              </div>
+            </div>
+          </a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mdui-col-md-2 mdui-col-xs-down"></div>
+</div>

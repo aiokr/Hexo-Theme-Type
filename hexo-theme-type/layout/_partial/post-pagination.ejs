@@ -1,0 +1,21 @@
+<!--文章页页面选择器-->
+<div class="pagination noprn">
+  <div class="mdui-col-xs-6">
+    <% if (page.prev) { %>
+    <div class="itp-page-select-prev">
+      <a class="mdui-btn mdui-btn-icon" href="<%- url_for(page.prev.path) %>"><i
+          class="mdui-icon material-icons">arrow_back</i></a>
+      <a class="mdui-chip-title" rel="prev" href="<%- url_for(page.prev.path) %>"><%- __('prev')%></a>
+    </div>
+    <% } %>
+  </div>
+  <div class="mdui-col-xs-6">
+    <% if (page.next) { %>
+    <div class="itp-page-select-next  mdui-float-right">
+      <a class="mdui-chip-title" rel="next" href="<%- url_for(page.next.path) %>"><%- __('next')%></a>
+      <a class="mdui-btn mdui-btn-icon" href="<%- url_for(page.next.path) %>"><i
+          class="mdui-icon material-icons">arrow_forward</i></a>
+    </div>
+    <% } %>
+  </div>
+</div>

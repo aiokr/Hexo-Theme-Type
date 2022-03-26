@@ -1,0 +1,36 @@
+<%
+    var title = '';
+    if (page.category) title = page.category;
+    if (page.tag) title = "#" + page.tag;
+    if (page.archive) {
+        if (page.year) title = page.year + (page.month ? '/' + page.month : '');
+        else title = __('archive_a');
+    }
+%>
+<div class="mdui-container">
+  <div class="content-area">
+    <div class="mdui-row">
+      <div class="mdui-col-md-1 mdui-col-xs-down"></div>
+      <div class="mdui-col-md-10 mdui-col-xs-12">
+        <div class="index-achieve-title title">
+          <%- title %>
+        </div>
+        <section class="itp-blog-list">
+          <% 
+          var groupObj = _.groupBy(page.posts.toArray(), function(p){return -p.date.format('YYYY')})
+          // var groupObj = (page.posts.toArray(), function(p){return -p.date.format('YYYY')})
+          %>
+          <% for (var year in groupObj){ %>
+          <div class="mdui-card-primary-title" style="padding: 20px 0"><%- -year %></div>
+          <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-lg-3">
+            <%- partial('_partial/article-archive', {posts: groupObj[year]}) %>
+          </div>
+          <% } %>
+        </section>
+        <%- partial('_partial/index-pagination') %>
+      </div>
+    </div>
+    <div class="mdui-col-md-1 mdui-col-xs-down"></div>
+  </div>
+</div>
+</div>

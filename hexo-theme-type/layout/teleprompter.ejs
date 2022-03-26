@@ -1,0 +1,27 @@
+<div class="mdui-container">
+  <div class="content-area">
+    <div class="mdui-row">
+      <div class="mdui-col-md-2 mdui-col-xs-down"></div>
+      <div class="mdui-col-md-8 mdui-col-xs-12">
+        <!-- 浮动标签 -->
+        <div class="mdui-textfield mdui-textfield-floating-label">
+          <label class="mdui-textfield-label">内容</label>
+          <textarea class="mdui-textfield-input" id="content_input" onkeyup="javascript:senddata(this);"></textarea>
+        </div>
+        <!-- 显示内容 -->
+        <div class="teleprompter" id="content_output">
+
+        </div>
+      </div>
+      <div class="mdui-col-md-2 mdui-col-xs-down"></div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function senddata(inputobj) {
+    var value = document.getElementById("content_input").value
+    obj = document.getElementById("content_output");
+    obj.innerHTML = inputobj.value;
+  }
+</script>

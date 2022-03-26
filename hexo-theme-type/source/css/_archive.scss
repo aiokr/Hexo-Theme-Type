@@ -1,0 +1,20 @@
+.archive {
+  padding-bottom: 60px;
+
+  h2.year {
+    color: #444444;
+  }
+
+  ul.list {
+    padding-left: 24px;
+    li {
+      padding: 10px 0;
+      line-height: 1.5;
+      list-style-type: none;
+    }
+  }
+  .date {
+    margin-right: 30px;
+    color: #7f8c8d;
+  }
+}
