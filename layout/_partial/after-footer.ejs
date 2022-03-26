@@ -1,0 +1,20 @@
+<!-- fancybox -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<%- js('js/mdui.min.js') %>
+<% if (theme.busuanzi == true){ %>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi/bsz.pure.mini.js"></script>
+<% } %>
+<% if(theme.highlight.use == true) { %>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+  $("code").each(function () {
+    $(this).html("<ol><li>" + $(this).html().replace(/\n/g, "\n</li><li>") + "\n</li></ol>");
+  });
+</script>
+<% } %>
+<% if(page.style == 'photos') { %>
+<%- js('js/gallery-page.js') %>
+<% } %>
+<%- js('js/app.js') %>
