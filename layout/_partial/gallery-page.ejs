@@ -1,0 +1,36 @@
+<div class="mdui-container">
+  <div class="content-area">
+    <div class="mdui-row">
+      <div class="mdui-col-md-0 mdui-col-xs-down"></div>
+      <div class="mdui-col-md-12 mdui-col-xs-12">
+        <div class="mdui-card mdui-shadow-0 itp-index">
+          <div class="mdui-row-xs-1 mdui-row-sm-3 mdui-row-lg-3 mdui-grid-list">
+            <% for (var i in page.gallery) { %>
+            <div class="mdui-col itp-post-gallery mdui-grid-tile">
+              <a class="itp-gallery-img" data-fancybox="gallery" href="<%- page.gallery[i].src %>">
+                <img class="lazy" src="<%- page.gallery[i].src %>">
+              </a>
+            </div>
+            <% } %>
+          </div>
+        </div>
+        <div class="mdui-col-md-0 mdui-col-xs-down"></div>
+        <div class="mdui-row">
+          <div class="mdui-col-md-2 mdui-col-xs-down"></div>
+          <div class="mdui-col-md-8 mdui-col-xs-12">
+            <section class="mdui-card-content itp-post-content article" role="article">
+              <%- page.content %>
+            </section>
+            <section class="mdui-card-content itp-page-select">
+              <%- partial('_partial/post-pagination') %>
+            </section>
+            <section class="mdui-card-content itp-post-comment noprn">
+              <%- partial('_partial/comment') %>
+            </section>
+          </div>
+          <div class="mdui-col-md-2 mdui-col-xs-down"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

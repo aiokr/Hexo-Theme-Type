@@ -2,17 +2,17 @@
 # ICON Settings 图标设置
 # ---------------------------------------------------------------
 
-favicon: 
-avatar: 
+favicon: https://imgur.lzmun.com/picgo/after2022/presslogo.png_avatar
+avatar: https://imgur.lzmun.com/picgo/after2022/presslogo.png_itp
 apple_icon:
   # iPhone 57x57 
-  iphone: 
+  iphone: https://imgur.lzmun.com/picgo/after2022/presslogo.png_iPhone
   # iPad 72x72
-  ipad: 
+  ipad: https://imgur.lzmun.com/picgo/after2022/presslogo.png_RetinaiPad
   # Retina iPhone 114x114
-  iphone_hd: 
+  iphone_hd: https://imgur.lzmun.com/picgo/after2022/presslogo.png_iPhoneHD
   # Retina iPad 144x144
-  ipad_hd: 
+  ipad_hd: https://imgur.lzmun.com/picgo/after2022/presslogo.png_RetinaiPad
   
 # ---------------------------------------------------------------
 # Style Settings 样式设置
@@ -32,10 +32,10 @@ random_thumbnail: ../img/random/randompic-
 
 # Header Cover
 header: 
-  img: 
+  img: https://imgur.lzmun.com/picgo/20200504100314.jpg
   title_color: '#fff'
 
-# drawer_header: 
+# drawer_header: //imgur.lzmun.com/picgo/20200405182517.jpg
 # drawer was removed
 
 # Header Links
@@ -47,12 +47,15 @@ nav:
   归档: 
     link: /archives/
     icon:   move_to_inbox
-#  关于:
-#    link: /about.html
-#    icon: person
-#  友链:
-#    link: /links.html
-#    icon: link
+  关于:
+    link: /about.html
+    icon: person
+  友链:
+    link: /links.html
+    icon: link
+  作品集:
+    link: https://photup.xyz
+    icon: gesture
 
 # Materiac ICON from https://www.mdui.org/docs/material_icon
 
@@ -60,9 +63,9 @@ nav:
 # Footer Settings 页脚设置
 # ---------------------------------------------------------------
 
-start_time: 
+start_time: 2016
 # 'count' need run 'npm install hexo-symbols-count-time --save'
-count: false
+count: true
 icp: 
 
 # CDN LOGO
@@ -83,10 +86,10 @@ social_link:
   # 在这里开启微信二维码
   wechat_personal: 
     switch: false
-    src: 
+    src: https://imgur.lzmun.com/picgo/20200324090429.jpg
   wechat_public: 
     switch: true
-    src: 
+    src: https://open.weixin.qq.com/qr/code?username=itypen
 
 # 订阅链接
 subscription_link:
@@ -115,7 +118,7 @@ highlight:
 # Use gitment | valine | disqus | disqusjs | gitalk | waline
 # disqusjs 参考 https://github.com/SukkaW/DisqusJS 进行部署
 comment:
-  use: 
+  use: waline
   gitment:
     owner:
     repo:
@@ -142,7 +145,7 @@ comment:
     admin: 
     distractionFreeMode: 
   waline:
-    serverurl: 
+    serverurl: https://waline-comment-2gbapy7s91078d9b-1251909904.ap-guangzhou.app.tcloudbase.com/waline/
 
 # Busuanzi Count 不蒜子计数
 busuanzi: false
@@ -156,9 +159,9 @@ busuanzi: false
 
 google_analytics:
   # use: default
-  use:
-  ga_id:
-  ga_api:
+  use: cf_async
+  ga_id: UA-141010711-2
+  ga_api: https://async-google-analytics.disqusapi.workers.dev/
 
 # chart.js
 # https://www.chartjs.org/
