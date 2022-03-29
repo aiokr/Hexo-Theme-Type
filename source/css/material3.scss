@@ -1,0 +1,43 @@
+@import './_customize';
+
+//浮动导航
+.itp-float-bar-box {
+  display: -webkit-flex; /* Safari */
+  -webkit-justify-content: space-around; /* Safari 6.1+ */
+  display: flex;
+  justify-content: center;
+}
+.itp-float-bar {
+  z-index: 4000;
+  height: 65px;
+  border-radius: 12px;
+  //颜色 透明 模糊
+  background: linear-gradient(120deg,$gradient-main-color-opt,$gradient-sub-color-opt);
+  backdrop-filter: saturate(180%) blur(18px) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(18px) !important;
+  -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, .2);
+  //定位
+  display: flex !important;
+  position: fixed !important;
+  padding: 0 15px;
+  bottom: 58px;
+  //阴影
+  -webkit-box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+  .itp-float-bar-item {
+      line-height:65px;
+      width: 65px;
+      color: #fff;
+      text-align:center;//水平居中
+      background-color: rgba(0, 0, 0, 0);
+  }
+  .itp-float-bar-item:hover {
+      background: rgba(225, 225, 225, 0.2);
+      cursor: pointer;
+      -webkit-transition: all .2s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .2s cubic-bezier(.4,0,1,1);
+      transition: all .2s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .2s cubic-bezier(.4,0,1,1);
+      transition: all .2s cubic-bezier(.4,0,.2,1),box-shadow .2s cubic-bezier(.4,0,1,1);
+      transition: all .2s cubic-bezier(.4,0,.2,1),box-shadow .2s cubic-bezier(.4,0,1,1),-webkit-box-shadow .2s cubic-bezier(.4,0,1,1);
+  }
+}

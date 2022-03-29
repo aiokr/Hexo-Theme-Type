@@ -18,7 +18,7 @@
         <div class="mdui-card itp-post-card">
           <div class="mdui-card-primary">
             <div class="itp-post-title itp-post-title title"><%- title %></div>
-            <section class="mdui-card-content article categories itp-page-content">
+            <section class="mdui-card-content itp-article-categories itp-page-content">
               <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy -->
               <% 
               var groupObj = _.groupBy(page.posts.toArray(), function(p){return -p.date.format('YYYY')})

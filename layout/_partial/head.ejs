@@ -86,6 +86,9 @@
   <!-- Custom CSS/Sass -->
   <%- css('css/mdui.min') %>
   <%- css('css/style') %>
+  <% if (theme.schemes == 'm3'){ %>
+  <%- css('css/material3') %>
+  <% } %>
   <% if(theme.highlight.use == true) { %>
   <!--highlight.js CSS-->
   <% if(theme.highlight.style == 'github' ) { %>
@@ -103,7 +106,7 @@
   <!-- jquery -->
   <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
   <!-- PJAX -->
-  <script src="//cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+  <!--script src="//cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script-->
   <script>
   </script>
   <% if(theme.comment.use == 'gitment') { %>

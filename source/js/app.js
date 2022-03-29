@@ -24,6 +24,7 @@ var appDaily = {
   },
 };
 
+//滚动影响appbar颜色
 var whetherChange = 0;
 var whetherChangeToTop = 0;
 var ticking = false;

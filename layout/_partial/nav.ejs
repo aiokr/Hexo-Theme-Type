@@ -19,3 +19,16 @@
     </div>
   </div>
 </header>
+
+<% if (theme.schemes == 'm3'){ %>
+  <div class="itp-float-bar-box">
+    <div class="itp-float-bar">
+      <% for (var i in theme.nav) { %>
+        <a class="itp-float-bar-item" href="<%- theme.nav[i].link %>"><%- i %></a>
+      <% } %>
+    </div>
+  </div>
+  <!--
+    TODO: 小屏幕设备点按弹出导航
+  -->
+<% } %>
