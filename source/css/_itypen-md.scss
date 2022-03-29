@@ -41,7 +41,7 @@ h6 {
     margin: 20px 0 10px;
     padding: 0;
     font-style: bold !important;
-    color: $main-color !important;
+    color: $black !important;
     margin-top: 1.5em;
     margin-bottom: .5em;
     text-align: left !important;
@@ -110,33 +110,38 @@ ul li {
     line-height: 31px;
 }
 
-blockquote {
-    padding: 0 48px 0 60px;
-    margin: 1.5em 0px !important;
-    quotes: none;
-    p {
-        color: $grey;
-    }
-}
-
 img {
     max-width: 100%;
     position: relative;
     vertical-align: middle;
 }
 
+blockquote {
+    padding: 0 0px 0 10px;
+    margin: 1.5em 0px !important;
+    border-left: 2px solid $main-color;
+    quotes: none;
+    p {
+        color: $grey;
+        margin-top: 0 !important;
+    }
+}
+
 blockquote::before,
 .stressed-quote::before {
     content: "\201C";
     display: block;
-    font-family: times;
     font-style: normal;
-    font-size: 48px;
+    font-size: 28px;
     color: $main-color;
     font-weight: bold;
     line-height: 30px;
-    margin-left: -50px;
-    position: absolute;
+}
+
+a {
+    color: $black;
+    text-decoration: underline;
+    text-decoration-color: $main-color;
 }
 
 mark {
