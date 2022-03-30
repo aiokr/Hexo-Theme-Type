@@ -86,7 +86,10 @@
   <!-- Custom CSS/Sass -->
   <%- css('css/mdui.min') %>
   <%- css('css/style') %>
-  <% if (theme.schemes == 'm3'){ %>
+  <!--样式切换-->
+  <% if (theme.schemes =='column' ){ %>
+  <%- css('css/column') %>
+  <%} else if (theme.schemes =='m3' ){ %>
   <%- css('css/material3') %>
   <% } %>
   <% if(theme.highlight.use == true) { %>

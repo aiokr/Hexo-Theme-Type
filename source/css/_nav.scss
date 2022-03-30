@@ -35,7 +35,7 @@
   position: absolute;
 
   @media (max-width: 816px) {
-    left: 40px;
+    left: 0;
     top: 3px;
   }
 
@@ -81,11 +81,6 @@
     position: absolute;
     left: 0;
   }
-}
-
-.itp-nav-menu {
-  width: 80% !important;
-  height: 50% !important;
 }
 
 .mdui-nav-list {
