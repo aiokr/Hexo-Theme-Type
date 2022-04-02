@@ -1,8 +1,16 @@
+<% var toc = toc(page.content, {
+  class: 'itp-layer-toc',
+  id: 'close_btn',
+  list_number: false,
+  max_depth: 2,
+  min_depth: 1,
+}) %>
+<% if (theme.schemes=='column' ){ %>
 <%- partial('_partial/drawer') %>
 <header id="header" class="itp-header noprn">
   <div id="appbar-index" class="mdui-appbar mdui-appbar-fixed itp-appbar_index mdui-shadow-0">
     <div id="toolbar-index" class="mdui-toolbar mdui-shadow-0" style="justify-content: center;">
-      <% if (theme.schemes =='column' ){ %>
+      <% if (theme.schemes=='column' ){ %>
       <a class="mdui-btn mdui-btn-icon itp-drawer-btn itp-header-actions_menu" style="color: #fff" data-fancybox data-src="#nav_menu" href="javascript:;"><i class="mdui-icon material-icons">menu</i></a>
       <% } %>
       <a href="<%= url_for() %>" class="itp-header-title mdui-typo-title">
@@ -23,12 +31,46 @@
     </div>
   </div>
 </header>
-<% if (theme.schemes =='m3' ){ %>
-<div class="itp-float-bar">
+<% } %>
+<% if (theme.schemes=='m3' ){ %>
+<div class="itp-float-bar pjax-area">
+  <% if (page.layout !=='post' ){ %>
   <% for (var i in theme.nav) { %>
   <a class="itp-float-bar-item" href="<%- theme.nav[i].link %>">
-    <%- i %>
+    <span class="material-icons-outlined">
+      <%- theme.nav[i].icon %>
+    </span>
   </a>
   <% } %>
+  <div class="itp-float-bar-spacer"></div>
+  <a class="itp-float-bar-item itp-float-bar-item-bottom">
+    <span class="material-icons-outlined">format_align_left</span>
+  </a>
+  <%} else if (page.layout =='post' ){ %>
+  <a class="itp-float-bar-item" href="<%= url_for() %>">
+    <span class="material-icons-outlined">home</span>
+  </a>
+  <a class="itp-float-bar-item" href="#comment">
+    <span class="material-icons-outlined">textsms</span>
+  </a>
+  <a class="itp-float-bar-item" id="open_toc">
+    <span class="material-icons-outlined">format_align_left</span>
+  </a>
+  <div class="itp-float-bar-spacer"></div>
+  <a class="itp-float-bar-item" href="javascript:scroll(0,0)">
+    <span class="material-icons-outlined">arrow_upward</span>
+  </a>
+  <% } %>
+
+  <div class="itp-float-layer itp-toc-layer">
+    <a class="itp-float-layer-close-btn" id="close_btn">
+      <span class="material-icons-outlined">
+        highlight_off
+      </span>
+    </a>
+    <%-(toc) %>
+  </div>
+
+  <div class="itp-float-layer-bg layer-bg-nodisplay" id="close_layer"></div>
 </div>
 <% } %>

@@ -87,27 +87,31 @@
 <!--disqus-->
 <div id="disqus_thread" class="padding-25"></div>
 <script>
-    (function () {
-      var d = document, s = d.createElement('script');
-      s.src = '<%= theme.comment.disqus.src %>';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
+  (function() {
+    var d = document,
+      s = d.createElement('script');
+    s.src = '<%= theme.comment.disqus.src %>';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
     Disqus.</a></noscript>
 <!--waline-->
 <% } else if (theme.comment.use == 'waline') { %>
-  <div id="waline"></div>
-  <script>
-    Waline({
-      el: '#waline',
-      serverURL: '<%= theme.comment.waline.serverurl %>',
-      path: '<%= page.permalink %>',
-      dark: 'auto',
-      uploadImage: false
-    });
-  </script>
+<div id="waline"></div>
+<script>
+  Waline({
+    el: '#waline',
+    serverURL: '<%= theme.comment.waline.serverurl %>',
+    path: '<%= page.permalink %>',
+    dark: 'auto',
+    uploadImage: false,
+    emoji: [
+      'https://cdn.jsdelivr.net/gh/aiokr/press-assets@v0.1.0/waline-emojis/bili'
+    ],
+  });
+</script>
 <% } else if (theme.comment.use == 'disqusjs') { %>
 <!--disqusjs-->
 <link rel="stylesheet" href="/disqusjs/disqusjs.css">
@@ -136,8 +140,8 @@
     repo: '<%= theme.comment.gitalk.repo %>',
     owner: '<%= theme.comment.gitalk.owner %>',
     admin: ['<%= theme.comment.gitalk.admin %>'],
-    id: '<%- page.comment_id || page.date %>',      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false,  // Facebook-like distraction free mode
+    id: '<%- page.comment_id || page.date %>', // Ensure uniqueness and length less than 50
+    distractionFreeMode: false, // Facebook-like distraction free mode
     perPage: 20,
 
   })

@@ -1,87 +1,102 @@
-<% if (page.style=='mag' ) { %>
-  <progress id="content_progress" value="0"></progress>
-  <div id="itp-top-cover" class="itp-top-cover-mag"
-    style="background-image: url(<%- page.cover || theme.header.img %>);">
-    <div class="itp-mag-logo">
-      iTypen.MAG
-    </div>
-  </div>
-  <div id="itp-top-title" class="itp-mag-title" style="background-color: <%- page.color %>;">
-    <div class="itp-mag-logo">
-      iTypen.MAG
-    </div>
-    <h1>
-      <%- page.title %>
-    </h1>
-    <h2>
-      <%- page.subtitle %>
-    </h2>
-    <div class="itp-mag-excerpt mdui-center">
-      <%- page.excerpt %>
-    </div>
-  </div>
-  <div class="mdui-container-fluid itp-mag-content mdui-center article">
-    <%- page.content %>
-  </div>
-  <% } else if (page.style==='photos' ) { %>
-    <%- partial('_partial/gallery-page') %>
-      <% } else { %>
-        <!--<progress id="content_progress" value="0"></progress>-->
-        <div class="mdui-container">
-          <div class="content-area">
-            <div class="mdui-row">
-              <div class="mdui-col-md-2 mdui-col-xs-down"></div>
-              <div class="mdui-col-md-8 mdui-col-xs-12">
-                <div class="mdui-card itp-post-card">
-                  <!--正文-->
-                  <section class="mdui-card-content itp-post-content article" role="article">
-                    <%- page.content %>
-                  </section>
-                  <!--文章底部信息-->
-                  <section class="mdui-card-content itp-post-content">
-                    <div class="mdui-text-center">
-                      <div class="itp-post-subtitle">
-                        <%= page.date.format(config.date_format) %>
-                          <% if (page.categories && page.categories.length) { %>
-                            <span> / </span>
-                            <%- list_categories(page.categories, { show_count: false,
+<% if (theme.schemes==='column' ) { %>
+<% if (page.style==='photos' ) { %>
+<%- partial('_partial/gallery-page') %>
+<% } else { %>
+<!--<progress id="content_progress" value="0"></progress>-->
+<div class="mdui-container">
+  <div class="content-area">
+    <div class="mdui-row pjax-area">
+      <div class="mdui-col-md-2 mdui-col-xs-down"></div>
+      <div class="mdui-col-md-8 mdui-col-xs-12">
+        <div class="mdui-card itp-post-card">
+          <!--正文-->
+          <section class="mdui-card-content itp-post-content article" role="article">
+            <%- page.content %>
+          </section>
+          <!--文章底部信息-->
+          <section class="mdui-card-content itp-post-content">
+            <div class="mdui-text-center">
+              <div class="itp-post-subtitle">
+                <%= page.date.format(config.date_format) %>
+                <% if (page.categories && page.categories.length) { %>
+                <span> / </span>
+                <%- list_categories(page.categories, { show_count: false,
                               separator: '<span class="itp-post-cat"></span><span> / </span>' , style: 'none' }) %>
-                              <% } %>
-                                <span> / </span>
-                                <%- symbolsCount(page) %>
-                      </div>
-                    </div>
-                    <% if (page.tags) { %>
-                      <div class="mdui-text-center" style="padding-top: 2px; font-size: .75rem !important;">
-                        <div class="tags-links">
-                          <% page.tags.each(function(tag){ %>
-                            <div class="mdui-chip">
-                              <a class="mdui-chip-title" href="<%= config.root %>tags/<%= tag.name %>/" rel="tag">
-                                <%- tag.name %>
-                              </a>
-                            </div>
-                            <% }); %>
-                        </div>
-                      </div>
-                      <% } %>
-                  </section>
-                  <section class="mdui-card-content itp-page-select">
-                    <%- partial('_partial/post-pagination') %>
-                  </section>
-                  <section class="itp-post-comment noprn">
-                    <%- partial('_partial/comment') %>
-                  </section>
-                </div>
-              </div>
-              <div class="mdui-col-md-2 mdui-col-xs-down itp-right-col">
-                <%- partial('_partial/post-toc') %>
-                  <style>
-                    ::-webkit-scrollbar {
-                      display: none;
-                    }
-                  </style>
+                <% } %>
+                <span> / </span>
+                <%- symbolsCount(page) %>
               </div>
             </div>
-          </div>
+            <% if (page.tags) { %>
+            <div class="mdui-text-center" style="padding-top: 2px; font-size: .75rem !important;">
+              <div class="tags-links">
+                <% page.tags.each(function(tag){ %>
+                <div class="mdui-chip">
+                  <a class="mdui-chip-title" href="<%= config.root %>tags/<%= tag.name %>/" rel="tag">
+                    <%- tag.name %>
+                  </a>
+                </div>
+                <% }); %>
+              </div>
+            </div>
+            <% } %>
+          </section>
+          <section class="mdui-card-content itp-page-select">
+            <%- partial('_partial/post-pagination') %>
+          </section>
+          <section class="itp-post-comment noprn" id="comment">
+            <%- partial('_partial/comment') %>
+          </section>
         </div>
-        <% } %>
+      </div>
+      <div class="mdui-col-md-2 mdui-col-xs-down itp-right-col">
+        <%- partial('_partial/column-toc') %>
+        <style>
+          ::-webkit-scrollbar {
+            display: none;
+          }
+        </style>
+      </div>
+    </div>
+  </div>
+</div>
+<% } %>
+<%} else if (theme.schemes==='m3' ) { %>
+<div class="mdui-container pjax-area">
+  <div class="content-area">
+    <div class="mdui-col-md-2 mdui-col-xs-down"></div>
+    <div class="mdui-col-md-8 mdui-col-xs-12 pjax-area">
+      <div class="itp-m3-post article">
+        <%- page.content %>
+      </div>
+      <div class="itp-m3-post-info_area">
+        <div class="info_area-category">
+          <% if (page.categories && page.categories.length) { %>
+          <%- list_categories(page.categories, { show_count: false, style: 'category-link' }) %>
+          <% } %>
+          <% if (page.tags && page.tags.length) { %>
+          <% page.tags.each(function(tag){ %>
+          <a href="<%= config.root %>tags/<%= tag.name %>/" rel="tag" class="tags-link">
+            #<%- tag.name %>
+          </a>
+          <% }); %>
+          <% } %>
+        </div>
+        <div class="info_area-copyright">
+          <p>本文著作权归作者 aiokr 所有，转载或引用请联系作者获得授权。</p>
+        </div>
+        <!--div class="copyright-icon-box">
+          <i class="copyright-icon">
+            <i class="copyright-icon-before"></i>
+            <i class="copyright-icon-after"></i>
+          </i>
+        </div-->
+      </div>
+      <div class="itp-m3-post-comment_area">
+        <%- partial('_partial/comment') %>
+      </div>
+      <div class="mdui-col-md-2 mdui-col-xs-down"></div>
+    </div>
+  </div>
+</div>
+<% } %>

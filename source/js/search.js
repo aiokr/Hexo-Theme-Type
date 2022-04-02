@@ -48,7 +48,7 @@ $(document).ready(function() {
 
 
   // Smooth scroll of TOC
-  $(".post-toc a").click(function() {
+  $(".column-toc a").click(function() {
       $("html, body").animate({
           scrollTop: $($(this).attr("href")).offset().top + "px"
       }, {

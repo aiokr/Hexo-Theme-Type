@@ -19,7 +19,8 @@ apple_icon:
 # ---------------------------------------------------------------
 
 # Schemes
-schemes: column
+# Use column ｜ m3
+schemes: 
 
 # Random Pictures
 random_pic_switch: true

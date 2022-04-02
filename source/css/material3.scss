@@ -1,6 +1,7 @@
 @import './_customize';
+$toggle_screen: 1024px;
 //COVER
-@media screen and (max-width: 816px) {
+@media screen and (max-width: $toggle_screen) {
     .itp-m3-cover-box {
         width: 100vw;
         .mdui-col-xs-12 {
@@ -12,34 +13,38 @@
 
 .itp-m3-cover {
     box-sizing: border-box;
-    //最小尺寸 816px 大屏幕设备
-    @media screen and (min-width: 816px) {
-        margin-top: 120px;
+    //最小尺寸 $toggle_screen 大屏幕设备
+    @media screen and (min-width: $toggle_screen) {
+        margin-top: 108px;
+        .itp-m3-cover-bg {
+            border-radius: 12px;
+        }
     }
-    //最大尺寸 816px 中等屏幕设备
-    @media screen and (max-width: 816px) {
-        margin-top: 0px;
+    //最大尺寸 $toggle_screen 中等屏幕设备
+    @media screen and (max-width: $toggle_screen) {
+        margin: 0px;
+        .itp-m3-cover-bg {
+            border-radius: 0 0 12px 12px;
+        }
     }
     .itp-m3-cover-bg {
         width: 100%;
         height: 100%;
         background: #000;
+    }
+    .itp-m3-cover-layer {
+        background: linear-gradient(rgba(32, 32, 32, 0) 14%, rgba(32, 32, 32, 0.56) 100%);
+        height: 100%;
         border-radius: 12px;
     }
-}
-
-.itp-m3-cover-layer {
-    background: linear-gradient(rgba(32, 32, 32, 0) 14%, rgba(32, 32, 32, 0.56) 100%);
-    height: 100%;
-    border-radius: 12px;
 }
 
 .info-area {
     .category-link {
         color: #fff;
     }
-    //最小尺寸 816px 大屏幕设备
-    @media screen and (min-width: 816px) {
+    //最小尺寸 $toggle_screen 大屏幕设备
+    @media screen and (min-width: $toggle_screen) {
         padding: 96px 64px 64px 96px;
         .itp-m3-cover-avatar {
             img {
@@ -60,9 +65,9 @@
             line-height: 22px;
         }
     }
-    //最大尺寸 816px 中等屏幕设备
-    @media screen and (max-width: 816px) {
-        padding: 120px 64px 64px 64px;
+    //最大尺寸 $toggle_screen 中等屏幕设备
+    @media screen and (max-width: $toggle_screen) {
+        padding: 92px 48px 60px 48px;
         .itp-m3-cover-avatar {
             img {
                 max-height: 64px;
@@ -98,40 +103,128 @@
     }
 }
 
-//浮动导航
-$float-height: 58px;
-.itp-float-bar {
-    z-index: 4000;
-    height: $float-height;
+//浮动弹窗
+.itp-float-layer {
+    z-index: 1400;
+    @media screen and (min-width: $toggle_screen) {
+        display: none;
+    }
+    @media screen and (max-width: $toggle_screen) {
+        width: 100vw;
+        border-radius: 12px 12px 0 0;
+        height: 90vh;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-evenly;
+        -webkit-justify-content: space-evenly;
+        //颜色 透明 模糊
+        background-color: $deep-grey;
+        backdrop-filter: saturate(180%) blur(18px) !important;
+        -webkit-backdrop-filter: saturate(180%) blur(18px) !important;
+        -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, .2);
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, .2);
+        //定位
+        display: flex !important;
+        position: fixed !important;
+        bottom: -90vh; //开始时不现实弹窗
+        //动画
+        -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+        transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+        transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+        transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+        //阴影
+        -webkit-box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+        box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+    }
+}
+
+.itp-float-layer-bg {
+    background-color: #00000077;
+    /*当弹窗显示时，屏幕滚动时，弹窗始终保持位置固定在屏幕正中，不随屏幕滚动而变化位置*/
+    position: fixed;
     width: 100vw;
-    border-radius: 12px 12px 0 0;
-    display: -webkit-flex;
-    /* Safari */
-    -webkit-justify-content: space-around;
-    /* Safari 6.1+ */
+    height: 100vh;
+    margin: 0px 0 0 0px;
+    bottom: 0;
+    /*设置弹窗位于遮罩的上方*/
+    z-index: 1050;
+}
+
+.layer-bg-nodisplay {
+    display: none;
+}
+
+.itp-float-layer-pull-up {
+    bottom: 0;
     display: flex;
-    justify-content: center;
-    //颜色 透明 模糊
-    background: linear-gradient(120deg, $gradient-main-color-opt, $gradient-sub-color-opt);
+    -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+    transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+    transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+    transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+}
+
+//浮动导航
+#open_toc {
+    @media screen and (min-width: $toggle_screen) {
+        display: none;
+    }
+}
+
+.itp-float-bar {
+    @media screen and (min-width: $toggle_screen) {
+        z-index: 1000;
+        width: 100vw;
+        height: 54px;
+        max-width: none;
+        border-radius: 0;
+        top: 0px;
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+    }
+    @media screen and (max-width: $toggle_screen) {
+        z-index: 1000;
+        height: 54px;
+        width: 100vw;
+        border-radius: 12px 12px 0 0;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-evenly;
+        -webkit-justify-content: space-evenly;
+        //定位
+        display: flex !important;
+        position: fixed !important;
+        bottom: 0px;
+        //阴影
+        -webkit-box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+        box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+    }
+    //颜色 透明 模糊 动画
+    background-color: #fff;
     backdrop-filter: saturate(180%) blur(18px) !important;
     -webkit-backdrop-filter: saturate(180%) blur(18px) !important;
     -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, .2);
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, .2);
-    //定位
-    display: flex !important;
-    position: fixed !important;
-    bottom: 0px;
-    //阴影
-    -webkit-box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
-    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
     .itp-float-bar-item {
-        line-height: $float-height;
-        width: $float-height;
-        color: #fff;
+        background-color: rgba(0, 0, 0, 0);
+        width: 54px;
+        color: $black;
         text-align: center; //水平居中
         background-color: rgba(0, 0, 0, 0);
+        [class*=material-icons-] {
+            line-height: 54px;
+        }
     }
-    .itp-float-bar-item:hover {
+    .itp-float-bar-spacer {
+        flex-grow: 1;
+    }
+    .itp-float-bar-item-bottom {
+        @media screen and (max-width: $toggle_screen) {
+            display: none;
+        }
+    }
+    .itp-float-bar-item:hover,
+    .itp-float-bar-item-bottom:hover {
         background: rgba(225, 225, 225, 0.2);
         cursor: pointer;
         -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
@@ -139,12 +232,78 @@ $float-height: 58px;
         transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1);
         transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
     }
-    //最小尺寸 816px 大屏幕设备
-    @media screen and (min-width: 816px) {
-        display: none !important;
+}
+
+//文章
+.itp-m3-post {}
+
+
+/*
+.copyright-icon-box {
+    .copyright-icon {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 1.125rem;
+        border-color: #c7c7c7;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: stretch;
+        justify-content: center;
+        align-items: center;
     }
-    //最大尺寸 816px 中等屏幕设备
-    @media screen and (max-width: 816px) {
-        display: flex !important;
+    .copyright-icon-before,
+    .copyright-icon-after {
+        display: block;
+        position: relative;
+        width: 1.5rem;
+        height: 1.5rem;
+        left: .2rem;
+        border-color: #c7c7c7;
+        border-right-color: transparent;
+        font-size: 0px;
+        border-radius: 50%;
+        border-style: solid;
+        border-width: 1.2rem;
+    }
+}
+*/
+
+.itp-m3-post-info_area {
+    background: url('../img/copyright_black_24dp.svg');
+    background-position: right -45px top -35px;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-clip: padding-box;
+    margin: 65px 0 65px 0;
+    padding: 22px;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+    .info_area-category {
+        a {
+            color: #fff !important;
+            padding: 6px;
+            border-radius: 24px;
+            padding: 6px 12px;
+            line-height: 24px;
+            display: inline-block;
+        }
+        .category-link {
+            background: linear-gradient(120deg, $gradient-main-color-opt, $gradient-sub-color-opt);
+        }
+        .tags-link {
+            background-color: $main-color;
+            opacity: 0.8;
+        }
+    }
+}
+
+.info_area-copyright {
+    p {
+        color: $black;
+        line-height: 24px;
+        padding: 12px 6px 6px 6px;
     }
 }

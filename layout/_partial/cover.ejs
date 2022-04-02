@@ -1,4 +1,6 @@
 <% if (theme.schemes =='m3' ){ %>
+<% if (is_archive() | is_category() | is_tag()) { %>
+<% } else { %>
 <div class="mdui-container itp-m3-cover-box">
   <div class="mdui-row">
     <div class="mdui-col-md-2 mdui-col-xs-down"></div>
@@ -10,7 +12,7 @@
           background-position: center center;
         ">
           <div class="itp-m3-cover-layer">
-            <div class="info-area">
+            <div class="info-area pjax-area">
               <div class="itp-m3-cover-avatar">
                 <img src="<%- theme.avatar %>" class="nofancy">
               </div>
@@ -28,6 +30,7 @@
     <div class="mdui-col-md-2 mdui-col-xs-down"></div>
   </div>
 </div>
+<% } %>
 <% } else if (theme.schemes =='column' ) { %>
 <div class="itp-cover noprn">
   <div class="itp-cover-img">
