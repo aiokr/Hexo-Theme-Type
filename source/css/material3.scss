@@ -1,4 +1,5 @@
 @import './_customize';
+@import './_m3-post-entry';
 $toggle_screen: 1024px;
 //COVER
 @media screen and (max-width: $toggle_screen) {
@@ -13,6 +14,8 @@ $toggle_screen: 1024px;
 
 .itp-m3-cover {
     box-sizing: border-box;
+    border-radius: 12px;
+    box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 5%), 1px 1px 15px 0 rgb(0 0 0 / 8%);
     //最小尺寸 $toggle_screen 大屏幕设备
     @media screen and (min-width: $toggle_screen) {
         margin-top: 108px;
@@ -200,7 +203,7 @@ $toggle_screen: 1024px;
         box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
     }
     //颜色 透明 模糊 动画
-    background-color: #fff;
+    background-color: #ffffffb5;
     backdrop-filter: saturate(180%) blur(18px) !important;
     -webkit-backdrop-filter: saturate(180%) blur(18px) !important;
     -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, .2);
