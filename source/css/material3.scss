@@ -219,6 +219,9 @@ $toggle_screen: 1024px;
             line-height: 54px;
         }
     }
+    [type=button], [type=reset], [type=submit], button {
+        -webkit-appearance: attachment;
+    }
     .itp-float-bar-spacer {
         flex-grow: 1;
     }
