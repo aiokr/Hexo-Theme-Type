@@ -111,7 +111,10 @@ ul li {
 }
 
 img {
-    width: 100%;
+    display: block;
+    margin: auto;
+    border-radius: 4px;
+    max-width: 100%;
 }
 
 blockquote {
