@@ -50,7 +50,7 @@
   <a class="itp-float-bar-item" href="<%= url_for() %>">
     <span class="material-icons-outlined">home</span>
   </a>
-  <a class="itp-float-bar-item" href="#comment">
+  <a class="itp-float-bar-item" onclick="scrollto(comment)">
     <span class="material-icons-outlined">textsms</span>
   </a>
   <a class="itp-float-bar-item" id="open_toc">
@@ -60,9 +60,10 @@
   <a class="itp-float-bar-item" href="javascript:scroll(0,0)">
     <span class="material-icons-outlined">arrow_upward</span>
   </a>
-  <a class="itp-float-bar-item" button type="button" name="button" mdui-dialog="{target: '#shareDialog'}" onclick="share()">
+  <!--
+  <a class="itp-float-bar-item" button type="button" name="button" mdui-dialog="{target: '#shareDialogText'}" onclick="share()">
     <span class="material-icons-outlined">share</span>
-  </a>
+  </a>-->
   <% } %>
 
   <div class="itp-float-layer itp-toc-layer">

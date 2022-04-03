@@ -1,26 +1,22 @@
 function share() {
-  $(".itp-share-card").removeClass("nodisplay")
+  html2canvas(document.querySelector("#shareInfo"), {
+    onrendered: function (canvas) {
+      //添加属性
+      canvas.setAttribute('id', 'shareCanvas');
+    },
+    width: 400,
+    height: 600,
+    useCORS: true,
+    setTimeout: 15
+  })
     .then(
-      html2canvas(document.querySelector("#shareInfo"), {
-        onrendered: function (canvas) {
-          //添加属性
-          canvas.setAttribute('id', 'shareCanvas');
-        },
-        width: 400,
-        height: 600,
-        useCORS: true,
-        setTimeout: 15
+      canvas => {
+        document.getElementById("shareDialogImg").appendChild(canvas)
+        var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
+        console.log("base64-data:", imgUrl);
       })
-        .then(
-          canvas => {
-            document.getElementById("shareDialog").appendChild(canvas)
-            var imgUrl = canvas.toDataURL("image/png"); // 将canvas转换成img的src流
-            console.log("base64-data:", imgUrl);
-          })
-        .then(
-          $(".itp-share-card").addClass("nodisplay")
-        )
-    );
+    .then(
+      new mdui.Dialog('#shareDialogImg').open);
 }
 var Download = document.getElementById("Download");
 Download.onclick = function () {

@@ -23,6 +23,9 @@ var appDaily = {
     header
   },
 };
+function scrollto(comment) {
+  document.querySelector('#comment').scrollIntoView(true);
+};
 
 //点击底部弹出图层
 $(function () {
