@@ -17,6 +17,10 @@
     .vlogin-info {
         max-width: 80px;
         margin-right: 10px;
+        text-align: center;
+        a.vlogin-nick {
+            font-size: 14px;
+        }
         .vavatar {
             position: relative;
             .vlogout-btn {
@@ -130,13 +134,16 @@
                 opacity: 0.8;
                 border-radius: 6px;
                 color: $deep-grey;
-                width: 54px;
                 height: 30px;
             }
             .vbtn {
                 color: white;
+                width: 54px;
                 font-size: 14px;
                 margin: 0 0 0 6px;
+            }
+            .vactuon {
+                width: 32px;
             }
             .vbtn.primary {
                 background: linear-gradient(120deg, $gradient-main-color-opt, $gradient-sub-color-opt);
