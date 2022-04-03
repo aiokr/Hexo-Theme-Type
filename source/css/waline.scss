@@ -7,32 +7,76 @@
     background-clip: padding-box;
     margin: 65px 0 65px 0;
     padding: 22px;
-    border-radius: 12px;
+    border-radius: 5px;
     background-color: #f5f5f5;
-    border-radius: 12px;
     padding: 24px;
     .vcomment {
         margin-bottom: 58px;
-    }
-    .vheader {
-        padding-bottom: 24px;
         display: flex;
-        overflow: hidden;
-        @media (max-width: 1024px) {
-            display: block;
+    }
+    .vlogin-info {
+        max-width: 80px;
+        margin-right: 10px;
+        .vavatar {
+            position: relative;
+            .vlogout-btn {
+                position: absolute;
+                top: -10px;
+                left: 27px;
+                padding: 3px;
+                border: none;
+                background: transparent;
+                line-height: 0;
+                cursor: pointer;
+            }
+            img {
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+            }
         }
-        .vheader-item {
-            border: 0;
+        .vclose-icon {
+            color: #bababa;
         }
-        label {
-            padding: 0 6px;
-            color: $grey;
+    }
+    .vpanel {
+        width: 100%;
+        .vheader {
+            padding-bottom: 24px;
+            display: flex;
+            overflow: hidden;
+            @media (max-width: 1024px) {
+                display: block;
+            }
+            .vheader-item {
+                border: 0;
+            }
+            label {
+                padding: 0 6px;
+                color: $grey;
+                font-size: 14px;
+            }
+            .vinput {
+                width: calc(80% - 20px);
+                border: 0px;
+                font-size: 14px;
+                outline-style: none;
+                -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+                transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+                -webkit-transition-duration: .2s;
+                transition-duration: .2s;
+                line-height: 20px;
+                background-color: #00000000;
+            }
+        }
+        .veditor {
+            width: 100%;
+            min-height: 120px;
             font-size: 14px;
-        }
-        .vinput {
-            width: calc(80% - 20px);
+            margin: 2px;
             border: 0px;
-            font-size: 14px;
+            border: 0px;
+            border-bottom: 2px solid $grey;
             outline-style: none;
             -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
             transition-timing-function: cubic-bezier(.4, 0, .2, 1);
@@ -41,81 +85,67 @@
             line-height: 20px;
             background-color: #00000000;
         }
-    }
-    .veditor {
-        width: 100%;
-        min-height: 120px;
-        font-size: 14px;
-        margin: 2px;
-        border: 0px;
-        border: 0px;
-        border-bottom: 2px solid $grey;
-        outline-style: none;
-        -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-        -webkit-transition-duration: .2s;
-        transition-duration: .2s;
-        line-height: 20px;
-        background-color: #00000000;
-    }
-    .veditor:focus {
-        border-bottom: 2px solid $main-color;
-    }
-    .vfooter {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        .vactions {
+        .veditor:focus {
+            border-bottom: 2px solid $main-color;
+        }
+        .vfooter {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
-            .vaction {
-                margin: 0px 6px 0 0;
-                svg {
-                    margin-top: 2px;
-                    color: white;
-                    width: 18px;
+            .vactions {
+                display: flex;
+                align-items: center;
+                .vaction {
+                    margin: 0px 6px 0 0;
+                    svg {
+                        margin-top: 2px;
+                        color: white;
+                        width: 18px;
+                    }
+                }
+                a.vaction {
+                    display: none;
+                }
+                .upload {
+                    display: none;
                 }
             }
-            a.vaction {
-                display: none;
+            .vinfo {
+                display: flex;
+                flex: 2;
+                align-items: center;
+                justify-content: flex-end;
             }
-            .upload {
-                display: none;
+            .vtext-number {
+                color: $deep-grey;
+                line-height: 24px;
+                font-size: 14px;
+            }
+            .vaction,
+            .vbtn {
+                align-items: center;
+                display: block;
+                border: none;
+                background-color: $main-color;
+                opacity: 0.8;
+                border-radius: 6px;
+                color: $deep-grey;
+                width: 54px;
+                height: 30px;
+            }
+            .vbtn {
+                color: white;
+                font-size: 14px;
+                margin: 0 0 0 6px;
+            }
+            .vbtn.primary {
+                background: linear-gradient(120deg, $gradient-main-color-opt, $gradient-sub-color-opt);
             }
         }
-        .vinfo {
-            display: flex;
-            flex: 2;
-            align-items: center;
-            justify-content: flex-end;
-        }
-        .vtext-number {
-            color: $deep-grey;
-            line-height: 24px;
-            font-size: 14px;
-        }
-        .vaction,
-        .vbtn {
-            align-items: center;
-            display: block;
-            border: none;
-            background-color: $main-color;
-            opacity: 0.8;
-            border-radius: 6px;
-            color: $deep-grey;
-            width: 65px;
-            height: 30px;
-        }
-        .vbtn {
-            color: white;
-            font-size: 14px;
-            margin: 0 0 0 6px;
-        }
-        .vbtn.primary {
-            background: linear-gradient(120deg, $gradient-main-color-opt, $gradient-sub-color-opt);
+        .vpreview {
+            margin: 14px 0;
         }
     }
-    .vpreview {}
     .vemoji-popup {
         visibility: hidden;
         display: none;
@@ -198,20 +228,52 @@
                     line-height: 1;
                     transition: color .2s ease;
                 }
-                .vcontent {
-                    line-height: 2;
-                    position: relative;
-                    font-size: 1.2em;
-                    word-wrap: break-word;
-                    .vemoji {
-                        display: inline-block;
-                        vertical-align: middle;
-                        width: 1.5em;
-                        margin: .25em;
-                    }
+                .vemoji {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 1.5em;
+                    margin: .25em;
                 }
             }
         }
+    }
+    .vcontent {
+        line-height: 1.8rem;
+        position: relative;
+        word-wrap: break-word;
+        h1 {
+            font-size: 24px;
+        }
+        h2 {
+            font-size: 22px;
+        }
+        h3 {
+            font-size: 20px;
+        }
+        h4 {
+            font-size: 18px;
+        }
+        h5 {
+            font-size: 16px;
+        }
+        h6 {
+            font-size: 14px;
+        }
+        p {
+            font-size: 14px;
+        }
+        blockquote {
+            border-left: $deep-grey solid 2px;
+            p {
+                padding-left: 7px;
+            }
+        }
+    }
+    .vempty {
+        text-align: center;
+        color: $deep-grey;
+        font-size: 14px;
+        margin-bottom: 12px;
     }
     .vmore {
         text-align: center;

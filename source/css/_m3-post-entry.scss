@@ -26,17 +26,32 @@
 }
 
 .itp-m3-post-entry-cover {
-    height: 233px;
+    @media screen and (min-width: 1024px) {
+        height: 233px;
+    }
+    @media screen and (max-width: 1024px) {
+        height: 180px;
+    }
     background-position: center;
     background-size: cover;
     border-radius: var(--radius);
 }
 
 .itp-m3-post-entry-info {
-    padding: 42px 54px 54px 54px;
+    @media screen and (min-width: 1024px) {
+        padding: 42px 54px 54px 54px;
+        .title {
+            font-size: 28px;
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        padding: 28px 32px 32px 32px;
+        .title {
+            font-size: 24px;
+        }
+    }
     .title {
         font-weight: 500;
-        font-size: 28px;
         z-index: 1;
         position: relative;
         a {

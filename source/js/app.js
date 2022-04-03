@@ -79,7 +79,7 @@ $(".categories .archive-link23").replaceWith(function () {
 });
 
 
-$("img").not('footer img,.drawer-img, .mdui-card-header-avatar,.itp-mag-content img,.itp-post-author-avatar img,.itp-post-gallery img,.nofancy').each(function () {
+$("img").not('footer img,.drawer-img, .mdui-card-header-avatar,.itp-mag-content img,.itp-post-author-avatar img,.itp-post-gallery img,.vavatar img,.nofancy').each(function () {
   // $(this).attr("data-fancybox", "gallery"); 直接给img添加data-fancybox会导致点击图片后图片消失
   var element = document.createElement("a");
   $(element).attr("data-fancybox", "gallery");
