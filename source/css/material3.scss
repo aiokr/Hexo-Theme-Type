@@ -225,13 +225,13 @@ $toggle_screen: 1024px;
     .itp-float-bar-spacer {
         flex-grow: 1;
     }
-    .itp-float-bar-item-bottom {
+    .itp-float-bar-item-max {
         @media screen and (max-width: $toggle_screen) {
             display: none;
         }
     }
     .itp-float-bar-item:hover,
-    .itp-float-bar-item-bottom:hover {
+    .itp-float-bar-item-max:hover {
         background: rgba(225, 225, 225, 0.2);
         cursor: pointer;
         -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
