@@ -1,0 +1,37 @@
+<div class="content-area itp-gallery-content">
+  <div class="mdui-container itp-index">
+    <div class="mdui-col-md-2 mdui-col-xs-down"> </div>
+    <div class="mdui-col-md-8 mdui-col-xs-12">
+      <% if (site.data.gallery) { %>
+      <% for (var a in site.data.gallery) { %>
+      <div class="itp-m3-card">
+        <div class="itp-gallery-info">
+          <div class="meta" id="date"><%= site.data.gallery[a].date %></div>
+          <div class="title"><%= a %></div>
+          <div class="meta"><%- site.data.gallery[a].descr %></div>
+        </div>
+        <div class="itp-gallery-image_area">
+          <div class="mdui-row-xs-2 mdui-row-sm-3 mdui-grid-list">
+            <% for (var p in site.data.gallery[a].img ) { %>
+            <div class="mdui-col">
+              <div class="mdui-grid-tile itp-gallery-img" style="background-image: url('<%- site.data.gallery[a].img[p] %>');">
+                <a href="<%- site.data.gallery[a].img[p] %>" data-fancybox="images" class="image-fancy-link"></a>
+                <%- site.data.gallery.num %>
+              </div>
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <% } %>
+      <% } %>
+    </div>
+    <div class="mdui-col-md-2 mdui-col-xs-down"> </div>
+  </div>
+</div>
+
+<style>
+  body {
+    background-color: #f5f5f5 !important;
+  }
+</style>

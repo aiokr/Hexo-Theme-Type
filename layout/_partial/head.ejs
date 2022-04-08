@@ -94,6 +94,9 @@
   <%} else if (theme.schemes =='m3' ){ %>
   <%- css('css/material3') %>
   <% } %>
+  <% if (page.layout =='gallery' ){ %>
+  <%- css('css/gallery') %>
+  <% } %>
   <% if(theme.highlight.use == true) { %>
   <!--highlight.js CSS-->
   <% if(theme.highlight.style == 'github' ) { %>

@@ -13,6 +13,21 @@ $toggle_screen: 1024px;
     }
 }
 
+.itp-m3-card {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    margin-bottom: 58px;
+    border-radius: var(--radius);
+    box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 2%), 1px 1px 15px 0 rgb(0 0 0 / 3%);
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.6s;
+}
+
+.itp-m3-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 1px 10px 30px 0 rgb(0 0 0 / 10%);
+}
+
 .itp-m3-cover {
     box-sizing: border-box;
     border-radius: 5x;

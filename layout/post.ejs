@@ -1,6 +1,6 @@
 <% if (theme.schemes==='column' ) { %>
 <% if (page.style==='photos' ) { %>
-<%- partial('_partial/gallery-page') %>
+<%- partial('_partial/post-gallery') %>
 <% } else { %>
 <!--<progress id="content_progress" value="0"></progress>-->
 <div class="mdui-container">
@@ -64,6 +64,17 @@
 <%} else if (theme.schemes==='m3' ) { %>
 <div class="mdui-container pjax-area">
   <div class="content-area">
+    <% if (page.style==='photos' ) { %>
+    <div class="mdui-row-xs-1 mdui-row-sm-3 mdui-row-lg-3 mdui-grid-list" style="padding-top: 58px;">
+      <% for (var i in page.gallery) { %>
+      <div class="mdui-col itp-post-gallery mdui-grid-tile">
+        <a class="itp-gallery-img" data-fancybox="gallery" href="<%- page.gallery[i].src %>">
+          <img class="lazy" src="<%- page.gallery[i].src %>">
+        </a>
+      </div>
+      <% } %>
+    </div>
+    <% } %>
     <div class="mdui-col-md-2 mdui-col-xs-down"></div>
     <div class="mdui-col-md-8 mdui-col-xs-12 pjax-area">
       <div class="itp-m3-post article">
@@ -101,4 +112,3 @@
 </div>
 <% } %>
 <!--<%- partial('_partial/shareimg') %>-->
-
