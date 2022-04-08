@@ -1,9 +1,31 @@
-.itp-gallery-content {
-    padding-top: 58px;
+//COVER
+@media screen and (max-width: 1024px) {
+    .itp-gallery-content {
+        width: 100vw;
+        .mdui-container {
+            width: 100%;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        .mdui-col-xs-12 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+    .itp-m3-card-gallery {
+        width: 100vw;
+        border-radius: 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .itp-gallery-content {
+        padding-top: 128px;
+    }
 }
 
 .itp-gallery-image_area {
-  padding: 10px 12px;
+    padding: 10px 12px;
 }
 
 .itp-gallery-info {

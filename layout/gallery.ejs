@@ -1,10 +1,10 @@
 <div class="content-area itp-gallery-content">
-  <div class="mdui-container itp-index">
+  <div class="mdui-container">
     <div class="mdui-col-md-2 mdui-col-xs-down"> </div>
     <div class="mdui-col-md-8 mdui-col-xs-12">
       <% if (site.data.gallery) { %>
       <% for (var a in site.data.gallery) { %>
-      <div class="itp-m3-card">
+      <div class="itp-m3-card-gallery">
         <div class="itp-gallery-info">
           <div class="meta" id="date"><%= site.data.gallery[a].date %></div>
           <div class="title"><%= a %></div>

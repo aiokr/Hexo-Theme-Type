@@ -54,7 +54,7 @@
         </section>
         <% } %>
         <section id="index-post-entry">
-          <div class="mduimdui-card-primary itp-index-content">
+          <div class="itp-index-content">
             <% page.posts.each(function(item, itemIndex){ %>
             <% if (item.noindex !== true) { %>
             <%- partial('_partial/post-entry', {item: item}) %>
