@@ -1,3 +1,4 @@
+@import './_customize';
 //COVER
 @media screen and (max-width: 1024px) {
     .itp-gallery-content {
@@ -12,7 +13,7 @@
             padding-left: 0;
         }
     }
-    .itp-m3-card-gallery {
+    .itp-m3-card {
         width: 100vw;
         border-radius: 0;
     }
@@ -30,13 +31,13 @@
 
 .itp-gallery-info {
     @media screen and (min-width: 1024px) {
-        padding: 42px 54px 32px 54px;
+        padding: 42px 54px 32px 16px;
         .title {
             font-size: 28px;
         }
     }
     @media screen and (max-width: 1024px) {
-        padding: 28px 32px 16px 32px;
+        padding: 28px 32px 24px 16px;
         .title {
             font-size: 24px;
         }

@@ -1,0 +1,68 @@
+.itp-m3-card {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    margin-bottom: 58px;
+    border-radius: var(--radius);
+    box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 2%), 1px 1px 15px 0 rgb(0 0 0 / 3%);
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.6s;
+    max-width: $content-width;
+    margin: 0 auto;
+}
+
+.post-entry {
+    @media screen and (min-width: 1024px) {
+        max-width: 100%;
+    }
+    @media screen and (max-width: 1024px) {
+        width: 92% !important;
+    }
+}
+
+.itp-m3-card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 1px 10px 30px 0 rgb(0 0 0 / 10%);
+}
+
+.top-cover {
+    @media screen and (min-width: $content-width) {
+        margin-top: 116px;
+    }
+}
+
+.itp-m3-card.post-entry {
+    margin-bottom: 58px;
+}
+
+.itp-m3-card-cover-layer {
+    background: linear-gradient(rgba(32, 32, 32, 0) 14%, rgba(32, 32, 32, 0.56) 100%);
+    height: 100%;
+}
+
+//封面圆角控制
+.itp-m3-card.top-cover {
+    .itp-m3-cover-bg,
+    .itp-m3-card-cover,
+    .itp-m3-card-cover-layer {
+        @media screen and (min-width: $content-width) {
+            border-radius: var(--radius);
+        }
+        @media screen and (max-width: $content-width) {
+            border-bottom-left-radius: var(--radius);
+            border-bottom-right-radius: var(--radius);
+            border-top-left-radius: 0 !important;
+            border-top-right-radius: 0 !important;
+        }
+    }
+}
+
+.itp-m3-card .article {
+    @media screen and (min-width: $content-width) {
+        margin: 3.5rem;
+    }
+    @media screen and (max-width: $content-width) {
+        margin: 1.5rem;
+    }
+}
+
+.itp-m3-card-content {}

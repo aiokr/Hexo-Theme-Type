@@ -1,3 +1,4 @@
+<% if (theme.schemes =='column' ){ %>
 <div class="mdui-container">
   <div class="mdui-row">
     <div class="mdui-col-md-2 mdui-col-xs-down"></div>
@@ -6,12 +7,11 @@
         向那些永远停留在这个冬天里的人致哀
       </div>-->
       <div class="itp-index">
-        <% if( (theme.social_link.use === true) && (page.current === 1) && (is_home()) ) { %>
+        <% if( (theme.social_link.use === true) && (theme.schemes =='column' ) && (page.current === 1) && (is_home()) ) { %>
         <section id="index-links">
           <div class="mdui-row-lg-3 mdui-row-md-3 mdui-row-sm-3 mdui-row-xs-1" style="padding-bottom: 10px;">
             <% for (var a in site.data.index.links) { %>
-            <a class="mdui-col" href="<%= site.data.index.links[a].link %>"
-              title="<%= site.data.index.links[a].title %>" target="_blank">
+            <a class="mdui-col" href="<%= site.data.index.links[a].link %>" title="<%= site.data.index.links[a].title %>" target="_blank">
               <div class="mdui-card mdui-shadow-0 itp-index-link">
                 <div class="mdui-card-header">
                   <img class="mdui-card-header-avatar" src="<%= site.data.index.links[a].avatar %>" />
@@ -22,8 +22,7 @@
             </a>
             <% } %>
             <% if (theme.social_link.wechat_public.switch == true) { %>
-            <a class="mdui-col itp-link-item" data-fancybox data-src="#mp-wechat" href="javascript:;"
-              title="Wechat Public Account" target="_blank">
+            <a class="mdui-col itp-link-item" data-fancybox data-src="#mp-wechat" href="javascript:;" title="Wechat Public Account" target="_blank">
               <div class="mdui-card mdui-shadow-0 itp-index-link">
                 <div class="mdui-card-header">
                   <img class="mdui-card-header-avatar" src="//imgur.lzmun.com/picgo/20200324092946.jpg" />
@@ -34,8 +33,7 @@
             </a>
             <% } %>
             <% if (theme.social_link.wechat_personal.switch == true) { %>
-            <a class="mdui-col itp-link-item" data-fancybox data-src="#personal-wechat" href="javascript:;"
-              title="Wechat Personal Account" target="_blank">
+            <a class="mdui-col itp-link-item" data-fancybox data-src="#personal-wechat" href="javascript:;" title="Wechat Personal Account" target="_blank">
               <div class="mdui-card mdui-shadow-0 itp-index-link">
                 <div class="mdui-card-header">
                   <img class="mdui-card-header-avatar" src="//imgur.lzmun.com/picgo/20200323120414.jpg" />
@@ -48,7 +46,7 @@
           </div>
         </section>
         <% } %>
-        <% if( (theme.subscription_link.use === true) && (page.current === 1) && (is_home()) ) { %>
+        <% if( (theme.subscription_link.use === true) && (theme.schemes =='column' ) && (page.current === 1) && (is_home()) ) { %>
         <section id="index-links index-subscription-link">
           <div class="mdui-row-lg-3 mdui-row-md-3 mdui-row-sm-3 mdui-row-xs-1" style="padding-bottom: 10px;"></div>
         </section>
@@ -91,9 +89,22 @@
 </div>
 <% } %>
 <% } %>
-
-<style>
-  body {
-    background-color: #f5f5f5 !important;
-  }
-</style>
+<% } else if (theme.schemes =='m3' ) { %>
+  <section id="index-post-entry">
+    <div class="itp-index-content">
+      <% page.posts.each(function(item, itemIndex){ %>
+      <% if (item.noindex !== true) { %>
+      <%- partial('_partial/post-entry', {item: item}) %>
+      <% } %>
+      <% }); %>
+      <div class="index-pagination">
+        <% if (page.prev){ %>
+        <a href="<%- config.root %><%- page.prev_link %>" class="index-pagination-btn"><%- __('prev')%></a>
+        <% } %>
+        <% if (page.next){ %>
+        <a href="<%- config.root %><%- page.next_link %>" class="index-pagination-btn"><%- __('next')%></a>
+        <% } %>
+      </div>
+    </div>
+  </section>
+<% } %>

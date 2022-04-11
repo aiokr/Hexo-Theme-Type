@@ -62,52 +62,74 @@
 </div>
 <% } %>
 <%} else if (theme.schemes==='m3' ) { %>
-<div class="mdui-container pjax-area">
-  <div class="content-area">
-    <% if (page.style==='photos' ) { %>
-    <div class="mdui-row-xs-1 mdui-row-sm-3 mdui-row-lg-3 mdui-grid-list" style="padding-top: 58px;">
-      <% for (var i in page.gallery) { %>
-      <div class="mdui-col itp-post-gallery mdui-grid-tile">
-        <a class="itp-gallery-img" data-fancybox="gallery" href="<%- page.gallery[i].src %>">
-          <img class="lazy" src="<%- page.gallery[i].src %>">
+<% if (page.style==='photos' ) { %>
+<div class="mdui-row-xs-1 mdui-row-sm-3 mdui-row-lg-3 mdui-grid-list" style="padding-top: 58px;">
+  <% for (var i in page.gallery) { %>
+  <div class="mdui-col itp-post-gallery mdui-grid-tile">
+    <a class="itp-gallery-img" data-fancybox="gallery" href="<%- page.gallery[i].src %>">
+      <img class="lazy" src="<%- page.gallery[i].src %>">
+    </a>
+  </div>
+  <% } %>
+</div>
+<% } %>
+<div class="content-area">
+  <div class="itp-m3-card top-cover">
+    <div class="itp-m3-card-cover">
+      <div class="itp-m3-cover-bg" style="
+          background-image: url(<%- page.cover || theme.header.img %>);
+          background-size: cover;
+          background-position: center center;
+        ">
+        <div class="itp-m3-card-cover-layer ">
+          <div class="info-area pjax-area">
+            <div class="itp-m3-cover-avatar">
+              <img src="<%- theme.avatar %>" class="nofancy">
+            </div>
+            <div class="itp-m3-cover-title" style="color: <%- page.title_color || theme.header.title_color || '#fff' %>; opacity: 1;">
+              <%= page.title || config.title %>
+            </div>
+            <div class="itp-m3-cover-subtitle" style="color: <%- page.title_color || theme.header.title_color || '#fff' %>; opacity: 0.8;">
+              <%- partial('_partial/subtitle') %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="article">
+      <%- page.content %>
+    </div>
+    <div class="itp-m3-post-info_area">
+      <div class="info_area-category">
+        <% if (page.categories && page.categories.length) { %>
+        <% page.categories.each(function(categories){ %>
+        <a href="<%= config.root %>categories/<%= categories.name %>/" rel="categories" class="itp-m3-chip-color">
+          <%- categories.name %>
         </a>
+        <% }); %>
+        <% } %>
+        <% if (page.tags && page.tags.length) { %>
+        <% page.tags.each(function(tag){ %>
+        <a href="<%= config.root %>tags/<%= tag.name %>/" rel="tag" class="itp-m3-chip-normal">
+          #<%- tag.name %>
+        </a>
+        <% }); %>
+        <% } %>
       </div>
-      <% } %>
+      <div class="info_area-copyright">
+        <p>本文著作权归作者 aiokr 所有，转载或引用请联系作者获得授权。</p>
+      </div>
+      <!--div class="copyright-icon-box">
+            <i class="copyright-icon">
+              <i class="copyright-icon-before"></i>
+              <i class="copyright-icon-after"></i>
+            </i>
+          </div-->
     </div>
-    <% } %>
-    <div class="mdui-col-md-2 mdui-col-xs-down"></div>
-    <div class="mdui-col-md-8 mdui-col-xs-12 pjax-area">
-      <div class="itp-m3-post article">
-        <%- page.content %>
-      </div>
-      <div class="itp-m3-post-info_area">
-        <div class="info_area-category">
-          <% if (page.categories && page.categories.length) { %>
-          <%- list_categories(page.categories, { show_count: false, style: 'category-link' }) %>
-          <% } %>
-          <% if (page.tags && page.tags.length) { %>
-          <% page.tags.each(function(tag){ %>
-          <a href="<%= config.root %>tags/<%= tag.name %>/" rel="tag" class="tags-link">
-            #<%- tag.name %>
-          </a>
-          <% }); %>
-          <% } %>
-        </div>
-        <div class="info_area-copyright">
-          <p>本文著作权归作者 aiokr 所有，转载或引用请联系作者获得授权。</p>
-        </div>
-        <!--div class="copyright-icon-box">
-          <i class="copyright-icon">
-            <i class="copyright-icon-before"></i>
-            <i class="copyright-icon-after"></i>
-          </i>
-        </div-->
-      </div>
-      <div class="itp-m3-post-comment_area" id="comment">
-        <%- partial('_partial/comment') %>
-      </div>
-      <div class="mdui-col-md-2 mdui-col-xs-down"></div>
-    </div>
+
+  </div>
+  <div class="itp-m3-card itp-m3-post-comment_area" id="comment">
+    <%- partial('_partial/comment') %>
   </div>
 </div>
 <% } %>

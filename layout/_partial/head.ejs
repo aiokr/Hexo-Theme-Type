@@ -97,6 +97,9 @@
   <% if (page.layout =='gallery' ){ %>
   <%- css('css/gallery') %>
   <% } %>
+  <% if (page.layout =='gallery2' ){ %>
+  <%- css('css/gallery2') %>
+  <% } %>
   <% if(theme.highlight.use == true) { %>
   <!--highlight.js CSS-->
   <% if(theme.highlight.style == 'github' ) { %>
@@ -122,12 +125,12 @@
   <script data-pjax src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
   <script data-pjax src='//unpkg.com/valine/dist/Valine.min.js'></script>
   <% } else if (theme.comment.use == 'waline') { %>
-    <% if (theme.schemes =='column' ){ %>
-    <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
-    <%} else if (theme.schemes =='m3' ){ %>
-    <script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.noStyle.js"></script>
-    <%- css('css/waline') %>
-    <% } %>
+  <% if (theme.schemes =='column' ){ %>
+  <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+  <%} else if (theme.schemes =='m3' ){ %>
+  <script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.noStyle.js"></script>
+  <%- css('css/waline') %>
+  <% } %>
   <% } %>
   <% if(theme.google_analytics.use == 'default') { %>
   <!-- Google Analytics -->

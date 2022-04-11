@@ -1,6 +1,8 @@
 @import './_customize';
 @import './_m3-post-entry';
 @import './_shareimg';
+@import './_m3-components/_m3-chip';
+@import './_m3-components/_m3-card';
 $toggle_screen: 1024px;
 //COVER
 @media screen and (max-width: $toggle_screen) {
@@ -11,22 +13,6 @@ $toggle_screen: 1024px;
             padding-left: 0;
         }
     }
-}
-
-.itp-m3-card,
-.itp-m3-card-gallery {
-    position: relative;
-    width: 100%;
-    background-color: #ffffff;
-    margin-bottom: 58px;
-    border-radius: var(--radius);
-    box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 2%), 1px 1px 15px 0 rgb(0 0 0 / 3%);
-    transition: transform 0.3s, background-color 0.3s, box-shadow 0.6s;
-}
-
-.itp-m3-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 1px 10px 30px 0 rgb(0 0 0 / 10%);
 }
 
 .itp-m3-cover {
@@ -60,9 +46,6 @@ $toggle_screen: 1024px;
 }
 
 .info-area {
-    .category-link {
-        color: #fff;
-    }
     //最小尺寸 $toggle_screen 大屏幕设备
     @media screen and (min-width: $toggle_screen) {
         padding: 96px 64px 64px 96px;
@@ -235,7 +218,10 @@ $toggle_screen: 1024px;
             line-height: 54px;
         }
     }
-    [type=button], [type=reset], [type=submit], button {
+    [type=button],
+    [type=reset],
+    [type=submit],
+    button {
         -webkit-appearance: attachment;
     }
     .itp-float-bar-spacer {
@@ -300,30 +286,12 @@ $toggle_screen: 1024px;
     background-repeat: no-repeat;
     background-size: 150px;
     background-clip: padding-box;
-    margin: 65px 0 65px 0;
+    margin: 0;
     padding: 22px;
     border-radius: 5px;
-    background-color: #f5f5f5;
+    background-color: #f5f5f5a4;
     .info_area-category {
-        a {
-            color: #fff !important;
-            padding: 6px;
-            border-radius: 5px;
-            padding: 6px 12px;
-            line-height: 20px;
-            display: inline-block;
-            font-size: 14px;
-        }
-        .category-link {
-            background: linear-gradient(120deg, $gradient-main-color-opt, $gradient-sub-color-opt);
-            opacity: 0.8;
-            font-weight: 600;
-        }
-        .tags-link {
-            background-color: #bababa;
-            font-weight: 400;
-            opacity: 0.8;
-        }
+        a {}
     }
 }
 

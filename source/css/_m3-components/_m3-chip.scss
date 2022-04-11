@@ -1,0 +1,84 @@
+@import '../_customize';
+// 小标签
+[class*=itp-m3-chip-],
+.itp-m3-chip {
+    color: #fff;
+    opacity: 0.8;
+    border-radius: 5px;
+    padding: 6px 12px;
+    margin: 4px;
+    line-height: 20px;
+    font-size: 14px;
+    display: inline-block;
+    a {
+        color: #fff;
+    }
+}
+
+//页内归档
+.itp-m3-chip-color {
+    background: linear-gradient(120deg, $gradient-main-color-opt, $gradient-sub-color-opt);
+    font-weight: 600;
+}
+
+//首页归档
+.itp-m3-chip-bold {
+    background-color: #f4f4f4;
+    color: $deep-grey;
+    font-weight: 600;
+}
+
+//页内标签 归档页
+.itp-m3-chip-normal,
+.itp-m3-chip {
+    background-color: #bababa;
+    font-weight: 400;
+}
+
+@media (prefers-color-scheme: light) {
+    [class*=itp-m3-chip-],
+    .itp-m3-chip {
+        color: #fff;
+        a {
+            color: #fff;
+        }
+    }
+    //页内归档
+    .itp-m3-chip-color {
+        background: linear-gradient(120deg, $gradient-main-color-opt, $gradient-sub-color-opt);
+    }
+    //首页归档
+    .itp-m3-chip-bold {
+        background-color: #f4f4f4;
+        color: $deep-grey;
+    }
+    //页内标签 归档页
+    .itp-m3-chip-normal,
+    .itp-m3-chip {
+        background-color: #bababa;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    [class*=itp-m3-chip-],
+    .itp-m3-chip {
+        color: #fff;
+        a {
+            color: #fff;
+        }
+    }
+    //页内归档
+    .itp-m3-chip-color {
+        background: linear-gradient(120deg, $gradient-main-color-opt, $gradient-sub-color-opt);
+    }
+    //首页归档
+    .itp-m3-chip-bold {
+        background-color: #424242;
+        color: $deep-grey;
+    }
+    //页内标签 归档页
+    .itp-m3-chip-normal,
+    .itp-m3-chip {
+        background-color: #424242;
+    }
+}

@@ -1,0 +1,52 @@
+@import './_customize';
+.itp-gallery-img {}
+
+@media screen and (min-width: 1024px) {
+    .itp-gallery-content {
+        padding-top: 58px;
+    }
+}
+
+.image-fancy-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+    z-index: 0;
+}
+
+.itp-gallery2-tile {
+    height: 0;
+    width: 100%;
+    padding: 0;
+    padding-bottom: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.itp-gallery2-tile-cover {
+  background-color: #EAEAEA;
+}
+
+.itp-gallery-info-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itp-gallery-info {
+    padding: 75px 15px 0 15px;
+    color: $deep-grey;
+    .title {
+        font-size: 28px;
+        font-weight: 600;
+    }
+    .meta {
+        margin-top: 16px;
+        font-size: 18px;
+    }
+}

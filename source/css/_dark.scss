@@ -1,4 +1,4 @@
-$dark-bg-color: #212121;
+$dark-bg-color: #121212;
 $dark-card-color: #424242;
 $dark-title-color: #ffffff;
 $dark-subtitle-color: #bdbdbd;
@@ -6,12 +6,19 @@ $dark-blue: #03A9F4;
 $dark-green: #1db954;
 $dark-lightgreen: #49b683;
 $dark-yellow: #feda7a;
-
 body,
 .itp-drawer,
 .mdui-chip,
 .mdui-toolbar {
-  background-color: $dark-bg-color !important;
+    background-color: $dark-bg-color !important;
+}
+
+.itp-float-bar {
+    background-color: $dark-card-color !important;
+}
+
+.itp-float-bar a span {
+    color: $dark-title-color;
 }
 
 .itp-index-title,
@@ -28,8 +35,10 @@ body,
 .mdui-list-item-title,
 .itp-header-title,
 .mdui-btn,
-.itp-gallery-title {
-  color: $dark-title-color !important;
+.itp-gallery-title,
+.index-achieve-title.title,
+.itp-m3-post-entry-info .title a {
+    color: $dark-title-color !important;
 }
 
 .article p,
@@ -47,22 +56,28 @@ body,
 .itp-search .mdui-textfield-label,
 .mdui-list-item-text,
 .itp-page-select-prev a,
-.itp-page-select-next a {
-  color: $dark-subtitle-color !important;
+.itp-page-select-next a,
+.itp-m3-post-entry-info .excerpt,
+.itp-m3-post-entry-info .meta,
+.itp-achieve-title,
+.info_area-copyright p,
+i.mdui-icon {
+    color: $dark-subtitle-color !important;
 }
 
 img {
-  filter: brightness(.8);
+    filter: brightness(.8);
 }
-
 
 .itp-drawer-description,
 .itp-index-header-description {
-  color: #e3e3e3;
+    color: #e3e3e3;
 }
 
-.itp-post-entry {
-  background-color: $dark-card-color;
+.itp-post-entry,
+.itp-m3-card,
+.itp-m3-post-info_area {
+    background-color: $dark-card-color !important;
 }
 
 h1,
@@ -71,45 +86,45 @@ h3,
 h4,
 h5,
 h6 {
-  filter: invert(1) hue-rotate(180deg);
+    filter: invert(1) hue-rotate(180deg);
+}
+
+.article a {
+    color: #e3e3e3;
 }
 
 .itp-search {
-  .mdui-textfield-input {
-    border-bottom: 1px solid $dark-subtitle-color;
-  }
+    .mdui-textfield-input {
+        border-bottom: 1px solid $dark-subtitle-color;
+    }
 }
 
 .v {
-
-  .vcontent p a,
-  .power a {
-    color: $dark-title-color !important;
-  }
-
-  .veditor,
-  .vemoji-btn,
-  .vpreview-btn,
-  .markdown,
-  .vcontent p,
-  .vmeta .vat,
-  .vcount,
-  .vcount span {
-    color: $dark-subtitle-color !important;
-  }
-
-  .vbtn {
-    background: $dark-bg-color !important;
-    color: $dark-title-color !important;
-  }
-
-  .vsys {
-    background: $dark-bg-color !important;
-  }
+    .vcontent p a,
+    .power a {
+        color: $dark-title-color !important;
+    }
+    .veditor,
+    .vemoji-btn,
+    .vpreview-btn,
+    .markdown,
+    .vcontent p,
+    .vmeta .vat,
+    .vcount,
+    .vcount span {
+        color: $dark-subtitle-color !important;
+    }
+    .vbtn {
+        background: $dark-bg-color !important;
+        color: $dark-title-color !important;
+    }
+    .vsys {
+        background: $dark-bg-color !important;
+    }
 }
 
 .itp-post-card,
 .itp-index-card,
 .itp-link {
-  background-color: $dark-card-color;
+    background-color: $dark-card-color;
 }

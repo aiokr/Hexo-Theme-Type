@@ -16,22 +16,22 @@
           <div class="index-achieve-title title"><%- title %></div>
           <div class="mdui-card-primary-title" style="padding: 20px 0">分类</div>
           <section class="itp-article-categories" style="list-style-type: none;">
-            <div class="mdui-chip">
+            <div class="itp-m3-chip-color">
               <%- list_categories({
                 show_count: false,
-                class: 'mdui-chip-title',
+                class: '',
                 style: 'none',
-                separator: '</div><div class="mdui-chip">'
+                separator: '</div><div class="itp-m3-chip-color">'
               }) %>
           </section>
           <div class="mdui-card-primary-title" style="padding: 20px 0">标签</div>
           <section class="itp-article-categories" style="list-style-type: none;">
-            <div class="mdui-chip">
+            <div class="itp-m3-chip-normal">
               <%- list_tags({
                 show_count: false,
-                class: 'mdui-chip-title',
+                class: '',
                 style: 'none',
-                separator: '</div><div class="mdui-chip">'
+                separator: '</div><div class="itp-m3-chip-normal">'
               }) %>
           </section>
           <%

@@ -1,35 +1,37 @@
 <% if (theme.schemes =='m3' ){ %>
-<% if (is_archive() | is_category() | is_tag()) { %>
+<% if (is_archive() | is_category() | is_tag() | is_post() | is_page()) { %>
 <%} else if (page.layout == 'gallery' ) {%>
+<%} else if (page.layout == 'gallery2' ) {%>
 <% } else { %>
-<div class="mdui-container itp-m3-cover-box">
-  <div class="mdui-row">
-    <div class="mdui-col-md-2 mdui-col-xs-down"></div>
-    <div class="mdui-col-md-8 mdui-col-xs-12">
-      <div class="itp-m3-cover">
-        <div class="itp-m3-cover-bg" style="
+<div class="itp-m3-card top-cover">
+  <div class="itp-m3-card-cover">
+    <div class="itp-m3-cover-bg" style="
           background-image: url(<%- page.cover || theme.header.img %>);
           background-size: cover;
           background-position: center center;
         ">
-          <div class="itp-m3-cover-layer">
-            <div class="info-area pjax-area">
-              <div class="itp-m3-cover-avatar">
-                <img src="<%- theme.avatar %>" class="nofancy">
-              </div>
-              <div class="itp-m3-cover-title" style="color: <%- page.title_color || theme.header.title_color || '#fff' %>; opacity: 1;">
-                <%= page.title || config.title %>
-              </div>
-              <div class="itp-m3-cover-subtitle" style="color: <%- page.title_color || theme.header.title_color || '#fff' %>; opacity: 0.8;">
-                <%- partial('_partial/subtitle') %>
-              </div>
-            </div>
+      <div class="itp-m3-card-cover-layer ">
+        <div class="info-area pjax-area">
+          <div class="itp-m3-cover-avatar">
+            <img src="<%- theme.avatar %>" class="nofancy">
+          </div>
+          <div class="itp-m3-cover-title" style="color: <%- page.title_color || theme.header.title_color || '#fff' %>; opacity: 1;">
+            <%= page.title || config.title %>
+          </div>
+          <div class="itp-m3-cover-subtitle" style="color: <%- page.title_color || theme.header.title_color || '#fff' %>; opacity: 0.8;">
+            <%- partial('_partial/subtitle') %>
           </div>
         </div>
       </div>
     </div>
-    <div class="mdui-col-md-2 mdui-col-xs-down"></div>
   </div>
+  <% if( (theme.social_link.use === true) && (theme.schemes =='m3' ) && (page.current === 1) && (is_home()) ) { %>
+  <div class="itp-m3-card-content" style="padding: 12px;">
+    <% for (var a in site.data.index.links) { %>
+    <a href="<%= site.data.index.links[a].link %>" class="itp-m3-chip-bold"><%= site.data.index.links[a].title %></a>
+    <% } %>
+  </div>
+  <% } %>
 </div>
 <% } %>
 <% } else if (theme.schemes =='column' ) { %>
