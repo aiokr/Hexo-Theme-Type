@@ -1,0 +1,39 @@
+canvas {
+    position: fixed;
+    display: flex;
+}
+
+#shareDialogImage,
+#shareDialogText {
+    width: 400px;
+    height: 700px;
+    min-height: 50px;
+}
+
+.itp-share-card {
+    width: 400px;
+    height: 600px;
+    .itp-share-cover {
+        height: 400px;
+        background-position: center !important;
+        background-size: cover !important;
+    }
+    .itp-share-layer {
+        background: linear-gradient(rgba(32, 32, 32, 0) 14%, rgba(32, 32, 32, 0.56) 100%);
+        height: 100%;
+    }
+    .itp-share-info {
+        padding: 100px 32px 0px 32px;
+        text-align: left;
+    }
+    .itp-share-avatar img {
+        border-radius: 50%;
+        width: 36px;
+    }
+    .itp-share-title {
+        font-size: 24px;
+        font-weight: 500;
+        margin-top: 24px;
+        color: white;
+    }
+}

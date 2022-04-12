@@ -18,3 +18,13 @@
 <%- js('js/gallery-page.js') %>
 <% } %>
 <%- js('js/app.js') %>
+<% if (theme.schemes =='column' ){ %>
+  <%- js('js/nav-scroll.js') %>
+<%} else if (theme.schemes =='m3' ){ %>
+<% } %>
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.js"></script>
+<%- js('js/canvas2image.js') %>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<%- js('js/shareimg') %>
+<%- js('js/pjax-ctrl.js') %>
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>

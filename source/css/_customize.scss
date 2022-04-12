@@ -1,7 +1,14 @@
-$main-color: #22577A;
-$sub-color: #38A3A5;
-$bg-color: #fff;
+$main-color: #71afdd;
+$sub-color: #6CD9CE;
+$bg-color: #f5f5f5;
 $black: #222831;
 $grey: #767676;
-$deep-grey: #333333;
+$deep-grey: #52596a;
 $progress-color: #cccfd7;
+$gradient-main-color-opt: #71aeddbe;
+$gradient-sub-color-opt: #66DED2be;
+$content-width: 800px;
+
+:root {
+  --radius: 5px;
+}

@@ -1,0 +1,51 @@
+<div class="content-area itp-gallery-content">
+  <div class="mdui-container">
+    <div class="mdui-col-md-2 mdui-col-xs-down"> </div>
+    <div class="mdui-col-md-8 mdui-col-xs-12">
+      <% if (site.data.gallery) { %>
+      <% for (var a in site.data.gallery) { %>
+      <div class="itp-m3-card" id="<%= a %>">
+        <div class="itp-gallery-info">
+          <div class="meta" id="date"><%= site.data.gallery[a].date %></div>
+          <div class="title share<%= a %>"><%= a %></div>
+          <div class="meta"><%- site.data.gallery[a].descr %></div>
+        </div>
+        <div class="itp-gallery-image_area">
+          <div class="mdui-row-xs-2 mdui-row-sm-3 mdui-grid-list">
+            <% for (var p in site.data.gallery[a].img ) { %>
+            <div class="mdui-col">
+              <div class="mdui-grid-tile itp-gallery-img lazy-bg" data-src="<%- site.data.gallery[a].img[p] %>">
+                <a href="<%- site.data.gallery[a].img[p] %>" data-fancybox="images" class="image-fancy-link"></a>
+              </div>
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <script>
+        document.querySelector('.share<%= a %>').addEventListener('click', shareSite)
+        function shareSite() {
+          navigator.share({
+              title: '<%= a %>',
+              text: '<%- site.data.gallery[a].descr %>',
+              url: '<%- url_for(page.path) %>#<%= a %>',
+            })
+            .then(() => {
+              console.log('Share completed successfuly')
+            })
+            .catch((error) => {
+              console.log(`share failed: ${error}`)
+            });
+        }
+      </script>
+      <% } %>
+      <% } %>
+    </div>
+    <div class="mdui-col-md-2 mdui-col-xs-down"> </div>
+  </div>
+</div>
+<script>
+  $(function() {
+    $("div.lazy-bg").lazyload();
+  });
+</script>

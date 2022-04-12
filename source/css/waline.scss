@@ -1,0 +1,324 @@
+@import './_customize';
+.v {
+    background: url(../img/forum_black_24dp.svg);
+    background-position: right -45px top -35px;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-clip: padding-box;
+    margin: 65px 0 65px 0;
+    padding: 22px;
+    border-radius: 5px;
+    padding: 24px;
+    .vcomment {
+        margin-bottom: 58px;
+        display: flex;
+    }
+    .vlogin-info {
+        max-width: 80px;
+        margin-right: 10px;
+        text-align: center;
+        a.vlogin-nick {
+            font-size: 14px;
+        }
+        .vavatar {
+            position: relative;
+            .vlogout-btn {
+                position: absolute;
+                top: -10px;
+                left: 27px;
+                padding: 3px;
+                border: none;
+                background: transparent;
+                line-height: 0;
+                cursor: pointer;
+            }
+            img {
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+            }
+        }
+        .vclose-icon {
+            color: #bababa;
+        }
+    }
+    .vpanel {
+        width: 100%;
+        .vheader {
+            padding-bottom: 24px;
+            display: flex;
+            overflow: hidden;
+            @media (max-width: 1024px) {
+                display: block;
+            }
+            .vheader-item {
+                border: 0;
+            }
+            label {
+                padding: 0 6px;
+                color: $grey;
+                font-size: 14px;
+            }
+            .vinput {
+                width: calc(80% - 20px);
+                border: 0px;
+                font-size: 14px;
+                outline-style: none;
+                -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+                transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+                -webkit-transition-duration: .2s;
+                transition-duration: .2s;
+                line-height: 20px;
+                background-color: #00000000;
+            }
+        }
+        .veditor {
+            width: 100%;
+            min-height: 120px;
+            font-size: 14px;
+            margin: 2px;
+            border: 0px;
+            border: 0px;
+            border-bottom: 2px solid $grey;
+            outline-style: none;
+            -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+            transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+            -webkit-transition-duration: .2s;
+            transition-duration: .2s;
+            line-height: 20px;
+            background-color: #00000000;
+        }
+        .veditor:focus {
+            border-bottom: 2px solid $main-color;
+        }
+        .vfooter {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            .vactions {
+                display: flex;
+                align-items: center;
+                .vaction {
+                    margin: 0px 6px 0 0;
+                    svg {
+                        margin-top: 2px;
+                        color: white;
+                        width: 18px;
+                    }
+                }
+                a.vaction {
+                    display: none;
+                }
+                .upload {
+                    display: none;
+                }
+            }
+            .vinfo {
+                display: flex;
+                flex: 2;
+                align-items: center;
+                justify-content: flex-end;
+            }
+            .vtext-number {
+                color: $deep-grey;
+                line-height: 24px;
+                font-size: 14px;
+            }
+            .vaction,
+            .vbtn {
+                align-items: center;
+                display: block;
+                border: none;
+                background-color: $main-color;
+                opacity: 0.8;
+                border-radius: 6px;
+                color: $deep-grey;
+                height: 30px;
+            }
+            .vbtn {
+                color: white;
+                width: 54px;
+                font-size: 14px;
+                margin: 0 0 0 6px;
+            }
+            .vactuon {
+                width: 32px;
+            }
+            .vbtn.primary {
+                background: linear-gradient(120deg, $gradient-main-color-opt, $gradient-sub-color-opt);
+            }
+        }
+        .vpreview {
+            margin: 14px 0;
+        }
+    }
+    .vemoji-popup {
+        visibility: hidden;
+        display: none;
+        margin: 12px;
+        .vtab-wrapper {
+            max-height: 145px;
+            overflow-y: auto;
+            padding: .5em;
+            button {
+                border: 0;
+                background-color: #00000000;
+                img {
+                    width: 2em;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    .vclose {
+        align-items: center;
+        display: block;
+        border: none;
+        opacity: 0.8;
+        border-radius: 6px;
+        color: #ffffff00;
+        width: 54px;
+        font-size: 14px;
+        margin: 0 0 0 6px;
+    }
+    .display {
+        visibility: visible;
+        display: flex;
+    }
+    .vcount {
+        display: flex;
+        font-size: 14px;
+        color: $deep-grey;
+        border-bottom: $grey solid 0.5px;
+        margin-bottom: 12px;
+    }
+    .vcards {
+        .vitem {
+            position: relative;
+            display: flex;
+            padding: 1em .5em;
+            img.vuser {
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+            }
+            .vcard {
+                font-size: 12px;
+                margin-left: 1em;
+                flex: 1;
+                .vhead {
+                    margin-bottom: 6px;
+                }
+                .vnick {
+                    color: $main-color;
+                    font-weight: 400;
+                }
+                .vbadge {
+                    background-color: $main-color;
+                    color: white;
+                    border-radius: 2px;
+                    padding: 2px 4px;
+                    margin-right: 6px;
+                    display: inline-block;
+                }
+                .vtime {
+                    margin-left: 6px;
+                }
+                .vmeta {
+                    margin-bottom: 6px;
+                    span {
+                        background-color: #d7d7d7;
+                        color: white;
+                        border-radius: 2px;
+                        padding: 2px 4px;
+                        margin-right: 6px;
+                        display: inline-block;
+                    }
+                }
+                .vreply {
+                    float: right;
+                    cursor: pointer;
+                    padding: 4px;
+                    border: none;
+                    background: transparent;
+                    color: var(--waline-text-color);
+                    line-height: 1;
+                    transition: color .2s ease;
+                }
+                .vemoji {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 1.5em;
+                    margin: .25em;
+                }
+            }
+        }
+    }
+    .vcontent {
+        line-height: 1.8rem;
+        position: relative;
+        word-wrap: break-word;
+        h1 {
+            font-size: 24px;
+        }
+        h2 {
+            font-size: 22px;
+        }
+        h3 {
+            font-size: 20px;
+        }
+        h4 {
+            font-size: 18px;
+        }
+        h5 {
+            font-size: 16px;
+        }
+        h6 {
+            font-size: 14px;
+        }
+        p {
+            font-size: 14px;
+        }
+        blockquote {
+            border-left: $deep-grey solid 2px;
+            p {
+                padding-left: 7px;
+            }
+        }
+    }
+    .vempty {
+        text-align: center;
+        color: $deep-grey;
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    .vmore {
+        text-align: center;
+        .vbtn {
+            margin: 30px 0;
+            border: 0;
+            border-radius: 6px;
+            opacity: 0.8;
+            background-color: $main-color;
+            width: 150px;
+            height: 30px;
+            color: white;
+            font-size: 14px;
+        }
+    }
+    .vloading {
+        text-align: center;
+        margin: 30px 0;
+        svg {
+            margin: 0 auto;
+        }
+    }
+    .vpower {
+        color: $deep-grey;
+        font-size: 10px;
+        text-align: center;
+        a {
+            color: $deep-grey;
+        }
+    }
+}

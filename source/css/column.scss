@@ -1,0 +1,85 @@
+.itp-header-title {
+    @media (max-width: 816px) {
+        left: 40px;
+    }
+    @media (min-width: 816px) {
+        left: 0px;
+    }
+}
+
+.itp-right-col {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 60px;
+    z-index: -100;
+}
+
+@media screen and (max-width: 816px) {
+    .itp-right-col {
+        display: none;
+    }
+}
+
+#column-toc {
+    opacity: 0.2;
+    display: block;
+    padding: 45px 0 0 0;
+     ::-webkit-scrollbar {
+        display: none;
+        /* Chrome Safari */
+    }
+}
+
+#column-toc.itp-toc-pull-up {
+    opacity: 0.8;
+}
+
+.itp-toc {
+    font-size: 12px;
+    display: block;
+    max-height: 80vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    li,
+    ol {
+        list-style-type: none;
+    }
+    li>ol {
+        padding-left: 1em !important;
+    }
+    ol li a span,
+    li a span {
+        display: inline-block;
+        /*让span 标签变成行内标签但具有宽高属性*/
+        white-space: nowrap;
+        /*文本不进行换行*/
+        overflow: hidden !important;
+        /*隐藏溢出文本*/
+        text-overflow: ellipsis !important;
+        /*多出文本使用 ....代替*/
+        width: auto;
+        /*自适应布局*/
+        padding: 0.4em 0 0.4em 0;
+    }
+    .itp-toc-level-1 {
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .itp-toc-level-2 {
+        font-size: 12px;
+        font-weight: 400;
+        padding-left: 0.4em;
+    }
+    .itp-toc-level-3 {
+        padding-left: 0.4em;
+    }
+    .itp-toc-level-4 {
+        padding-left: 0.4em;
+    }
+    .itp-toc-level-5 {
+        padding-left: 0.4em;
+    }
+    .itp-toc-level-6 {
+        padding-left: 0.4em;
+    }
+}

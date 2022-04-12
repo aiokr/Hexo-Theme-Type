@@ -2,6 +2,10 @@
     background-color: #ffffff00 !important;
 }
 
+#index-post-entry {
+    padding-top: 58px;
+}
+
 .mdui-card-primary {
     padding: 24px !important;
 }
@@ -90,15 +94,6 @@
     background-color: #ede59a !important;
     margin-top: 36px;
     padding: 16px;
-}
-
-.itp-index-content {
-    @media (min-width: 816px) {
-        padding: 0 0 0 0;
-    }
-    @media (max-width: 816px) {
-        padding: 0 16px 0 16px;
-    }
 }
 
 .itp-post-entry-title {
@@ -198,7 +193,7 @@
 .index-achieve-title {
     color: $black;
     @media (min-width: 816px) {
-        padding: 6% 0% 4px 0%;
+        padding: 108px 0% 4px 0%;
         font-size: 2.6rem;
     }
     @media (max-width: 816px) {

@@ -1,0 +1,32 @@
+name: Hexo-Theme-Type auto test
+
+on:
+  push:
+    branches:    
+      - 'master'
+      - 'auto-package'
+
+  pull_request:
+    branches:    
+      - 'master'
+  
+jobs:
+  theme_test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+      with:
+        submodules: true
+    - name: hexo test
+      run: |
+        sudo apt-get install tree
+        npm install hexo-cli -g
+        mkdir hexo-test
+        cd hexo-test
+        hexo init
+        npm install hexo-theme-type --save
+        npm install
+        sudo cp -r ./node_modules/hexo-theme-type/_config.test.yml ./_config.type.yml
+        hexo g
+        tree

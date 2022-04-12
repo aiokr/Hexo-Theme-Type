@@ -19,11 +19,31 @@ var appDaily = {
     } else {
       this.googleSearch($ipt.value.trim());
     }
-
-    return false; header
+    return false;
+    header
   },
 };
+function scrollto(comment) {
+  document.querySelector('#comment').scrollIntoView(true);
+};
 
+//点击底部弹出图层
+$(function () {
+  $("#open_toc").click(function () {
+    $(".itp-toc-layer").addClass("itp-float-layer-pull-up");
+    $(".itp-float-layer-bg").removeClass("layer-bg-nodisplay");
+  })
+  $("#close_btn,#close_layer").click(function () {
+    $(".itp-comment-layer,.itp-toc-layer").removeClass("itp-float-layer-pull-up");
+    $(".itp-float-layer-bg").addClass("layer-bg-nodisplay");
+  })
+});
+
+$(".itp-layer-toc-text").replaceWith(function () {
+  return "<div class ='itp-layer-toc-text' id='close_btn'>" + this.innerHTML + "</div>";
+});
+
+//滚动影响 toc 透明度
 var whetherChange = 0;
 var whetherChangeToTop = 0;
 var ticking = false;
@@ -32,13 +52,11 @@ cover = 240
 window.onscroll = function () {
   var howFar = document.documentElement.scrollTop || document.body.scrollTop;
   if (howFar > cover & whetherChange == 0) {
-    $("#appbar-index").addClass("itp-appbar-color-pull-up");
-    $("#post-toc").addClass("itp-toc-pull-up");
+    $("#column-toc").addClass("itp-toc-pull-up");
     whetherChange = 1;
   };
   if (howFar <= cover & whetherChange == 1) {
-    $("#appbar-index").removeClass("itp-appbar-color-pull-up");
-    $("#post-toc").removeClass("itp-toc-pull-up");
+    $("#column-toc").removeClass("itp-toc-pull-up");
     whetherChange = 0;
   }
 };
@@ -53,7 +71,7 @@ $(".toc-child li").replaceWith(function () {
   return "<li class='mdui-menu-item'>" + this.innerHTML + "</li>";
 });
 
-$(".itp-post-toc ol").replaceWith(function () {
+$(".itp-column-toc ol").replaceWith(function () {
   return "<ul class='mdui-menu mdui-menu-cascade itp-toc-menu' id='toc'>" + this.innerHTML + "</ul>";
 });
 
@@ -64,7 +82,7 @@ $(".categories .archive-link23").replaceWith(function () {
 });
 
 
-$("img").not('footer img,.drawer-img, .mdui-card-header-avatar,.itp-mag-content img,.itp-post-author-avatar img,.itp-post-gallery img,.nofancy').each(function () {
+$("img").not('footer img,.drawer-img, .mdui-card-header-avatar,.itp-mag-content img,.itp-post-author-avatar img,.itp-post-gallery img,.vavatar img,.nofancy').each(function () {
   // $(this).attr("data-fancybox", "gallery"); 直接给img添加data-fancybox会导致点击图片后图片消失
   var element = document.createElement("a");
   $(element).attr("data-fancybox", "gallery");
@@ -83,8 +101,7 @@ $('[data-fancybox="gallery"]').fancybox({
   buttons: [
     "close",
   ],
-  baseTpl:
-    '<div class="fancybox-container" role="dialog" tabindex="-1">' +
+  baseTpl: '<div class="fancybox-container" role="dialog" tabindex="-1">' +
     '<div class="fancybox-bg"></div>' +
     '<div class="fancybox-inner">' +
     '<div class="fancybox-infobar">' +
