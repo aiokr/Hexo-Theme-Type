@@ -30,6 +30,8 @@ jobs:
         npm install
         sudo cp -v ./node_modules/hexo-theme-type/_config_test.yml ./_config.type.yml
         sudo cp -v ./node_modules/hexo-theme-type/assets/_config.yml ./_config.yml
+        git config --global user.email "hiaiokr+photup@gmai.com"
+        git config --global user.name "aiokr"
         hexo g
         hexo d
         cd public
