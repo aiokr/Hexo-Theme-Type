@@ -101,8 +101,4 @@ theme: type
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: https://${{ secrets.theme_live_preivew }}@github.com/Photup/type-live-preivew.git
-  branch: live
-  message: auto-test
+
