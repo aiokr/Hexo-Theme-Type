@@ -27,6 +27,6 @@ jobs:
         hexo init
         npm install hexo-theme-type --save
         npm install
-        sudo cp -v ../node_modules/hexo-theme-type/_config_test.yml ./_config.type.yml
+        sudo cp -v ./node_modules/hexo-theme-type/_config_test.yml ./_config.type.yml
         hexo g
         tree
