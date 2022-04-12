@@ -10,7 +10,7 @@ on:
     branches:    
       - 'master'
   
-  jobs:
+jobs:
   theme_test:
     runs-on: ubuntu-latest
     steps:
