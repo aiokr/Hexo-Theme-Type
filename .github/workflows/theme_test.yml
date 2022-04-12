@@ -29,6 +29,8 @@ jobs:
         npm install hexo-theme-type --save
         npm install
         sudo cp -v ./node_modules/hexo-theme-type/_config_test.yml ./_config.type.yml
+        sudo cp -v ./node_modules/hexo-theme-type/assets/_config_test.yml ./_config.yml
         hexo g
+        hexo d
         cd public
         tree
