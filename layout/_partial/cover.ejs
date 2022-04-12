@@ -27,8 +27,8 @@
   </div>
   <% if( (theme.social_link.use === true) && (theme.schemes =='m3' ) && (page.current === 1) && (is_home()) ) { %>
   <div class="itp-m3-card-content" style="padding: 12px;">
-    <% for (var a in site.data.index.links) { %>
-    <a href="<%= site.data.index.links[a].link %>" class="itp-m3-chip-bold"><%= site.data.index.links[a].title %></a>
+    <% for (var a in theme.cover_links) { %>
+    <a href="<%= theme.cover_links[a].link %>" class="itp-m3-chip-bold"><%= theme.cover_links[a].title %></a>
     <% } %>
   </div>
   <% } %>

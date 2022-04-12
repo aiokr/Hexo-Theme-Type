@@ -21,10 +21,12 @@ jobs:
     - name: hexo test
       run: |
         sudo apt-get install tree
-        mkdir hexo
-        cd hexo
+        npm install hexo
+        mkdir hexo-test
+        cd hexo-test
         hexo init
         npm install hexo-theme-type --save
         npm install
+        sudo cp -r ./node_modules/hexo-theme-type/_config.test.yml ./_config.type.yml
         hexo g
         tree

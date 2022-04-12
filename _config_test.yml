@@ -2,17 +2,17 @@
 # ICON Settings 图标设置
 # ---------------------------------------------------------------
 
-favicon: 
-avatar: 
+favicon: https://imgur.lzmun.com/picgo/after2022/presslogo.png_avatar
+avatar: https://imgur.lzmun.com/picgo/after2022/presslogo.png_itp
 apple_icon:
   # iPhone 57x57 
-  iphone: 
+  iphone: https://imgur.lzmun.com/picgo/after2022/presslogo.png_iPhone
   # iPad 72x72
-  ipad: 
+  ipad: https://imgur.lzmun.com/picgo/after2022/presslogo.png_RetinaiPad
   # Retina iPhone 114x114
-  iphone_hd: 
+  iphone_hd: https://imgur.lzmun.com/picgo/after2022/presslogo.png_iPhoneHD
   # Retina iPad 144x144
-  ipad_hd: 
+  ipad_hd: https://imgur.lzmun.com/picgo/after2022/presslogo.png_RetinaiPad
   
 # ---------------------------------------------------------------
 # Style Settings 样式设置
@@ -20,12 +20,14 @@ apple_icon:
 
 # Schemes
 # Use column ｜ m3
-schemes: 
+schemes: m3
+
 
 # Random Pictures
-random_pic_switch: true
+random_pic_switch: false
 random_pics: 19
-random_thumbnail: ../img/random/randompic-
+random_thumbnail: https://cdn.jsdelivr.net/gh/aiokr/hexo-theme-type-random_pics@v1.0.0/randompic-
+# random_thumbnail: ../img/random/randompic-
 
 # ---------------------------------------------------------------
 # Header and Nav Settings 页眉、导航和封面设置
@@ -33,34 +35,40 @@ random_thumbnail: ../img/random/randompic-
 
 # Header Cover
 header: 
-  img: 
+  img: https://imgur.lzmun.com/picgo/after2022/Photo_6553646_DJI_46_jpg_4736772_0_2021414122720_photo_original.jpg_itp
   title_color: '#fff'
 
-# drawer_header: 
+# drawer_header: //imgur.lzmun.com/picgo/20200405182517.jpg
 # drawer was removed
 
 # Header Links
+# icon list: https://fonts.google.com/icons?selected=Material+Icons&icon.style=Outlined
 search_btn: true
 nav:
-  首页:
-    link: /
-    icon: home
   归档: 
     link: /archives/
-    icon:   move_to_inbox
-#  关于:
-#    link: /about.html
-#    icon: person
-#  友链:
-#    link: /links.html
-#    icon: link
+    icon:  move_to_inbox
+  相册:
+    link: /gallery/
+    icon: image
+  关于:
+    link: /about/
+    icon: person
 
 # Cover Links
 cover_links:
-  - title: Tripper.Press
-    link: https://tripper.press/
-    avatar: //imgur.lzmun.com/picgo/after2022/presslogo.png_avatar
-    descr: 'Tripper Press'
+  - title: Unsplash
+    link: https://unsplash.com/@aiokr
+    avatar: https://imgur.lzmun.com/picgo/20200323114326.jpg
+    descr: '@aiokr'
+  - title: 500px
+    link: https://500px.com/vcg-aiokr
+    avatar: https://imgur.lzmun.com/picgo/20200323114235.jpg
+    descr: 'aiokr'
+  - title: RSS Feed
+    link: /atom.xml
+    avatar: https://imgur.lzmun.com/2021/09/19/512x512bb.jpeg_itp
+    descr: 'iTypen.APP'
 
 # Materiac ICON from https://www.mdui.org/docs/material_icon
 
@@ -68,9 +76,9 @@ cover_links:
 # Footer Settings 页脚设置
 # ---------------------------------------------------------------
 
-start_time: 
+start_time: 2016
 # 'count' need run 'npm install hexo-symbols-count-time --save'
-count: false
+count: true
 icp: 
 
 # CDN LOGO
@@ -91,14 +99,14 @@ social_link:
   # 在这里开启微信二维码
   wechat_personal: 
     switch: false
-    src: 
+    src: https://imgur.lzmun.com/picgo/20200324090429.jpg
   wechat_public: 
     switch: true
-    src: 
+    src: https://open.weixin.qq.com/qr/code?username=itypen
 
 # 订阅链接
 subscription_link:
-  use: true
+  use: false
 
 # ---------------------------------------------------------------
 # Posts Settings 文章设置
@@ -123,7 +131,7 @@ highlight:
 # Use gitment | valine | disqus | disqusjs | gitalk | waline
 # disqusjs 参考 https://github.com/SukkaW/DisqusJS 进行部署
 comment:
-  use: 
+  use: waline
   gitment:
     owner:
     repo:
@@ -150,7 +158,7 @@ comment:
     admin: 
     distractionFreeMode: 
   waline:
-    serverurl: 
+    serverurl: https://waline-server-repo.vercel.app/
 
 # Busuanzi Count 不蒜子计数
 busuanzi: false
@@ -164,9 +172,9 @@ busuanzi: false
 
 google_analytics:
   # use: default
-  use:
-  ga_id:
-  ga_api:
+  use: cf_async
+  ga_id: UA-141010711-2
+  ga_api: https://async-google-analytics.disqusapi.workers.dev/
 
 # chart.js
 # https://www.chartjs.org/

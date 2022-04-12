@@ -10,13 +10,13 @@
         <% if( (theme.social_link.use === true) && (theme.schemes =='column' ) && (page.current === 1) && (is_home()) ) { %>
         <section id="index-links">
           <div class="mdui-row-lg-3 mdui-row-md-3 mdui-row-sm-3 mdui-row-xs-1" style="padding-bottom: 10px;">
-            <% for (var a in site.data.index.links) { %>
-            <a class="mdui-col" href="<%= site.data.index.links[a].link %>" title="<%= site.data.index.links[a].title %>" target="_blank">
+            <% for (var a in theme.cover_links) { %>
+            <a class="mdui-col" href="<%= theme.cover_links[a].link %>" title="<%= theme.cover_links[a].title %>" target="_blank">
               <div class="mdui-card mdui-shadow-0 itp-index-link">
                 <div class="mdui-card-header">
-                  <img class="mdui-card-header-avatar" src="<%= site.data.index.links[a].avatar %>" />
-                  <div class="mdui-card-header-title"><%= site.data.index.links[a].title %></div>
-                  <div class="mdui-card-header-subtitle"><%- site.data.index.links[a].descr %></div>
+                  <img class="mdui-card-header-avatar" src="<%= theme.cover_links[a].avatar %>" />
+                  <div class="mdui-card-header-title"><%= theme.cover_links[a].title %></div>
+                  <div class="mdui-card-header-subtitle"><%- theme.cover_links[a].descr %></div>
                 </div>
               </div>
             </a>
