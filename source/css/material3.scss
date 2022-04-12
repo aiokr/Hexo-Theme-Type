@@ -287,7 +287,12 @@ $toggle_screen: 1024px;
     background-size: 150px;
     background-clip: padding-box;
     margin: 0;
-    padding: 22px;
+    @media screen and (min-width: $content-width) {
+        padding: 18px 3.5rem;
+    }
+    @media screen and (max-width: $content-width) {
+        padding: 18px 1.5rem;
+    }
     border-radius: 5px;
     background-color: #f5f5f5a4;
     .info_area-category {
