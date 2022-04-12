@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-type",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "a simple hexo theme",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "hexo"
   ],
   "author": "aiokr",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/aiokr/hexo-theme-type/issues"
   },
