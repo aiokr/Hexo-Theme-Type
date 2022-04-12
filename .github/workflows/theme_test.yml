@@ -21,7 +21,7 @@ jobs:
     - name: hexo test
       run: |
         sudo apt-get install tree
-        npm install hexo
+        npm install hexo-cli -g
         mkdir hexo-test
         cd hexo-test
         hexo init
