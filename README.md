@@ -32,7 +32,7 @@
 ```bash
 npm install hexo-theme-type --save
 npm install
-cp -v ./node_modules/hexo-theme-type/_config_test.yml ./_config.type.yml
+cp -v ./node_modules/hexo-theme-type/_config_template.yml ./_config.type.yml
 ```
 
 随后，修改 Hexo 根目录的 `_config.yml` 文件
