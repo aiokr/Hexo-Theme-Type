@@ -31,6 +31,7 @@ jobs:
         sudo cp -v ./node_modules/hexo-theme-type/_config_test.yml ./_config.type.yml
         sudo cp -v ./node_modules/hexo-theme-type/assets/_config.yml ./_config.yml
         hexo g
+        sudo cp -v ./node_modules/hexo-theme-type/assets/CNAME public/CNAME
         cd public
         tree
         git init
