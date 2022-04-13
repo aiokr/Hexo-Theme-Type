@@ -13,6 +13,10 @@
 <img src="https://img.shields.io/github/workflow/status/aiokr/hexo-theme-type/Hexo-Theme-Type%20auto%20test/auto-package?label=test&logo=github&style=for-the-badge" alt="Github Code Size"/>
 </p>
 
+![Snipaste_2022-04-13_13-40-24](https://imgur.lzmun.com/picgo/after2022/Snipaste_2022-04-13_13-40-24.png_itp)
+
+![Snipaste_2022-04-13_13-40-13](https://imgur.lzmun.com/picgo/after2022/Snipaste_2022-04-13_13-40-13.png_itp)
+
 [中文文档](https://tripper.press/type-docs/)  [效果预览](https://tripper.press/)  [实时预览](https://photup.github.io/type-live-preivew/)
 
 本仓库经由 Github Action 自动打包生成，实时生成的文件在 [auto-package 分支](https://github.com/aiokr/hexo-theme-type/tree/auto-package)，定期会合并到主分支。
@@ -32,7 +36,7 @@
 ```bash
 npm install hexo-theme-type --save
 npm install
-cp -v ./node_modules/hexo-theme-type/_config_test.yml ./_config.type.yml
+cp -v ./node_modules/hexo-theme-type/_config_template.yml ./_config.type.yml
 ```
 
 随后，修改 Hexo 根目录的 `_config.yml` 文件
