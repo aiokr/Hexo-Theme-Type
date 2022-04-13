@@ -2,11 +2,11 @@
 
 
 # Hexo Theme Type
-<p style="text-align:center;" >
+<p style="text-align:center;" align="center">
 一个漂亮、简洁的 HEXO 主题
 </p>
 
-<p style="text-align:center;" >
+<p style="text-align:center;" align="center">
 <img src="https://img.shields.io/github/downloads/aiokr/hexo-theme-type/total?color=orange&style=for-the-badge&label=Download&logo=github" alt="Github Download Count"/>
 <img src="https://img.shields.io/github/v/release/aiokr/hexo-theme-type?style=for-the-badge&label=Release&logo=github" alt="Github Release"/>
 <img src="https://img.shields.io/github/languages/code-size/aiokr/hexo-theme-type?color=71afdd&label=Code%20Size&logo=github&style=for-the-badge" alt="Github Code Size"/>
