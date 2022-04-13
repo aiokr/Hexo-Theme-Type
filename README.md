@@ -13,7 +13,7 @@
 <img src="https://img.shields.io/github/workflow/status/aiokr/hexo-theme-type/Hexo-Theme-Type%20auto%20test/auto-package?label=test&logo=github&style=for-the-badge" alt="Github Code Size"/>
 </p>
 
-[中文文档](https://tripper.press/type-docs/)  [效果预览](https://tripper.press/)  [实时预览](live-preview.tripper.press)
+[中文文档](https://tripper.press/type-docs/)  [效果预览](https://tripper.press/)  [实时预览](https://live-preview.tripper.press)
 
 本仓库经由 Github Action 自动打包生成，实时生成的文件在 [auto-package 分支](https://github.com/aiokr/hexo-theme-type/tree/auto-package)，定期会合并到主分支。
 
