@@ -30,6 +30,7 @@
 ## 🔨 安装使用
 
 本主题支持 npm 和 git 两种安装方式，你也可以下载 release 版本手动安装。
+当前主题仍在开发中，部分功能还没有完善！
 
 ### 使用 npm 安装（推荐）
 
@@ -65,6 +66,29 @@ theme: type
 ## 📖 文档
 
 本项目的文档正在逐步完善中，详情请阅读 [GitHub · Where software is built](https://github.com/aiokr/hexo-theme-type/wiki)
+
+## 许可证
+
+hexo-theme-type 还使用/依赖了这些开源项目
+
+### HEXO 相关
+
+### 其他
+
+**DisqusJS**
+
+[SukkaW/DisqusJS: Render Disqus comments in Mainland China using Disqus API](https://github.com/SukkaW/DisqusJS)  
+License: MIT
+
+**霞鹜文楷**
+
+[lxgw/LxgwBright: A merged font of Ysabeau Office and LXGW WenKai.](https://github.com/lxgw/LxgwBright)  
+License: SIL Open Font License 1.1
+
+**Josefin Sans Font Project**
+
+[googlefonts/josefinsans: Google Improvement Project](https://github.com/googlefonts/josefinsans)  
+License: SIL Open Font License 1.1
 
 ## ✨ Star 历史趋势
 
