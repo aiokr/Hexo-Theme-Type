@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-type",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "a simple hexo theme",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/aiokr/hexo-theme-type.git"
   },
   "keywords": [
-    "hexo"
+    "hexo","material3"
   ],
   "author": "aiokr",
   "license": "MIT",

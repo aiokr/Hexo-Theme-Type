@@ -2,16 +2,18 @@
 
 
 # Hexo Theme Type
-<p style="text-align:center;" >
+
+<p style="text-align:center;" align="center">
 一个漂亮、简洁的 HEXO 主题
 </p>
 
-<p style="text-align:center;" >
+<p style="text-align:center;" align="center">
 <img src="https://img.shields.io/github/downloads/aiokr/hexo-theme-type/total?color=orange&style=for-the-badge&label=Download&logo=github" alt="Github Download Count"/>
 <img src="https://img.shields.io/github/v/release/aiokr/hexo-theme-type?style=for-the-badge&label=Release&logo=github" alt="Github Release"/>
 <img src="https://img.shields.io/github/languages/code-size/aiokr/hexo-theme-type?color=71afdd&label=Code%20Size&logo=github&style=for-the-badge" alt="Github Code Size"/>
 <img src="https://img.shields.io/github/workflow/status/aiokr/hexo-theme-type/Hexo-Theme-Type%20auto%20test/auto-package?label=test&logo=github&style=for-the-badge" alt="Github Code Size"/>
-</p>
+<a href="https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&appChannel=share&inviteCode=14OQfh&businessType=9&from=246610&biz=ka#/pc"><img src="https://img.shields.io/badge/QQ%20Channel-TYPEforHEXO-71afdd?&style=for-the-badge">
+</p></a>
 
 ![Snipaste_2022-04-13_13-40-24](https://imgur.lzmun.com/picgo/after2022/Snipaste_2022-04-13_13-40-24.png_itp)
 
@@ -23,7 +25,7 @@
 
 - 提出 Issue 请到 [Issues · aiokr/hexo-theme-type](https://github.com/aiokr/hexo-theme-type/issues)
 - 了解最新进展请到 [[持续更新] Hexo-Theme-Type 最新进展 · Discussion #23 · aiokr/Tripper-Press](https://github.com/aiokr/Tripper-Press/discussions/23)
-- 参与讨论请到 [Discussions · aiokr/Tripper-Press](https://github.com/aiokr/Tripper-Press/discussions/categories/general)
+- 参与讨论请到 [Discussions · aiokr/Tripper-Press](https://github.com/aiokr/Tripper-Press/discussions/categories/general) 或 [QQ 频道](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&appChannel=share&inviteCode=14OQfh&businessType=9&from=246610&biz=ka#/pc)
 
 ## 🔨 安装使用
 
