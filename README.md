@@ -42,7 +42,9 @@ npm install
 cp -v ./node_modules/hexo-theme-type/_config_template.yml ./_config.type.yml
 ```
 
-随后，修改 Hexo 根目录的 `_config.yml` 文件
+随后，修改站点配置文件[^1]
+
+
 
 ```yaml
 theme: type
@@ -57,7 +59,7 @@ git clone https://github.com/aiokr/hexo-theme-type.git themes/type --depth=1
 npm install
 ```
 
-随后，修改 Hexo 根目录的 `_config.yml` 文件
+随后，修改站点配置文件[^1]
 
 ```yaml
 theme: type
@@ -73,10 +75,40 @@ hexo-theme-type 还使用/依赖了这些开源项目
 
 ### HEXO 相关
 
-### 其他
+**HEXO**  
+[hexojs/hexo: A fast, simple & powerful blog framework, powered by Node.js.](https://github.com/hexojs/hexo)  
+**License**: MIT
+
+**hexo-renderer-ejs**  
+[hexojs/hexo-renderer-ejs: EJS renderer for Hexo](https://github.com/hexojs/hexo-renderer-ejs)  
+**License**: MIT
+
+**hexo-renderer-marked**  
+[hexojs/hexo-renderer-marked: Markdown renderer for Hexo](https://github.com/hexojs/hexo-renderer-marked)  
+**License**: MIT
+
+### 评论系统
 
 **DisqusJS**  
 [SukkaW/DisqusJS: Render Disqus comments in Mainland China using Disqus API](https://github.com/SukkaW/DisqusJS)  
+**License**: MIT
+
+**Valine**  
+[xCss/Valine: A fast, simple & powerful comment system.](https://github.com/xCss/Valine)  
+**License**: GPL-2.0
+
+**Waline**  
+[walinejs/waline: A Simple, Safe Comment System inspired by Valine | 一款基于 Valine 衍生的简洁、安全的评论系统](https://github.com/walinejs/waline)  
+**License**: GPL-2.0
+
+**Gitment**  
+[imsun/gitment: A comment system based on GitHub Issues.](https://github.com/imsun/gitment)  
+**License**: MIT
+
+### 其他
+
+**MDUI**  
+[zdhxiong/mdui: MDUI 是一个基于 Material Design 的前端框架。](https://github.com/zdhxiong/mdui)
 **License**: MIT
 
 **霞鹜文楷**  
@@ -90,3 +122,5 @@ hexo-theme-type 还使用/依赖了这些开源项目
 ## ✨ Star 历史趋势
 
 ![Star](https://starchart.cc/aiokr/hexo-theme-type.svg)
+
+[^1]: 站点配置文件即 Hexo 根目录的 `_config.yml` 文件

@@ -45,6 +45,20 @@ $toggle_screen: 1024px;
     }
 }
 
+.top-cover {
+    .itp-m3-cover-title,
+    .itp-m3-cover-subtitle {
+        color: #fff;
+    }
+}
+
+.post-cover {
+    .itp-m3-cover-title,
+    .itp-m3-cover-subtitle {
+        color: $black;
+    }
+}
+
 .info-area {
     //最小尺寸 $toggle_screen 大屏幕设备
     @media screen and (min-width: $toggle_screen) {

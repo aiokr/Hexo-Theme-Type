@@ -22,6 +22,10 @@ apple_icon:
 # Use column ｜ m3
 schemes: m3
 
+# Fonts
+# Use LXGW ｜ 
+fonts: LXGW
+
 
 # Random Pictures
 random_pic_switch: false
@@ -36,7 +40,6 @@ random_thumbnail: https://cdn.jsdelivr.net/gh/aiokr/hexo-theme-type-random_pics@
 # Header Cover
 header: 
   img: https://imgur.lzmun.com/picgo/after2022/Photo_6553646_DJI_46_jpg_4736772_0_2021414122720_photo_original.jpg_itp
-  title_color: '#fff'
 
 # drawer_header: //imgur.lzmun.com/picgo/20200405182517.jpg
 # drawer was removed

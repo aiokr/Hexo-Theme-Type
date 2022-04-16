@@ -20,7 +20,11 @@ apple_icon:
 
 # Schemes
 # Use column ｜ m3
-schemes: 
+schemes: m3
+
+# Fonts
+# Use LXGW ｜ 
+fonts: LXGW
 
 # Random Pictures
 random_pic_switch: true
@@ -34,7 +38,6 @@ random_thumbnail: ../img/random/randompic-
 # Header Cover
 header: 
   img: 
-  title_color: '#fff'
 
 # drawer_header: 
 # drawer was removed
