@@ -37,6 +37,7 @@ body,
 .mdui-btn,
 .itp-gallery-title,
 .index-achieve-title.title,
+.post-cover,
 .itp-m3-post-entry-info .title a {
     color: $dark-title-color !important;
 }
@@ -127,4 +128,31 @@ h6 {
 .itp-index-card,
 .itp-link {
     background-color: $dark-card-color;
+}
+
+.post-cover {
+    .itp-m3-card-cover-layer {
+        background: linear-gradient(#424242ba, #424242ba) !important;
+        height: 100%;
+    }
+}
+
+.top-cover {
+    .itp-m3-card-cover-layer {
+        background: linear-gradient(rgba(32, 32, 32, 0) 14%, rgba(32, 32, 32, 0.56) 100%) !important;
+    }
+}
+
+.top-cover {
+    .itp-m3-cover-title,
+    .itp-m3-cover-subtitle {
+        color: $dark-title-color !important;
+    }
+}
+
+.post-cover {
+    .itp-m3-cover-title,
+    .itp-m3-cover-subtitle {
+        color: $dark-title-color !important;
+    }
 }
