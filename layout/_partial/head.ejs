@@ -133,6 +133,7 @@
   <%- css('css/waline') %>
   <% } %>
   <% } %>
+  <% if(theme.google_analytics == true) { %>
   <% if(theme.google_analytics.use == 'default') { %>
   <!-- Google Analytics -->
   <script>
@@ -163,6 +164,20 @@
     window.ga_api = "<%= theme.google_analytics.ga_api %>"; // {String} The route of your cloudflare workers you just registered before.
   </script>
   <script src="https://cdn.jsdelivr.net/npm/cfga@1.0.1" async></script>
+  <% } else if (theme.google_analytics.use == 'gtag') { %>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.google_analytics.gtag_id %>"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', '<%= theme.google_analytics.gtag_id %>');
+  </script>
+  <% } %>
   <% } %>
   <% if(page.layout == 'post') { %>
   <% if (theme.chart_js.use == true){ %>
