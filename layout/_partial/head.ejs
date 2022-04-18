@@ -133,7 +133,6 @@
   <%- css('css/waline') %>
   <% } %>
   <% } %>
-  <% if(theme.google_analytics == true) { %>
   <% if(theme.google_analytics.use == 'default') { %>
   <!-- Google Analytics -->
   <script>
@@ -177,7 +176,6 @@
 
     gtag('config', '<%= theme.google_analytics.gtag_id %>');
   </script>
-  <% } %>
   <% } %>
   <% if(page.layout == 'post') { %>
   <% if (theme.chart_js.use == true){ %>
