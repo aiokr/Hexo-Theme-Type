@@ -145,10 +145,6 @@ a {
     text-decoration: none;
 }
 
-.cdn-img {
-    max-height: 40px !important;
-}
-
 .upyun {
     margin: 20px auto;
 }
@@ -177,7 +173,7 @@ a {
     display: block;
     background-color: rgba(255, 255, 255, 0);
     padding-top: 10vh;
-    padding-bottom: 20vh;
+    padding-bottom: 10vh;
     .footer-info,
     a {
         color: $grey;
