@@ -56,6 +56,16 @@
 <%} else if (theme.schemes==='m3' ) { %>
 <div class="itp-m3-index-post-area">
   <% if(item.style== 'moment') { %>
+  <div class="itp-m3-card post-entry">
+    <div class="itp-m3-post-entry-info">
+      <div class="meta">
+        <%= item.date.format(config.date_format) %>
+      </div>
+      <div class="title">
+        <%- item.content || item.title || theme.default_post_title || "Untitled" %>
+      </div>
+    </div>
+  </div>
   <% } else { %>
   <div class="itp-m3-card post-entry itp-m3-card-hover">
     <% if(theme.random_pic_switch == true && item.cover ) { %>
