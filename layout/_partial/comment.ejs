@@ -104,7 +104,7 @@
   Waline({
     el: '#waline',
     serverURL: '<%= theme.comment.waline.serverurl %>',
-    path: '<%= page.permalink %>',
+    path: '<%= url_for(post.path) %>',
     dark: 'auto',
     uploadImage: false,
     wordLimit: [5,200],
