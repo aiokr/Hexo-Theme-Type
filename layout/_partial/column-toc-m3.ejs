@@ -1,0 +1,11 @@
+<% var toc = toc(page.content, {
+  class: 'itp-toc',
+  list_number: false,
+  max_depth: 2,
+  min_depth: 1,
+}) %>
+<% if(toc.length > 0) { %>
+<div id="column-toc-m3" class="noprn column-toc-m3 itp-toc-m3-sidetop">
+  <%-(toc) %>
+</div>
+<% } %>

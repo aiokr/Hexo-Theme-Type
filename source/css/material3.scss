@@ -319,3 +319,34 @@ $toggle_screen: 1024px;
         padding: 12px 6px 6px 0px;
     }
 }
+
+.column-toc-m3 {
+    background-color: #fff;
+    opacity: 0.8;
+    position: fixed;
+    right: 48px;
+    top: 30%;
+    z-index: 90;
+    padding: 12px 0;
+    margin-right: 48px;
+    width: 220px;
+    max-height: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    ol {
+        list-style-type:none;
+        display: inline-grid;
+        margin-left: -24px;
+    }
+}
+
+.itp-toc-m3-sidetop {
+    position: absolute;
+    top: 80vh;
+}
+
+@media screen and (max-width: 1200px) {
+    #column-toc-m3 {
+        display: none;
+    }
+}

@@ -7,9 +7,43 @@
         else title = __('archive_a');
     }
 %>
+<%
+// 在 Hexo 5.0 中，全局变量中不再包含-Lodash，详情可见：
+// https://blog.skk.moe/post/hexo-5/#全局变量中不再包含-Lodash
+// https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_groupby
+// 可以通过安装 Lodash 并引入 Hexo 解决此问题，详情可见：http://www.zhongweipeng.cn/2020/08/14/hexo异常/
+// 因此在此处保留新版和旧版两条代码
+// 旧版，服务于 Hexo 4.2.0 之前版本
+ var groupObj = _.groupBy(page.posts.toArray(), function(p){return -p.date.format('YYYY')})
+ var catgroupObj = _.groupBy(page.posts.toArray(), function(c){return -c.categories.format})
+// 新版，服务于 Hexo 5.0.0 之后版本
+// var groupObj = (page.posts.toArray(), function(p){return -p.date.format('YYYY')})
+%>
+<!--
+<div class="mdui-container-fluid pjax-area">
+  <div class="mdui-row mdui-row-gapless" style="padding-top: 58px;">
+    <div class="content-area">
+      <div class="mdui-col-sm-3">
+        <div class="mdui-list">
+          <% page.posts.each(function(item, itemIndex){ %>
+          <% if (item.noindex !== true) { %>
+          <a class="mdui-list-item " href="<%- url_for(item.path) %>">
+            <div class="title">
+              <%- item.title || theme.default_post_title || "Untitled" %>
+            </div>
+          </a>
+          <% } %>
+          <% }); %>
+        </div>
+      </div>
+      <div class="mdui-col-sm-9">2323232</div>
+    </div>
+  </div>
+</div>
+-->
 <div class="mdui-container pjax-area">
-  <div class="content-area">
-    <div class="mdui-row">
+  <div class="mdui-row">
+    <div class="content-area">
       <div class="mdui-col-md-1 mdui-col-xs-down"></div>
       <div class="mdui-col-md-10 mdui-col-xs-12">
         <section class="itp-blog-list">
@@ -34,23 +68,20 @@
                 separator: '</div><div class="itp-m3-chip-normal">'
               }) %>
           </section>
-          <%
-          // 在 Hexo 5.0 中，全局变量中不再包含-Lodash，详情可见：
-          // https://blog.skk.moe/post/hexo-5/#全局变量中不再包含-Lodash
-          // https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore#_groupby
-          // 可以通过安装 Lodash 并引入 Hexo 解决此问题，详情可见：http://www.zhongweipeng.cn/2020/08/14/hexo异常/
-          // 因此在此处保留新版和旧版两条代码
-          // 旧版，服务于 Hexo 4.2.0 之前版本
-           var groupObj = _.groupBy(page.posts.toArray(), function(p){return -p.date.format('YYYY')})
-          // 新版，服务于 Hexo 5.0.0 之后版本
-          // var groupObj = (page.posts.toArray(), function(p){return -p.date.format('YYYY')})
-          %>
           <% for (var year in groupObj){ %>
           <div class="mdui-card-primary-title" style="padding: 20px 0"><%- -year %></div>
           <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-lg-3">
             <%- partial('_partial/article-archive', {posts: groupObj[year]}) %>
           </div>
           <% } %>
+          <!--
+          <% for (var cat in catgroupObj){ %>
+          <div class="mdui-card-primary-title" style="padding: 20px 0"><%- -cat %></div>
+          <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-lg-3">
+            <%- partial('_partial/article-archive', {posts: catgroupObj[cat]}) %>
+          </div>
+          <% } %>
+          -->
           <div class="index-pagination">
             <% if (page.prev){ %>
             <a href="<%- config.root %><%- page.prev_link %>" class="index-pagination-btn"><%- __('prev')%></a>
@@ -64,5 +95,4 @@
     </div>
     <div class="mdui-col-md-1 mdui-col-xs-down"></div>
   </div>
-</div>
 </div>
