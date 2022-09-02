@@ -133,6 +133,10 @@
   <%- css('css/waline') %>
   <% } %>
   <% } %>
+  <!--umami analytics-->
+  <% if(theme.umami_analytics.use = true) { %>
+  <script async defer data-website-id="<%= theme.umami_analytics.id %>" src="<%= theme.umami_analytics.src %>"></script>
+  <% } %>
   <% if(theme.google_analytics.use == 'default') { %>
   <!-- Google Analytics -->
   <script>
