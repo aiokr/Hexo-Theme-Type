@@ -132,7 +132,7 @@
   <script src="/js/gitment.js"></script>
   <script src="/js/gitment-theme.js"></script>
   <% } %>
-  <% } else if ( theme.cdn.use == 'valine') { %>
+  <% } else if ( theme.comment.use == 'valine') { %>
   <% if(theme.cdn.use == 'jsdelivr') { %>
   <script data-pjax src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
   <script data-pjax src='//cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js'></script>
@@ -140,7 +140,7 @@
   <script data-pjax src="/js/av-min.js"></script>
   <script data-pjax src='/js/Valine.min.js'></script>
   <% } %>
-  <% } else if (theme.cdn.use == 'waline') { %>
+  <% } else if (theme.comment.use == 'waline') { %>
   <% if (theme.schemes =='column' ){ %>
   <% if(theme.cdn.use == 'jsdelivr') { %>
   <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
