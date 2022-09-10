@@ -74,7 +74,9 @@
 </div>
 <% } %>
 <div class="content-area">
+  <% if (theme.post_toc == true ) { %>
   <%- partial('_partial/column-toc-m3') %>
+  <% } %>
   <div class="itp-m3-card post-cover">
     <div class="itp-m3-card-cover">
       <div class="itp-m3-cover-bg" style="
@@ -120,12 +122,6 @@
       <div class="info_area-copyright">
         <p><%- __('post_copyright')%></p>
       </div>
-      <!--div class="copyright-icon-box">
-            <i class="copyright-icon">
-              <i class="copyright-icon-before"></i>
-              <i class="copyright-icon-after"></i>
-            </i>
-          </div-->
     </div>
   </div>
   <div class="itp-m3-card itp-m3-post-comment_area" id="comment">

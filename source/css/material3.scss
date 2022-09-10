@@ -323,7 +323,7 @@ $toggle_screen: 1024px;
 .column-toc-m3 {
     background-color: #ffffff00;
     position: fixed;
-    top: 30%;
+    top: 30vh;
     z-index: 90;
     padding: 12px 0;
     margin-right: 48px;
@@ -336,6 +336,7 @@ $toggle_screen: 1024px;
         list-style-type: none;
         display: inline-grid;
         margin-left: -24px;
+        line-height: 1.2em;
     }
     .itp-toc-item a {
         display: inline-block;
@@ -355,7 +356,7 @@ $toggle_screen: 1024px;
 }
 
 .column-toc-m3:hover {
-    opacity: 1;
+    opacity: 0.8;
     background-color: #ffffff55;
     -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
     transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
@@ -365,8 +366,9 @@ $toggle_screen: 1024px;
 }
 
 .itp-toc-m3-sidetop {
-    position: absolute;
-    top: 80vh;
+    position: fixed;
+    top: 30vh;
+    opacity: 0.1;
 }
 
 .column-toc-m3 {
