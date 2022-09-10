@@ -122,6 +122,7 @@
   <script src="/js/jquery.min.js"></script>
   <% } %>
   <!--Comment-->
+  <% if(is_post() | is_page()) {%> 
   <% if(theme.comment.use == 'gitment') { %>
   <% if(theme.cdn.use == 'jsdelivr') { %>
   <script data-pjax src='//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.js'></script>
@@ -156,8 +157,9 @@
   <%- css('css/waline') %>
   <% } %>
   <% } %>
+  <% } %>
   <!--umami analytics-->
-  <% if(theme.umami_analytics.use = true) { %>
+  <% if(theme.umami_analytics.use == true) { %>
   <script async defer data-website-id="<%= theme.umami_analytics.id %>" src="<%= theme.umami_analytics.src %>"></script>
   <% } %>
   <% if(theme.google_analytics.use == 'default') { %>
