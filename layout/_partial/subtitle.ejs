@@ -12,7 +12,7 @@
 <% } %>
 <% if(page.author) { %>
 <span> / </span>
-<%= page.author %>
+<%= config.author || page.author %>
 <% } %>
 <span> / </span>
 <%- symbolsCount(page) %>
