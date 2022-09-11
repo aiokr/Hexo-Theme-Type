@@ -5,7 +5,8 @@ var pjax = new Pjax({
     "meta[name=description]", // 如果是全部 meta 替换的话，只需要写 meta
     "main",
     ".content-area",
-    "#comment"
+    "#comment",
+    ".itp-index-content"
   ],
   cacheBust: false,
 })

@@ -127,4 +127,6 @@ $('[data-fancybox="gallery"]').fancybox({
     '</div>',
 });
 
+// lazyload
+
 console.log(`${'\n'} %c  Hexo-Theme-Type  %c  https://github.com/aiokr/hexo-theme-type  ${'\n'}`, 'color: #fff; background: #030307; padding:5px 0;', 'color: #fff; background: #71afdd; padding:5px 0;');
