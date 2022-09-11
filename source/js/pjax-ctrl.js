@@ -4,9 +4,10 @@ var pjax = new Pjax({
     "title",
     "meta[name=description]", // 如果是全部 meta 替换的话，只需要写 meta
     "main",
-    ".pjax-area"
+    ".content-area",
+    "#comment"
   ],
-  cacheBust: false
+  cacheBust: false,
 })
 // 添加重载，其实就是 PJAX 完成之后的操作
 document.addEventListener('pjax:complete', function (){

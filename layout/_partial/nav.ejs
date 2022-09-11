@@ -1,6 +1,6 @@
 <% var toc = toc(page.content, {
   class: 'itp-layer-toc',
-  id: 'close_btn',
+  id: '',
   list_number: false,
   max_depth: 2,
   min_depth: 1,
@@ -75,14 +75,15 @@
   <% } %>
 
   <div class="itp-float-layer itp-toc-layer">
-    <a class="itp-float-layer-close-btn" id="close_btn">
-      <span class="material-icons-outlined">
-        highlight_off
-      </span>
-    </a>
+    <div class="clost-btn" style="display: flex;">
+      <a class="itp-float-layer-close-btn" id="close_btn">
+        <span class="material-icons-outlined">
+          highlight_off
+        </span>
+      </a>
+    </div>
     <%-(toc) %>
   </div>
-
   <div class="itp-float-layer-bg layer-bg-nodisplay" id="close_layer"></div>
 </div>
 <% } %>
