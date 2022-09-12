@@ -9,6 +9,7 @@ var pjax = new Pjax({
     ".itp-index-content"
   ],
   cacheBust: false,
+  scrollRestoration: true,
 })
 // 添加重载，其实就是 PJAX 完成之后的操作
 document.addEventListener('pjax:complete', function (){

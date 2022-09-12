@@ -41,12 +41,14 @@
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.js" defer></script>
 -->
 <!--PJAX-->
+<!--
 <% if(theme.cdn.use == 'jsdelivr') { %>
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.js" defer></script>
 <% } else if ( theme.cdn.use == 'self_host') { %>
 <%- js('js/pjax.js') %>
 <% } %>
 <%- js('js/pjax-ctrl.js') %>
+-->
 <!--lazyload-->
 <% if(theme.cdn.use == 'jsdelivr') { %>
 <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js" defer></script>
