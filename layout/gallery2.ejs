@@ -1,10 +1,10 @@
-<div class="itp-gallery-content">
-  <% if (site.data.gallery) { %>
-  <% for (var a in site.data.gallery) { %>
-  <div class="mdui-row-xs-2 mdui-row-sm-3 mdui-row-lg-5 mdui-grid-list">
+<div class="content-area itp-gallery-content">
+  <div class="mdui-row-xs-2 mdui-row-sm-3 mdui-row-md-4 mdui-row-lg-5 mdui-row-xl-6 mdui-grid-list">
+    <% if (site.data.gallery) { %>
+    <% for (var a in site.data.gallery) { %>
     <div class="mdui-col">
       <% if (site.data.gallery[a].cover) { %>
-      <div class="mdui-grid-tile itp-gallery2-tile itp-gallery2-tile-cover itp-gallery-img lazy-bg share<%= a %>" id="<%= a %>" data-src="<%- site.data.gallery[a].cover %>">
+      <div class="mdui-grid-tile itp-gallery2-tile itp-gallery-img lazy-bg share<%= a %>" id="<%= a %>" data-src="<%- site.data.gallery[a].cover %>">
       </div>
       <%} else { %>
       <div class="mdui-grid-tile itp-gallery2-tile itp-gallery2-tile-cover share<%= a %>">
@@ -40,18 +40,18 @@
         <a href="<%- site.data.gallery[a].img[p] %>" data-fancybox="images" class="image-fancy-link"></a>
       </div>
     </div>
-  <% } %>
+    <% } %>
+    <% } %>
+    <% } %>
+  </div>
+  <style>
+    body {
+      background-color: #2f2f2f !important;
+    }
+  </style>
+  <script>
+    $(function() {
+      $("div.lazy-bg").lazyload();
+    });
+  </script>
 </div>
-  <% } %>
-  <% } %>
-</div>
-<script>
-  $(function() {
-    $("div.lazy-bg").lazyload();
-  });
-</script>
-<style>
-  body {
-    background-color: #2f2f2f !important;
-  }
-</style>

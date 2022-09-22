@@ -1,6 +1,6 @@
 <% var toc = toc(page.content, {
   class: 'itp-layer-toc',
-  id: 'close_btn',
+  id: '',
   list_number: false,
   max_depth: 2,
   min_depth: 1,
@@ -11,7 +11,9 @@
   <div id="appbar-index" class="mdui-appbar mdui-appbar-fixed itp-appbar_index mdui-shadow-0">
     <div id="toolbar-index" class="mdui-toolbar mdui-shadow-0" style="justify-content: center;">
       <% if (theme.schemes=='column' ){ %>
-      <a class="mdui-btn mdui-btn-icon itp-drawer-btn itp-header-actions_menu" style="color: #fff" data-fancybox data-src="#nav_menu" href="javascript:;"><i class="mdui-icon material-icons">menu</i></a>
+      <a class="mdui-btn mdui-btn-icon itp-drawer-btn itp-header-actions_menu" style="color: #fff" data-fancybox data-src="#nav_menu" href="javascript:;"><span class="material-icons-outlined">
+          menu
+        </span></a>
       <% } %>
       <a href="<%= url_for() %>" class="itp-header-title mdui-typo-title">
         <%- config.title %>
@@ -25,7 +27,9 @@
       </div>
       <div class="itp-nav-action">
         <% if (theme.search_btn==true){ %>
-        <a href="/search.html" class="mdui-btn mdui-btn-icon itp-header-search-btn"><i class="mdui-icon material-icons" style="line-height: 20px;">search</i></a>
+        <a href="/search.html" class="mdui-btn mdui-btn-icon itp-header-search-btn"><span class="material-icons-outlined">
+            search
+          </span></a>
         <% } %>
       </div>
     </div>
@@ -47,10 +51,11 @@
     </span>
   </a>
   <% } %>
+  <!--靠右对齐的图标
   <div class="itp-float-bar-spacer"></div>
   <a class="itp-float-bar-item itp-float-bar-item-max">
     <span class="material-icons-outlined">format_align_left</span>
-  </a>
+  </a>-->
   <%} else if (page.layout =='post' ){ %>
   <!--只在 **文章** 页面显示-->
   <a class="itp-float-bar-item" onclick="scrollto(comment)">
@@ -70,14 +75,15 @@
   <% } %>
 
   <div class="itp-float-layer itp-toc-layer">
-    <a class="itp-float-layer-close-btn" id="close_btn">
-      <span class="material-icons-outlined">
-        highlight_off
-      </span>
-    </a>
+    <div class="clost-btn" style="display: flex;">
+      <a class="itp-float-layer-close-btn" id="close_btn">
+        <span class="material-icons-outlined">
+          highlight_off
+        </span>
+      </a>
+    </div>
     <%-(toc) %>
   </div>
-
   <div class="itp-float-layer-bg layer-bg-nodisplay" id="close_layer"></div>
 </div>
 <% } %>

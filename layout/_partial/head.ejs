@@ -116,22 +116,51 @@
   <% } %>
   <% } %>
   <!-- jquery -->
+  <% if(theme.cdn.use == 'jsdelivr') { %>
   <script src="//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+  <% } else if ( theme.cdn.use == 'self_host') { %>
+  <script src="/js/jquery.min.js"></script>
+  <% } %>
   <!--Comment-->
+  <% if(is_post() | is_page()) {%> 
   <% if(theme.comment.use == 'gitment') { %>
+  <% if(theme.cdn.use == 'jsdelivr') { %>
+  <script data-pjax src='//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.js'></script>
+  <script data-pjax src='//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/theme/default.js'></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css">
+  <% } else if ( theme.cdn.use == 'self_host') { %>
   <link rel="stylesheet" href="/css/gitment.css">
   <script src="/js/gitment.js"></script>
   <script src="/js/gitment-theme.js"></script>
+  <% } %>
   <% } else if ( theme.comment.use == 'valine') { %>
+  <% if(theme.cdn.use == 'jsdelivr') { %>
   <script data-pjax src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
-  <script data-pjax src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script data-pjax src='//cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js'></script>
+  <% } else if ( theme.cdn.use == 'self_host') { %>
+  <script data-pjax src="/js/av-min.js"></script>
+  <script data-pjax src='/js/Valine.min.js'></script>
+  <% } %>
   <% } else if (theme.comment.use == 'waline') { %>
   <% if (theme.schemes =='column' ){ %>
+  <% if(theme.cdn.use == 'jsdelivr') { %>
   <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+  <% } else if ( theme.cdn.use == 'self_host') { %>
+  <script data-pjax src='/js/walline-client.js'></script>
+  <% } %>
   <%} else if (theme.schemes =='m3' ){ %>
+  <% if(theme.cdn.use == 'jsdelivr') { %>
   <script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.noStyle.js"></script>
+  <% } else if ( theme.cdn.use == 'self_host') { %>
+  <script src="/js/Waline.noStyle.js"></script>
+  <% } %>
   <%- css('css/waline') %>
   <% } %>
+  <% } %>
+  <% } %>
+  <!--umami analytics-->
+  <% if(theme.umami_analytics.use == true) { %>
+  <script async defer data-website-id="<%= theme.umami_analytics.id %>" src="<%= theme.umami_analytics.src %>"></script>
   <% } %>
   <% if(theme.google_analytics.use == 'default') { %>
   <!-- Google Analytics -->
@@ -162,11 +191,36 @@
     window.ga_tid = "<%= theme.google_analytics.ga_id %>"; // {String} The trackerID of your site.
     window.ga_api = "<%= theme.google_analytics.ga_api %>"; // {String} The route of your cloudflare workers you just registered before.
   </script>
+  <% if(theme.cdn.use == 'jsdelivr') { %>
   <script src="https://cdn.jsdelivr.net/npm/cfga@1.0.1" async></script>
+  <% } else if ( theme.cdn.use == 'self_host') { %>
+  <script src="/js/cfga@1.0.1" async></script>
+  <% } %>
+  <% } else if (theme.google_analytics.use == 'gtag') { %>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<%= theme.google_analytics.gtag_id %>" defer></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', '<%= theme.google_analytics.gtag_id %>');
+  </script>
   <% } %>
   <% if(page.layout == 'post') { %>
   <% if (theme.chart_js.use == true){ %>
+
+  <% if(theme.cdn.use == 'jsdelivr') { %>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <% } else if ( theme.cdn.use == 'self_host') { %>
+  <script src="/js/chart.js@2.8.0"></script>
   <% } %>
+  <% } %>
+  <% } %>
+  <% if (theme.pwa == true){ %>
+  <link rel="manifest" href="/manifest.json">
   <% } %>
 </head>

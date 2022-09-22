@@ -1,15 +1,27 @@
 <!-- fancybox -->
+<% if(theme.cdn.use == 'jsdelivr') { %>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<%- js('js/mdui.min.js') %>
-<% if (theme.busuanzi == true){ %>
-<script data-pjax src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi/bsz.pure.mini.js"></script>
+<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
+<% } else if ( theme.cdn.use == 'self_host') { %>
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
+<script src="/js/jquery.fancybox.min.js" defer></script>
 <% } %>
+<!-- mdui -->
+<%- js('js/mdui.min.js') %>
+<!-- busuanzi -->
+<% if (theme.busuanzi == true){ %>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script>
+<% } %>
+<!-- highlightjs -->
 <% if(theme.highlight.use == true) { %>
-<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+<% if(theme.cdn.use == 'jsdelivr') { %>
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js" defer></script>
+<% } else if ( theme.cdn.use == 'self_host') { %>
+<script src="/js/highlight.min.js" defer></script>
+<% } %>
 <script>
   hljs.initHighlightingOnLoad();
-  $("pre.code").each(function () {
+  $("pre.code").each(function() {
     $(this).html("<ol><li>" + $(this).html().replace(/\n/g, "\n</li><li>") + "\n</li></ol>");
   });
 </script>
@@ -19,12 +31,27 @@
 <% } %>
 <%- js('js/app.js') %>
 <% if (theme.schemes =='column' ){ %>
-  <%- js('js/nav-scroll.js') %>
+<%- js('js/nav-scroll.js') %>
 <%} else if (theme.schemes =='m3' ){ %>
 <% } %>
-<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.js"></script>
+<!--
 <%- js('js/canvas2image.js') %>
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <%- js('js/shareimg') %>
 <%- js('js/pjax-ctrl.js') %>
-<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.js" defer></script>
+-->
+<!--PJAX-->
+<!--
+<% if(theme.cdn.use == 'jsdelivr') { %>
+<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.js" defer></script>
+<% } else if ( theme.cdn.use == 'self_host') { %>
+<%- js('js/pjax.js') %>
+<% } %>
+<%- js('js/pjax-ctrl.js') %>
+-->
+<!--lazyload-->
+<% if(theme.cdn.use == 'jsdelivr') { %>
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js" defer></script>
+<% } else if ( theme.cdn.use == 'self_host') { %>
+<%- js('js/lazyload.js') %>
+<% } %>

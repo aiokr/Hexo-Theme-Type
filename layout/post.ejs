@@ -74,6 +74,9 @@
 </div>
 <% } %>
 <div class="content-area">
+  <% if (theme.post_toc == true ) { %>
+  <%- partial('_partial/column-toc-m3') %>
+  <% } %>
   <div class="itp-m3-card post-cover">
     <div class="itp-m3-card-cover">
       <div class="itp-m3-cover-bg" style="
@@ -117,16 +120,9 @@
         <% } %>
       </div>
       <div class="info_area-copyright">
-        <p>本文著作权归作者 <%- config.author %> 所有，转载或引用请联系作者获得授权。</p>
+        <p><%- __('post_copyright')%></p>
       </div>
-      <!--div class="copyright-icon-box">
-            <i class="copyright-icon">
-              <i class="copyright-icon-before"></i>
-              <i class="copyright-icon-after"></i>
-            </i>
-          </div-->
     </div>
-
   </div>
   <div class="itp-m3-card itp-m3-post-comment_area" id="comment">
     <%- partial('_partial/comment') %>

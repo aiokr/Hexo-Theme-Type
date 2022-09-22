@@ -30,6 +30,16 @@
     <% for (var a in theme.cover_links) { %>
     <a href="<%= theme.cover_links[a].link %>" class="itp-m3-chip-bold"><%= theme.cover_links[a].title %></a>
     <% } %>
+    <% if (theme.social_link.wechat_public.switch == true) { %>
+    <a class="itp-m3-chip-bold" data-fancybox data-src="#mp-wechat" href="javascript:;" title="Wechat Public Account" target="_blank">
+      <%- __('wechat_mp')%>
+    </a>
+    <% } %>
+    <% if (theme.social_link.wechat_personal.switch == true) { %>
+    <a class="itp-m3-chip-bold" data-fancybox data-src="#personal-wechat" href="javascript:;" title="Wechat Personal Account" target="_blank">
+      <%- __('wechat_personal')%>
+    </a>
+    <% } %>
   </div>
   <% } %>
 </div>

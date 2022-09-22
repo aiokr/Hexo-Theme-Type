@@ -43,20 +43,33 @@ $(".itp-layer-toc-text").replaceWith(function () {
   return "<div class ='itp-layer-toc-text' id='close_btn'>" + this.innerHTML + "</div>";
 });
 
-//滚动影响 toc 透明度
+//滚动影响
 var whetherChange = 0;
 var whetherChangeToTop = 0;
 var ticking = false;
-cover = 240
 
+cover = 240
 window.onscroll = function () {
   var howFar = document.documentElement.scrollTop || document.body.scrollTop;
   if (howFar > cover & whetherChange == 0) {
-    $("#column-toc").addClass("itp-toc-pull-up");
+    $("#column-toc").addClass("itp-toc-pull-up"); //滚动影响toc菜单透明度
     whetherChange = 1;
   };
   if (howFar <= cover & whetherChange == 1) {
-    $("#column-toc").removeClass("itp-toc-pull-up");
+    $("#column-toc").removeClass("itp-toc-pull-up"); //滚动影响toc菜单透明度
+    whetherChange = 0;
+  }
+};
+
+m3righttop = 470
+window.onscroll = function () {
+  var howFar = document.documentElement.scrollTop || document.body.scrollTop;
+  if (howFar > m3righttop & whetherChange == 0) {
+    $("#column-toc-m3").removeClass("itp-toc-m3-sidetop"); //m3 样式中，滚动影响toc菜单定位方式
+    whetherChange = 1;
+  };
+  if (howFar <= m3righttop & whetherChange == 1) {
+    $("#column-toc-m3").addClass("itp-toc-m3-sidetop"); //m3 样式中，滚动影响toc菜单定位方式
     whetherChange = 0;
   }
 };
@@ -113,3 +126,7 @@ $('[data-fancybox="gallery"]').fancybox({
     '</div>' +
     '</div>',
 });
+
+// lazyload
+
+console.log(`${'\n'} %c  Hexo-Theme-Type  %c  https://github.com/aiokr/hexo-theme-type  ${'\n'}`, 'color: #fff; background: #030307; padding:5px 0;', 'color: #fff; background: #71afdd; padding:5px 0;');

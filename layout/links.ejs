@@ -6,7 +6,7 @@
         <div class="itp-index" style="padding-top: 118px;">
           <!--链接-->
           <% if (site.data.links) { %>
-            <div class="mdui-row-lg-3 mdui-row-md-3 mdui-row-sm-3 mdui-row-xs-1 " style="padding-bottom: 10px;">
+          <div class="mdui-row-lg-3 mdui-row-md-3 mdui-row-sm-3 mdui-row-xs-1 " style="padding-bottom: 10px;">
             <% for (var i in site.data.links) { %>
             <a class="mdui-col" href="<%= site.data.links[i].url %>" title="<%= i %>" target="_blank">
               <div class="mdui-card mdui-shadow-0 itp-index-link">
@@ -34,5 +34,12 @@
       <div class="mdui-col-md-2 mdui-col-xs-down">
       </div>
     </div>
+    <% if (theme.schemes==='m3' ) { %>
+      <style>
+        body {
+          background-color: #fff;
+        }
+      </style>
+      <% } %>
   </div>
 </div>

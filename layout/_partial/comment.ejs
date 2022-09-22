@@ -104,12 +104,12 @@
   Waline({
     el: '#waline',
     serverURL: '<%= theme.comment.waline.serverurl %>',
-    path: '<%= page.permalink %>',
+    path: '<%= url_for(page.path) %>',
     dark: 'auto',
     uploadImage: false,
     wordLimit: [5,200],
     emoji: [
-      'https://cdn.jsdelivr.net/gh/aiokr/press-assets@v0.1.0/waline-emojis/bili'
+      'https://imgur.lzmun.com/press_assets/emojis/bili'
     ],
   });
 </script>

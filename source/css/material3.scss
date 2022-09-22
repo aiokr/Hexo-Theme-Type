@@ -1,6 +1,6 @@
 @import './_customize';
-@import './_m3-post-entry';
 @import './_shareimg';
+@import './_m3-components/_m3-post-entry';
 @import './_m3-components/_m3-chip';
 @import './_m3-components/_m3-card';
 $toggle_screen: 1024px;
@@ -131,7 +131,6 @@ $toggle_screen: 1024px;
         border-radius: 12px 12px 0 0;
         height: 90vh;
         display: -webkit-flex;
-        display: flex;
         justify-content: space-evenly;
         -webkit-justify-content: space-evenly;
         //颜色 透明 模糊
@@ -141,8 +140,9 @@ $toggle_screen: 1024px;
         -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, .2);
         box-shadow: 0 0 10px 2px rgba(0, 0, 0, .2);
         //定位
-        display: flex !important;
+        display: grid !important;
         position: fixed !important;
+        grid-template-columns: repeat(12, minmax(0px, 1fr));
         bottom: -90vh; //开始时不现实弹窗
         //动画
         -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
@@ -152,6 +152,24 @@ $toggle_screen: 1024px;
         //阴影
         -webkit-box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
         box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+    }
+    .clost-btn {
+        grid-column: span 2 / span 2;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 3vh;
+    }
+    .itp-layer-toc {
+        display: flex;
+        padding-top: 3vh;
+        padding-right: 5vw;
+        grid-column: span 10 / span 10;
+        flex-direction: column;
+    }
+    li {
+        list-style: none;
+        line-height: 24px;
     }
 }
 
@@ -317,5 +335,74 @@ $toggle_screen: 1024px;
         color: $black;
         line-height: 24px;
         padding: 12px 6px 6px 0px;
+    }
+}
+
+.column-toc-m3 {
+    background-color: #ffffff00;
+    position: fixed;
+    top: 30vh;
+    z-index: 90;
+    padding: 12px 0;
+    margin-right: 48px;
+    width: 220px;
+    max-height: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.4;
+    ol {
+        list-style-type: none;
+        display: inline-grid;
+        margin-left: -24px;
+        line-height: 1.2em;
+    }
+    .itp-toc-item a {
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 2px 0;
+        max-width: 180px;
+        color: $black;
+    }
+    .itp-toc-level-1 {
+        font-size: 16px;
+    }
+    .itp-toc-level-2 {
+        font-size: 14px;
+    }
+}
+
+.column-toc-m3:hover {
+    opacity: 0.8;
+    background-color: #ffffff55;
+    -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+    transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+    transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+    transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+    box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 5%), 1px 1px 15px 0 rgb(0 0 0 / 8%);
+}
+
+.itp-toc-m3-sidetop {
+    position: fixed;
+    top: 30vh;
+    opacity: 0.1;
+}
+
+.column-toc-m3 {
+    @media screen and (max-width: 1200px) {
+        display: none;
+    }
+    @media screen and (min-width: 1200px) {
+        right: 0px;
+    }
+    @media screen and (min-width: 1300px) {
+        right: 20px;
+    }
+    @media screen and (min-width: 1500px) {
+        right: 80px;
+    }
+    @media screen and (min-width: 1800px) {
+        right: 140px;
     }
 }

@@ -108,7 +108,7 @@ hexo-theme-type 还使用/依赖了这些开源项目
 ### 其他
 
 **MDUI**  
-[zdhxiong/mdui: MDUI 是一个基于 Material Design 的前端框架。](https://github.com/zdhxiong/mdui)
+[zdhxiong/mdui: MDUI 是一个基于 Material Design 的前端框架。](https://github.com/zdhxiong/mdui)  
 **License**: MIT
 
 **霞鹜文楷**  
