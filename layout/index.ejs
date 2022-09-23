@@ -71,6 +71,11 @@
 <% } else if (theme.schemes =='m3' ) { %>
 <section id="index-post-entry">
   <div class="itp-index-content">
+    <script>
+      $(function() {
+        $("div.lazy").lazyload();
+      });
+    </script>
     <% page.posts.each(function(item, itemIndex){ %>
     <% if (item.noindex !== true) { %>
     <%- partial('_partial/post-entry', {item: item}) %>
@@ -87,7 +92,6 @@
   </div>
 </section>
 <% } %>
-
 <!--首页微信号二维码弹窗-->
 <% if( (theme.social_link.use === true) && (page.current === 1) && (is_home()) ) { %>
 <% if (theme.social_link.wechat_public.switch == true) { %>

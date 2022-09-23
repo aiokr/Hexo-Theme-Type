@@ -102,6 +102,7 @@
   <%- css('css/gallery2') %>
   <% } %>
   <% if(theme.highlight.use == true) { %>
+  <script src="/js/highlight.min.js"></script>
   <!--highlight.js CSS-->
   <% if(theme.highlight.style == 'github' ) { %>
   <%- css('css/highlight/github') %>
@@ -122,7 +123,7 @@
   <script src="/js/jquery.min.js"></script>
   <% } %>
   <!--Comment-->
-  <% if(is_post() | is_page()) {%> 
+  <% if(is_post() | is_page()) {%>
   <% if(theme.comment.use == 'gitment') { %>
   <% if(theme.cdn.use == 'jsdelivr') { %>
   <script data-pjax src='//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.js'></script>
@@ -212,7 +213,6 @@
   <% } %>
   <% if(page.layout == 'post') { %>
   <% if (theme.chart_js.use == true){ %>
-
   <% if(theme.cdn.use == 'jsdelivr') { %>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <% } else if ( theme.cdn.use == 'self_host') { %>
@@ -222,5 +222,28 @@
   <% } %>
   <% if (theme.pwa == true){ %>
   <link rel="manifest" href="/manifest.json">
+  <% } %>
+  <!-- Google Search Advanced
+  https://developers.google.com/search/docs/advanced/structured-data/search-gallery
+  -->
+  <% if (theme.google_search_advanced.use == true){ %>
+  <% if (theme.google_search_advanced.article == true){ %>
+  <% if( (is_post()) ) { %>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "<%= page.title %>",
+      "image": "<%- page.cover || theme.header.img %>",
+      "datePublished": "<%= page.date %>",
+      "author": [{
+        "@type": "Person",
+        "name": "<%= config.author || page.author %>",
+        "url": "<%= config.url %>"
+      }]
+    }
+  </script>
+  <% } %>
+  <% } %>
   <% } %>
 </head>
