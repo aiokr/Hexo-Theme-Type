@@ -35,11 +35,17 @@
       </div>
     </div>
     <% if (theme.schemes==='m3' ) { %>
-      <style>
+    <style>
+      body {
+        background-color: #fff;
+      }
+
+      @media (prefers-color-scheme: dark) {
         body {
-          background-color: #fff;
-        }
-      </style>
-      <% } %>
+        background-color: #121212;
+      }
+      }
+    </style>
+    <% } %>
   </div>
 </div>

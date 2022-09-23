@@ -18,7 +18,7 @@
         <div class="mdui-card itp-post-card">
           <div class="mdui-card-primary">
             <div class="index-achieve-title title"><%- title %></div>
-            <section class="mdui-card-content itp-article-categories itp-page-content">
+            <section class="itp-blog-list">
               <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy -->
               <% 
               var groupObj = _.groupBy(page.posts.toArray(), function(p){return -p.date.format('YYYY')})
@@ -36,5 +36,4 @@
       </div>
       <div class="mdui-col-md-1 mdui-col-xs-down"></div>
     </div>
-    <%- partial('_partial/index-pagination') %>
   </div>
