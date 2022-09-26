@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-type",
-  "version": "0.3.6",
+  "version": "0.4.2",
   "description": "a simple hexo theme",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/aiokr/hexo-theme-type#readme",
   "dependencies": {
-    "hexo": "^5.4.0",
+    "hexo": "^6.0.0",
     "hexo-abbrlink": "^2.2.1",
     "hexo-footnotes": "^1.0.2",
     "hexo-generator-archive": "^1.0.0",
@@ -28,13 +28,15 @@
     "hexo-generator-feed": "^3.0.0",
     "hexo-generator-index": "^2.0.0",
     "hexo-generator-search": "^2.4.3",
-    "hexo-generator-sitemap": "^2.1.0",
+    "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^1.0.0",
+    "hexo-helper-qrcode": "^1.0.2",
     "hexo-renderer-dartsass": "^0.1.2",
-    "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^5.0.0",
-    "hexo-server": "^2.0.0",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-markdown-it": "^6.1.0",
+    "hexo-server": "^3.0.0",
     "hexo-symbols-count-time": "^0.7.1",
-    "lodash": "^4.17.21"
+    "install": "^0.13.0",
+    "lodash": "^4.17.21",
   }
 }

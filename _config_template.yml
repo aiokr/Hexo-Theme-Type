@@ -5,7 +5,7 @@
 # 本文件有严格的缩进限制，请确保在修改时，没有打乱原有的缩进
 # Hexo-Theme-Type 是一个尚在开发过程中的主题，当「主题配置文件」有修改时，您可能需要重新在这里配置所有的选项。
 # 当「主题配置文件」有修改时，会修改版本号的第二位数。
-# 当前版本：0.4.1
+# 当前版本：0.4.2
 # ---------------------------------------------------------------
 # ---------------------------------------------------------------
 
@@ -201,6 +201,36 @@ umami_analytics:
 # https://www.chartjs.org/
 chart_js:
   use: false
+
+# ---------------------------------------------------------------
+# Assets CDN Settings 资源托管设置
+# ---------------------------------------------------------------
+
+# Use jsdelivr | self_host
+# 如果你的站点接入了 Cloudflare，建议您使用 self_host 选项，以便资源可以被 Cloudflare 正确缓存。
+cdn:
+  use: self_host
+
+# ---------------------------------------------------------------
+# Others Settings 其他功能设置
+# ---------------------------------------------------------------
+
+# PWA 尚是一个实验性功能，不建议您启用。
+# 如果需要启用，需要手动创立 manifest.json 文件，并在生成网站是复制到 public 目录下。
+# 暂时没有提供 service-worker.js 文件
+pwa: false
+
+# Google 搜索增强
+# 使得您的搜索结果呈现主题概览
+# 开启此功能，会在页面中添加结构化数据，以便被 Google 索引
+# 中文介绍：https://developers.google.com/search/docs/advanced/appearance/overview?hl=zh-cn
+# English Docs: https://developers.google.com/search/docs/appearance/structured-data/search-gallery
+# 这是一个实验性功能，尚未开发完成。
+google_search_advanced:
+  # 全局开关
+  use: false
+  # 文章页开关
+  article: false
 
 # ---------------------------------------------------------------
 # Assets CDN Settings 资源托管设置
