@@ -37,6 +37,6 @@
     "hexo-server": "^3.0.0",
     "hexo-symbols-count-time": "^0.7.1",
     "install": "^0.13.0",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.21"
   }
 }
