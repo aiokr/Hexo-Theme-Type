@@ -56,10 +56,10 @@
 <%} else if (theme.schemes==='m3' ) { %>
 <div class="itp-m3-index-post-area">
   <% if(item.style== 'moment') { %>
-  <div class="itp-m3-card post-entry">
+  <div class="itp-m3-card post-entry moment-card">
     <div class="itp-m3-post-entry-info">
       <div class="meta">
-        <%= item.date.format(config.date_format) %>
+        <%= item.date.format(config.date_format) %> · Moments
       </div>
       <div class="title">
         <%- item.content || item.title || theme.default_post_title || "Untitled" %>
