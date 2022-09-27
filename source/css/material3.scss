@@ -330,7 +330,10 @@ $toggle_screen: 1024px;
     @media screen and (max-width: $content-width) {
         padding: 18px 1.5rem;
     }
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
     background-color: #f5f5f5a4;
     .info_area-category {
         a {}

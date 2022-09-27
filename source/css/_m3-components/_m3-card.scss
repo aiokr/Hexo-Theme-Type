@@ -24,7 +24,8 @@
     box-shadow: 1px 10px 30px 0 rgb(0 0 0 / 10%);
 }
 
-.top-cover,.post-cover {
+.top-cover,
+.post-cover {
     @media screen and (min-width: $content-width) {
         margin-top: 116px;
     }
@@ -35,10 +36,11 @@
 }
 
 .post-cover {
-.itp-m3-card-cover-layer {
-    background: linear-gradient(#ffffffba 14%, #fff 100%);
-    height: 100%;
-}}
+    .itp-m3-card-cover-layer {
+        background: linear-gradient(#ffffffba 14%, #fff 100%);
+        height: 100%;
+    }
+}
 
 .top-cover {
     .itp-m3-card-cover-layer {
@@ -47,19 +49,17 @@
 }
 
 //封面圆角控制
-.itp-m3-card.top-cover {
-    .itp-m3-cover-bg,
-    .itp-m3-card-cover,
-    .itp-m3-card-cover-layer {
-        @media screen and (min-width: $content-width) {
-            border-radius: var(--radius);
-        }
-        @media screen and (max-width: $content-width) {
-            border-bottom-left-radius: var(--radius);
-            border-bottom-right-radius: var(--radius);
-            border-top-left-radius: 0 !important;
-            border-top-right-radius: 0 !important;
-        }
+.itp-m3-cover-bg,
+.itp-m3-card-cover,
+.itp-m3-card-cover-layer {
+    @media screen and (min-width: $content-width) {
+        border-radius: var(--radius) !important;
+    }
+    @media screen and (max-width: $content-width) {
+        border-bottom-left-radius: var(--radius);
+        border-bottom-right-radius: var(--radius);
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
     }
 }
 
