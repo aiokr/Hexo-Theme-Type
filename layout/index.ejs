@@ -81,15 +81,32 @@
     <%- partial('_partial/post-entry', {item: item}) %>
     <% } %>
     <% }); %>
-    <div class="index-pagination">
+    <div class="m3-index-pagination">
       <% if (page.prev){ %>
-      <a href="<%- config.root %><%- page.prev_link %>" class="index-pagination-btn"><%- __('prev')%></a>
+      <% } else{ %>
+      <div class="itp-m3-card m3-pagination-card">
+        <div class="pagination-text pagination-text-first"><span><%- __('index_first')%></span></div>
+      </div>
+      <% } %>
+      <% if (page.prev){ %>
+      <div class="itp-m3-card m3-pagination-card prev-card">
+        <div class="pagination-text"><%- __('prev')%></div>
+        <a class="pagination-link" href="<%- config.root %><%- page.prev_link %>"></a>
+      </div>
       <% } %>
       <% if (page.next){ %>
-      <a href="<%- config.root %><%- page.next_link %>" class="index-pagination-btn"><%- __('next')%></a>
+      <div class="itp-m3-card m3-pagination-card next-card">
+        <div class="pagination-text"><%- __('next')%></div>
+        <a class="pagination-link" href="<%- config.root %><%- page.next_link %>"></a>
+      </div>
       <% } %>
+      <% if (page.next){ %>
+        <% } else{ %>
+        <div class="itp-m3-card m3-pagination-card">
+          <div class="pagination-text pagination-text-final"><span><%- __('index_final')%></span></div>
+        </div>
+        <% } %>
     </div>
-  </div>
 </section>
 <% } %>
 <!--首页微信号二维码弹窗-->
