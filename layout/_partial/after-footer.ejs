@@ -55,3 +55,38 @@
 <% } else if ( theme.cdn.use == 'self_host') { %>
 <%- js('js/lazyload.js') %>
 <% } %>
+<!--全局键盘快捷键-->
+<script>
+  window.onkeydown = function allpage_hotkey() {
+    //[键盘快捷键] Shift+1 首页
+    if (event.shiftKey && event.keyCode === 49) {
+      window.location.href = "<%- config.root %>"
+    };
+    //[键盘快捷键] Shift+2 归档页
+    if (event.shiftKey && event.keyCode === 50) {
+      window.location.href = "/archives/"
+    };
+    //[键盘快捷键] Shift+3 相册页
+    if (event.shiftKey && event.keyCode === 51) {
+      window.location.href = "/gallery/"
+    };
+    //[键盘快捷键] Shift+4 关于页
+    if (event.shiftKey && event.keyCode === 52) {
+      window.location.href = "/about/"
+    };
+    //[键盘快捷键] Shift+5 友情链接页
+    if (event.shiftKey && event.keyCode === 53) {
+      window.location.href = "/links/"
+    };
+    <% if( (is_home()) ) { %>
+    //[键盘快捷键] 左箭头 上一页
+    if (event.keyCode === 37) {
+      window.location.href = "<%- config.root %><%- page.prev_link %>"
+    };
+    //[键盘快捷键] 右箭头 下一页
+    if (event.keyCode === 39) {
+      window.location.href = "<%- config.root %><%- page.next_link %>"
+    };
+    <% } %>
+  }
+</script>
