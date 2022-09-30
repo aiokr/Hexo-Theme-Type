@@ -113,14 +113,14 @@
 <% if( (theme.social_link.use === true) && (page.current === 1) && (is_home()) ) { %>
 <% if (theme.social_link.wechat_public.switch == true) { %>
 <!-- Wechat MP QRCode -->
-<div style="display: none;" id="mp-wechat">
+<div class="m3-index-pop" style="display: none;" id="mp-wechat">
   <div class="mdui-dialog-title"><%- __('wechat_mp')%></div>
   <img src="<%= theme.social_link.wechat_public.src %>" width="300px" class="mdui-center nofancy">
 </div>
 <% } %>
 <% if (theme.social_link.wechat_personal.switch == true) { %>
 <!-- Wechat Personal QRCode -->
-<div style="display: none;" id="personal-wechat">
+<div class="m3-index-pop" style="display: none;" id="personal-wechat">
   <div class="mdui-dialog-title"><%- __('wechat_personal')%></div>
   <img src="<%= theme.social_link.wechat_personal.src %>" width="300px" class="mdui-center nofancy">
 </div>

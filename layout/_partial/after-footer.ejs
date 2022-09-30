@@ -1,10 +1,10 @@
 <!-- fancybox -->
 <% if(theme.cdn.use == 'jsdelivr') { %>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-<script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
 <% } else if ( theme.cdn.use == 'self_host') { %>
-<link rel="stylesheet" href="/css/jquery.fancybox.min.css" />
-<script src="/js/jquery.fancybox.min.js" defer></script>
+<script src="/js/fancybox.umd.js" defer></script>
+<link rel="stylesheet" href="/css/fancybox.css" />
 <% } %>
 <!-- mdui -->
 <%- js('js/mdui.min.js') %>

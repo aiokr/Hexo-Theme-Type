@@ -5,6 +5,7 @@ index_first: 第一页
 index_final: 最后一页
 archive_a: 归档
 archive_b: 归档：%s
+keyboard_shortcut: 键盘快捷键
 post:
   post_on: 本文发布于
 search: 搜索

@@ -276,7 +276,7 @@ $toggle_screen: 1024px;
 .hljs {
     border-radius: 5px;
     padding: 1em !important;
-    font-family: 'Courier New',Menlo, Monaco, Courier, monospace;
+    font-family: 'Courier New', Menlo, Monaco, Courier, monospace;
     line-height: 12px;
 }
 
@@ -415,4 +415,8 @@ $toggle_screen: 1024px;
     @media screen and (min-width: 1800px) {
         right: 140px;
     }
+}
+
+.m3-index-pop {
+    border-radius: 5px;
 }
