@@ -322,3 +322,17 @@
         }
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    .vempty,
+    .vpower,
+    .vpower a {
+        color: $grey !important;
+    }
+    .v .vcards .vitem .vcard .vmeta span {
+        background-color: #00000000;
+    }
+    .v .vcards .vitem img.vuser {
+        background-color: #cccccc;
+    }
+}

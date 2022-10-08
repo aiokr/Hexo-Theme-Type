@@ -43,6 +43,7 @@ body,
 }
 
 .article p,
+.moment-card .title p,
 .itp-toc span,
 .mdui-chip a,
 .itp-drawer-title,
@@ -79,6 +80,18 @@ img {
 .itp-m3-card,
 .itp-m3-post-info_area {
     background-color: $dark-card-color !important;
+}
+
+.itp-index-link {
+    border: solid 2px rgba(225, 225, 225, 0.06);
+}
+
+.mdui-card-header-title {
+    color: $dark-title-color;
+}
+
+.mdui-card-header-subtitle {
+    color: $dark-subtitle-color;
 }
 
 h1,
