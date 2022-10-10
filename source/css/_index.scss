@@ -149,6 +149,12 @@
     background-size: cover;
 }
 
+.itp-post-entry-image-cover {
+    height: calc($content-width * 8 / 16);
+    background-position: center;
+    background-size: cover;
+}
+
 .itp-post-entry-categories {
     color: $grey !important;
 }
