@@ -68,7 +68,7 @@
   </div>
   <% } else if (item.style =='image' ) { %>
   <div class="itp-m3-card post-entry">
-    <div class="mdui-card-media itp-post-entry-image-cover" style="background-image: url('<%- item.cover %>');">
+    <div class="mdui-card-media itp-post-entry-image-cover lazy" data-src="<%- item.cover %>">
     </div>
   </div>
   <% } else { %>
