@@ -73,59 +73,64 @@
   <% } %>
 </div>
 <% } %>
-<div class="content-area">
-  <% if (theme.post_toc == true ) { %>
-  <%- partial('_partial/column-toc-m3') %>
-  <% } %>
-  <div class="itp-m3-card post-cover">
-    <div class="itp-m3-card-cover">
-      <div class="itp-m3-cover-bg" style="
+<div class="content-area post-content-area">
+  <div class="left-area"></div>
+  <div class="main-area">
+    <div class="itp-m3-card post-cover">
+      <div class="itp-m3-card-cover">
+        <div class="itp-m3-cover-bg" style="
           background-image: url(<%- page.cover || theme.header.img %>);
           background-size: cover;
           background-position: center center;
         ">
-        <div class="itp-m3-card-cover-layer ">
-          <div class="info-area pjax-area">
-            <div class="itp-m3-cover-avatar">
-              <img src="<%- theme.avatar %>" class="nofancy">
-            </div>
-            <div class="itp-m3-cover-title" style="opacity: 1;">
-              <%= page.title || config.title %>
-            </div>
-            <div class="itp-m3-cover-subtitle" style="opacity: 0.8;">
-              <%- partial('_partial/subtitle') %>
+          <div class="itp-m3-card-cover-layer ">
+            <div class="info-area pjax-area">
+              <div class="itp-m3-cover-avatar">
+                <img src="<%- theme.avatar %>" class="nofancy">
+              </div>
+              <div class="itp-m3-cover-title" style="opacity: 1;">
+                <%= page.title || config.title %>
+              </div>
+              <div class="itp-m3-cover-subtitle" style="opacity: 0.8;">
+                <%- partial('_partial/subtitle') %>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="article">
-      <%- page.content %>
-    </div>
-    <div class="itp-m3-post-info_area">
-      <div class="info_area-category">
-        <% if (page.categories && page.categories.length) { %>
-        <% page.categories.each(function(categories){ %>
-        <a href="<%= config.root %>categories/<%= categories.name %>/" rel="categories" class="itp-m3-chip-color">
-          <%- categories.name %>
-        </a>
-        <% }); %>
-        <% } %>
-        <% if (page.tags && page.tags.length) { %>
-        <% page.tags.each(function(tag){ %>
-        <a href="<%= config.root %>tags/<%= tag.name %>/" rel="tag" class="itp-m3-chip-normal">
-          #<%- tag.name %>
-        </a>
-        <% }); %>
-        <% } %>
+      <div class="article">
+        <%- page.content %>
       </div>
-      <div class="info_area-copyright">
-        <p><%- __('post_copyright')%></p>
+      <div class="itp-m3-post-info_area">
+        <div class="info_area-category">
+          <% if (page.categories && page.categories.length) { %>
+          <% page.categories.each(function(categories){ %>
+          <a href="<%= config.root %>categories/<%= categories.name %>/" rel="categories" class="itp-m3-chip-color">
+            <%- categories.name %>
+          </a>
+          <% }); %>
+          <% } %>
+          <% if (page.tags && page.tags.length) { %>
+          <% page.tags.each(function(tag){ %>
+          <a href="<%= config.root %>tags/<%= tag.name %>/" rel="tag" class="itp-m3-chip-normal">
+            #<%- tag.name %>
+          </a>
+          <% }); %>
+          <% } %>
+        </div>
+        <div class="info_area-copyright">
+          <p><%- __('post_copyright')%></p>
+        </div>
       </div>
+    </div>
+    <div class="itp-m3-card itp-m3-post-comment_area" id="comment">
+      <%- partial('_partial/comment') %>
     </div>
   </div>
-  <div class="itp-m3-card itp-m3-post-comment_area" id="comment">
-    <%- partial('_partial/comment') %>
+  <div class="right-area">
+    <% if (theme.post_toc == true ) { %>
+    <%- partial('_partial/column-toc-m3') %>
+    <% } %>
   </div>
 </div>
 <% } %>

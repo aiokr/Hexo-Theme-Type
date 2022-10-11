@@ -6,9 +6,22 @@
     border-radius: var(--radius);
     box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 2%), 1px 1px 15px 0 rgb(0 0 0 / 3%);
     transition: transform 0.3s, background-color 0.3s, box-shadow 0.6s;
-    max-width: $content-width;
+    /*max-width: $content-width;*/
     margin: 0 auto;
 }
+
+.post-content-area {
+    display: grid;
+    grid-template-columns: calc( 100% / 2 - $content-width /2) $content-width calc( 100% / 2 - $content-width /2);
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.left-area {}
+
+.main-area {}
+
+.right-area {}
 
 .post-entry {
     @media screen and (min-width: 1024px) {
@@ -59,6 +72,7 @@
     .itp-m3-card-cover-layer {
         background: linear-gradient(rgba(32, 32, 32, 0) 14%, rgba(32, 32, 32, 0.56) 100%);
     }
+    max-width: $content-width;
 }
 
 //封面圆角控制

@@ -350,8 +350,9 @@ $toggle_screen: 1024px;
 
 .column-toc-m3 {
     background-color: #ffffff00;
-    position: fixed;
-    top: 30vh;
+    position: sticky;
+    top: 120px;
+    margin-top: 90vh;
     z-index: 90;
     padding: 12px 0;
     margin-right: 48px;
@@ -385,36 +386,14 @@ $toggle_screen: 1024px;
 
 .column-toc-m3:hover {
     opacity: 0.8;
-    background-color: #ffffff55;
     -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
     transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
     transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1);
     transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-    box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 5%), 1px 1px 15px 0 rgb(0 0 0 / 8%);
 }
 
 .itp-toc-m3-sidetop {
-    position: fixed;
-    top: 30vh;
     opacity: 0.1;
-}
-
-.column-toc-m3 {
-    @media screen and (max-width: 1200px) {
-        display: none;
-    }
-    @media screen and (min-width: 1200px) {
-        right: 0px;
-    }
-    @media screen and (min-width: 1300px) {
-        right: 20px;
-    }
-    @media screen and (min-width: 1500px) {
-        right: 80px;
-    }
-    @media screen and (min-width: 1800px) {
-        right: 140px;
-    }
 }
 
 .m3-index-pop {
