@@ -3,7 +3,7 @@
 @import './_m3-components/_m3-post-entry';
 @import './_m3-components/_m3-chip';
 @import './_m3-components/_m3-card';
-$toggle_screen: 1024px;
+$toggle_screen: 1022px;
 //COVER
 @media screen and (max-width: $toggle_screen) {
     .itp-m3-cover-box {
@@ -208,7 +208,7 @@ $toggle_screen: 1024px;
 .itp-float-bar {
     @media screen and (min-width: $toggle_screen) {
         z-index: 1000;
-        width: 100vw;
+        width: 100%;
         height: 54px;
         max-width: none;
         border-radius: 0;
@@ -220,7 +220,7 @@ $toggle_screen: 1024px;
     @media screen and (max-width: $toggle_screen) {
         z-index: 1000;
         height: 54px;
-        width: 100vw;
+        width: 100%;
         border-radius: 12px 12px 0 0;
         display: -webkit-flex;
         display: flex;
@@ -356,7 +356,7 @@ $toggle_screen: 1024px;
     z-index: 90;
     padding: 12px 0;
     margin-right: 48px;
-    width: 220px;
+    width: calc( 100vw / 2 - $content-width /2);
     max-height: 400px;
     overflow: hidden;
     text-overflow: ellipsis;

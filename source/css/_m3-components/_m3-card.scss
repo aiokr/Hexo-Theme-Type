@@ -15,24 +15,22 @@
     @media screen and (min-width: 1024px) {
         grid-template-columns: calc( 100% / 2 - $content-width /2) $content-width calc( 100% / 2 - $content-width /2);
     }
-    @media screen and (max-width: 1024px) {
-        grid-template-columns: 0 100% 0;
-    }
+    @media screen and (max-width: 1023px) {}
     max-width: 1280px;
     margin: 0 auto;
 }
 
-.left-area {}
-
-.main-area {}
-
-.right-area {}
+@media screen and (max-width: 1023px) {
+    .right-area {
+        display: none;
+    }
+}
 
 .post-entry {
     @media screen and (min-width: 1024px) {
         max-width: $content-width;
     }
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1023px) {
         width: 92% !important;
     }
 }
@@ -57,7 +55,7 @@
 
 .top-cover,
 .post-cover {
-    @media screen and (min-width: $content-width) {
+    @media screen and (min-width: 1022px) {
         margin-top: 116px;
     }
 }
