@@ -26,43 +26,6 @@
   });
 </script>
 <% } %>
-<!--Comment-->
-<% if(is_post() | is_page() | page.layout !== 'gallery' | page.layout !== 'gallery2') {%>
-<% if(theme.comment.use == 'gitment') { %>
-<% if(theme.cdn.use == 'jsdelivr') { %>
-<script data-pjax src='//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.js' async></script>
-<script data-pjax src='//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/theme/default.js' async></script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css">
-<% } else if ( theme.cdn.use == 'self_host') { %>
-<link rel="stylesheet" href="/css/gitment.css">
-<script src="/js/gitment.js" async></script>
-<script src="/js/gitment-theme.js" async></script>
-<% } %>
-<% } else if ( theme.comment.use == 'valine') { %>
-<% if(theme.cdn.use == 'jsdelivr') { %>
-<script data-pjax src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js" async></script>
-<script data-pjax src='//cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js' async></script>
-<% } else if ( theme.cdn.use == 'self_host') { %>
-<script data-pjax src="/js/av-min.js" async></script>
-<script data-pjax src='/js/Valine.min.js' async></script>
-<% } %>
-<% } else if (theme.comment.use == 'waline') { %>
-<% if (theme.schemes =='column' ){ %>
-<% if(theme.cdn.use == 'jsdelivr') { %>
-<script src="//cdn.jsdelivr.net/npm/@waline/client" async></script>
-<% } else if ( theme.cdn.use == 'self_host') { %>
-<script data-pjax src='/js/walline-client.js' async></script>
-<% } %>
-<%} else if (theme.schemes =='m3' ){ %>
-<% if(theme.cdn.use == 'jsdelivr') { %>
-<script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.noStyle.js" async></script>
-<% } else if ( theme.cdn.use == 'self_host') { %>
-<script src="/js/Waline.noStyle.js" async></script>
-<% } %>
-<%- css('css/waline') %>
-<% } %>
-<% } %>
-<% } %>
 <% if(page.style == 'photos') { %>
 <%- js('js/gallery-page.js') %>
 <% } %>
