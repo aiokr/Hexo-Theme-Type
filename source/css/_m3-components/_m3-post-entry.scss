@@ -82,19 +82,19 @@
         border-radius: var(--radius);
         height: 200px;
         transition: transform 0.3s, background-color 0.3s, box-shadow 0.6s, opacity 0.3s;
+        box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 2%), 1px 1px 15px 0 rgb(0 0 0 / 3%);
+        background-color: #ffffff55;
     }
     .stack-cover {
         width: 100%;
         top: 20px;
         left: 0px;
         z-index: 7;
-        box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 2%), 1px 1px 15px 0 rgb(0 0 0 / 3%);
     }
     .stack-cover2 {
         margin: 0 auto;
         width: 95%;
-        background-color: #57b459;
-        opacity: 0.6;
+        opacity: 0.8;
         background-position: center;
         background-size: cover;
         z-index: 5;
