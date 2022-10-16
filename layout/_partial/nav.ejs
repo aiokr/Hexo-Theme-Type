@@ -39,7 +39,7 @@
 <% if (theme.schemes=='m3' ){ %>
 <div class="itp-float-bar pjax-area">
   <!--所有页面都显示-->
-  <a class="itp-float-bar-item" href="<%= url_for() %>">
+  <a class="itp-float-bar-item itp-float-bar-item-home" href="<%= url_for() %>">
     <% if (theme.nav_style=='icon' ){ %>
     <span class="material-icons-outlined">home</span>
     <%} else if (theme.nav_style =='text' ){ %>
@@ -70,7 +70,7 @@
     <% if (theme.nav_style=='icon' ){ %>
     <span class="material-icons-outlined">textsms</span>
     <%} else if (theme.nav_style =='text' ){ %>
-    <span><%- __('post_comment')%><</span>
+    <span><%- __('post_comment')%></span>
     <% } %>
   </a>
   <a class="itp-float-bar-item" id="open_toc">
