@@ -21,13 +21,13 @@
   <% if (theme.footer_logo.use == 'upyun'){ %>
   <section class="footer-logo">
     <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank">
-      <img style="max-height: 40px !important;" src="<%- url_for(theme.footer_logo.upyun) %>"></a>
+      <img style="max-height: 40px !important; display: block; margin: 0 auto;" src="<%- url_for(theme.footer_logo.upyun) %>"></a>
   </section>
   <% } %>
   <% if (theme.footer_logo.use == 'vercel'){ %>
   <section class="footer-logo">
     <a href="https://vercel.com/" target="_blank">
-      <img style="padding-top: 12px; max-height: 25px !important; opacity: 0.4;" src="<%- url_for(theme.footer_logo.vercel) %>"></a>
+      <img style="padding-top: 12px; max-height: 25px !important; opacity: 0.4; display: block; margin: 0 auto;" src="<%- url_for(theme.footer_logo.vercel) %>"></a>
   </section>
   <% } %>
 </footer>

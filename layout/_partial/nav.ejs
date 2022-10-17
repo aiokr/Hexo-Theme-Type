@@ -43,11 +43,12 @@
     <% if (theme.nav_style=='icon' ){ %>
     <span class="material-icons-outlined">home</span>
     <%} else if (theme.nav_style =='text' ){ %>
-    <span><%- __('index_home')%></span>
+    <span><%- config.title %></span>
     <% } %>
   </a>
   <% if (page.layout !=='post' ){ %>
   <!--只在 **非文章** 页面显示-->
+  <div class="itp-float-bar-spacer"></div>
   <% for (var i in theme.nav) { %>
   <a class="itp-float-bar-item" href="<%- theme.nav[i].link %>">
     <% if (theme.nav_style=='icon' ){ %>
@@ -66,6 +67,7 @@
   </a>-->
   <%} else if (page.layout =='post' ){ %>
   <!--只在 **文章** 页面显示-->
+  <div class="itp-float-bar-spacer"></div>
   <a class="itp-float-bar-item" onclick="scrollto(comment)">
     <% if (theme.nav_style=='icon' ){ %>
     <span class="material-icons-outlined">textsms</span>
@@ -80,7 +82,6 @@
     <span><%- __('post_toc')%></span>
     <% } %>
   </a>
-  <div class="itp-float-bar-spacer"></div>
   <a class="itp-float-bar-item" href="javascript:scroll(0,0)">
     <% if (theme.nav_style=='icon' ){ %>
     <span class="material-icons-outlined">arrow_upward</span>

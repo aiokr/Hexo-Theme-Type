@@ -250,6 +250,8 @@ $toggle_screen: 1022px;
     }
     .itp-float-bar-item-home {
         font-weight: bold;
+        width: auto;
+        padding: 0 12px;
     }
     [type=button],
     [type=reset],
@@ -367,7 +369,7 @@ $toggle_screen: 1022px;
     ol {
         list-style-type: none;
         display: block;
-        margin-left: -24px;
+        margin-left: 12px;
         line-height: 1.2em;
     }
     .itp-toc-item a {

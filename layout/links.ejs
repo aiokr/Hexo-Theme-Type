@@ -1,51 +1,46 @@
-<div class="mdui-container">
-  <div class="content-area links-content-area">
-    <div class="mdui-row">
-      <div class="mdui-col-md-2 mdui-col-xs-down"></div>
-      <div class="mdui-col-md-8 mdui-col-xs-12">
-        <div class="itp-index" style="padding-top: 118px;">
-          <!--链接-->
-          <% if (site.data.links) { %>
-          <div class="mdui-row-lg-3 mdui-row-md-3 mdui-row-sm-3 mdui-row-xs-1 " style="padding-bottom: 10px;">
-            <% for (var i in site.data.links) { %>
-            <a class="mdui-col" href="<%= site.data.links[i].url %>" title="<%= i %>" target="_blank">
-              <div class="mdui-card mdui-shadow-0 itp-index-link">
-                <div class="mdui-card-header itp-link-bg">
-                  <img class="mdui-card-header-avatar" src="<%= site.data.links[i].img %>" />
-                  <div class="mdui-card-header-title"><%= i %></div>
-                  <div class="mdui-card-header-subtitle"><%- site.data.links[i].descr %></div>
-                </div>
-              </div>
-            </a>
-            <% } %>
+<div class="content-area links-content-area">
+  <div class="max-w-none md:max-w-screen-md lg:max-w-screen-md container">
+    <div class="itp-index" style="padding-top: 118px;">
+      <!--链接-->
+      <% if (site.data.links) { %>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-2" style="padding-bottom: 10px;">
+        <% for (var i in site.data.links) { %>
+        <a href="<%= site.data.links[i].url %>" title="<%= i %>" target="_blank">
+          <div class="mdui-card mdui-shadow-0 itp-index-link">
+            <div class="mdui-card-header itp-link-bg">
+              <img class="mdui-card-header-avatar" src="<%= site.data.links[i].img %>" />
+              <div class="mdui-card-header-title"><%= i %></div>
+              <div class="mdui-card-header-subtitle"><%- site.data.links[i].descr %></div>
+            </div>
           </div>
-          <% } %>
-          <!--正文-->
-          <section class="mdui-card-content itp-page-content article" role="article">
-            <%- page.content %>
-          </section>
-          <div class="padding-70"></div>
-          <!--评论-->
-          <div class="mdui-card-content itp-post-comment">
-            <%- partial('_partial/comment') %>
-          </div>
-        </div>
+        </a>
+        <% } %>
       </div>
-      <div class="mdui-col-md-2 mdui-col-xs-down">
-      </div>
+      <% } %>
     </div>
-    <% if (theme.schemes==='m3' ) { %>
-    <style>
-      body {
-        background-color: #fff;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        body {
-        background-color: #121212;
-      }
-      }
-    </style>
-    <% } %>
+    <!--正文-->
+    <section class="mdui-card-content itp-page-content article" role="article">
+      <%- page.content %>
+    </section>
+    <div class="padding-70"></div>
+    <!--评论-->
+    <div class="mdui-card-content itp-post-comment container">
+      <%- partial('_partial/comment') %>
+    </div>
   </div>
+</div>
+<% if (theme.schemes==='m3' ) { %>
+<style>
+  body {
+    background-color: #fff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #121212;
+    }
+  }
+</style>
+<% } %>
+</div>
 </div>

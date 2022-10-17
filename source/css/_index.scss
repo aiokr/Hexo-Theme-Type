@@ -220,14 +220,10 @@
 
 .itp-index-link {
     border: solid 2px rgba(0, 0, 0, .06);
-    -webkit-transition: .2s cubic-bezier(.25, .46, .45, .94) all;
-    transition: .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    margin-top: 8px;
-    margin-bottom: 8px;
+    transition: .2s cubic-bezier(0.25, 0.46, 0.45, 0.94) all;
 }
 
 .itp-index-link:hover {
     border: solid 2px $main-color;
-    -webkit-transition: .2s cubic-bezier(.25, .46, .45, .94) all;
     transition: .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
