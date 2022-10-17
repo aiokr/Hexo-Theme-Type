@@ -240,7 +240,7 @@ $toggle_screen: 1022px;
     -webkit-backdrop-filter: saturate(180%) blur(18px) !important;
     .itp-float-bar-item {
         background-color: rgba(0, 0, 0, 0);
-        width: 54px;
+        width: 68px;
         color: $black;
         text-align: center; //水平居中
         background-color: rgba(0, 0, 0, 0);
@@ -251,7 +251,7 @@ $toggle_screen: 1022px;
     .itp-float-bar-item-home {
         font-weight: bold;
         width: auto;
-        padding: 0 12px;
+        padding: 0 18px;
     }
     [type=button],
     [type=reset],
@@ -275,6 +275,7 @@ $toggle_screen: 1022px;
         transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
         transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1);
         transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+        border-radius: 3px;
     }
 }
 

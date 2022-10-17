@@ -45,10 +45,168 @@
           <path d="M512 378.7c-73.4 0-133.3 59.9-133.3 133.3S438.6 645.3 512 645.3 645.3 585.4 645.3 512 585.4 378.7 512 378.7z" p-id="7545" fill="#666666"></path>
           <path d="M911.8 512c0-55.2 0.5-109.9-2.6-165-3.1-64-17.7-120.8-64.5-167.6-46.9-46.9-103.6-61.4-167.6-64.5-55.2-3.1-109.9-2.6-165-2.6-55.2 0-109.9-0.5-165 2.6-64 3.1-120.8 17.7-167.6 64.5C132.6 226.3 118.1 283 115 347c-3.1 55.2-2.6 109.9-2.6 165s-0.5 109.9 2.6 165c3.1 64 17.7 120.8 64.5 167.6 46.9 46.9 103.6 61.4 167.6 64.5 55.2 3.1 109.9 2.6 165 2.6 55.2 0 109.9 0.5 165-2.6 64-3.1 120.8-17.7 167.6-64.5 46.9-46.9 61.4-103.6 64.5-167.6 3.2-55.1 2.6-109.8 2.6-165zM512 717.1c-113.5 0-205.1-91.6-205.1-205.1S398.5 306.9 512 306.9 717.1 398.5 717.1 512 625.5 717.1 512 717.1z m213.5-370.7c-26.5 0-47.9-21.4-47.9-47.9s21.4-47.9 47.9-47.9 47.9 21.4 47.9 47.9c-0.1 26.6-21.4 47.9-47.9 47.9z" p-id="7546" fill="#666666"></path>
         </svg><a class="highlight" href="https://www.instagram.com/skomobi/" target="_blank">Instergram</a></div>
+      <div class="social-link-item"><svg t="1665971633215" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2153" width="22" height="22">
+          <path d="M362.666667 469.333333v213.333334h298.666666v-213.333334H896v426.666667H128V469.333333h234.666667z m298.666666-341.333333v213.333333h-298.666666V128h298.666666z" p-id="2154" fill="#666666"></path>
+        </svg><a class="highlight" href="https://unsplash.com/@aiokr" target="_blank">Unsplash</a></div>
     </div>
   </section><img class="logo nofancy" src="https://imgur.lzmun.com/picgo/after2022/202209101335136.png_itp" />
 </div>
 <div class="itp-m3-card itp-m3-post-comment_area" id="comment">
   <%- partial('_partial/comment') %>
 </div>
-<%- css('css/m3-about-page') %>
+<style>
+  body {
+    background-color: #ffffff !important;
+    color: #222831aa;
+  }
+
+  .about-content-area {
+    padding-top: 60px;
+    max-width: 700px;
+    margin: 0 auto
+  }
+
+  p {
+    line-height: 24px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .content-area {
+      padding: 0 18px;
+      margin: 0 auto
+    }
+  }
+
+  mark {
+    background-color: #0000;
+    color: #222831;
+  }
+
+  mark {
+    background: linear-gradient(104deg, #71afdd00 0.9%, #71afdd7c 2.4%, #71afdd80 5.8%, #71afdd1a 93%, #71afdd67 96%, #82ffff00 98%), linear-gradient(183deg, #71afdd00 0%, #71afdd4d 7.9%, #71afdd00 15%);
+    margin: 0 0px;
+    padding: 0 12px;
+    border-radius: 7.5px;
+    text-shadow: -12px 12px 9.8px #71afdd45, 21px -18.1px 7.3px #ffffff99, -18.1px -27.3px 30px #ffffff99;
+  }
+
+  @media screen and (max-width: 700px) {
+    .about-title {
+      grid-column: span 12 / span 12;
+      font-size: 20px;
+      font-weight: 500;
+      text-align: left;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    .about-title {
+      grid-column: span 2 / span 2;
+      font-size: 20px;
+      font-weight: 500;
+      text-align: right;
+    }
+  }
+
+  blockquote {
+    padding: 0.1em 0 0.1em 10px;
+    margin: 0 0 .5em 0;
+    border-left: 2px solid #71afdd;
+    quotes: none;
+    line-height: 24px;
+  }
+
+  .quote {
+    padding: 120px 0 0 0;
+  }
+
+  .logo {
+    padding: 60px 0;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 700px) {
+    section.info .header-blank {
+      grid-column: span 0 / span 0;
+    }
+
+    section.info .header-info {
+      grid-column: span 12 / span 12;
+      padding: 12px 0 0 0;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    section.info .header-blank {
+      grid-column: span 2 / span 2;
+    }
+
+    section.info .header-info {
+      grid-column: span 10 / span 10;
+      padding: 60px 0 0 0;
+    }
+  }
+
+
+  .iam,
+  .findme {
+    padding-top: 60px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .about-item {
+      grid-column: span 12 / span 12;
+    }
+
+    .social-link {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0px, 1fr));
+      gap: 8pt;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    .about-item {
+      grid-column: span 10 / span 10;
+    }
+
+    .social-link {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0px, 1fr));
+      gap: 8pt;
+    }
+  }
+
+  .social-link-item {
+    display: inline-flex;
+    line-height: 22px;
+  }
+
+  .social-link-item a {
+    margin: 0 2px;
+    padding: 0 8px;
+    color: #222831aa;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .highlight {
+    background: linear-gradient(104deg, #71afdd00 0.9%, #71afdd7c 2.4%, #71aedd4d 5.8%, #71afdd1a 93%, #71aedd23 96%, #82ffff00 98%), linear-gradient(183deg, #71afdd00 0%, #71aedd3b 7.9%, #71afdd00 15%);
+    margin: 0 2px;
+    padding: 0 8px;
+    border-radius: 1.5px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0px, 1fr));
+    gap: 24px;
+    padding: 1.5pc 0;
+  }
+
+  #comment {
+    max-width: 800px;
+  }
+</style>

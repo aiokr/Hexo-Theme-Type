@@ -38,6 +38,7 @@
 <% } %>
 <% if (theme.schemes=='m3' ){ %>
 <div class="itp-float-bar pjax-area">
+
   <!--所有页面都显示-->
   <a class="itp-float-bar-item itp-float-bar-item-home" href="<%= url_for() %>">
     <% if (theme.nav_style=='icon' ){ %>
@@ -46,9 +47,9 @@
     <span><%- config.title %></span>
     <% } %>
   </a>
+  <div class="itp-float-bar-spacer"></div>
   <% if (page.layout !=='post' ){ %>
   <!--只在 **非文章** 页面显示-->
-  <div class="itp-float-bar-spacer"></div>
   <% for (var i in theme.nav) { %>
   <a class="itp-float-bar-item" href="<%- theme.nav[i].link %>">
     <% if (theme.nav_style=='icon' ){ %>
@@ -60,14 +61,8 @@
     <% } %>
   </a>
   <% } %>
-  <!--靠右对齐的图标
-  <div class="itp-float-bar-spacer"></div>
-  <a class="itp-float-bar-item itp-float-bar-item-max">
-    <span class="material-icons-outlined">format_align_left</span>
-  </a>-->
   <%} else if (page.layout =='post' ){ %>
   <!--只在 **文章** 页面显示-->
-  <div class="itp-float-bar-spacer"></div>
   <a class="itp-float-bar-item" onclick="scrollto(comment)">
     <% if (theme.nav_style=='icon' ){ %>
     <span class="material-icons-outlined">textsms</span>
