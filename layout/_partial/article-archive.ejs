@@ -1,31 +1,38 @@
-<% posts.forEach(function(item) { %>
-  <% if (item.style == 'moment') { %>
-  <% } else if (item.noachieve == true) { %>
-  <% } else { %>
-    <a href="<%- url_for(item.path) %>">
-      <li class="mdui-list-item mdui-ripple mdui-col">
-        <i class="mdui-list-item-icon mdui-icon material-icons">
-          <% if (item.password) { %>
-          <%- item.icon || "https" %>
-          <% } else if (item.style == 'photos') { %>
-          <%- item.icon || "photo" %>
-          <% } else { %>
-          <%- item.icon || "bookmarks" %>
-          <% } %>
-        </i>
-        <div class="mdui-list-item-content" style="margin-left: 32px;">
-          <div class="mdui-list-item-one-line itp-achieve-title"><%- item.title || theme.default_post_title || "Untitled" %>
-          </div>
-          <div class="mdui-list-item-text mdui-list-item-one-line itp-achieve-subtitle">
-            <%= item.date.format(config.date_format) %><span> · </span>
-            <% item.categories.each(function(categories){ %>
-            <span class="itp-post-entry-categories" rel="tag">
-              <%- categories.name %>
-            </span>
-            <% }); %>
-          </div>
-        </div>
-      </li>
-    </a>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  <% var dateCursor %>
+  <% page.posts.each(function (post) { %>
+  <% if(date(post.date, "YYYY") !== dateCursor) { %>
+  <% dateCursor = date(post.date, "YYYY") %>
+  <p class="text-2xl leading-10 py-2 col-span-1 md:col-span-2 lg:col-span-3 gap-1 text-tblack"><%= dateCursor %></p>
   <% } %>
-<% }); %>
+  <% if (post.style == 'moment') { %>
+  <% } else if (post.noachieve == true) { %>
+  <% } else { %>
+  <div class="h-auto px-3 py-1 hover:bg-gray-200 transition-all">
+    <a href="<%= url_for(post.path) %>" class="flex items-center">
+      <i class="mdui-list-item-icon mdui-icon material-icons">
+        bookmarks
+      </i>
+      <div class="px-3">
+        <div class="post-title"><%= post.title %></div>
+        <span class="text-sm leading-4 text-gray-400"><%= date(post.date, "MM-DD") %></span> ·
+        <% post.categories.each(function(categories){ %>
+        <span class="text-sm leading-4 text-gray-400" rel="tag">
+          <%- categories.name %>
+        </span>
+        <% }); %>
+      </div>
+    </a>
+  </div>
+  <% } %>
+  <% }) %>
+</div>
+<style>
+  .post-title {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+</style>
