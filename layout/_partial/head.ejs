@@ -84,8 +84,8 @@
   <!-- QQ应用模式 -->
   <meta name="x5-page-mode" content="app">
   <!-- https://material.io/resources/icons/?style=outline -->
-  <% if (theme.nav_style=='icon' ){ %>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+  <% if (theme.nav_style =='icon' ){ %>
+  <script src="<%= theme.nav_style_src %>"></script>
   <% } %>
   <%- partial('_partial/fonts') %>
   <!-- Custom CSS/Sass -->

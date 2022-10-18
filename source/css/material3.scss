@@ -3,9 +3,8 @@
 @import './_m3-components/_m3-post-entry';
 @import './_m3-components/_m3-chip';
 @import './_m3-components/_m3-card';
-$toggle_screen: 1022px;
 //COVER
-@media screen and (max-width: $toggle_screen) {
+@media screen and (max-width: $toggle_desktop) {
     .itp-m3-cover-box {
         width: 100vw;
         .mdui-col-xs-12 {
@@ -19,15 +18,22 @@ $toggle_screen: 1022px;
     box-sizing: border-box;
     border-radius: 5x;
     box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 5%), 1px 1px 15px 0 rgb(0 0 0 / 8%);
-    //最小尺寸 $toggle_screen 大屏幕设备
-    @media screen and (min-width: $toggle_screen) {
+    //最小尺寸 $toggle_desktop 大屏幕设备
+    @media screen and (min-width: $toggle_desktop) {
         margin-top: 108px;
         .itp-m3-cover-bg {
             border-radius: 5px;
         }
     }
-    //最大尺寸 $toggle_screen 中等屏幕设备
-    @media screen and (max-width: $toggle_screen) {
+    //最小尺寸 $toggle_tabelt 中等屏幕设备
+    @media screen and (min-width: $toggle_tablet) {
+        margin: 0px;
+        .itp-m3-cover-bg {
+            border-radius: 0 0 5px 5px;
+        }
+    }
+    //最大尺寸 $toggle_tabelt 小屏幕设备
+    @media screen and (max-width: $toggle_tablet) {
         margin: 0px;
         .itp-m3-cover-bg {
             border-radius: 0 0 5px 5px;
@@ -60,8 +66,8 @@ $toggle_screen: 1022px;
 }
 
 .info-area {
-    //最小尺寸 $toggle_screen 大屏幕设备
-    @media screen and (min-width: $toggle_screen) {
+    //最小尺寸 $toggle_desktop 大屏幕设备
+    @media screen and (min-width: $toggle_desktop) {
         padding: 96px 64px 64px 96px;
         .itp-m3-cover-avatar {
             img {
@@ -82,8 +88,8 @@ $toggle_screen: 1022px;
             line-height: 22px;
         }
     }
-    //最大尺寸 $toggle_screen 中等屏幕设备
-    @media screen and (max-width: $toggle_screen) {
+    //最大尺寸 $toggle_desktop 中等屏幕设备
+    @media screen and (max-width: $toggle_desktop) {
         padding: 92px 48px 60px 48px;
         .itp-m3-cover-avatar {
             img {
@@ -123,10 +129,10 @@ $toggle_screen: 1022px;
 //浮动弹窗
 .itp-float-layer {
     z-index: 1400;
-    @media screen and (min-width: $toggle_screen) {
+    @media screen and (min-width: $toggle_desktop) {
         display: none;
     }
-    @media screen and (max-width: $toggle_screen) {
+    @media screen and (max-width: $toggle_desktop) {
         width: 100vw;
         border-radius: 12px 12px 0 0;
         height: 90vh;
@@ -200,13 +206,13 @@ $toggle_screen: 1022px;
 
 //浮动导航
 #open_toc {
-    @media screen and (min-width: $toggle_screen) {
+    @media screen and (min-width: $toggle_desktop) {
         display: none;
     }
 }
 
 .itp-float-bar {
-    @media screen and (min-width: $toggle_screen) {
+    @media screen and (min-width: $toggle_desktop) {
         z-index: 1000;
         width: 100%;
         height: 54px;
@@ -217,7 +223,7 @@ $toggle_screen: 1022px;
         flex-direction: row;
         position: fixed;
     }
-    @media screen and (max-width: $toggle_screen) {
+    @media screen and (max-width: $toggle_desktop) {
         z-index: 1000;
         height: 54px;
         width: 100%;
@@ -263,7 +269,7 @@ $toggle_screen: 1022px;
         flex-grow: 1;
     }
     .itp-float-bar-item-max {
-        @media screen and (max-width: $toggle_screen) {
+        @media screen and (max-width: $toggle_desktop) {
             display: none;
         }
     }

@@ -39,22 +39,19 @@
 <% if (theme.schemes=='m3' ){ %>
 <div class="itp-float-bar pjax-area">
   <!--所有页面都显示-->
-  <a class="itp-float-bar-item itp-float-bar-item-home rounded" href="<%= url_for() %>">
+  <a class="itp-float-bar-item rounded" href="<%= url_for() %>">
     <% if (theme.nav_style=='icon' ){ %>
-    <span class="material-icons-outlined">home</span>
+    <iconpark-icon class="navicon" name="home"></iconpark-icon>
     <%} else if (theme.nav_style =='text' ){ %>
     <span><%- config.title %></span>
     <% } %>
   </a>
-  <div class="itp-float-bar-spacer"></div>
   <% if (page.layout !=='post' ){ %>
   <!--只在 **非文章** 页面显示-->
   <% for (var i in theme.nav) { %>
   <a class="itp-float-bar-item rounded" href="<%- theme.nav[i].link %>">
     <% if (theme.nav_style=='icon' ){ %>
-    <span class="material-icons-outlined">
-      <%- theme.nav[i].icon %>
-    </span>
+    <iconpark-icon class="navicon" name="<%- theme.nav[i].icon %>"></iconpark-icon>
     <%} else if (theme.nav_style =='text' ){ %>
     <span><%- [i] %></span>
     <% } %>
@@ -64,21 +61,21 @@
   <!--只在 **文章** 页面显示-->
   <a class="itp-float-bar-item rounded" onclick="scrollto(comment)">
     <% if (theme.nav_style=='icon' ){ %>
-    <span class="material-icons-outlined">textsms</span>
+    <iconpark-icon class="navicon" name="comment"></iconpark-icon>
     <%} else if (theme.nav_style =='text' ){ %>
     <span><%- __('post_comment')%></span>
     <% } %>
   </a>
   <a class="itp-float-bar-item rounded" id="open_toc">
     <% if (theme.nav_style=='icon' ){ %>
-    <span class="material-icons-outlined">format_align_left</span>
+    <iconpark-icon class="navicon" name="list"></iconpark-icon>
     <%} else if (theme.nav_style =='text' ){ %>
     <span><%- __('post_toc')%></span>
     <% } %>
   </a>
   <a class="itp-float-bar-item rounded" href="javascript:scroll(0,0)">
     <% if (theme.nav_style=='icon' ){ %>
-    <span class="material-icons-outlined">arrow_upward</span>
+    <iconpark-icon class="navicon" name="top"></iconpark-icon>
     <%} else if (theme.nav_style =='text' ){ %>
     <span><%- __('post_totop')%></span>
     <% } %>
@@ -103,9 +100,15 @@
 <% } %>
 <% if (theme.nav_style =='text' ){ %>
 <style>
-  a.itp-float-bar-item{
+  a.itp-float-bar-item {
     line-height: 54px;
     padding: 0 6px;
   }
 </style>
 <% } %>
+<style>
+  .navicon {
+    font-size: 18px;
+    padding-top: 18px;
+  }
+</style>

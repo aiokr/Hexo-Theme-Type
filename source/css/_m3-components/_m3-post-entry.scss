@@ -11,10 +11,10 @@
 }
 
 .itp-m3-post-entry-cover {
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1022px) {
         height: 322px;
     }
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1022px) {
         height: 233px;
     }
     background-position: center;
@@ -25,13 +25,13 @@
 .itp-m3-post-entry-cover:hover {}
 
 .itp-m3-post-entry-info {
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1022px) {
         padding: 42px 54px 54px 54px;
         .title {
             font-size: 28px;
         }
     }
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1022px) {
         padding: 28px 32px 32px 32px;
         .title {
             font-size: 24px;
