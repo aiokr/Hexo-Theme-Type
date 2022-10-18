@@ -39,7 +39,9 @@ hexo.extend.tag.register('note', postNote, { ends: true });
 
 // 可以通过安装 Lodash 并引入 Hexo 解决此问题，详情可见：http://www.zhongweipeng.cn/2020/08/14/hexo异常/
 
+/*
 const _ = require('lodash');
 hexo.extend.filter.register('template_locals', locals => {
   locals._ = _;
 });
+*/

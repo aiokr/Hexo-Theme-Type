@@ -38,9 +38,8 @@
 <% } %>
 <% if (theme.schemes=='m3' ){ %>
 <div class="itp-float-bar pjax-area">
-
   <!--所有页面都显示-->
-  <a class="itp-float-bar-item itp-float-bar-item-home" href="<%= url_for() %>">
+  <a class="itp-float-bar-item itp-float-bar-item-home rounded" href="<%= url_for() %>">
     <% if (theme.nav_style=='icon' ){ %>
     <span class="material-icons-outlined">home</span>
     <%} else if (theme.nav_style =='text' ){ %>
@@ -51,7 +50,7 @@
   <% if (page.layout !=='post' ){ %>
   <!--只在 **非文章** 页面显示-->
   <% for (var i in theme.nav) { %>
-  <a class="itp-float-bar-item" href="<%- theme.nav[i].link %>">
+  <a class="itp-float-bar-item rounded" href="<%- theme.nav[i].link %>">
     <% if (theme.nav_style=='icon' ){ %>
     <span class="material-icons-outlined">
       <%- theme.nav[i].icon %>
@@ -63,21 +62,21 @@
   <% } %>
   <%} else if (page.layout =='post' ){ %>
   <!--只在 **文章** 页面显示-->
-  <a class="itp-float-bar-item" onclick="scrollto(comment)">
+  <a class="itp-float-bar-item rounded" onclick="scrollto(comment)">
     <% if (theme.nav_style=='icon' ){ %>
     <span class="material-icons-outlined">textsms</span>
     <%} else if (theme.nav_style =='text' ){ %>
     <span><%- __('post_comment')%></span>
     <% } %>
   </a>
-  <a class="itp-float-bar-item" id="open_toc">
+  <a class="itp-float-bar-item rounded" id="open_toc">
     <% if (theme.nav_style=='icon' ){ %>
     <span class="material-icons-outlined">format_align_left</span>
     <%} else if (theme.nav_style =='text' ){ %>
     <span><%- __('post_toc')%></span>
     <% } %>
   </a>
-  <a class="itp-float-bar-item" href="javascript:scroll(0,0)">
+  <a class="itp-float-bar-item rounded" href="javascript:scroll(0,0)">
     <% if (theme.nav_style=='icon' ){ %>
     <span class="material-icons-outlined">arrow_upward</span>
     <%} else if (theme.nav_style =='text' ){ %>

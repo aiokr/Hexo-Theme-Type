@@ -11,7 +11,8 @@
     "url": "git+https://github.com/aiokr/hexo-theme-type.git"
   },
   "keywords": [
-    "hexo","material3"
+    "hexo",
+    "material3"
   ],
   "author": "aiokr",
   "license": "MIT",
@@ -35,8 +36,6 @@
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-markdown-it": "^6.1.0",
     "hexo-server": "^3.0.0",
-    "hexo-symbols-count-time": "^0.7.1",
-    "install": "^0.13.0",
-    "lodash": "^4.17.21"
+    "hexo-symbols-count-time": "^0.7.1"
   }
 }
