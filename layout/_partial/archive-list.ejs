@@ -1,24 +1,27 @@
+<!-- learn from https://hughsite.com/post/hexo-modify-theme.html -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
   <% var dateCursor %>
   <% page.posts.each(function (post) { %>
   <% if(date(post.date, "YYYY") !== dateCursor) { %>
   <% dateCursor = date(post.date, "YYYY") %>
-  <p class="text-2xl leading-10 py-2 col-span-1 md:col-span-2 lg:col-span-3 gap-1 text-tblack"><%= dateCursor %></p>
+  <p class="text-2xl leading-10 py-2 col-span-1 md:col-span-2 lg:col-span-3 gap-1 text-tblack dark:text-white"><%= dateCursor %></p>
   <% } %>
   <% if (post.style == 'moment') { %>
   <% } else if (post.noachieve == true) { %>
   <% } else { %>
-  <div class="h-auto px-3 py-1 hover:bg-gray-200 transition-all">
+  <div class="h-auto px-3 py-1 hover:bg-gray-200 dark:hover:bg-gray-800 rounded transition-all">
     <a href="<%= url_for(post.path) %>" class="flex items-center">
-      <i class="mdui-list-item-icon mdui-icon material-icons">
-        bookmarks
-      </i>
+      <% if (post.style == 'photos') { %>
+        <iconpark-icon class="post-icon" name="gallery"></iconpark-icon>
+      <% } else { %>
+        <iconpark-icon class="post-icon" name="bookmark"></iconpark-icon>
+      <% } %>
       <div class="px-3">
-        <div class="post-title"><%= post.title %></div>
-        <span class="text-sm leading-4 text-gray-400"><%= date(post.date, "MM-DD") %></span> ·
+        <div class="post-title text-tblack dark:text-white"><%= post.title %></div>
+        <span class="text-sm leading-4 text-gray-400"><%= date(post.date, "YYYY-MM-DD") %></span>
         <% post.categories.each(function(categories){ %>
         <span class="text-sm leading-4 text-gray-400" rel="tag">
-          <%- categories.name %>
+          · <%- categories.name %>
         </span>
         <% }); %>
       </div>
@@ -34,5 +37,9 @@
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+  }
+  .post-icon {
+    font-size: 1.2em;
+    color: #9DA3AE;
   }
 </style>

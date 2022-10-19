@@ -56,15 +56,26 @@
 <%} else if (theme.schemes==='m3' ) { %>
 <div class="itp-m3-index-post-area">
   <% if(item.style== 'moment') { %>
-  <div class="itp-m3-card post-entry">
+  <div class="itp-m3-card post-entry moment-card">
     <div class="itp-m3-post-entry-info">
       <div class="meta">
-        <%= item.date.format(config.date_format) %>
+        <%= item.date.format(config.date_format) %> · Moments
       </div>
       <div class="title">
         <%- item.content || item.title || theme.default_post_title || "Untitled" %>
       </div>
     </div>
+  </div>
+  <% } else if (item.style =='image' ) { %>
+  <div class="itp-m3-card post-entry">
+    <div class="mdui-card-media itp-post-entry-image-cover lazy" data-src="<%- item.cover %>">
+    </div>
+  </div>
+  <% } else if (item.style =='stack' ) { %>
+  <div class="itp-m3-stack post-entry">
+    <div class="stack-item stack-cover lazy" data-src="<%- item.cover %>"></div>
+    <div class="stack-item stack-cover2 lazy" data-src="<%- item.cover2 %>"></div>
+    <a href="<%- url_for(item.path) %>" class="post-entry-link" title="<%- item.title || theme.default_post_title %>"></a>
   </div>
   <% } else { %>
   <div class="itp-m3-card post-entry itp-m3-card-hover">
@@ -84,7 +95,7 @@
         <%= item.date.format(config.date_format) %>
       </div>
       <div class="title">
-        <a href="<%- url_for(item.path) %>"><%- item.title || theme.default_post_title || "Untitled" %></a>
+        <a href="<%- url_for(item.path) %>" title="<%- item.title || theme.default_post_title %>"><%- item.title || theme.default_post_title || "Untitled" %></a>
       </div>
       <div class="excerpt">
         <% if (item.excerpt) { %><%- item.excerpt %>
@@ -93,12 +104,12 @@
       </div>
       <div class="category">
         <% item.categories.each(function(categories){ %>
-        <a class="itp-m3-chip-bold" href="<%= config.root %>categories/<%= categories.name %>/" rel="tag">
+        <a class="itp-m3-chip-bold" href="<%= config.root %>categories/<%= categories.name %>/" rel="tag" title="<%= categories.name %>">
           <%- categories.name %>
         </a>
         <% }); %>
       </div>
-      <a href="<%- url_for(item.path) %>" class="post-entry-link"></a>
+      <a href="<%- url_for(item.path) %>" class="post-entry-link" title="<%- item.title || theme.default_post_title %>"></a>
     </div>
   </div>
   <% } %>

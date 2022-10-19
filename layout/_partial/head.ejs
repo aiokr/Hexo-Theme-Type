@@ -84,13 +84,15 @@
   <!-- QQ应用模式 -->
   <meta name="x5-page-mode" content="app">
   <!-- https://material.io/resources/icons/?style=outline -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+  <% if (theme.nav_style =='icon' ){ %>
+  <script src="<%= theme.nav_style_src %>"></script>
+  <% } %>
   <%- partial('_partial/fonts') %>
   <!-- Custom CSS/Sass -->
-  <%- css('css/mdui.min') %>
   <%- css('css/style') %>
   <!--样式切换-->
   <% if (theme.schemes =='column' ){ %>
+  <%- css('css/mdui.min') %>
   <%- css('css/column') %>
   <%} else if (theme.schemes =='m3' ){ %>
   <%- css('css/material3') %>
@@ -246,4 +248,5 @@
   <% } %>
   <% } %>
   <% } %>
+  <%- partial('_partial/head-tailwind') %>
 </head>

@@ -48,11 +48,12 @@
             padding-bottom: 24px;
             display: flex;
             overflow: hidden;
-            @media (max-width: 1024px) {
+            @media (max-width: 1022px) {
                 display: block;
             }
             .vheader-item {
                 border: 0;
+                height: 36px;
             }
             label {
                 padding: 0 6px;
@@ -320,5 +321,19 @@
         a {
             color: $deep-grey;
         }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .vempty,
+    .vpower,
+    .vpower a {
+        color: $grey !important;
+    }
+    .v .vcards .vitem .vcard .vmeta span {
+        background-color: #00000000;
+    }
+    .v .vcards .vitem img.vuser {
+        background-color: #cccccc;
     }
 }

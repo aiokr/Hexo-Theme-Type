@@ -1,7 +1,4 @@
 <%
-// tag 与 archive 基本一致,区别是:
-// 1. archive 使用的 site.posts, tag使用的是page.posts；
-// 2. tag 有分页。 (如果使用page.posts, hexo 默认使用config里的[per_page]来配置archive和tag分页)
     var title = '';
     if (page.category) title = page.category;
     if (page.tag) title = "#" + page.tag;
@@ -10,30 +7,9 @@
         else title = __('archive_a');
     }
 %>
-<div class="mdui-container">
-  <div class="content-area">
-    <div class="mdui-row">
-      <div class="mdui-col-md-1 mdui-col-xs-down"></div>
-      <div class="mdui-col-md-10 mdui-col-xs-12">
-        <div class="mdui-card itp-post-card">
-          <div class="mdui-card-primary">
-            <div class="index-achieve-title title"><%- title %></div>
-            <section class="itp-blog-list">
-              <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy -->
-              <% 
-              var groupObj = _.groupBy(page.posts.toArray(), function(p){return -p.date.format('YYYY')})
-              // var groupObj = (page.posts.toArray(), function(p){return -p.date.format('YYYY')})
-              %>
-              <% for (var year in groupObj){ %>
-              <div class="mdui-card-primary-title" style="padding: 20px 0"><%- -year %></div>
-              <div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-lg-3">
-                <%- partial('_partial/article-archive', {posts: groupObj[year]}) %>
-              </div>
-              <% } %>
-            </section>
-          </div>
-        </div>
-      </div>
-      <div class="mdui-col-md-1 mdui-col-xs-down"></div>
-    </div>
-  </div>
+<div class="content-area archive-content-area p-4 container max-w-[1280px]">
+  <div class="index-achieve-title title"><%- title %></div>
+  <section class="itp-blog-list">
+    <%- partial('_partial/archive-list') %>
+  </section>
+</div>

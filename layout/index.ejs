@@ -81,29 +81,46 @@
     <%- partial('_partial/post-entry', {item: item}) %>
     <% } %>
     <% }); %>
-    <div class="index-pagination">
+    <div class="m3-index-pagination">
       <% if (page.prev){ %>
-      <a href="<%- config.root %><%- page.prev_link %>" class="index-pagination-btn"><%- __('prev')%></a>
+      <% } else{ %>
+      <div class="itp-m3-card m3-pagination-card">
+        <div class="pagination-text pagination-text-first"><span><%- __('index_first')%></span></div>
+      </div>
+      <% } %>
+      <% if (page.prev){ %>
+      <div class="itp-m3-card m3-pagination-card prev-card hover:shadow-itp">
+        <div class="pagination-text"><%- __('prev')%></div>
+        <a class="pagination-link" href="<%- config.root %><%- page.prev_link %>" title="prev page"></a>
+      </div>
       <% } %>
       <% if (page.next){ %>
-      <a href="<%- config.root %><%- page.next_link %>" class="index-pagination-btn"><%- __('next')%></a>
+      <div class="itp-m3-card m3-pagination-card next-card hover:shadow-itp">
+        <div class="pagination-text"><%- __('next')%></div>
+        <a class="pagination-link" href="<%- config.root %><%- page.next_link %>" title="next page"></a>
+      </div>
+      <% } %>
+      <% if (page.next){ %>
+      <% } else{ %>
+      <div class="itp-m3-card m3-pagination-card">
+        <div class="pagination-text pagination-text-final"><span><%- __('index_final')%></span></div>
+      </div>
       <% } %>
     </div>
-  </div>
 </section>
 <% } %>
 <!--首页微信号二维码弹窗-->
 <% if( (theme.social_link.use === true) && (page.current === 1) && (is_home()) ) { %>
 <% if (theme.social_link.wechat_public.switch == true) { %>
 <!-- Wechat MP QRCode -->
-<div style="display: none;" id="mp-wechat">
+<div class="m3-index-pop" style="display: none;" id="mp-wechat">
   <div class="mdui-dialog-title"><%- __('wechat_mp')%></div>
   <img src="<%= theme.social_link.wechat_public.src %>" width="300px" class="mdui-center nofancy">
 </div>
 <% } %>
 <% if (theme.social_link.wechat_personal.switch == true) { %>
 <!-- Wechat Personal QRCode -->
-<div style="display: none;" id="personal-wechat">
+<div class="m3-index-pop" style="display: none;" id="personal-wechat">
   <div class="mdui-dialog-title"><%- __('wechat_personal')%></div>
   <img src="<%= theme.social_link.wechat_personal.src %>" width="300px" class="mdui-center nofancy">
 </div>

@@ -3,7 +3,7 @@ body {
   color: #222831aa;
 }
 
-.content-area {
+.about-content-area {
   padding-top: 60px;
   max-width: 700px;
   margin: 0 auto
@@ -147,4 +147,8 @@ blockquote {
   grid-template-columns: repeat(12, minmax(0px, 1fr));
   gap: 24px;
   padding: 1.5pc 0;
+}
+
+#comment {
+  max-width: 800px;
 }

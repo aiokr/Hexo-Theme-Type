@@ -1,43 +1,15 @@
 <div class="content-area itp-gallery-content">
-  <div class="mdui-row-xs-2 mdui-row-sm-3 mdui-row-md-4 mdui-row-lg-5 mdui-row-xl-6 mdui-grid-list">
+  <div class="mdui-row-xs-2 mdui-row-sm-3 mdui-row-md-4 mdui-row-lg-5 mdui-row-xl-6 mdui-grid-list" style="max-width: 100vw;">
     <% if (site.data.gallery) { %>
     <% for (var a in site.data.gallery) { %>
-    <div class="mdui-col">
-      <% if (site.data.gallery[a].cover) { %>
-      <div class="mdui-grid-tile itp-gallery2-tile itp-gallery-img lazy-bg share<%= a %>" id="<%= a %>" data-src="<%- site.data.gallery[a].cover %>">
-      </div>
-      <%} else { %>
-      <div class="mdui-grid-tile itp-gallery2-tile itp-gallery2-tile-cover share<%= a %>">
-        <div class="itp-gallery-info-tile">
-          <div class="itp-gallery-info">
-            <div class="title" id="<%= a %>"><%= a %></div>
-            <div class="meta"><%- site.data.gallery[a].descr %></div>
-          </div>
-        </div>
-      </div>
-      <% } %>
-      <script>
-        document.querySelector('.share<%= a %>').addEventListener('click', shareSite)
-
-        function shareSite() {
-          navigator.share({
-              title: '<%= a %>',
-              text: '<%- site.data.gallery[a].descr %>',
-              url: '<%- url_for(page.path) %>#<%= a %>',
-            })
-            .then(() => {
-              console.log('Share completed successfuly')
-            })
-            .catch((error) => {
-              console.log(`share failed: ${error}`)
-            });
-        }
-      </script>
-    </div>
     <% for (var p in site.data.gallery[a].img ) { %>
     <div class="mdui-col">
       <div class="mdui-grid-tile itp-gallery2-tile itp-gallery-img lazy-bg" data-src="<%- site.data.gallery[a].img[p] %>">
-        <a href="<%- site.data.gallery[a].img[p] %>" data-fancybox="images" class="image-fancy-link"></a>
+        <a href="<%- site.data.gallery[a].img[p] %>"
+           data-fancybox="images"
+           class="image-fancy-link"
+           data-caption="<%= a %>">
+        </a>
       </div>
     </div>
     <% } %>
