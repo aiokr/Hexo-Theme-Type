@@ -91,13 +91,13 @@
       <% if (page.prev){ %>
       <div class="itp-m3-card m3-pagination-card prev-card hover:shadow-itp">
         <div class="pagination-text"><%- __('prev')%></div>
-        <a class="pagination-link" href="<%- config.root %><%- page.prev_link %>"></a>
+        <a class="pagination-link" href="<%- config.root %><%- page.prev_link %>" title="prev page"></a>
       </div>
       <% } %>
       <% if (page.next){ %>
       <div class="itp-m3-card m3-pagination-card next-card hover:shadow-itp">
         <div class="pagination-text"><%- __('next')%></div>
-        <a class="pagination-link" href="<%- config.root %><%- page.next_link %>"></a>
+        <a class="pagination-link" href="<%- config.root %><%- page.next_link %>" title="next page"></a>
       </div>
       <% } %>
       <% if (page.next){ %>
