@@ -22,7 +22,7 @@ jobs:
         sudo cp -v ./node_modules/hexo-theme-type/_config_test.yml ./_config.type.yml
         sudo cp -v ./node_modules/hexo-theme-type/assets/_config.yml ./_config.yml
         git clone https://github.com/hexojs/hexo-theme-unit-test.git unit-test
-        cp -r unit-test/source/_posts /source/_posts
+        cp -r unit-test/source/_posts source
         hexo g
         cd public
         git init
