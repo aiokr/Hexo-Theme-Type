@@ -3,13 +3,6 @@ name: Hexo-Theme-Type auto test
 on: workflow_dispatch
   
 jobs:
-  node-package:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-      with:
-        submodules: true
   theme_test:
     runs-on: ubuntu-latest
     steps:
@@ -30,14 +23,13 @@ jobs:
         sudo cp -v ./node_modules/hexo-theme-type/assets/_config.yml ./_config.yml
         cd source/_posts
         git init
-        git remote add origin  https://github.com/hexojs/hexo-theme-unit-test
+        git remote add origin  https://github.com/hexojs/hexo-theme-unit-test.git
         git config core.sparsecheckout true
         echo "/source/_posts" >> .git/info/sparse-checkout
         git pull --depth 1 origin master
         cd ../..
         hexo g
         cd public
-        tree
         git init
         git config --global push.default matching
         git config --global user.email "hiaiokr@gmail.com"
