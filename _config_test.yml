@@ -5,7 +5,8 @@
 # 本文件有严格的缩进限制，请确保在修改时，没有打乱原有的缩进
 # Hexo-Theme-Type 是一个尚在开发过程中的主题，当「主题配置文件」有修改时，您可能需要重新在这里配置所有的选项。
 # 当「主题配置文件」有修改时，会修改版本号的第二位数。
-# 当前版本：0.4.2
+# 您不应当编辑这个参数
+ver: 0.4.2
 # ---------------------------------------------------------------
 # ---------------------------------------------------------------
 
@@ -37,6 +38,11 @@ schemes: m3
 # Use LXGW ｜ 
 fonts: 
 
+# Header Links Style 导航链接样式
+# Use text ｜ icon
+nav_style: icon
+nav_style_src: "https://lf1-cdn-tos.bytegoofy.com/obj/iconpark/icons_20213_15.146eebe3e0c6cc716d8cc4e68617b273.js"
+
 # Random Pictures
 random_pic_switch: false
 random_pics: 19
@@ -54,30 +60,30 @@ post_toc: true
 
 # Header Cover 首页封面背景图
 header: 
-  img: 'https://imgur.lzmun.com/picgo/after2022/DSC02367-large-2022-08-25.jpeg_itp'
+  img: 'https://imgur.lzmun.com/picgo/after2022/6DD1FBC3-AD8A-4340-842D-6ACF531F8291_1_105_c.jpeg_itp'
 
 # Header Links 首页导航连接
 search_btn: true
 nav:
   归档: 
     link: /archives/
-    icon:  move_to_inbox
+    icon: inbox
+  影像:
+    link: /gallery/
+    icon: gallery
   关于:
     link: /about/
     icon: person
   链接:
     link: /links/
-    icon: group
-  链接:
-    link: /links/
-    icon: group
+    icon: people
 
 # Cover Links 封面底部链接
 cover_links:
   - title: Gallery
     link: /gallery/
   - title: Type docs
-    link: /type/
+    link: /type-readme/
   - title: RSS Feed
     link: /atom.xml
     descr: 'iTypen.APP'
@@ -103,11 +109,14 @@ count: true
 icp: 
 
 # CDN LOGO
-# Use upyun | vercel
+# Use upyun | vercel | self
 footer_logo: 
-  use: vercel
+  use: self
   upyun: '../img/upyun.png'
   vercel: '../img/vercel-logotype-dark.svg'
+  self:
+    link: '../about/'
+    src: 'https://imgur.lzmun.com/picgo/after2022/202209101335136.png_itp'
 
 # ---------------------------------------------------------------
 # Posts Settings 文章设置
@@ -172,7 +181,6 @@ busuanzi: false
 # if use is default, it will use analytics.js
 # if use is cf_async, look at the https://github.com/SukkaW/cloudflare-workers-async-google-analytics to learn more
 # if use is gtag，will use Google GA 4 id gtag.js 
-# if use is gtag，will use Google GA 4 id gtag.js 
 # 如果 use 项选择 default，将使用 analytics.js 文件接入谷歌分析
 # 如果 use 项选择 cf_async，请浏览 https://github.com/SukkaW/cloudflare-workers-async-google-analytics 进行配置
 # 如果 use 项选择 gtag，将使用 Google 全局网站代码 (gtag.js) 接入谷歌分析
@@ -185,7 +193,7 @@ google_analytics:
 
 # umami Analytics
 umami_analytics: 
-  use: true
+  use: false
   id: eff465f3-a4a1-4cfd-a5ab-cbbcb1b32a48
   src: https://analytics.tripper.press/aioana.js
 
@@ -219,37 +227,7 @@ pwa: true
 # English Docs: https://developers.google.com/search/docs/appearance/structured-data/search-gallery
 # 这是一个实验性功能，尚未开发完成。
 google_search_advanced:
-  # 全局开关
+# 全局开关
   use: true
-  # 文章页开关
-  article: true
-
-# ---------------------------------------------------------------
-# Assets CDN Settings 资源托管设置
-# ---------------------------------------------------------------
-
-# Use jsdelivr | self_host
-# 如果你的站点接入了 Cloudflare，建议您使用 self_host 选项，以便资源可以被 Cloudflare 正确缓存。
-cdn:
-  use: self_host
-
-# ---------------------------------------------------------------
-# Others Settings 其他功能设置
-# ---------------------------------------------------------------
-
-# PWA 尚是一个实验性功能，不建议您启用。
-# 如果需要启用，需要手动创立 manifest.json 文件，并在生成网站是复制到 public 目录下。
-# 暂时没有提供 service-worker.js 文件
-pwa: true
-
-# Google 搜索增强
-# 使得您的搜索结果呈现主题概览
-# 开启此功能，会在页面中添加结构化数据，以便被 Google 索引
-# 中文介绍：https://developers.google.com/search/docs/advanced/appearance/overview?hl=zh-cn
-# English Docs: https://developers.google.com/search/docs/appearance/structured-data/search-gallery
-# 这是一个实验性功能，尚未开发完成。
-google_search_advanced:
-  # 全局开关
-  use: true
-  # 文章页开关
+# 文章页开关
   article: true
