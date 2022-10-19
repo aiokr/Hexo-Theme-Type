@@ -2,17 +2,24 @@ name: Hexo-Theme-Type auto test
 
 on:
   push:
-    branches:    
-      - 'master'
+    branches:
       - 'auto-package'
-
-  pull_request:
-    branches:    
-      - 'master'
   
 jobs:
+  node-package:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+      with:
+        submodules: true
+    - name: npm publish
+      run: |
+        npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
+        npm publish --tag alpha || true
   theme_test:
     runs-on: ubuntu-latest
+    needs: node-package
     steps:
     - name: Checkout
       uses: actions/checkout@v1
@@ -26,7 +33,7 @@ jobs:
         cd hexo-test
         hexo init
         npm install hexo-deployer-git --save
-        npm install hexo-theme-type --save
+        npm install hexo-theme-type@alpha --save
         npm install
         sudo cp -v ./node_modules/hexo-theme-type/_config_test.yml ./_config.type.yml
         sudo cp -v ./node_modules/hexo-theme-type/assets/_config.yml ./_config.yml
