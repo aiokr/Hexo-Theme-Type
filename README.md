@@ -1,9 +1,4 @@
----
-title: Type README
-date: 2022-09-21 18:02:00
-permalink: /type-readme/
----
-<img src="./hexo-theme-type-logo.png" alt="logo" width="72" height="72" align="right" />
+<img src="./hexo-theme-type-logo.png" alt="logo" width="72" height="72" align="center" />
 
 - [Hexo Theme Type](#hexo-theme-type)
   - [🔨 安装使用](#-安装使用)
@@ -46,9 +41,9 @@ permalink: /type-readme/
 
 本仓库经由 Github Action 自动打包生成，实时生成的文件在 [auto-package 分支](https://github.com/aiokr/hexo-theme-type/tree/auto-package)，定期会合并到主分支。
 
-- 提出 Issue 请到 [Issues · aiokr/Tripper-Press](https://github.com/aiokr/Tripper-Press/issues)
-- 了解最新进展请到 [[持续更新] Hexo-Theme-Type 最新进展 · Discussion #23 · aiokr/Tripper-Press](https://github.com/aiokr/Tripper-Press/discussions/23)
-- 参与讨论请到 [Discussions · aiokr/Tripper-Press](https://github.com/aiokr/Tripper-Press/discussions/categories/general) 或 [QQ 频道](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&appChannel=share&inviteCode=14OQfh&businessType=9&from=246610&biz=ka#/pc)
+- 提出 Issue 请到 [Issues · aiokr/Hexo-Theme-Type](https://github.com/aiokr/hexo-theme-type/issues)
+- 了解最新进展请到 [[持续更新] Hexo-Theme-Type 最新进展 · Discussion #23 · aiokr/Hexo-Theme-Type](https://github.com/aiokr/hexo-theme-type/discussions/23)
+- 参与讨论请到 [Discussions · aiokr/Hexo-Theme-Type](https://github.com/aiokr/hexo-theme-type/discussions/categories/general) 或 [QQ 频道](https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&appChannel=share&inviteCode=14OQfh&businessType=9&from=246610&biz=ka#/pc)
 
 ## 🔨 安装使用
 
