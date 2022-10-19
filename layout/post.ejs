@@ -63,10 +63,10 @@
 <% } %>
 <%} else if (theme.schemes==='m3' ) { %>
 <% if (page.style==='photos' ) { %>
-<div class="mdui-row-xs-2 mdui-row-sm-3 mdui-row-md-4 mdui-row-lg-5 mdui-row-xl-6 mdui-grid-list" style="max-width: 100vw;">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 2xl:grid-cols-6" style="max-width: 100vw; padding-top: 58px;">
   <% for (var i in page.gallery) { %>
-  <div class="mdui-col">
-    <div class="mdui-grid-tile itp-gallery2-tile itp-gallery-img lazy-bg" data-src="<%- page.gallery[i].src %>">
+  <div style="padding: 2px; position: relative;">
+    <div class="itp-gallery2-tile itp-gallery-img lazy-bg" data-src="<%- page.gallery[i].src %>">
       <a data-fancybox="images" href="<%- page.gallery[i].src %>" class="image-fancy-link" data-caption="<%- page.gallery[i].title %>">>
       </a>
     </div>
