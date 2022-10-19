@@ -64,10 +64,10 @@
 <%} else if (theme.schemes==='m3' ) { %>
 <% if (page.style==='photos' ) { %>
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5" style="max-width: 100vw; padding-top: 58px;">
-  <% for (var i in page.gallery) { %>
+  <% for (var i in page.photos) { %>
   <div style="padding: 2px; position: relative;">
-    <div class="itp-gallery2-tile itp-gallery-img lazy-bg" data-src="<%- page.gallery[i].src %>">
-      <a data-fancybox="images" href="<%- page.gallery[i].src %>" class="image-fancy-link" data-caption="<%- page.gallery[i].title %>">>
+    <div class="itp-gallery2-tile itp-gallery-img lazy-bg" data-src="<%- page.photos[i] %>">
+      <a data-fancybox="images" href="<%- page.photos[i] %>" class="image-fancy-link" data-caption="<%- page.title %>">>
       </a>
     </div>
   </div>
