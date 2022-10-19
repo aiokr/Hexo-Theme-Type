@@ -21,13 +21,8 @@ jobs:
         npm install
         sudo cp -v ./node_modules/hexo-theme-type/_config_test.yml ./_config.type.yml
         sudo cp -v ./node_modules/hexo-theme-type/assets/_config.yml ./_config.yml
-        cd source/_posts
-        git init
-        git remote add origin  https://github.com/hexojs/hexo-theme-unit-test.git
-        git config core.sparsecheckout true
-        echo "/source/_posts" >> .git/info/sparse-checkout
-        git pull --depth 1 origin master
-        cd ../..
+        git clone https://github.com/hexojs/hexo-theme-unit-test.git unit-test
+        cp -r unit-test/source/_posts /source/_posts
         hexo g
         cd public
         git init
