@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="/css/fancybox.css" />
 <% } %>
 <!-- mdui -->
+<% if (theme.schemes =='column' ){ %>
 <%- js('js/mdui.min.js') %>
+<% } %>
 <!-- busuanzi -->
 <% if (theme.busuanzi == true){ %>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script>

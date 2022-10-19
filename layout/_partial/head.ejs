@@ -89,10 +89,10 @@
   <% } %>
   <%- partial('_partial/fonts') %>
   <!-- Custom CSS/Sass -->
-  <%- css('css/mdui.min') %>
   <%- css('css/style') %>
   <!--样式切换-->
   <% if (theme.schemes =='column' ){ %>
+  <%- css('css/mdui.min') %>
   <%- css('css/column') %>
   <%} else if (theme.schemes =='m3' ){ %>
   <%- css('css/material3') %>

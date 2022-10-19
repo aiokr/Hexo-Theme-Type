@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="mdui-text-center itp-footer">
+<footer class="itp-footer text-center">
   <section class="footer-info">
     <%- config.title %> &copy; <%- theme.start_time %> - <%= (new Date()).getFullYear() %>
     <% if (theme.count == true){ %>
@@ -17,17 +17,20 @@
     <span> / Theme</span>
     <a href="https://github.com/aiokr/hexo-theme-type" target="_blank">Type
     </a>
+    <span> / Made by aiokr with ❤️ </span>
   </section>
   <% if (theme.footer_logo.use == 'upyun'){ %>
   <section class="footer-logo">
     <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank">
       <img style="max-height: 40px !important; display: block; margin: 0 auto;" src="<%- url_for(theme.footer_logo.upyun) %>"></a>
   </section>
-  <% } %>
-  <% if (theme.footer_logo.use == 'vercel'){ %>
+  <%} else if (theme.footer_logo.use == 'vercel'){ %>
   <section class="footer-logo">
     <a href="https://vercel.com/" target="_blank">
-      <img style="padding-top: 12px; max-height: 25px !important; opacity: 0.4; display: block; margin: 0 auto;" src="<%- url_for(theme.footer_logo.vercel) %>"></a>
+      <img style="padding-top: 12px; width: 80px !important; opacity: 0.4; display: block; margin: 0 auto;" src="<%- url_for(theme.footer_logo.vercel) %>"></a>
   </section>
+  <%} else if (theme.footer_logo.use == 'self'){ %>
+    <a href="<%- theme.footer_logo.self.link %>" target="_blank">
+      <img style="padding-top: 12px; width: 80px !important; display: block; margin: 0 auto;" src="<%- url_for(theme.footer_logo.self.src) %>"></a>
   <% } %>
 </footer>
