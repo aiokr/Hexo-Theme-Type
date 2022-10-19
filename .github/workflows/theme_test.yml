@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'auto-package'
+      - 'master'
   
 jobs:
   node-package:
