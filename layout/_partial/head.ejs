@@ -31,11 +31,7 @@
   <!--Page Cover-->
   <% if (page.cover) { %>
   <meta property="og:image" content="<%- url_for(page.cover || page.share_img) %>" />
-<<<<<<< HEAD
   <% } else { %>
-=======
-  <% } else if (config.cover) { %>
->>>>>>> 6ba9356c38f0dc9e85acdb1e36f4783b27a46754
   <meta property="og:image" content="<%- url_for(config.cover || theme.header.img) %>" />
   <% } %>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
