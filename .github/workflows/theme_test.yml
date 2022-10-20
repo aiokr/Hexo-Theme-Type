@@ -25,6 +25,11 @@ jobs:
         hexo init
         npm install hexo-deployer-git --save
         npm install hexo-theme-type --save
+        npm install hexo-generator-archive
+        npm install hexo-generator-category
+        npm install hexo-generator-tag
+        npm install hexo-renderer-markdown-it
+        npm install hexo-symbols-count-time
         npm install
         sudo cp -v ./node_modules/hexo-theme-type/_config_test.yml ./_config.type.yml
         sudo cp -v ./node_modules/hexo-theme-type/assets/_config.yml ./_config.yml
