@@ -6,8 +6,8 @@ index_final: 最后一页
 archive_a: 归档
 archive_b: 归档：%s
 keyboard_shortcut: 键盘快捷键
-index_home: 首页
-index_archive: 归档
+categories: 分类
+tags: 标签
 post:
   post_on: 本文发布于
 post_comment: 评论
