@@ -17,17 +17,9 @@
   <meta name="author" content="<%= config.author %>">
   <% } %>
   <!--Open Graph Title-->
-  <% if (page.title){ %>
-  <meta property="og:title" content="<%= page.title %>" />
-  <% } else { %>
-  <meta property="og:title" content="<%= config.title %>" />
-  <% } %>
+  <meta property="og:title" content="<%= page.title || config.title %>" />
   <!--Open Graph Description-->
-  <% if (page.description){ %>
-  <meta property="og:description" content="<%= page.description %>" />
-  <% } else if (config.description) { %>
-  <meta property="og:description" content="<%= config.description %>" />
-  <% } %>
+  <meta property="og:description" content="<%= page.description || config.description %>" />
   <!--Open Graph Site Name-->
   <meta property="og:site_name" content="<%= config.title %>" />
   <!--Type page-->
@@ -38,9 +30,9 @@
   <% } %>
   <!--Page Cover-->
   <% if (page.cover) { %>
-  <meta property="og:image" content="<%= config.url %><%= page.share_cover %>" />
-  <% } else if (config.cover) { %>
-  <meta property="og:image" content="<%= config.url %><%= config.cover %>" />
+  <meta property="og:image" content="<%- url_for(page.cover || page.share_img) %>" />
+  <% } else { %>
+  <meta property="og:image" content="<%- url_for(config.cover || theme.header.img) %>" />
   <% } %>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <!-- Title -->
