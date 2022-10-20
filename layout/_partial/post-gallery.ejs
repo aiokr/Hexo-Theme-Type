@@ -5,10 +5,10 @@
       <div class="mdui-col-md-12 mdui-col-xs-12">
         <div class="mdui-card mdui-shadow-0 itp-index">
           <div class="mdui-row-xs-1 mdui-row-sm-3 mdui-row-lg-3 mdui-grid-list">
-            <% for (var i in page.gallery) { %>
+            <% for (var i in page.photos) { %>
             <div class="mdui-col itp-post-gallery mdui-grid-tile">
-              <a class="itp-gallery-img" data-fancybox="gallery" href="<%- page.gallery[i].src %>">
-                <img class="lazy" src="<%- page.gallery[i].src %>">
+              <a class="itp-gallery-img" data-fancybox="gallery" href="<%- page.photos[i].src %>">
+                <img class="lazy" src="<%- page.photos[i].src %>">
               </a>
             </div>
             <% } %>

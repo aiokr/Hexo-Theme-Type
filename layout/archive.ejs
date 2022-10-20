@@ -10,7 +10,7 @@
 
 <div class="p-4 container max-w-[1280px]">
   <div class="index-achieve-title title"><%- title %></div>
-  <div class="text-2xl leading-10 py-2 col-span-1 md:col-span-3 text-tblack">分类</div>
+  <div class="text-2xl leading-10 py-2 col-span-1 md:col-span-3 text-tblack"><%- __('categories')%></div>
   <section class="itp-article-categories" style="list-style-type: none;">
     <div class="itp-m3-chip-color">
       <%- list_categories({
@@ -20,7 +20,7 @@
           separator: '</div><div class="itp-m3-chip-color">'
         }) %>
   </section>
-  <div class="text-2xl leading-10 py-2 col-span-1 md:col-span-3 text-tblack">标签</div>
+  <div class="text-2xl leading-10 py-2 col-span-1 md:col-span-3 text-tblack"><%- __('tags')%></div>
   <section class="itp-article-categories" style="list-style-type: none;">
     <div class="itp-m3-chip-normal">
       <%- list_tags({
