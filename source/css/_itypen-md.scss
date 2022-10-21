@@ -1,5 +1,5 @@
 p {
-    margin: 1.5em 0px !important;
+    margin: 1em 0px !important;
     font-size: 16px;
     font-weight: 400;
     color: #222831;
@@ -38,7 +38,7 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 20px 0 10px;
+    margin: 1.5em 0 0.5em 0;
     padding: 0;
     font-style: bold !important;
     color: $black !important;
@@ -50,7 +50,7 @@ h6 {
 
 h1 {
     font-style: normal;
-    font-size: 28px;
+    font-size: 1.8em;
     line-height: 140%;
     margin-top: 36px;
     margin-bottom: 24px;
@@ -58,25 +58,25 @@ h1 {
 }
 
 h2 {
-    font-size: 26px !important;
+    font-size: 1.6em !important;
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
 h3 {
-    font-size: 22px;
+    font-size: 1.4em;
     margin-top: 24px;
     margin-bottom: 16px;
 }
 
 h4 {
-    font-size: 20px;
+    font-size: 1.2em;
     margin-top: 20px;
     margin-bottom: 16px;
 }
 
 h5 {
-    font-size: 18px;
+    font-size: 1em;
     font-weight: 500;
     font-size: 16px;
     margin-top: 20px;
@@ -84,8 +84,8 @@ h5 {
 }
 
 h6 {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 1em;
+    font-weight: 400;
     margin-top: 20px;
     margin-bottom: 8px;
 }
@@ -100,6 +100,11 @@ ol {
 
 ul {
     list-style-type: disc;
+}
+
+ol,
+ul {
+    margin-left: 1.4em;
 }
 
 ol li,
@@ -121,6 +126,7 @@ blockquote {
     margin: 1.5em 0px !important;
     border-left: 2px solid $main-color;
     quotes: none;
+
     p {
         color: $grey;
         margin-top: 0 !important;
@@ -153,10 +159,12 @@ mark {
         vertical-align: middle;
         text-align: center
     }
+
     @media screen and (min-width: 768px) {
         float: right;
         padding: 15px;
     }
+
     @media print {
         float: right;
         padding: 15px;
@@ -168,10 +176,12 @@ mark {
         vertical-align: middle;
         text-align: center
     }
+
     @media screen and (min-width: 768px) {
         float: left;
         padding: 15px;
     }
+
     @media print {
         float: left;
         padding: 15px;
@@ -189,4 +199,12 @@ ul li {
     span {
         display: contents !important;
     }
+}
+
+pre {
+    margin: 1em 0px !important;
+}
+
+code {
+    line-height: 16px;
 }
