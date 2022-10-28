@@ -56,7 +56,8 @@
 <% } else if ( theme.cdn.use == 'self_host') { %>
 <%- js('js/lazyload.js') %>
 <% } %>
-<!--全局键盘快捷键-->
+<!--首页键盘快捷键-->
+<% if( (is_home()) ) { %>
 <script>
   window.onkeydown = function allpage_hotkey() {
     //[键盘快捷键] Shift+1 首页
@@ -79,7 +80,6 @@
     if (event.shiftKey && event.keyCode === 53) {
       window.location.href = "/links/"
     };
-    <% if( (is_home()) ) { %>
     //[键盘快捷键] 左箭头 上一页
     if (event.keyCode === 37) {
       window.location.href = "<%- config.root %><%- page.prev_link %>"
@@ -88,6 +88,6 @@
     if (event.keyCode === 39) {
       window.location.href = "<%- config.root %><%- page.next_link %>"
     };
-    <% } %>
   }
 </script>
+<% } %>

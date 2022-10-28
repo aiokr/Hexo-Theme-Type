@@ -3,10 +3,12 @@
 @import './_m3-components/_m3-post-entry';
 @import './_m3-components/_m3-chip';
 @import './_m3-components/_m3-card';
+
 //COVER
 @media screen and (max-width: $toggle_desktop) {
     .itp-m3-cover-box {
         width: 100vw;
+
         .mdui-col-xs-12 {
             padding-right: 0;
             padding-left: 0;
@@ -18,32 +20,40 @@
     box-sizing: border-box;
     border-radius: 5x;
     box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 5%), 1px 1px 15px 0 rgb(0 0 0 / 8%);
+
     //最小尺寸 $toggle_desktop 大屏幕设备
     @media screen and (min-width: $toggle_desktop) {
         margin-top: 108px;
+
         .itp-m3-cover-bg {
             border-radius: 5px;
         }
     }
+
     //最小尺寸 $toggle_tabelt 中等屏幕设备
     @media screen and (min-width: $toggle_tablet) {
         margin: 0px;
+
         .itp-m3-cover-bg {
             border-radius: 0 0 5px 5px;
         }
     }
+
     //最大尺寸 $toggle_tabelt 小屏幕设备
     @media screen and (max-width: $toggle_tablet) {
         margin: 0px;
+
         .itp-m3-cover-bg {
             border-radius: 0 0 5px 5px;
         }
     }
+
     .itp-m3-cover-bg {
         width: 100%;
         height: 100%;
         background: #000;
     }
+
     .itp-m3-cover-layer {
         background: linear-gradient(rgba(32, 32, 32, 0) 14%, rgba(32, 32, 32, 0.56) 100%);
         height: 100%;
@@ -52,6 +62,7 @@
 }
 
 .top-cover {
+
     .itp-m3-cover-title,
     .itp-m3-cover-subtitle {
         color: #fff;
@@ -59,6 +70,7 @@
 }
 
 .post-cover {
+
     .itp-m3-cover-title,
     .itp-m3-cover-subtitle {
         color: $black;
@@ -66,9 +78,11 @@
 }
 
 .info-area {
+
     //最小尺寸 $toggle_desktop 大屏幕设备
     @media screen and (min-width: $toggle_desktop) {
         padding: 96px 64px 64px 96px;
+
         .itp-m3-cover-avatar {
             img {
                 max-height: 64px;
@@ -77,20 +91,24 @@
                 padding-bottom: 8px;
             }
         }
+
         .itp-m3-cover-title {
             padding: 8px 0 0 0;
             font-size: 32px;
             line-height: 48px;
         }
+
         .itp-m3-cover-subtitle {
             padding-bottom: 8px;
             font-size: 18px;
             line-height: 22px;
         }
     }
+
     //最大尺寸 $toggle_desktop 中等屏幕设备
     @media screen and (max-width: $toggle_desktop) {
         padding: 92px 48px 60px 48px;
+
         .itp-m3-cover-avatar {
             img {
                 max-height: 64px;
@@ -99,25 +117,30 @@
                 padding-bottom: 6px;
             }
         }
+
         .itp-m3-cover-title {
             padding: 8px 0 0 0;
             font-size: 26px;
             line-height: 32px;
         }
+
         .itp-m3-cover-subtitle {
             padding-bottom: 8px;
             font-size: 18px;
             line-height: 22px;
         }
     }
+
     //最大尺寸 600px 中等屏幕设备
     @media screen and (max-width: 600px) {
         padding: 120px 48px 48px 48px;
+
         .itp-m3-cover-title {
             padding: 8px 0 0 0;
             font-size: 26px;
             line-height: 32px;
         }
+
         .itp-m3-cover-subtitle {
             padding-bottom: 8px;
             font-size: 18px;
@@ -129,9 +152,11 @@
 //浮动弹窗
 .itp-float-layer {
     z-index: 1400;
+
     @media screen and (min-width: $toggle_desktop) {
         display: none;
     }
+
     @media screen and (max-width: $toggle_desktop) {
         width: 100vw;
         border-radius: 12px 12px 0 0;
@@ -159,6 +184,7 @@
         -webkit-box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
         box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
     }
+
     .clost-btn {
         grid-column: span 2 / span 2;
         display: flex;
@@ -166,6 +192,7 @@
         align-items: flex-start;
         padding-top: 3vh;
     }
+
     .itp-layer-toc {
         display: flex;
         padding-top: 3vh;
@@ -173,6 +200,7 @@
         grid-column: span 10 / span 10;
         flex-direction: column;
     }
+
     li {
         list-style: none;
         line-height: 24px;
@@ -223,6 +251,7 @@
         flex-direction: row;
         position: fixed;
     }
+
     @media screen and (max-width: $toggle_desktop) {
         z-index: 1000;
         height: 54px;
@@ -240,39 +269,47 @@
         -webkit-box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
         box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
     }
+
     //颜色 透明 模糊 动画
     background-color: #ffffffb5;
     backdrop-filter: saturate(180%) blur(18px) !important;
     -webkit-backdrop-filter: saturate(180%) blur(18px) !important;
+
     .itp-float-bar-item {
         background-color: rgba(0, 0, 0, 0);
         width: 68px;
         color: $black;
         text-align: center; //水平居中
         background-color: rgba(0, 0, 0, 0);
+
         [class*=material-icons-] {
             line-height: 54px;
         }
     }
+
     .itp-float-bar-item-home {
         font-weight: bold;
         width: auto;
         padding: 0 18px;
     }
+
     [type=button],
     [type=reset],
     [type=submit],
     button {
         -webkit-appearance: attachment;
     }
+
     .itp-float-bar-spacer {
         flex-grow: 1;
     }
+
     .itp-float-bar-item-max {
         @media screen and (max-width: $toggle_desktop) {
             display: none;
         }
     }
+
     .itp-float-bar-item:hover,
     .itp-float-bar-item-max:hover {
         background: rgba(225, 225, 225, 0.2);
@@ -288,12 +325,16 @@
 .hljs {
     border-radius: 5px;
     padding: 1em !important;
-    font-family: 'Courier New', Menlo, Monaco, Courier, monospace;
-    line-height: 12px;
+    font-family: monospace;
 }
 
 //文章
 .itp-m3-post {}
+
+li::marker {
+    content: ' ';
+    display: none !important;
+}
 
 
 /*
@@ -336,17 +377,21 @@
     background-size: 150px;
     background-clip: padding-box;
     margin: 0;
+
     @media screen and (min-width: $content-width) {
         padding: 18px 3.5rem;
     }
+
     @media screen and (max-width: $content-width) {
         padding: 18px 1.5rem;
     }
+
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
     background-color: #f5f5f5a4;
+
     .info_area-category {
         a {}
     }
@@ -366,19 +411,21 @@
     top: 120px;
     margin-top: 90vh;
     z-index: 90;
-    padding: 12px 0;
+    padding: 12px 2px 12px 4px;
     margin-right: 48px;
-    width: calc( 100vw / 2 - $content-width /2);
+    width: calc(100vw / 2 - $content-width /2);
     max-height: 400px;
     overflow: hidden;
     text-overflow: ellipsis;
     opacity: 0.4;
+
     ol {
         list-style-type: none;
         display: block;
         margin-left: 12px;
         line-height: 1.2em;
     }
+
     .itp-toc-item a {
         display: inline-block;
         overflow: hidden;
@@ -388,9 +435,11 @@
         max-width: 180px;
         color: $black;
     }
+
     .itp-toc-level-1 {
         font-size: 16px;
     }
+
     .itp-toc-level-2 {
         font-size: 14px;
     }
@@ -411,4 +460,3 @@
 .m3-index-pop {
     border-radius: 5px;
 }
-

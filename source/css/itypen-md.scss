@@ -1,12 +1,15 @@
+/*
+Photup Article Style
+*/
+
 p {
-    margin: 1.5em 0px !important;
+    margin: 1em 0px !important;
     font-size: 16px;
     font-weight: 400;
     color: #222831;
     line-height: 1.8em;
     letter-spacing: 0;
 }
-
 
 /*
 文字避头尾法则
@@ -38,7 +41,7 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 20px 0 10px;
+    margin: 1.5em 0 0.5em 0;
     padding: 0;
     font-style: bold !important;
     color: $black !important;
@@ -50,44 +53,31 @@ h6 {
 
 h1 {
     font-style: normal;
-    font-size: 28px;
+    font-size: 1.8em;
     line-height: 140%;
-    margin-top: 36px;
-    margin-bottom: 24px;
     text-align: left !important;
 }
 
 h2 {
-    font-size: 26px !important;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    font-size: 1.6em !important;
 }
 
 h3 {
-    font-size: 22px;
-    margin-top: 24px;
-    margin-bottom: 16px;
+    font-size: 1.4em;
 }
 
 h4 {
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 16px;
+    font-size: 1.2em;
 }
 
 h5 {
-    font-size: 18px;
+    font-size: 1em;
     font-weight: 500;
-    font-size: 16px;
-    margin-top: 20px;
-    margin-bottom: 16px;
 }
 
 h6 {
-    font-size: 18px;
-    font-weight: 500;
-    margin-top: 20px;
-    margin-bottom: 8px;
+    font-size: 1em;
+    font-weight: 400;
 }
 
 strong {
@@ -100,6 +90,11 @@ ol {
 
 ul {
     list-style-type: disc;
+}
+
+ol,
+ul {
+    margin-left: 1.4em;
 }
 
 ol li,
@@ -119,8 +114,9 @@ img {
 blockquote {
     padding: 0 0px 0 10px;
     margin: 1.5em 0px !important;
-    border-left: 2px solid $main-color;
+    border-left: 2px solid #71aedd;
     quotes: none;
+
     p {
         color: $grey;
         margin-top: 0 !important;
@@ -133,7 +129,7 @@ blockquote::before,
     display: block;
     font-style: normal;
     font-size: 28px;
-    color: $main-color;
+    color:  #71aedd;
     font-weight: bold;
     line-height: 30px;
 }
@@ -141,41 +137,11 @@ blockquote::before,
 a {
     color: $black;
     text-decoration: underline;
-    text-decoration-color: $main-color;
+    text-decoration-color:  #71aedd;
 }
 
 mark {
-    background: #9deeb0;
-}
-
-.right {
-    @media screen and (max-width: 768px) {
-        vertical-align: middle;
-        text-align: center
-    }
-    @media screen and (min-width: 768px) {
-        float: right;
-        padding: 15px;
-    }
-    @media print {
-        float: right;
-        padding: 15px;
-    }
-}
-
-.left {
-    @media screen and (max-width: 768px) {
-        vertical-align: middle;
-        text-align: center
-    }
-    @media screen and (min-width: 768px) {
-        float: left;
-        padding: 15px;
-    }
-    @media print {
-        float: left;
-        padding: 15px;
-    }
+    background: #71aedd80;
 }
 
 ol li,
@@ -189,4 +155,12 @@ ul li {
     span {
         display: contents !important;
     }
+}
+
+pre {
+    margin: 1em 0px !important;
+}
+
+code {
+    line-height: 16px;
 }
