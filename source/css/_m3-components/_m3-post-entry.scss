@@ -63,7 +63,9 @@
     .category {
         z-index: 1;
         position: relative;
-        .tags {}
+        .itp-m3-chip-bold-list a{
+            margin: 0;
+        }
     }
 }
 

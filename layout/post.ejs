@@ -118,18 +118,22 @@
       <div class="itp-m3-post-info_area">
         <div class="info_area-category">
           <% if (page.categories && page.categories.length) { %>
-          <% page.categories.each(function(categories){ %>
-          <a href="<%= config.root %>categories/<%= categories.name %>/" rel="categories" class="itp-m3-chip-color">
-            <%- categories.name %>
-          </a>
-          <% }); %>
+          <div class="itp-m3-chip-color-list">
+            <%- list_categories(page.categories, {
+                  show_count: false,
+                  class: '',
+                  style: 'none',
+                  separator: ''
+                }) %>
+          </div>
           <% } %>
           <% if (page.tags && page.tags.length) { %>
-          <% page.tags.each(function(tag){ %>
-          <a href="<%= config.root %>tags/<%= tag.name %>/" rel="tag" class="itp-m3-chip-normal">
-            #<%- tag.name %>
-          </a>
-          <% }); %>
+          <div class="itp-m3-chip-normal-list">
+            <%- list_tags(page.tags,{
+                  show_count: false,
+                  style: 'none',
+                }) %>
+          </div>
           <% } %>
         </div>
         <div class="info_area-copyright">
@@ -149,3 +153,6 @@
 </div>
 <% } %>
 <!--<%- partial('_partial/shareimg') %>-->
+<style>
+  .itp-m3-chip-color-list {}
+</style>
