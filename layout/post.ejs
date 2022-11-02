@@ -121,9 +121,8 @@
           <div class="itp-m3-chip-color-list">
             <%- list_categories(page.categories, {
                   show_count: false,
-                  class: '',
-                  style: 'none',
-                  separator: ''
+                  separator: '',
+                  style: 'none'
                 }) %>
           </div>
           <% } %>
@@ -131,13 +130,14 @@
           <div class="itp-m3-chip-normal-list">
             <%- list_tags(page.tags,{
                   show_count: false,
+                  separator: '',
                   style: 'none',
                 }) %>
           </div>
           <% } %>
         </div>
         <div class="info_area-copyright">
-          <p><%- __('post_copyright')%></p>
+          <p><%- __('post_copyright_before')%>&nbsp<%- config.author %>&nbsp<%- __('post_copyright_after')%></p>
         </div>
       </div>
     </div>
@@ -153,6 +153,3 @@
 </div>
 <% } %>
 <!--<%- partial('_partial/shareimg') %>-->
-<style>
-  .itp-m3-chip-color-list {}
-</style>

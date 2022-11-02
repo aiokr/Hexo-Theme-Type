@@ -131,7 +131,7 @@ auto_excerpt:
 # style github | tomorrow  | night-blue | night-bright | night-eighties
 highlight:
   use: true
-  style: night-bright
+  style: github
 
 # Copyright
 
