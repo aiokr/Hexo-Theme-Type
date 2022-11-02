@@ -12,23 +12,21 @@
   <div class="index-achieve-title title"><%- title %></div>
   <div class="text-2xl leading-10 py-2 col-span-1 md:col-span-3 text-tblack"><%- __('categories')%></div>
   <section class="itp-article-categories" style="list-style-type: none;">
-    <div class="itp-m3-chip-color">
+    <div class="itp-m3-chip-color-list">
       <%- list_categories({
           show_count: false,
-          class: '',
-          style: 'none',
-          separator: '</div><div class="itp-m3-chip-color">'
+          style: 'none'
         }) %>
+    </div>
   </section>
   <div class="text-2xl leading-10 py-2 col-span-1 md:col-span-3 text-tblack"><%- __('tags')%></div>
   <section class="itp-article-categories" style="list-style-type: none;">
-    <div class="itp-m3-chip-normal">
+    <div class="itp-m3-chip-normal-list">
       <%- list_tags({
           show_count: false,
-          class: '',
           style: 'none',
-          separator: '</div><div class="itp-m3-chip-normal">'
         }) %>
+    </div>
   </section>
   <%- partial('_partial/archive-list') %>
 </div>

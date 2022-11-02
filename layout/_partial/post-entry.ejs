@@ -103,11 +103,12 @@
         <% } %>
       </div>
       <div class="category">
-        <% item.categories.each(function(categories){ %>
-        <a class="itp-m3-chip-bold" href="<%= config.root %>categories/<%= categories.name %>/" rel="tag" title="<%= categories.name %>">
-          <%- categories.name %>
-        </a>
-        <% }); %>
+        <div class="itp-m3-chip-bold-list">
+          <%- list_categories(item.categories, {
+                  show_count: false,
+                  style: 'none',
+                }) %>
+        </div>
       </div>
       <a href="<%- url_for(item.path) %>" class="post-entry-link" title="<%- item.title || theme.default_post_title %>"></a>
     </div>
