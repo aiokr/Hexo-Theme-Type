@@ -5,7 +5,7 @@
       <% if (site.data.links) { %>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-2" style="padding-bottom: 10px;">
         <% for (var i in site.data.links) { %>
-        <a href="<%= site.data.links[i].url %>" title="<%= i %>" target="_blank" class="links-item px-3 py-1 items-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded transition-all">
+        <a href="<%= site.data.links[i].url %>" title="<%= i %>" target="_blank" class="links-item p-2 items-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded transition-all">
           <img src="<%= site.data.links[i].img %>" class="links-avatar nofancy">
           <div class="px-3">
             <div class="links-title text-tblack dark:text-white"><%= i %></div>
@@ -42,6 +42,7 @@
   .links-item {
     display: flex;
     height: 68px;
+    border-radius: 34px;
   }
 
   .links-title,.links-desrc {
