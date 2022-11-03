@@ -173,6 +173,14 @@ comment:
   waline:
     serverurl: https://comment.tripper.press/
 
+# Search 搜索
+# Use hexo-generator-search or hexo-algoliasearch
+# if use local, use 'npm install hexo-generator-search --save' to install
+# if use algolia use 'npm install hexo-algoliasearch --save' to install
+search:
+  #use: local
+  use: algolia
+
 # Busuanzi Count 不蒜子计数
 busuanzi: false
 
