@@ -3,7 +3,7 @@
 <%} else if (page.layout == 'gallery' ) {%>
 <%} else if (page.layout == 'gallery2' ) {%>
 <% } else { %>
-<div class="itp-m3-card top-cover">
+<div class="itp-m3-card top-cover content-area">
   <div class="itp-m3-card-cover">
     <div class="itp-m3-cover-bg" style="
           background-image: url(<%- page.cover || theme.header.img %>);
@@ -45,7 +45,7 @@
 </div>
 <% } %>
 <% } else if (theme.schemes =='column' ) { %>
-<div class="itp-cover noprn">
+<div class="itp-cover noprn content-area">
   <div class="itp-cover-img">
     <% if (page.blur==true){ %>
     <img class="nofancy blur" src="<%- page.cover || theme.header.img %>">

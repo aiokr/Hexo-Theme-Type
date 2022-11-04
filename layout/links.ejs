@@ -26,39 +26,39 @@
       <%- partial('_partial/comment') %>
     </div>
   </div>
-</div>
-<% if (theme.schemes==='m3' ) { %>
-<style>
-  body {
-    background-color: #fff;
-  }
-
-  @media (prefers-color-scheme: dark) {
+  <% if (theme.schemes==='m3' ) { %>
+  <style>
     body {
-      background-color: #121212;
+      background-color: #fff;
     }
-  }
 
-  .links-item {
-    display: flex;
-    height: 68px;
-    border-radius: 34px;
-  }
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+      }
+    }
 
-  .links-title,.links-desrc {
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-  }
+    .links-item {
+      display: flex;
+      height: 68px;
+      border-radius: 34px;
+    }
 
-  .links-avatar{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-  }
-</style>
-<% } %>
+    .links-title,
+    .links-desrc {
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
+    }
+
+    .links-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  </style>
+  <% } %>
 </div>
 </div>
