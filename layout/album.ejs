@@ -19,7 +19,7 @@
 
   <div class="album-list flex gap-2">
     <% for (var i in page.photos) { %>
-    <a class="album-item" id="<%- i %>" rel="<%- page.photos[i] %>" href="javascript:void(0);" onClick="changeimg(event)" style="background-image:url('<%- page.photos[i] %>')"></a>
+    <a class="album-item lazy-bg" id="<%- i %>" rel="<%- page.photos[i] %>" href="javascript:void(0);" onClick="changeimg(event)" data-src="<%- page.photos[i] %>"></a>
     <% } %>
   </div>
 
@@ -28,6 +28,9 @@
   </div>
 </div>
 <script>
+  $(function() {
+    $("a.lazy-bg").lazyload();
+  });
   function changeimg() {
     var imgLink = event.target.getAttribute('rel');
     $(".pic-area").css("background-image", "url(" + imgLink + ")");
@@ -37,6 +40,11 @@
   <style>
     body {
       background-color: #fff;
+    }
+
+    .content-area {
+
+      padding: 16px;
     }
 
     @media (max-width: 768px) {
@@ -52,6 +60,7 @@
         grid-column: span 3 / span 3;
         padding: 12px;
       }
+
       .album-article {
         padding: 12px;
       }
