@@ -7,10 +7,25 @@
 <!-- Head tag -->
 <%- partial('_partial/head') %>
 <% if(page.layout === 'layout') { %>
+
 <body>
   <%- page.content %>
 </body>
+
+<%} else if(page.layout === 'whiteboard') { %>
+
+<body>
+  <!-- Nav -->
+  <%- partial('_partial/nav') %>
+  <!-- Main Content -->
+  <%- page.content %>
+  <%- partial('_partial/footer') %>
+  <!-- After footer scripts -->
+  <%- partial('_partial/after-footer') %>
+</body>
+
 <% } else { %>
+
 <body>
   <!-- Nav -->
   <%- partial('_partial/nav') %>

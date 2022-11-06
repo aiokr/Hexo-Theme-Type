@@ -1,27 +1,35 @@
 <div class="content-area post-album pjax-area">
   <div class="grid grid-cols-3 gap-2">
-    <div class="pic-area" style="background-image:url('<%- page.cover || theme.header.img %>');">
+    <div class="pic-area">
+      <div id="imgbox" class="pic-item" style="background-image:url('<%- page.cover || theme.header.img %>');">
+      </div>
+      <div class="album-list flex gap-2">
+        <% for (var i in page.photos) { %>
+        <a class="album-item lazy-bg" id="<%- i %>" rel="<%- page.photos[i] %>" href="javascript:void(0);" onClick="changeimg(event)" data-src="<%- page.photos[i] %>" aria-label="the photo <%- i %>"></a>
+        <% } %>
+      </div>
     </div>
     <div class="album-info flex">
       <div class="album-info-main">
         <div class="album-title"><%- page.title %></div>
         <span class="album-subtitle">
-          <%= page.date.format(config.date_format) %>
+          <%= page.date.format(config.date_format) %><br />
+        </span>
+        <span class="album-subtitle">
+          <%= page.excerpt %>
         </span>
       </div>
       <div class="album-info-btm">
+        <% if ( page.location ){ %>
         <div class="album-location">
           <iconpark-icon name="aiming"></iconpark-icon><span><%- page.location %></span>
         </div>
+        <% } %>
       </div>
     </div>
   </div>
 
-  <div class="album-list flex gap-2">
-    <% for (var i in page.photos) { %>
-    <a class="album-item lazy-bg" id="<%- i %>" rel="<%- page.photos[i] %>" href="javascript:void(0);" onClick="changeimg(event)" data-src="<%- page.photos[i] %>"></a>
-    <% } %>
-  </div>
+
 
   <div class="album-article article">
     <%- page.content %>
@@ -31,9 +39,10 @@
   $(function() {
     $("a.lazy-bg").lazyload();
   });
+  var imageBox = document.getElementById("imgbox");
   function changeimg() {
     var imgLink = event.target.getAttribute('rel');
-    $(".pic-area").css("background-image", "url(" + imgLink + ")");
+    imageBox.style.backgroundImage = "url(" + imgLink + ")";
   }
 </script>
 <section class="pjax-area">
@@ -82,13 +91,13 @@
       }
     }
 
-    @media (min-width: 1086px) {
+    @media (min-width: 1304px) {
       .content-area {
-        max-width: 1000px;
+        max-width: 1200px;
       }
     }
 
-    .pic-area {
+    .pic-item {
       aspect-ratio: 3 / 2;
       background-size: cover;
       background-position: center;
@@ -115,7 +124,6 @@
       display: inline-flex;
       font-size: .8em;
       color: #71afdd;
-      opacity: 0.65;
       gap: 4px;
       padding-bottom: 4px;
     }
@@ -130,6 +138,16 @@
       height: 100px;
       background-size: cover;
       background-position: center;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .album-info {
+        color: #fff;
+      }
+
+      .album-location {
+        color: #bdbdbd;
+      }
     }
   </style>
 </section>
