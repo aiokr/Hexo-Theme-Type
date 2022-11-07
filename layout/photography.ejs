@@ -1,5 +1,5 @@
 <section class="content-area album-area pjax-area">
-  <div class="container grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[8px]">
+  <div class="container grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
     <% if (site.data.album) { %>
     <% for (var a in site.data.album) { %>
     <a href="<%- site.data.album[a].url %>">
@@ -21,6 +21,10 @@
       background-color: #fff;
     }
 
+    .container {
+      gap: 8px;
+    }
+
     .content-area {
       padding-top: 118px;
       padding-left: 16px;
@@ -33,6 +37,7 @@
       background-size: cover;
       border-radius: 5px;
       transition: all .15s ease-in-out;
+      min-height: 211px;
     }
 
     .gpro-tile:hover {

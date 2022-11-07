@@ -205,6 +205,10 @@ umami_analytics:
   id: eff465f3-a4a1-4cfd-a5ab-cbbcb1b32a48
   src: https://analytics.tripper.press/aioana.js
 
+# Vercel Audiences Analytics
+vercel_analytics:
+  use: true
+
 # chart.js
 # https://www.chartjs.org/
 chart_js:

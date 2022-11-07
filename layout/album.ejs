@@ -8,8 +8,9 @@
         <a class="album-item lazy-bg" id="<%- i %>" rel="<%- page.photos[i] %>" href="javascript:void(0);" onClick="changeimg(event)" data-src="<%- page.photos[i] %>" aria-label="the photo <%- i %>"></a>
         <% } %>
       </div>
+
     </div>
-    <div class="album-info flex">
+    <div class="album-info">
       <div class="album-info-main">
         <div class="album-title"><%- page.title %></div>
         <span class="album-subtitle">
@@ -18,6 +19,9 @@
         <span class="album-subtitle">
           <%= page.excerpt %>
         </span>
+        <div class="album-article article">
+          <%- page.content %>
+        </div>
       </div>
       <div class="album-info-btm">
         <% if ( page.location ){ %>
@@ -28,11 +32,8 @@
       </div>
     </div>
   </div>
-
-
-
-  <div class="album-article article">
-    <%- page.content %>
+  <div class="album-comment">
+    <%- partial('_partial/comment') %>
   </div>
 </div>
 <script>
@@ -40,6 +41,7 @@
     $("a.lazy-bg").lazyload();
   });
   var imageBox = document.getElementById("imgbox");
+
   function changeimg() {
     var imgLink = event.target.getAttribute('rel');
     imageBox.style.backgroundImage = "url(" + imgLink + ")";
@@ -52,8 +54,16 @@
     }
 
     .content-area {
-
       padding: 16px;
+    }
+
+    .album-comment {
+      padding: 12px 0;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .album-comment .v {
     }
 
     @media (max-width: 768px) {
@@ -71,7 +81,7 @@
       }
 
       .album-article {
-        padding: 12px;
+        padding: 12px 0;
       }
     }
 
@@ -102,6 +112,7 @@
       background-size: cover;
       background-position: center;
       transition: all .3s ease-in-out;
+      min-height: 297px;
     }
 
     .album-info {
@@ -135,7 +146,8 @@
 
     .album-item {
       aspect-ratio: 1 / 1;
-      height: 100px;
+      min-height: 100px;
+      min-width: 100px;
       background-size: cover;
       background-position: center;
     }

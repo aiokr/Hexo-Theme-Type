@@ -153,6 +153,10 @@
   <% } %>
   <% } %>
   <% } %>
+  <!--Vercel Audiences  Analytics-->
+  <% if(theme.vercel_analytics.use == true) { %>
+  <script defer src="/va/script.js"></script>
+  <% } %>
   <!--umami analytics-->
   <% if(theme.umami_analytics.use == true) { %>
   <script async defer data-website-id="<%= theme.umami_analytics.id %>" src="<%= theme.umami_analytics.src %>"></script>
