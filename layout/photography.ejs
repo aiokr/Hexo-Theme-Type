@@ -1,38 +1,54 @@
-<section class="content-area album-area pjax-area">
-  <div class="container grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-    <% if (site.data.album) { %>
-    <% for (var a in site.data.album) { %>
-    <a href="<%- site.data.album[a].url %>">
-      <div class="gpro-tile lazy-bg" data-src="<%- site.data.album[a].cover %>">
-        <div class="gpro-tile-descr"><%= a %></div>
-      </div>
-    </a>
-    <% } %><% } %>
-  </div>
-</section>
-<script>
-  $(function() {
-    $("div.lazy-bg").lazyload();
-  });
-</script>
 <section class="pjax-area">
+  <div class="content-area album-area">
+    <% if (theme.photography_page.slogan) { %>
+    <div class="container gpro-slogan title">
+      <%- theme.photography_page.slogan %>
+    </div>
+    <% } %>
+    <div class="container gpro-container grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <% if (site.data.album) { %>
+      <% for (var a in site.data.album) { %>
+      <a href="<%- site.data.album[a].url %>">
+        <div class="gpro-tile lazy" data-src="<%- site.data.album[a].cover %>">
+          <div class="gpro-tile-descr"><%= a %></div>
+        </div>
+      </a>
+      <% } %><% } %>
+    </div>
+  </div>
+  <script>
+    $(function() {
+      $("div.lazy").lazyload();
+    });
+  </script>
   <style>
     body {
       background-color: #fff;
     }
 
-    .container {
+    .album-area {
+      margin-top: 120px;
+      padding-left: 16px;
+      padding-right: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .gpro-slogan {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: #3D4350;
+    }
+
+    .gpro-container {
+      margin-top: 120px;
       gap: 8px;
     }
 
-    .content-area {
-      padding-top: 118px;
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-
     .gpro-tile {
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 3 / 2;
       background-position: center;
       background-size: cover;
       border-radius: 5px;
@@ -68,6 +84,20 @@
     .gpro-tile-descr:hover {
       opacity: 1;
       transition: all .15s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+      .gpro-slogan {
+        font-size: 28px;
+      }
+
+      .content-area {
+        margin-top: 80px;
+      }
+
+      .gpro-container {
+        margin-top: 60px;
+      }
     }
   </style>
 </section>

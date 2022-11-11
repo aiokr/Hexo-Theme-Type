@@ -1,53 +1,50 @@
-<div class="content-area post-album pjax-area">
-  <div class="grid grid-cols-3 gap-2">
-    <div class="pic-area">
-      <div id="imgbox" class="pic-item" style="background-image:url('<%- page.cover || theme.header.img %>');">
-      </div>
-      <div class="album-list flex gap-2">
-        <% for (var i in page.photos) { %>
-        <a class="album-item lazy-bg" id="<%- i %>" rel="<%- page.photos[i] %>" href="javascript:void(0);" onClick="changeimg(event)" data-src="<%- page.photos[i] %>" aria-label="the photo <%- i %>"></a>
-        <% } %>
-      </div>
-
-    </div>
-    <div class="album-info">
-      <div class="album-info-main">
-        <div class="album-title"><%- page.title %></div>
-        <span class="album-subtitle">
-          <%= page.date.format(config.date_format) %><br />
-        </span>
-        <span class="album-subtitle">
-          <%= page.excerpt %>
-        </span>
-        <div class="album-article article">
-          <%- page.content %>
-        </div>
-      </div>
-      <div class="album-info-btm">
-        <% if ( page.location ){ %>
-        <div class="album-location">
-          <iconpark-icon name="aiming"></iconpark-icon><span><%- page.location %></span>
-        </div>
-        <% } %>
-      </div>
-    </div>
-  </div>
-  <div class="album-comment">
-    <%- partial('_partial/comment') %>
-  </div>
-</div>
-<script>
-  $(function() {
-    $("a.lazy-bg").lazyload();
-  });
-  var imageBox = document.getElementById("imgbox");
-
-  function changeimg() {
-    var imgLink = event.target.getAttribute('rel');
-    imageBox.style.backgroundImage = "url(" + imgLink + ")";
-  }
-</script>
 <section class="pjax-area">
+  <div class="content-area post-album">
+    <div class="grid grid-cols-3 gap-2">
+      <div class="pic-area">
+        <div id="imgbox" class="pic-item" style="background-image:url('<%- page.cover || theme.header.img %>');">
+        </div>
+        <div class="album-list flex gap-2">
+          <% for (var i in page.photos) { %>
+          <a class="album-item lazy" id="<%- i %>" rel="<%- page.photos[i] %>" href="javascript:void(0);" onClick="changeimg(event)" data-src="<%- page.photos[i] %>" aria-label="the photo <%- i %>"></a>
+          <% } %>
+        </div>
+
+      </div>
+      <div class="album-info">
+        <div class="album-info-main">
+          <div class="album-title"><%- page.title %></div>
+          <span class="album-subtitle">
+            <%= page.date.format(config.date_format) %><br />
+          </span>
+          <span class="album-subtitle">
+            <%= page.excerpt %>
+          </span>
+        </div>
+        <div class="album-info-btm">
+          <% if ( page.location ){ %>
+          <div class="album-location">
+            <iconpark-icon name="aiming"></iconpark-icon><span><%- page.location %></span>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="album-article article">
+      <%- page.content %>
+    </div>
+    <div class="album-comment">
+      <%- partial('_partial/comment') %>
+    </div>
+  </div>
+  <script>
+    var imageBox = document.getElementById("imgbox");
+    function changeimg() {
+      var imgLink = event.target.getAttribute('rel');
+      imageBox.style.backgroundImage = "url(" + imgLink + ")";
+    }
+  </script>
   <style>
     body {
       background-color: #fff;
@@ -63,8 +60,7 @@
       margin: 0 auto;
     }
 
-    .album-comment .v {
-    }
+    .album-comment .v {}
 
     @media (max-width: 768px) {
       .content-area {
@@ -112,7 +108,7 @@
       background-size: cover;
       background-position: center;
       transition: all .3s ease-in-out;
-      min-height: 297px;
+      min-height: 200px;
     }
 
     .album-info {

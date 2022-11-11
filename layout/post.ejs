@@ -63,93 +63,97 @@
 <% } %>
 <%} else if (theme.schemes==='m3' ) { %>
 <% if (page.style==='photos' ) { %>
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5" style="max-width: 100vw; padding-top: 58px;">
-  <% for (var i in page.photos) { %>
-  <div style="padding: 2px; position: relative;">
-    <div class="itp-gallery2-tile itp-gallery-img lazy-bg" data-src="<%- page.photos[i] %>">
-      <a data-fancybox="images" href="<%- page.photos[i] %>" class="image-fancy-link" data-caption="<%- page.title %>">>
-      </a>
+<section class="pjax-area">
+  <div class="content-area grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5" style="max-width: 100vw; padding-top: 58px;">
+    <% for (var i in page.photos) { %>
+    <div style="padding: 2px; position: relative;">
+      <div class="itp-gallery2-tile itp-gallery-img lazy" data-src="<%- page.photos[i] %>">
+        <a data-fancybox="images" href="<%- page.photos[i] %>" class="image-fancy-link" data-caption="<%- page.title %>">>
+        </a>
+      </div>
     </div>
+    <% } %>
+    <script>
+      $(function() {
+        $("div.lazy").lazyload();
+      });
+    </script>
+    <%- css('css/gallery') %>
+    <style>
+      @media screen and (min-width: 1022px) {
+        .mdui-grid-list {
+          margin-top: 58px;
+        }
+      }
+    </style>
   </div>
-  <% } %>
-</div>
-<script>
-  $(function() {
-    $("div.lazy-bg").lazyload();
-  });
-</script>
-<%- css('css/gallery') %>
-<style>
-  @media screen and (min-width: 1022px) {
-    .mdui-grid-list {
-      margin-top: 58px;
-    }
-  }
-</style>
+</section>
 <% } %>
-<div class="content-area post-content-area">
-  <div class="left-area"></div>
-  <div class="main-area">
-    <div class="itp-m3-card post-cover">
-      <div class="itp-m3-card-cover">
-        <div class="itp-m3-cover-bg" style="
+<section class="pjax-area">
+  <div class="content-area post-content-area">
+    <div class=" left-area"></div>
+    <div class="main-area">
+      <div class="itp-m3-card post-cover">
+        <div class="itp-m3-card-cover">
+          <div class="itp-m3-cover-bg" style="
           background-image: url(<%- page.cover || theme.header.img %>);
           background-size: cover;
           background-position: center center;
         ">
-          <div class="itp-m3-card-cover-layer ">
-            <div class="info-area pjax-area">
-              <div class="itp-m3-cover-avatar">
-                <img src="<%- theme.avatar %>" class="nofancy">
-              </div>
-              <div class="itp-m3-cover-title" style="opacity: 1;">
-                <%= page.title || config.title %>
-              </div>
-              <div class="itp-m3-cover-subtitle" style="opacity: 0.8;">
-                <%- partial('_partial/subtitle') %>
+            <div class="itp-m3-card-cover-layer ">
+              <div class="info-area pjax-area">
+                <div class="itp-m3-cover-avatar">
+                  <img src="<%- theme.avatar %>" class="nofancy">
+                </div>
+                <div class="itp-m3-cover-title" style="opacity: 1;">
+                  <%= page.title || config.title %>
+                </div>
+                <div class="itp-m3-cover-subtitle" style="opacity: 0.8;">
+                  <%- partial('_partial/subtitle') %>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="article">
-        <%- page.content %>
-      </div>
-      <div class="itp-m3-post-info_area">
-        <div class="info_area-category">
-          <% if (page.categories && page.categories.length) { %>
-          <div class="itp-m3-chip-color-list">
-            <%- list_categories(page.categories, {
+        <div class="article">
+          <%- page.content %>
+        </div>
+        <div class="itp-m3-post-info_area">
+          <div class="info_area-category">
+            <% if (page.categories && page.categories.length) { %>
+            <div class="itp-m3-chip-color-list">
+              <%- list_categories(page.categories, {
                   show_count: false,
                   separator: '',
                   style: 'none'
                 }) %>
-          </div>
-          <% } %>
-          <% if (page.tags && page.tags.length) { %>
-          <div class="itp-m3-chip-normal-list">
-            <%- list_tags(page.tags,{
+            </div>
+            <% } %>
+            <% if (page.tags && page.tags.length) { %>
+            <div class="itp-m3-chip-normal-list">
+              <%- list_tags(page.tags,{
                   show_count: false,
                   separator: '',
                   style: 'none',
                 }) %>
+            </div>
+            <% } %>
           </div>
-          <% } %>
-        </div>
-        <div class="info_area-copyright">
-          <p><%- __('post_copyright_before')%>&nbsp<%- config.author %>&nbsp<%- __('post_copyright_after')%></p>
+          <div class="info_area-copyright">
+            <p><%- __('post_copyright_before')%>&nbsp<%- config.author %>&nbsp<%- __('post_copyright_after')%></p>
+          </div>
         </div>
       </div>
+      <div class="itp-m3-card itp-m3-post-comment_area" id="comment">
+        <%- partial('_partial/comment') %>
+      </div>
     </div>
-    <div class="itp-m3-card itp-m3-post-comment_area" id="comment">
-      <%- partial('_partial/comment') %>
+    <div class="right-area">
+      <% if (theme.post_toc == true ) { %>
+      <%- partial('_partial/column-toc-m3') %>
+      <% } %>
     </div>
   </div>
-  <div class="right-area">
-    <% if (theme.post_toc == true ) { %>
-    <%- partial('_partial/column-toc-m3') %>
-    <% } %>
-  </div>
-</div>
-<% } %>
-<!--<%- partial('_partial/shareimg') %>-->
+  <% } %>
+  <!--<%- partial('_partial/shareimg') %>-->
+</section>
