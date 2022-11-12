@@ -402,7 +402,7 @@ li::marker {
     p {
         color: $black;
         line-height: 24px;
-        padding: 12px 6px 6px 0px;
+        padding: 12px 6px 6px 4px;
     }
 }
 
@@ -467,9 +467,22 @@ li::marker {
     display: grid;
 
     @media screen and (min-width: 1022px) {
-      max-width: $content-width;
+        max-width: $content-width;
     }
 
     max-width: 1280px;
     margin: 0 auto;
-  }
+}
+
+//comment
+#comment {
+    background: url(../img/forum_black_24dp.svg);
+    background-position: right -45px top -35px;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-clip: padding-box;
+    background-color: #ffffff;
+    margin: 65px auto;
+    border-radius: 5px;
+    padding: 24px;
+}

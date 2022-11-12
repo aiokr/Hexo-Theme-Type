@@ -5,6 +5,7 @@ var pjax = new Pjax({
     "meta[name=description]", // 如果是全部 meta 替换的话，只需要写 meta
     "section.pjax-area",
     "div.itp-float-bar",
+    "script[data-pjax]",
   ],
   cacheBust: false,
   scrollRestoration: true,

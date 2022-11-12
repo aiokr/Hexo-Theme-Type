@@ -87,6 +87,8 @@ cover_links:
   - title: RSS Feed
     link: /atom.xml
     descr: 'iTypen.APP'
+  - title: Search
+    link: /search/
 
 # Social link 社交链接
 social_link:
@@ -96,7 +98,7 @@ social_link:
     switch: false
     src: https://imgur.lzmun.com/picgo/20200324090429.jpg
   wechat_public: 
-    switch: true
+    switch: false
     src: https://open.weixin.qq.com/qr/code?username=itypen
 
 # ---------------------------------------------------------------
@@ -134,6 +136,12 @@ highlight:
   style: github
 
 # Copyright
+
+# 独立页面设置
+
+photography_page:
+  slogan: true
+  slogan_descr: 'The moments when I pressed the shutter, the moments are forever.'
 
 
 # ---------------------------------------------------------------
