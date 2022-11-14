@@ -312,6 +312,11 @@
     margin: 0 auto;
   }
 }
+
+svg.verified-icon  {
+  display: inline;
+  margin: 0 2px;
+}
 .vpower {
   color: $deep-grey;
   font-size: 10px;

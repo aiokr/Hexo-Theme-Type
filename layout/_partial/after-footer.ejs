@@ -41,7 +41,6 @@
 <%- js('js/shareimg') %>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.js" defer></script>
 -->
-
 <!--lazyload-->
 <% if(theme.cdn.use == 'jsdelivr') { %>
 <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js" defer></script>
@@ -49,8 +48,16 @@
 <%- js('js/lazyload.js') %>
 <% } %>
 <!--PJAX-->
+<!--Pjax from https://github.com/MoOx/pjax-->
+<% if(theme.cdn.use == 'jsdelivr') { %>
 <script src="https://cdn.jsdelivr.net/npm/pjax/pjax.js"></script>
+<% } else if ( theme.cdn.use == 'self_host') { %>
+<%- js('js/pjax.js') %>
+<% } %>
 <%- js('js/pjax-ctrl.js') %>
+<!--nprogress-->
+<%- js('js/nprogress.js') %>
+<%- css('css/nprogress.css') %>
 <!--首页键盘快捷键-->
 <% if( (is_home()) ) { %>
 <script>

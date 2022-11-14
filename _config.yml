@@ -41,7 +41,7 @@ fonts:
 # Header Links Style 导航链接样式
 # Use text ｜ icon
 nav_style: icon
-nav_style_src: "https://lf1-cdn-tos.bytegoofy.com/obj/iconpark/icons_20213_16.eafdb93355dd8d71fdb47c45fd59662a.js"
+nav_style_src: https://lf1-cdn-tos.bytegoofy.com/obj/iconpark/icons_20213_17.47c34e4be80743cd5edd866b34df1d9a.js
 
 # Random Pictures
 random_pic_switch: false
@@ -149,35 +149,13 @@ photography_page:
 # ---------------------------------------------------------------
 
 # Comment 评论
-# Use gitment | valine | disqus | disqusjs | gitalk | waline
+# Use 
 # disqusjs 参考 https://github.com/SukkaW/DisqusJS 进行部署
 comment:
   use: waline
-  gitment:
-    owner:
-    repo:
-    client_id:
-    client_secret:
-  valine:
-    appid: 
-    appkey: 
-  disqus:
-    src: 
-    # such as: https://xxx.disqus.com/embed.js
-  disqusjs:
-    shortname: 
-    siteName: 
-    api: 
-    apikey: 
-    title: 
-    admin: 
-  gitalk:
-    clientID: 
-    clientSecret: 
-    repo: 
-    owner: 
-    admin: 
-    distractionFreeMode: 
+  cusdis:
+    host:
+    app_id: f72a62c5-d240-4ab2-a094-fdda5a919029
   waline:
     serverurl: https://comment.tripper.press/
 

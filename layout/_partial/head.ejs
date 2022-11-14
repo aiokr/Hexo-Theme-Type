@@ -53,6 +53,7 @@
   <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
   <!-- 是否启用 WebApp 全屏模式 -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="apple-touch-startup-image" href="/assets/ splash-assets.png" media="(max-device-width: 700px)">
   <!-- 禁止数字识自动别为电话号码 -->
   <meta name="format-detection" content="telephone=no" />
   <link rel="shortcut icon" href="<%- url_for(config.favicon || theme.favicon) %>">
@@ -118,42 +119,11 @@
   <% } %>
   <!--Comment-->
   <% if(is_post() | is_page()) {%>
-  <% if(theme.comment.use == 'gitment') { %>
-  <% if(theme.cdn.use == 'jsdelivr') { %>
-  <script data-pjax src='//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.js'></script>
-  <script data-pjax src='//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/theme/default.js'></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css">
-  <% } else if ( theme.cdn.use == 'self_host') { %>
-  <link rel="stylesheet" href="/css/gitment.css">
-  <script src="/js/gitment.js"></script>
-  <script src="/js/gitment-theme.js"></script>
-  <% } %>
-  <% } else if ( theme.comment.use == 'valine') { %>
-  <% if(theme.cdn.use == 'jsdelivr') { %>
-  <script data-pjax src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
-  <script data-pjax src='//cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js'></script>
-  <% } else if ( theme.cdn.use == 'self_host') { %>
-  <script data-pjax src="/js/av-min.js"></script>
-  <script data-pjax src='/js/Valine.min.js'></script>
-  <% } %>
-  <% } else if (theme.comment.use == 'waline') { %>
-  <% if (theme.schemes =='column' ){ %>
-  <% if(theme.cdn.use == 'jsdelivr') { %>
-  <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
-  <% } else if ( theme.cdn.use == 'self_host') { %>
-  <script data-pjax src='/js/walline-client.js'></script>
-  <% } %>
-  <%} else if (theme.schemes =='m3' ){ %>
-  <% if(theme.cdn.use == 'jsdelivr') { %>
-  <script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.noStyle.js"></script>
-  <% } else if ( theme.cdn.use == 'self_host') { %>
-  <script src="/js/Waline.noStyle.js"></script>
-  <% } %>
-  <%- css('css/waline') %>
+  <% if(theme.comment.use == '') { %>
+
   <% } %>
   <% } %>
-  <% } %>
-  <!--Vercel Audiences  Analytics-->
+  <!--Vercel Audiences Analytics-->
   <% if(theme.vercel_analytics.use == true) { %>
   <script defer src="/va/script.js"></script>
   <% } %>
@@ -220,6 +190,17 @@
   <% } %>
   <% if (theme.pwa == true){ %>
   <link rel="manifest" href="/manifest.json">
+  <script>
+    // Google 官方给出的加载方式
+    // 你也可以用 if (navigator.serviceWorker)
+    if ('serviceWorker' in navigator) {
+      // 为了保证首屏渲染性能，在页面 onload 完之后注册 Service Worker
+      // 不使用 window.onload 以避免冲突
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+      });
+    }
+  </script>
   <% } %>
   <!-- Google Search Advanced
   https://developers.google.com/search/docs/advanced/structured-data/search-gallery

@@ -34,15 +34,48 @@
     <div class="album-article article">
       <%- page.content %>
     </div>
-    <div class="album-comment">
+    <% if ( theme.comment.use ) { %>
+    <div id="comment" class="album-comment">
       <%- partial('_partial/comment') %>
     </div>
+    <% } %>
   </div>
   <script>
     var imageBox = document.getElementById("imgbox");
+
     function changeimg() {
       var imgLink = event.target.getAttribute('rel');
       imageBox.style.backgroundImage = "url(" + imgLink + ")";
+    };
+    var imgno = 0;
+    parseInt(imgno);
+    window.onkeydown = function album_hotkey() {
+      //[键盘快捷键] 左箭头 上一张
+      if (event.keyCode === 37) {
+        imgno = imgno - 1;
+        if (imgno < 0) {
+          imgno = 0;
+        }
+        var imgLink = document.getElementById(imgno).getAttribute('rel')
+        imageBox.style.backgroundImage = "url(" + imgLink + ")";
+      };
+      //[键盘快捷键] 右箭头 下一张
+      if (event.keyCode === 39) {
+        imgcount = document.getElementsByClassName('album-item').length - 1
+        imgno = imgno + 1;
+        if (imgno > imgcount) {
+          imgno = imgcount
+        }
+        var imgLink = document.getElementById(imgno).getAttribute('rel');
+        imageBox.style.backgroundImage = "url(" + imgLink + ")";
+      };
+      //[键盘快捷键] 上箭头 恢复到第一张
+      if (event.keyCode === 38) {
+        imgno = 0;
+        console.log(imgno)
+        var imgLink = document.getElementById(imgno).getAttribute('rel')
+        imageBox.style.backgroundImage = "url(" + imgLink + ")";
+      };
     }
   </script>
   <style>
@@ -58,9 +91,8 @@
       padding: 12px 0;
       max-width: 800px;
       margin: 0 auto;
+      padding-top: 70px;
     }
-
-    .album-comment .v {}
 
     @media (max-width: 768px) {
       .content-area {

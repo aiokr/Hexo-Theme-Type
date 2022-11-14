@@ -10,7 +10,13 @@ var pjax = new Pjax({
   cacheBust: false,
   scrollRestoration: true,
 })
-// 添加重载，其实就是 PJAX 完成之后的操作
+var Comment = document.querySelector("#comment");
+document.addEventListener('pjax:send', function () {
+  NProgress.start();
+  NProgress.set(0.4);
+  pjax.refresh(Comment);
+})
+// PJAX 完成之后的操作
 document.addEventListener('pjax:complete', function () {
   // 重载 Background Image Lazyload
   $("div.lazy").lazyload();
@@ -37,10 +43,7 @@ document.addEventListener('pjax:complete', function () {
   loadscript('/js/highlight.min.js', function () {
     hljs.initHighlighting();
   });
+  NProgress.set(0.9);
+  NProgress.done();
 });
-//首次加载首页时，执行的脚本
-window.onload = function () {
-  $("div.lazy").lazyload();
-  $("a.lazy").lazyload();
-};
 
