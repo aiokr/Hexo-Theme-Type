@@ -1,0 +1,144 @@
+<section class="pjax-area">
+  <div class="content-area search-area pt-[100px] max-w-[90%] md:max-w-[800px]">
+
+    <div class="ais-InstantSearch">
+      <!--搜索框-->
+      <div id="searchbox"></div>
+      <div id="hits"></div>
+      <div id="pagination"></div>
+    </div>
+
+  </div>
+  <style>
+    input,
+    textarea {
+      outline: none;
+    }
+
+    .ais-InstantSearch {
+      max-width: 100%;
+    }
+
+    .hits {
+      max-width: 100%;
+    }
+
+    .ais-SearchBox-form {
+      width: 100%;
+      height: 58px;
+      border-radius: 29px;
+      background-color: #fff;
+    }
+
+    .ais-SearchBox-form input {
+      width: calc(100% - 60px);
+      height: 100%;
+      display: block;
+      margin: 0 auto;
+      background-color: #ffffff00;
+    }
+
+    .ais-SearchBox-form button {
+      display: none;
+    }
+
+
+    #hits {
+      border-radius: 29px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+      padding: 30px 0;
+    }
+
+    .ais-Hits--empty {
+      text-align: center;
+    }
+
+    .ais-Hits-item {
+      width: calc(100% - 60px);
+      padding: 8px 12px;
+      margin: 6px 0;
+      transition: .2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      text-align: left;
+      margin: 0 auto;
+    }
+
+    .ais-Hits-item:hover {
+      background-color: rgb(229 231 235);
+      border-radius: 3px;
+    }
+
+    .result-text {
+      font-size: 14px;
+      line-height: 16px;
+      opacity: 0.6;
+      height: 16px;
+      overflow-y: clip;
+    }
+
+    @media (prefers-color-scheme: dark) {
+
+      #hits,
+      .search-result,
+      .search-box,
+      .ais-SearchBox-form,
+      .search-box input {
+        background-color: #424242;
+      }
+
+      .result-text {
+        color: #bdbdbd;
+      }
+
+      input,
+      .ais-Hits--empty,
+      .title {
+        color: #fff
+      }
+
+      .ais-Hits-item:hover {
+        background-color: rgb(31 41 55 / 0.5);
+      }
+    }
+
+    mark {
+      background-color: #0000;
+      color: var(--main-black);
+    }
+
+    mark {
+      background: linear-gradient(104deg, #71afdd00 0.9%, #71afdd7c 2.4%, #71afdd80 5.8%, #71afdd1a 93%, #71afdd67 96%, #82ffff00 98%), linear-gradient(183deg, #71afdd00 0%, #71afdd4d 7.9%, #71afdd00 15%);
+      border-radius: 7.5px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.14.2/dist/algoliasearch-lite.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.46.2/dist/instantsearch.production.min.js"></script>
+  <script data-pjax>
+    
+      const searchClient = algoliasearch('<%- config.algolia.appId %>', '<%- config.algolia.apiKey %>');
+      const search = instantsearch({
+        indexName: '<%- config.algolia.indexName %>',
+        searchClient,
+      });
+      search.addWidgets([
+        instantsearch.widgets.searchBox({
+          container: '#searchbox',
+        }),
+
+        instantsearch.widgets.hits({
+          container: '#hits',
+          templates: {
+            item: `
+        <a href="{{ permalink }}" target="_blank" class="search-result">
+          <div class="title">{{#helpers.highlight}}{ "attribute": "title" }{{/helpers.highlight}}</div>
+        </a>
+      `,
+          },
+        })
+      ]);
+      search.start();
+    
+  </script>
+</section>

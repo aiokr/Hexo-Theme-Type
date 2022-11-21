@@ -32,16 +32,26 @@ apple_icon:
 
 # Schemes
 # Use column ｜ m3
+# column 样式已经不再支持
+# column is out of support
 schemes: m3
 
 # Fonts
 # Use LXGW ｜ 
 fonts: 
 
+# Color
+color:
+  main_color: '#71AFDD'
+  sub_color: '#6CD9CE'
+  main_black: '#222831'
+
 # Header Links Style 导航链接样式
+# 从 https://iconpark.oceanengine.com/home 获取图标包链接
+# to https://iconpark.oceanengine.com/home get nav_style_src links
 # Use text ｜ icon
 nav_style: icon
-nav_style_src: "https://lf1-cdn-tos.bytegoofy.com/obj/iconpark/icons_20213_15.146eebe3e0c6cc716d8cc4e68617b273.js"
+nav_style_src: https://lf1-cdn-tos.bytegoofy.com/obj/iconpark/icons_20213_18.4a5f87dae8e6f9e336b9ad6fa00f8e8f.js
 
 # Random Pictures
 random_pic_switch: false
@@ -60,10 +70,10 @@ post_toc: true
 
 # Header Cover 首页封面背景图
 header: 
-  img: 'https://imgur.lzmun.com/picgo/after2022/6DD1FBC3-AD8A-4340-842D-6ACF531F8291_1_105_c.jpeg_itp'
+  img: 
 
 # Header Links 首页导航连接
-search_btn: true
+search_btn: false
 nav:
   归档: 
     link: /archives/
@@ -78,7 +88,8 @@ nav:
     link: /links/
     icon: people
 
-# Cover Links 封面底部链接
+# Cover Links 封面卡片底部链接
+cover_links_switch: true
 cover_links:
   - title: Gallery
     link: /gallery/
@@ -87,22 +98,24 @@ cover_links:
 
 # Social link 社交链接
 social_link:
-  use: false
-  # 在这里开启微信二维码
+  # 微信二维码 显示在首页封面卡片底部
   wechat_personal: 
+  # 微信个人号
     switch: false
     src: 
   wechat_public: 
-    switch: true
-    src: https://open.weixin.qq.com/qr/code?username=
+  # 微信公众号
+    switch: false
+    src: 
 
 # ---------------------------------------------------------------
 # Footer Settings 页脚设置
 # ---------------------------------------------------------------
 
-start_time: 2016
+start_time: 2016 
+# 如果设置 count 选项，需要运行 npm install hexo-symbols-count-time --save
 # 'count' need run 'npm install hexo-symbols-count-time --save'
-count: false
+count: true
 icp: 
 
 # CDN LOGO
@@ -113,7 +126,7 @@ footer_logo:
   vercel: '../img/vercel-logotype-dark.svg'
   self:
     link: '../about/'
-    src: 'https://imgur.lzmun.com/picgo/after2022/202209101335136.png_itp'
+    src: 'https://imgur.lzmun.com/picgo/after2022/tripper2whitefull.png_avatar'
 
 # ---------------------------------------------------------------
 # Posts Settings 文章设置
@@ -125,50 +138,43 @@ auto_excerpt:
   length: 120
 
 # highlight.js 代码高亮
-# style github | tomorrow  | night-blue | night-bright | night-eighties
+# style github | tomorrow | night-blue | night-bright | night-eighties
 highlight:
   use: true
-  style: night-bright
+  style: github
 
 # Copyright
 
+# ---------------------------------------------------------------
+# Pages Settings 独立页面设置
+# ---------------------------------------------------------------
+
+photography_page:
+  slogan: true
+  slogan_descr: 'The moments when I pressed the shutter, the moments are forever.'
 
 # ---------------------------------------------------------------
 # Third Party Services Settings 第三方服务设置
 # ---------------------------------------------------------------
 
 # Comment 评论
-# Use gitment | valine | disqus | disqusjs | gitalk | waline
+# Use cusdis ｜ waline
 # disqusjs 参考 https://github.com/SukkaW/DisqusJS 进行部署
 comment:
-  use: 
-  gitment:
-    owner:
-    repo:
-    client_id:
-    client_secret:
-  valine:
-    appid: 
-    appkey: 
-  disqus:
-    src: 
-    # such as: https://xxx.disqus.com/embed.js
-  disqusjs:
-    shortname: 
-    siteName: 
-    api: 
-    apikey: 
-    title: 
-    admin: 
-  gitalk:
-    clientID: 
-    clientSecret: 
-    repo: 
-    owner: 
-    admin: 
-    distractionFreeMode: 
+  use: waline
+  cusdis:
+    host:
+    app_id: 
   waline:
-    serverurl: 
+    serverurl: https://comment.tripper.press/
+
+# Search 搜索
+# Use hexo-generator-search or hexo-algoliasearch
+# if use local, use 'npm install hexo-generator-search --save' to install
+# if use algolia use 'npm install hexo-algoliasearch --save' to install
+search:
+  #use: local
+  use: algolia
 
 # Busuanzi Count 不蒜子计数
 busuanzi: false
@@ -186,13 +192,17 @@ google_analytics:
   use: gtag
   ga_id: 
   ga_api: 
-  gtag_id: 
+  gtag_id: G-HFH67WJVKQ
 
 # umami Analytics
 umami_analytics: 
   use: false
   id: 
   src: 
+
+# Vercel Audiences Analytics
+vercel_analytics:
+  use: false
 
 # chart.js
 # https://www.chartjs.org/
@@ -213,9 +223,11 @@ cdn:
 # ---------------------------------------------------------------
 
 # PWA 尚是一个实验性功能，不建议您启用。
-# 如果需要启用，需要手动创立 manifest.json 文件，并在生成网站是复制到 public 目录下。
+# 如果需要启用，需要手动创立 manifest.json 文件
 # 暂时没有提供 service-worker.js 文件
-pwa: false
+pwa: 
+  use: false
+  theme_color: '#71afdd'
 
 # Google 搜索增强
 # 使得您的搜索结果呈现主题概览

@@ -1,4 +1,6 @@
-<% if(page.layout === 'html') { %>
+<!-- @format -->
+
+<% if(page.layout==='html' ) { %>
 <%- page.content %>
 <% } else { %>
 
@@ -6,11 +8,29 @@
 <html lang="<%= config.language ? config.language : 'en' %>">
 <!-- Head tag -->
 <%- partial('_partial/head') %>
-<% if(page.layout === 'layout') { %>
+<% if(page.layout==='layout' ) { %>
+
 <body>
   <%- page.content %>
 </body>
+
+<%} else if (page.layout==='whiteboard' ) { %>
+
+<body>
+  <!-- Nav -->
+  <%- partial('_partial/nav') %>
+  <!-- Main Content -->
+  <%- page.content %>
+  <%- partial('_partial/footer') %>
+  <!-- After footer scripts -->
+  <%- partial('_partial/after-footer') %>
+</body>
+
 <% } else { %>
+
+<!--Other Pages-->
+<% if (theme.schemes==='column' ) { %>
+
 <body>
   <!-- Nav -->
   <%- partial('_partial/nav') %>
@@ -23,6 +43,22 @@
   <!-- After footer scripts -->
   <%- partial('_partial/after-footer') %>
 </body>
+
+<%} else if(theme.schemes==='m3' ) { %>
+
+<body>
+  <!-- Nav -->
+  <%- partial('_partial/nav') %>
+  <!-- Main Content -->
+  <%- body %>
+  <!-- Footer -->
+  <%- partial('_partial/footer') %>
+  <!-- After footer scripts -->
+  <%- partial('_partial/after-footer') %>
+  <%- partial('_partial/customize') %>
+</body>
+
+<% } %>
 <% } %>
 
 </html>

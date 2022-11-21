@@ -1,3 +1,5 @@
+/** @format */
+
 @import './_customize';
 @import './_shareimg';
 @import './_m3-components/_m3-post-entry';
@@ -6,336 +8,354 @@
 
 //COVER
 @media screen and (max-width: $toggle_desktop) {
-    .itp-m3-cover-box {
-        width: 100vw;
+  .itp-m3-cover-box {
+    width: 100vw;
 
-        .mdui-col-xs-12 {
-            padding-right: 0;
-            padding-left: 0;
-        }
+    .mdui-col-xs-12 {
+      padding-right: 0;
+      padding-left: 0;
     }
+  }
 }
 
 .itp-m3-cover {
-    box-sizing: border-box;
-    border-radius: 5x;
-    box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 5%), 1px 1px 15px 0 rgb(0 0 0 / 8%);
+  box-sizing: border-box;
+  border-radius: 5x;
+  box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 5%), 1px 1px 15px 0 rgb(0 0 0 / 8%);
 
-    //最小尺寸 $toggle_desktop 大屏幕设备
-    @media screen and (min-width: $toggle_desktop) {
-        margin-top: 108px;
-
-        .itp-m3-cover-bg {
-            border-radius: 5px;
-        }
-    }
-
-    //最小尺寸 $toggle_tabelt 中等屏幕设备
-    @media screen and (min-width: $toggle_tablet) {
-        margin: 0px;
-
-        .itp-m3-cover-bg {
-            border-radius: 0 0 5px 5px;
-        }
-    }
-
-    //最大尺寸 $toggle_tabelt 小屏幕设备
-    @media screen and (max-width: $toggle_tablet) {
-        margin: 0px;
-
-        .itp-m3-cover-bg {
-            border-radius: 0 0 5px 5px;
-        }
-    }
+  //最小尺寸 $toggle_desktop 大屏幕设备
+  @media screen and (min-width: $toggle_desktop) {
+    margin-top: 108px;
 
     .itp-m3-cover-bg {
-        width: 100%;
-        height: 100%;
-        background: #000;
+      border-radius: 5px;
     }
+  }
 
-    .itp-m3-cover-layer {
-        background: linear-gradient(rgba(32, 32, 32, 0) 14%, rgba(32, 32, 32, 0.56) 100%);
-        height: 100%;
-        border-radius: 5px;
+  //最小尺寸 $toggle_tabelt 中等屏幕设备
+  @media screen and (min-width: $toggle_tablet) {
+    margin: 0px;
+
+    .itp-m3-cover-bg {
+      border-radius: 0 0 5px 5px;
     }
+  }
+
+  //最大尺寸 $toggle_tabelt 小屏幕设备
+  @media screen and (max-width: $toggle_tablet) {
+    margin: 0px;
+
+    .itp-m3-cover-bg {
+      border-radius: 0 0 5px 5px;
+    }
+  }
+
+  .itp-m3-cover-bg {
+    width: 100%;
+    height: 100%;
+    background: #000;
+  }
+
+  .itp-m3-cover-layer {
+    background: linear-gradient(
+      rgba(32, 32, 32, 0) 14%,
+      rgba(32, 32, 32, 0.56) 100%
+    );
+    height: 100%;
+    border-radius: 5px;
+  }
 }
 
 .top-cover {
-
-    .itp-m3-cover-title,
-    .itp-m3-cover-subtitle {
-        color: #fff;
-    }
+  .itp-m3-cover-title,
+  .itp-m3-cover-subtitle {
+    color: #fff;
+  }
 }
 
 .post-cover {
-
-    .itp-m3-cover-title,
-    .itp-m3-cover-subtitle {
-        color: $black;
-    }
+  .itp-m3-cover-title,
+  .itp-m3-cover-subtitle,
+  .itp-m3-cover-subtitle a {
+    color: $black;
+  }
 }
 
 .info-area {
+  //最小尺寸 $toggle_desktop 大屏幕设备
+  @media screen and (min-width: $toggle_desktop) {
+    padding: 96px 64px 64px 96px;
 
-    //最小尺寸 $toggle_desktop 大屏幕设备
-    @media screen and (min-width: $toggle_desktop) {
-        padding: 96px 64px 64px 96px;
-
-        .itp-m3-cover-avatar {
-            img {
-                max-height: 64px;
-                max-width: 64px;
-                border-radius: 50%;
-                padding-bottom: 8px;
-            }
-        }
-
-        .itp-m3-cover-title {
-            padding: 8px 0 0 0;
-            font-size: 32px;
-            line-height: 48px;
-        }
-
-        .itp-m3-cover-subtitle {
-            padding-bottom: 8px;
-            font-size: 18px;
-            line-height: 22px;
-        }
+    .itp-m3-cover-avatar {
+      img {
+        max-height: 64px;
+        max-width: 64px;
+        border-radius: 50%;
+        padding-bottom: 8px;
+      }
     }
 
-    //最大尺寸 $toggle_desktop 中等屏幕设备
-    @media screen and (max-width: $toggle_desktop) {
-        padding: 92px 48px 60px 48px;
-
-        .itp-m3-cover-avatar {
-            img {
-                max-height: 64px;
-                max-width: 64px;
-                border-radius: 50%;
-                padding-bottom: 6px;
-            }
-        }
-
-        .itp-m3-cover-title {
-            padding: 8px 0 0 0;
-            font-size: 26px;
-            line-height: 32px;
-        }
-
-        .itp-m3-cover-subtitle {
-            padding-bottom: 8px;
-            font-size: 18px;
-            line-height: 22px;
-        }
+    .itp-m3-cover-title {
+      padding: 8px 0 0 0;
+      font-size: 32px;
+      line-height: 48px;
     }
 
-    //最大尺寸 600px 中等屏幕设备
-    @media screen and (max-width: 600px) {
-        padding: 120px 48px 48px 48px;
-
-        .itp-m3-cover-title {
-            padding: 8px 0 0 0;
-            font-size: 26px;
-            line-height: 32px;
-        }
-
-        .itp-m3-cover-subtitle {
-            padding-bottom: 8px;
-            font-size: 18px;
-            line-height: 22px;
-        }
+    .itp-m3-cover-subtitle {
+      padding-bottom: 8px;
+      font-size: 18px;
+      line-height: 22px;
     }
+  }
+
+  //最大尺寸 $toggle_desktop 中等屏幕设备
+  @media screen and (max-width: $toggle_desktop) {
+    padding: 92px 48px 60px 48px;
+
+    .itp-m3-cover-avatar {
+      img {
+        max-height: 64px;
+        max-width: 64px;
+        border-radius: 50%;
+        padding-bottom: 6px;
+      }
+    }
+
+    .itp-m3-cover-title {
+      padding: 8px 0 0 0;
+      font-size: 26px;
+      line-height: 32px;
+    }
+
+    .itp-m3-cover-subtitle {
+      padding-bottom: 8px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  //最大尺寸 600px 中等屏幕设备
+  @media screen and (max-width: 600px) {
+    padding: 120px 48px 48px 48px;
+
+    .itp-m3-cover-title {
+      padding: 8px 0 0 0;
+      font-size: 26px;
+      line-height: 32px;
+    }
+
+    .itp-m3-cover-subtitle {
+      padding-bottom: 8px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
 }
 
 //浮动弹窗
 .itp-float-layer {
-    z-index: 1400;
+  z-index: 1400;
 
-    @media screen and (min-width: $toggle_desktop) {
-        display: none;
-    }
+  @media screen and (min-width: $toggle_desktop) {
+    display: none;
+  }
 
-    @media screen and (max-width: $toggle_desktop) {
-        width: 100vw;
-        border-radius: 12px 12px 0 0;
-        height: 90vh;
-        display: -webkit-flex;
-        justify-content: space-evenly;
-        -webkit-justify-content: space-evenly;
-        //颜色 透明 模糊
-        background-color: $deep-grey;
-        backdrop-filter: saturate(180%) blur(18px) !important;
-        -webkit-backdrop-filter: saturate(180%) blur(18px) !important;
-        -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, .2);
-        box-shadow: 0 0 10px 2px rgba(0, 0, 0, .2);
-        //定位
-        display: grid !important;
-        position: fixed !important;
-        grid-template-columns: repeat(12, minmax(0px, 1fr));
-        bottom: -90vh; //开始时不现实弹窗
-        //动画
-        -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-        transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-        transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-        transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-        //阴影
-        -webkit-box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
-        box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
-    }
+  @media screen and (max-width: $toggle_desktop) {
+    width: 100vw;
+    border-radius: 12px 12px 0 0;
+    height: 90vh;
+    display: -webkit-flex;
+    justify-content: space-evenly;
+    -webkit-justify-content: space-evenly;
+    //颜色 透明 模糊
+    background-color: #424242;
+    -webkit-box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+    //定位
+    display: grid !important;
+    position: fixed !important;
+    grid-template-columns: repeat(12, minmax(0px, 1fr));
+    bottom: -90vh; //开始时不现实弹窗
+    //动画
+    -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      -webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      -webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),
+      -webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+    //阴影
+    -webkit-box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%),
+      0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%),
+      0 1px 18px 0 rgb(0 0 0 / 12%);
+  }
 
-    .clost-btn {
-        grid-column: span 2 / span 2;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        padding-top: 3vh;
-    }
+  .clost-btn {
+    grid-column: span 2 / span 2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 3vh;
+  }
 
-    .itp-layer-toc {
-        display: flex;
-        padding-top: 3vh;
-        padding-right: 5vw;
-        grid-column: span 10 / span 10;
-        flex-direction: column;
-    }
+  .itp-layer-toc {
+    display: flex;
+    padding-top: 3vh;
+    padding-right: 5vw;
+    grid-column: span 10 / span 10;
+    flex-direction: column;
+  }
 
-    li {
-        list-style: none;
-        line-height: 24px;
-    }
+  li {
+    list-style: none;
+    line-height: 24px;
+  }
 }
 
 .itp-float-layer-bg {
-    background-color: #00000077;
-    /*当弹窗显示时，屏幕滚动时，弹窗始终保持位置固定在屏幕正中，不随屏幕滚动而变化位置*/
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    margin: 0px 0 0 0px;
-    bottom: 0;
-    /*设置弹窗位于遮罩的上方*/
-    z-index: 1050;
+  background-color: #00000077;
+  /*当弹窗显示时，屏幕滚动时，弹窗始终保持位置固定在屏幕正中，不随屏幕滚动而变化位置*/
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  margin: 0px 0 0 0px;
+  bottom: 0;
+  /*设置弹窗位于遮罩的上方*/
+  z-index: 1050;
 }
 
 .layer-bg-nodisplay {
-    display: none;
+  display: none;
 }
 
 .itp-float-layer-pull-up {
-    bottom: 0;
-    display: flex;
-    -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-    transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-    transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-    transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+  bottom: 0;
+  display: flex;
+  -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),
+    -webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
 }
 
 //浮动导航
 #open_toc {
-    @media screen and (min-width: $toggle_desktop) {
-        display: none;
-    }
+  @media screen and (min-width: $toggle_desktop) {
+    display: none;
+  }
 }
 
 .itp-float-bar {
-    @media screen and (min-width: $toggle_desktop) {
-        z-index: 1000;
-        width: 100%;
-        height: 54px;
-        max-width: none;
-        border-radius: 0;
-        top: 0px;
-        display: flex;
-        flex-direction: row;
-        position: fixed;
-    }
+  @media screen and (min-width: $toggle_desktop) {
+    z-index: 1000;
+    width: 100%;
+    height: 54px;
+    max-width: none;
+    border-radius: 0;
+    top: 0px;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+  }
 
+  @media screen and (max-width: $toggle_desktop) {
+    z-index: 1000;
+    height: 54px;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-evenly;
+    -webkit-justify-content: space-evenly;
+    //定位
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0px;
+    //阴影
+    -webkit-box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%),
+      0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%),
+      0 1px 18px 0 rgb(0 0 0 / 12%);
+  }
+
+  //颜色 透明 模糊 动画
+  background-color: #ffffffb5;
+  backdrop-filter: saturate(180%) blur(18px) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(18px) !important;
+
+  .itp-float-bar-item {
+    background-color: rgba(0, 0, 0, 0);
+    width: 68px;
+    color: $black;
+    text-align: center; //水平居中
+    background-color: rgba(0, 0, 0, 0);
+
+    [class*='material-icons-'] {
+      line-height: 54px;
+    }
+  }
+
+  .itp-float-bar-item-home {
+    font-weight: bold;
+    width: auto;
+    padding: 0 18px;
+  }
+
+  [type='button'],
+  [type='reset'],
+  [type='submit'],
+  button {
+    -webkit-appearance: attachment;
+  }
+
+  .itp-float-bar-spacer {
+    flex-grow: 1;
+  }
+
+  .itp-float-bar-item-max {
     @media screen and (max-width: $toggle_desktop) {
-        z-index: 1000;
-        height: 54px;
-        width: 100%;
-        border-radius: 12px 12px 0 0;
-        display: -webkit-flex;
-        display: flex;
-        justify-content: space-evenly;
-        -webkit-justify-content: space-evenly;
-        //定位
-        display: flex !important;
-        position: fixed !important;
-        bottom: 0px;
-        //阴影
-        -webkit-box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
-        box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+      display: none;
     }
+  }
 
-    //颜色 透明 模糊 动画
-    background-color: #ffffffb5;
-    backdrop-filter: saturate(180%) blur(18px) !important;
-    -webkit-backdrop-filter: saturate(180%) blur(18px) !important;
-
-    .itp-float-bar-item {
-        background-color: rgba(0, 0, 0, 0);
-        width: 68px;
-        color: $black;
-        text-align: center; //水平居中
-        background-color: rgba(0, 0, 0, 0);
-
-        [class*=material-icons-] {
-            line-height: 54px;
-        }
-    }
-
-    .itp-float-bar-item-home {
-        font-weight: bold;
-        width: auto;
-        padding: 0 18px;
-    }
-
-    [type=button],
-    [type=reset],
-    [type=submit],
-    button {
-        -webkit-appearance: attachment;
-    }
-
-    .itp-float-bar-spacer {
-        flex-grow: 1;
-    }
-
-    .itp-float-bar-item-max {
-        @media screen and (max-width: $toggle_desktop) {
-            display: none;
-        }
-    }
-
-    .itp-float-bar-item:hover,
-    .itp-float-bar-item-max:hover {
-        background: rgba(225, 225, 225, 0.2);
-        cursor: pointer;
-        -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-        transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-        transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-        transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-        border-radius: 3px;
-    }
+  .itp-float-bar-item:hover,
+  .itp-float-bar-item-max:hover {
+    background: rgba(225, 225, 225, 0.2);
+    cursor: pointer;
+    -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      -webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      -webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),
+      -webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+    border-radius: 3px;
+  }
 }
 
 .hljs {
-    border-radius: 5px;
-    padding: 1em !important;
-    font-family: monospace;
+  border-radius: 5px;
+  padding: 1em !important;
+  font-family: monospace;
 }
 
 //文章
-.itp-m3-post {}
-
-li::marker {
-    content: ' ';
-    display: none !important;
+.itp-m3-post {
 }
 
+li::marker {
+  content: ' ';
+  display: none !important;
+}
 
 /*
 .copyright-icon-box {
@@ -371,92 +391,129 @@ li::marker {
 */
 
 .itp-m3-post-info_area {
-    background: url('../img/copyright_black_24dp.svg');
-    background-position: right -45px top -35px;
-    background-repeat: no-repeat;
-    background-size: 150px;
-    background-clip: padding-box;
-    margin: 0;
+  background: url('../img/copyright_black_24dp.svg');
+  background-position: right -45px top -35px;
+  background-repeat: no-repeat;
+  background-size: 150px;
+  background-clip: padding-box;
+  margin: 0;
 
-    @media screen and (min-width: $content-width) {
-        padding: 18px 3.5rem;
+  @media screen and (min-width: $content-width) {
+    padding: 18px 3.5rem;
+  }
+
+  @media screen and (max-width: $content-width) {
+    padding: 18px 1.5rem;
+  }
+
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  background-color: #f5f5f5a4;
+
+  .info_area-category {
+    a {
     }
-
-    @media screen and (max-width: $content-width) {
-        padding: 18px 1.5rem;
-    }
-
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
-    background-color: #f5f5f5a4;
-
-    .info_area-category {
-        a {}
-    }
+  }
 }
 
 .info_area-copyright {
-    p {
-        color: $black;
-        line-height: 24px;
-        padding: 12px 6px 6px 0px;
-    }
+  p {
+    color: $black;
+    line-height: 24px;
+    padding: 12px 6px 6px 4px;
+  }
 }
 
 .column-toc-m3 {
-    background-color: #ffffff00;
-    position: sticky;
-    top: 120px;
-    margin-top: 90vh;
-    z-index: 90;
-    padding: 12px 2px 12px 4px;
-    margin-right: 48px;
-    width: calc(100vw / 2 - $content-width /2);
-    max-height: 400px;
+  background-color: #ffffff00;
+  position: sticky;
+  top: 120px;
+  margin-top: 90vh;
+  z-index: 90;
+  padding: 12px 2px 12px 4px;
+  margin-right: 48px;
+  width: calc(100vw / 2 - $content-width / 2);
+  max-height: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.4;
+
+  ol {
+    list-style-type: none;
+    display: block;
+    margin-left: 12px;
+    line-height: 1.2em;
+  }
+
+  .itp-toc-item a {
+    display: inline-block;
     overflow: hidden;
     text-overflow: ellipsis;
-    opacity: 0.4;
+    white-space: nowrap;
+    margin: 2px 0;
+    max-width: 180px;
+    color: $black;
+  }
 
-    ol {
-        list-style-type: none;
-        display: block;
-        margin-left: 12px;
-        line-height: 1.2em;
-    }
+  .itp-toc-level-1 {
+    font-size: 16px;
+  }
 
-    .itp-toc-item a {
-        display: inline-block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        margin: 2px 0;
-        max-width: 180px;
-        color: $black;
-    }
-
-    .itp-toc-level-1 {
-        font-size: 16px;
-    }
-
-    .itp-toc-level-2 {
-        font-size: 14px;
-    }
+  .itp-toc-level-2 {
+    font-size: 14px;
+  }
 }
 
 .column-toc-m3:hover {
-    opacity: 0.8;
-    -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-    transition: all .2s cubic-bezier(.4, 0, .2, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-    transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1);
-    transition: all .2s cubic-bezier(.4, 0, .2, 1), box-shadow .2s cubic-bezier(.4, 0, 1, 1), -webkit-box-shadow .2s cubic-bezier(.4, 0, 1, 1);
+  opacity: 0.8;
+  -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1),
+    -webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
 }
 
 .itp-toc-m3-sidetop {
-    opacity: 0.1;
+  opacity: 0.1;
 }
 
 .m3-index-pop {
-    border-radius: 5px;
+  border-radius: 5px;
+}
+
+//search
+.search-area {
+  display: grid;
+
+  @media screen and (min-width: 1022px) {
+    max-width: $content-width;
+  }
+
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+//comment
+#comment {
+  background: url(../img/forum_black_24dp.svg);
+  background-position: right -45px top -35px;
+  background-repeat: no-repeat;
+  background-size: 150px;
+  background-clip: padding-box;
+  background-color: #ffffff;
+  margin: 65px auto;
+  border-radius: 5px;
+  padding: 24px;
+  --waline-bgcolor: #ffffff00;
+  --waline-bgcolor-light: #ffffff00;
+  --waline-bgcolor-hover: #ffffff00;
+  --waline-theme-color: #71afdd;
+  --waline-active-color: #71afdd;
+  --waline-badge-color: #71afdd;
 }

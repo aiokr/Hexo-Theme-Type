@@ -83,7 +83,7 @@
     <div class="itp-m3-post-entry-cover lazy" data-src="<%- item.cover %>">
     </div>
     <% } else if (theme.random_pic_switch == true) { %>
-    <div class="itp-m3-post-entry-cover lazy" data-src="url('<%= url_for(theme.random_thumbnail) + randomPicPost + '.png' %>');">
+    <div class="itp-m3-post-entry-cover lazy" data-src="<%= url_for(theme.random_thumbnail) + randomPicPost + '.png' %>">
     </div>
     <% } else if (theme.random_pic_switch == false && item.cover ) { %>
     <div class="itp-m3-post-entry-cover lazy" data-src="<%- item.cover %>">

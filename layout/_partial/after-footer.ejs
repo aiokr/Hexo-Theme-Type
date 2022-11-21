@@ -19,10 +19,10 @@
 <% if(theme.cdn.use == 'jsdelivr') { %>
 <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js" defer></script>
 <% } else if ( theme.cdn.use == 'self_host') { %>
-<script src="/js/highlight.min.js" defer></script>
+<script src="/js/highlight.min.js" async></script>
 <% } %>
+<script>window.addEventListener('load', () => hljs.initHighlighting());</script>
 <script>
-  hljs.initHighlightingOnLoad();
   $("pre.code").each(function() {
     $(this).html("<ol><li>" + $(this).html().replace(/\n/g, "\n</li><li>") + "\n</li></ol>");
   });
@@ -41,21 +41,20 @@
 <%- js('js/shareimg') %>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.js" defer></script>
 -->
-<!--PJAX-->
-<!--
-<% if(theme.cdn.use == 'jsdelivr') { %>
-<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.js" defer></script>
-<% } else if ( theme.cdn.use == 'self_host') { %>
-<%- js('js/pjax.js') %>
-<% } %>
-<%- js('js/pjax-ctrl.js') %>
--->
 <!--lazyload-->
 <% if(theme.cdn.use == 'jsdelivr') { %>
 <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js" defer></script>
 <% } else if ( theme.cdn.use == 'self_host') { %>
 <%- js('js/lazyload.js') %>
 <% } %>
+<!--PJAX-->
+<!--Pjax from https://github.com/MoOx/pjax-->
+<% //if(theme.cdn.use == 'jsdelivr') { %>
+<!--<script src="https://cdn.jsdelivr.net/npm/pjax/pjax.js"></script>-->
+<!--<% //} else if ( theme.cdn.use == 'self_host') { %>-->
+<!--<%- //js('js/pjax.js') %>-->
+<!--<% //} %>-->
+<!--<%- //js('js/pjax-ctrl.js') %>-->
 <!--首页键盘快捷键-->
 <% if( (is_home()) ) { %>
 <script>

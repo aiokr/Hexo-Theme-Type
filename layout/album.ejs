@@ -1,0 +1,189 @@
+<section class="pjax-area">
+  <div class="content-area post-album">
+    <div class="grid grid-cols-3 gap-2">
+      <div class="pic-area">
+        <div id="imgbox" class="pic-item" style="background-image:url('<%- page.cover || theme.header.img %>');">
+        </div>
+        <div class="album-list flex gap-2">
+          <% for (var i in page.photos) { %>
+          <a class="album-item lazy" id="<%- i %>" rel="<%- page.photos[i] %>" href="javascript:void(0);" onClick="changeimg(event)" data-src="<%- page.photos[i] %>" aria-label="the photo <%- i %>"></a>
+          <% } %>
+        </div>
+        <div class="text-center opacity-30 text-xs pt-2"><%- __('album_tips') %>
+        </div>
+      </div>
+      <div class="album-info">
+        <div class="album-info-main">
+          <div class="album-title"><%- page.title %></div>
+          <span class="album-subtitle">
+            <%= page.date.format(config.date_format) %><br />
+          </span>
+          <span class="album-subtitle">
+            <%= page.excerpt %>
+          </span>
+        </div>
+        <div class="album-info-btm">
+          <% if ( page.location ){ %>
+          <div class="album-location">
+            <iconpark-icon name="aiming"></iconpark-icon><span><%- page.location %></span>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="album-article article">
+      <%- page.content %>
+    </div>
+    <% if ( theme.comment.use ) { %>
+    <div id="comment" class="itp-m3-card album-comment">
+      <%- partial('_partial/comment') %>
+    </div>
+    <% } %>
+  </div>
+  <script>
+    var imageBox = document.getElementById("imgbox");
+
+    function changeimg() {
+      var imgLink = event.target.getAttribute('rel');
+      imageBox.style.backgroundImage = "url(" + imgLink + ")";
+    };
+    var imgno = 0;
+    parseInt(imgno);
+    window.onkeydown = function album_hotkey() {
+      //[键盘快捷键] 左箭头 上一张
+      if (event.keyCode === 37) {
+        imgno = imgno - 1;
+        if (imgno < 0) {
+          imgno = 0;
+        }
+        var imgLink = document.getElementById(imgno).getAttribute('rel')
+        imageBox.style.backgroundImage = "url(" + imgLink + ")";
+      };
+      //[键盘快捷键] 右箭头 下一张
+      if (event.keyCode === 39) {
+        imgcount = document.getElementsByClassName('album-item').length - 1
+        imgno = imgno + 1;
+        if (imgno > imgcount) {
+          imgno = imgcount
+        }
+        var imgLink = document.getElementById(imgno).getAttribute('rel');
+        imageBox.style.backgroundImage = "url(" + imgLink + ")";
+      };
+      //[键盘快捷键] 上箭头 恢复到第一张
+      if (event.keyCode === 38) {
+        imgno = 0;
+        console.log(imgno)
+        var imgLink = document.getElementById(imgno).getAttribute('rel')
+        imageBox.style.backgroundImage = "url(" + imgLink + ")";
+      };
+    }
+  </script>
+  <style>
+    body {
+      background-color: #fff;
+    }
+
+    .album-comment {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .content-area {
+        max-width: 100vw;
+      }
+
+      .pic-area {
+        grid-column: span 3 / span 3;
+        padding: 16px;
+      }
+
+      .album-info {
+        grid-column: span 3 / span 3;
+        padding: 12px;
+      }
+
+      .album-article {
+        padding: 12px 0;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .content-area {
+        max-width: 92%;
+        margin: 0 auto;
+        padding: 135px 16px 16px 16px;
+      }
+
+      .pic-area {
+        grid-column: span 2 / span 2;
+      }
+
+      .album-info {
+        grid-column: span 1 / span 1;
+      }
+    }
+
+    @media (min-width: 1304px) {
+      .content-area {
+        max-width: 1200px;
+      }
+    }
+
+    .pic-item {
+      aspect-ratio: 3 / 2;
+      background-size: cover;
+      background-position: center;
+      transition: all .3s ease-in-out;
+      min-height: 200px;
+    }
+
+    .album-info {
+      flex-direction: column;
+      justify-content: space-between;
+      color: var(--main-black);
+    }
+
+    .album-title {
+      font-size: 1.6em;
+    }
+
+    .album-subtitle {
+      font-size: .8em;
+      opacity: 0.8;
+    }
+
+
+    .album-location {
+      display: inline-flex;
+      font-size: .8em;
+      color: #71afdd;
+      gap: 4px;
+      padding-bottom: 4px;
+    }
+
+    .album-list {
+      padding-top: 12px;
+      overflow-x: scroll;
+    }
+
+    .album-item {
+      aspect-ratio: 1 / 1;
+      min-height: 100px;
+      min-width: 100px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .album-info {
+        color: #fff;
+      }
+
+      .album-location {
+        color: #bdbdbd;
+      }
+    }
+  </style>
+</section>

@@ -8,26 +8,30 @@
     }
 %>
 
-<div class="p-4 container max-w-[1280px]">
-  <div class="index-achieve-title title"><%- title %></div>
-  <div class="text-2xl leading-10 py-2 col-span-1 md:col-span-3 text-tblack"><%- __('categories')%></div>
-  <section class="itp-article-categories" style="list-style-type: none;">
-    <div class="itp-m3-chip-color-list">
-      <%- list_categories({
+<section class="pjax-area">
+  <div class="content-area p-4 container max-w-[1280px]">
+    <div class="index-achieve-title title"><%- title %></div>
+    <div class="text-2xl leading-10 py-2 col-span-1 md:col-span-3 text-tblack dark:text-white"><%- __('categories')%></div>
+    <section class="itp-article-categories" style="list-style-type: none;">
+      <div class="itp-m3-chip-color-list">
+        <%- list_categories({
           show_count: false,
+          separator: '',
           style: 'none'
         }) %>
-    </div>
-  </section>
-  <div class="text-2xl leading-10 py-2 col-span-1 md:col-span-3 text-tblack"><%- __('tags')%></div>
-  <section class="itp-article-categories" style="list-style-type: none;">
-    <div class="itp-m3-chip-normal-list">
-      <%- list_tags({
+      </div>
+    </section>
+    <div class="text-2xl leading-10 py-2 col-span-1 md:col-span-3 text-tblack dark:text-white"><%- __('tags')%></div>
+    <section class="itp-article-categories" style="list-style-type: none;">
+      <div class="itp-m3-chip-normal-list">
+        <%- list_tags({
           show_count: false,
-          style: 'none',
+          separator: '',
+          style: 'none'
         }) %>
-    </div>
-  </section>
-  <%- partial('_partial/archive-list') %>
-</div>
+      </div>
+    </section>
+    <%- partial('_partial/archive-list') %>
+  </div>
+</section>
 <!--learn from https://github.com/fluid-dev/hexo-theme-fluid/blob/master/layout/archive.ejs-->

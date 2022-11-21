@@ -1,11 +1,11 @@
-$main-color: #71afdd;
-$sub-color: #6CD9CE;
+$main-color: var(--main-color);
+$sub-color: var(--sub-color);
 $bg-color: #f5f5f5;
-$black: #222831;
+$black: var(--main-black);
 $grey: #767676;
 $deep-grey: #3D4350;
 $progress-color: #cccfd7;
-$gradient-main-color-opt: #71aeddbe;
+$gradient-main-color-opt: #71afddbe;
 $gradient-sub-color-opt: #66DED2be;
 $content-width: 800px;
 $toggle_desktop: 1022px;

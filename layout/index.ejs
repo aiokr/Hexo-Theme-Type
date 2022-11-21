@@ -7,7 +7,7 @@
         向那些永远停留在这个冬天里的人致哀
       </div>-->
       <div class="itp-index">
-        <% if( (theme.social_link.use === true) && (theme.schemes =='column' ) && (page.current === 1) && (is_home()) ) { %>
+        <% if( (theme.cover_links_switch === true) && (theme.schemes =='column' ) && (page.current === 1) && (is_home()) ) { %>
         <section id="index-links">
           <div class="mdui-row-lg-3 mdui-row-md-3 mdui-row-sm-3 mdui-row-xs-1" style="padding-bottom: 10px;">
             <% for (var a in theme.cover_links) { %>
@@ -62,6 +62,11 @@
               <% } %>
             </div>
           </div>
+          <script>
+            $(function() {
+              $("div.lazy").lazyload();
+            });
+          </script>
         </section>
       </div>
     </div>
@@ -69,60 +74,99 @@
   </div>
 </div>
 <% } else if (theme.schemes =='m3' ) { %>
-<section id="index-post-entry">
-  <div class="itp-index-content">
-    <script>
-      $(function() {
-        $("div.lazy").lazyload();
-      });
-    </script>
-    <% page.posts.each(function(item, itemIndex){ %>
-    <% if (item.noindex !== true) { %>
-    <%- partial('_partial/post-entry', {item: item}) %>
-    <% } %>
-    <% }); %>
-    <div class="m3-index-pagination">
-      <% if (page.prev){ %>
-      <% } else{ %>
-      <div class="itp-m3-card m3-pagination-card">
-        <div class="pagination-text pagination-text-first"><span><%- __('index_first')%></span></div>
+<!--Cover-->
+<section class="pjax-area">
+  <div class="itp-m3-card top-cover content-area">
+    <div class="itp-m3-card-cover">
+      <div class="itp-m3-cover-bg" style="
+              background-image: url(<%- page.cover || theme.header.img %>);
+              background-size: cover;
+              background-position: center center;
+            ">
+        <div class="itp-m3-card-cover-layer ">
+          <div class="info-area pjax-area">
+            <div class="itp-m3-cover-avatar">
+              <img src="<%- theme.avatar %>" class="nofancy" width="56px" height="56px" alt="avatar">
+            </div>
+            <div class="itp-m3-cover-title" style="opacity: 1;">
+              <%= page.title || config.title %>
+            </div>
+            <div class="itp-m3-cover-subtitle" style="opacity: 0.8;">
+              <%- partial('_partial/subtitle') %>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+    <% if( (theme.cover_links_switch === true) && (theme.schemes =='m3' ) && (page.current === 1) && (is_home()) ) { %>
+    <div class="itp-m3-card-content" style="padding: 12px;">
+      <% for (var a in theme.cover_links) { %>
+      <a href="<%= theme.cover_links[a].link %>" class="itp-m3-chip-bold"><%= theme.cover_links[a].title %></a>
       <% } %>
-      <% if (page.prev){ %>
-      <div class="itp-m3-card m3-pagination-card prev-card hover:shadow-itp">
-        <div class="pagination-text"><%- __('prev')%></div>
-        <a class="pagination-link" href="<%- config.root %><%- page.prev_link %>" title="prev page"></a>
-      </div>
+      <% if (theme.social_link.wechat_public.switch == true) { %>
+      <a class="itp-m3-chip-bold" data-fancybox data-src="#mp-wechat" href="javascript:;" title="Wechat Public Account" target="_blank">
+        <%- __('wechat_mp')%>
+      </a>
       <% } %>
-      <% if (page.next){ %>
-      <div class="itp-m3-card m3-pagination-card next-card hover:shadow-itp">
-        <div class="pagination-text"><%- __('next')%></div>
-        <a class="pagination-link" href="<%- config.root %><%- page.next_link %>" title="next page"></a>
-      </div>
-      <% } %>
-      <% if (page.next){ %>
-      <% } else{ %>
-      <div class="itp-m3-card m3-pagination-card">
-        <div class="pagination-text pagination-text-final"><span><%- __('index_final')%></span></div>
-      </div>
+      <% if (theme.social_link.wechat_personal.switch == true) { %>
+      <a class="itp-m3-chip-bold" data-fancybox data-src="#personal-wechat" href="javascript:;" title="Wechat Personal Account" target="_blank">
+        <%- __('wechat_personal')%>
+      </a>
       <% } %>
     </div>
+    <% } %>
+  </div>
+  <section id="index-post-entry">
+    <div class="itp-index-content">
+      <% page.posts.each(function(item, itemIndex){ %>
+      <% if (item.noindex !== true) { %>
+      <%- partial('_partial/post-entry', {item: item}) %>
+      <% } %>
+      <% }); %>
+      <div class="m3-index-pagination">
+        <% if (page.prev){ %>
+        <% } else{ %>
+        <div class="itp-m3-card m3-pagination-card">
+          <div class="pagination-text pagination-text-first"><span><%- __('index_first')%></span></div>
+        </div>
+        <% } %>
+        <% if (page.prev){ %>
+        <div class="itp-m3-card m3-pagination-card prev-card hover:shadow-itp">
+          <div class="pagination-text"><%- __('prev')%></div>
+          <a class="pagination-link" href="<%- config.root %><%- page.prev_link %>" title="prev page"></a>
+        </div>
+        <% } %>
+        <% if (page.next){ %>
+        <div class="itp-m3-card m3-pagination-card next-card hover:shadow-itp">
+          <div class="pagination-text"><%- __('next')%></div>
+          <a class="pagination-link" href="<%- config.root %><%- page.next_link %>" title="next page"></a>
+        </div>
+        <% } %>
+        <% if (page.next){ %>
+        <% } else{ %>
+        <div class="itp-m3-card m3-pagination-card">
+          <div class="pagination-text pagination-text-final"><span><%- __('index_final')%></span></div>
+        </div>
+        <% } %>
+      </div>
+      <!--首页微信号二维码弹窗-->
+      <% if( (theme.cover_links_switch === true) && (page.current === 1) && (is_home()) ) { %>
+      <% if (theme.social_link.wechat_public.switch == true) { %>
+      <!-- Wechat MP QRCode -->
+      <div class="m3-index-pop" style="display: none;" id="mp-wechat">
+        <div class="mdui-dialog-title"><%- __('wechat_mp')%></div>
+        <img src="<%= theme.social_link.wechat_public.src %>" width="300px" class="mdui-center nofancy">
+      </div>
+      <% } %>
+      <% if (theme.social_link.wechat_personal.switch == true) { %>
+      <!-- Wechat Personal QRCode -->
+      <div class="m3-index-pop" style="display: none;" id="personal-wechat">
+        <div class="mdui-dialog-title"><%- __('wechat_personal')%></div>
+        <img src="<%= theme.social_link.wechat_personal.src %>" width="300px" class="mdui-center nofancy">
+      </div>
+      <% } %>
+      <% } %>
+    </div>
+  </section>
 </section>
-<% } %>
-<!--首页微信号二维码弹窗-->
-<% if( (theme.social_link.use === true) && (page.current === 1) && (is_home()) ) { %>
-<% if (theme.social_link.wechat_public.switch == true) { %>
-<!-- Wechat MP QRCode -->
-<div class="m3-index-pop" style="display: none;" id="mp-wechat">
-  <div class="mdui-dialog-title"><%- __('wechat_mp')%></div>
-  <img src="<%= theme.social_link.wechat_public.src %>" width="300px" class="mdui-center nofancy">
-</div>
-<% } %>
-<% if (theme.social_link.wechat_personal.switch == true) { %>
-<!-- Wechat Personal QRCode -->
-<div class="m3-index-pop" style="display: none;" id="personal-wechat">
-  <div class="mdui-dialog-title"><%- __('wechat_personal')%></div>
-  <img src="<%= theme.social_link.wechat_personal.src %>" width="300px" class="mdui-center nofancy">
-</div>
-<% } %>
 <% } %>

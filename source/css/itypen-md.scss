@@ -6,7 +6,7 @@ p {
     margin: 1em 0px !important;
     font-size: 16px;
     font-weight: 400;
-    color: #222831;
+    color: var(--main-black);
     line-height: 1.8em;
     letter-spacing: 0;
 }
@@ -44,7 +44,7 @@ h6 {
     margin: 1.5em 0 0.5em 0;
     padding: 0;
     font-style: bold !important;
-    color: $black !important;
+    color: var(--main-black) !important;
     margin-top: 1.5em;
     margin-bottom: .5em;
     text-align: left !important;
@@ -114,11 +114,11 @@ img {
 blockquote {
     padding: 0 0px 0 10px;
     margin: 1.5em 0px !important;
-    border-left: 2px solid #71aedd;
+    border-left: 2px solid #71afdd;
     quotes: none;
 
     p {
-        color: $grey;
+        color: 767676;
         margin-top: 0 !important;
     }
 }
@@ -129,19 +129,19 @@ blockquote::before,
     display: block;
     font-style: normal;
     font-size: 28px;
-    color: #71aedd;
+    color: var(--main-color);
     font-weight: bold;
     line-height: 30px;
 }
 
 a {
-    color: $black;
+    color: var(--main-black);;
     text-decoration: underline;
-    text-decoration-color: #71aedd;
+    text-decoration-color: #71afdd;
 }
 
 mark {
-    background: #71aedd80;
+    background: #71afdd80;
 }
 
 ol li,
@@ -158,8 +158,12 @@ ul li {
 }
 
 hr {
-    margin: 0 auto;
-    padding: 0 12px;
+    margin: 24px auto;
+    padding: 12px;
+    border: 0;
+    background-image: url('../img/halo.svg');
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 pre {

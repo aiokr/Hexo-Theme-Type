@@ -53,6 +53,7 @@
   <meta name="apple-mobile-web-app-title" content="<%= config.title %>">
   <!-- 是否启用 WebApp 全屏模式 -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="apple-touch-startup-image" href="/assets/ splash-assets.png" media="(max-device-width: 700px)">
   <!-- 禁止数字识自动别为电话号码 -->
   <meta name="format-detection" content="telephone=no" />
   <link rel="shortcut icon" href="<%- url_for(config.favicon || theme.favicon) %>">
@@ -96,7 +97,6 @@
   <%- css('css/gallery2') %>
   <% } %>
   <% if(theme.highlight.use == true) { %>
-  <script src="/js/highlight.min.js"></script>
   <!--highlight.js CSS-->
   <% if(theme.highlight.style == 'github' ) { %>
   <%- css('css/highlight/github') %>
@@ -117,41 +117,17 @@
   <script src="/js/jquery.min.js"></script>
   <% } %>
   <!--Comment-->
-  <% if(is_post() | is_page()) {%>
-  <% if(theme.comment.use == 'gitment') { %>
-  <% if(theme.cdn.use == 'jsdelivr') { %>
-  <script data-pjax src='//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.js'></script>
-  <script data-pjax src='//cdn.jsdelivr.net/npm/gitment@0.0.3/dist/theme/default.js'></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.min.css">
-  <% } else if ( theme.cdn.use == 'self_host') { %>
-  <link rel="stylesheet" href="/css/gitment.css">
-  <script src="/js/gitment.js"></script>
-  <script src="/js/gitment-theme.js"></script>
-  <% } %>
-  <% } else if ( theme.comment.use == 'valine') { %>
-  <% if(theme.cdn.use == 'jsdelivr') { %>
-  <script data-pjax src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
-  <script data-pjax src='//cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js'></script>
-  <% } else if ( theme.cdn.use == 'self_host') { %>
-  <script data-pjax src="/js/av-min.js"></script>
-  <script data-pjax src='/js/Valine.min.js'></script>
-  <% } %>
+  <% if(theme.comment.use == 'none') { %>
+  <% } else if (theme.comment.use == 'cusdis') { %>
+  <script src="https://cusdis.com/js/cusdis.es.js" defer></script>
   <% } else if (theme.comment.use == 'waline') { %>
-  <% if (theme.schemes =='column' ){ %>
-  <% if(theme.cdn.use == 'jsdelivr') { %>
-  <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
-  <% } else if ( theme.cdn.use == 'self_host') { %>
-  <script data-pjax src='/js/walline-client.js'></script>
+  <!--Waline-->
+  <script src="/js/waline.js" defer></script>
+  <link rel="stylesheet" href="/css/waline.css" />
   <% } %>
-  <%} else if (theme.schemes =='m3' ){ %>
-  <% if(theme.cdn.use == 'jsdelivr') { %>
-  <script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.noStyle.js"></script>
-  <% } else if ( theme.cdn.use == 'self_host') { %>
-  <script src="/js/Waline.noStyle.js"></script>
-  <% } %>
-  <%- css('css/waline') %>
-  <% } %>
-  <% } %>
+  <!--Vercel Audiences Analytics-->
+  <% if(theme.vercel_analytics.use == true) { %>
+  <script defer src="/va/script.js"></script>
   <% } %>
   <!--umami analytics-->
   <% if(theme.umami_analytics.use == true) { %>
@@ -159,7 +135,7 @@
   <% } %>
   <% if(theme.google_analytics.use == 'default') { %>
   <!-- Google Analytics -->
-  <script>
+  <script async>
     (function(i, s, o, g, r, a, m) {
       i['GoogleAnalyticsObject'] = r;
       i[r] = i[r] || function() {
@@ -214,8 +190,9 @@
   <% } %>
   <% } %>
   <% } %>
-  <% if (theme.pwa == true){ %>
+  <% if (theme.pwa.use == true){ %>
   <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="<%= theme.pwa.theme_color %>">
   <% } %>
   <!-- Google Search Advanced
   https://developers.google.com/search/docs/advanced/structured-data/search-gallery

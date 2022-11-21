@@ -26,4 +26,6 @@ gallery: 图库
 more: 阅读更多文章
 wechat_mp: 微信公众号
 wechat_personal: 微信号
-post_copyright: 本文著作权归作者 Komorebi 所有，转载或引用请联系作者获得授权。
+post_copyright_before: 本文著作权归作者
+post_copyright_after: 所有，转载或引用请联系作者获得授权。
+album_tips: 轻触或使用键盘 ⬅️ ➡️ 选择照片 按 ⬆️ 返回第一张

@@ -188,34 +188,6 @@ a {
     flex-grow: 1;
 }
 
-.mdui-textfield {
-    color: #2196f3 !important;
-    border-bottom-color: #2196f3 !important;
-}
-
-.mdui-textfield-focus .mdui-textfield-label {
-    color: #2196f3 !important;
-}
-
-.mdui-textfield-focus .mdui-textfield-input {
-    color: #2196f3 !important;
-    border-bottom-color: #2196f3 !important;
-    box-shadow: 0 1px 0 0 #2196f3 !important;
-}
-
-.mdui-textfield-input:hover {
-    border-bottom-color: #2196f3 !important;
-    box-shadow: 0 1px 0 0 #2196f3 !important;
-    -webkit-box-shadow: 0 1px 0 0 #2196f3 !important;
-}
-
-.mdui-chip {
-    margin-right: 5px;
-    a {
-        color: $black;
-    }
-}
-
 .teleprompter {
     font-size: xxx-large;
     font-size: -webkit-xxx-large;

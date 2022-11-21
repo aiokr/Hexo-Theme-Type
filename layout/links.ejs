@@ -1,63 +1,66 @@
-<div class="content-area links-content-area">
-  <div class="p-4 container max-w-[1000px]">
-    <div class="itp-index" style="padding-top: 118px;">
-      <!--链接-->
-      <% if (site.data.links) { %>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-2" style="padding-bottom: 10px;">
-        <% for (var i in site.data.links) { %>
-        <a href="<%= site.data.links[i].url %>" title="<%= i %>" target="_blank" class="links-item px-3 py-1 items-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded transition-all">
-          <img src="<%= site.data.links[i].img %>" class="links-avatar nofancy">
-          <div class="px-3">
-            <div class="links-title text-tblack dark:text-white"><%= i %></div>
-            <span class="links-desrc text-sm leading-4 text-gray-400"><%- site.data.links[i].descr %></span>
-          </div>
-        </a>
+<section class="pjax-area">
+  <div class="content-area links-content-area">
+    <div class="container max-w-[1000px]">
+      <div class="p-4 itp-index" style="padding-top: 118px;">
+        <!--链接-->
+        <% if (site.data.links) { %>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-2" style="padding-bottom: 10px;">
+          <% for (var i in site.data.links) { %>
+          <a href="<%= site.data.links[i].url %>" title="<%= i %>" target="_blank" class="links-item p-2 items-center hover:bg-gray-200 dark:hover:bg-gray-800 rounded transition-all">
+            <img src="<%= site.data.links[i].img %>" class="links-avatar nofancy" width="50px" height="50px">
+            <div class="px-3">
+              <div class="links-title text-tblack dark:text-white"><%= i %></div>
+              <span class="links-desrc text-sm leading-4 text-gray-400"><%- site.data.links[i].descr %></span>
+            </div>
+          </a>
+          <% } %>
+        </div>
         <% } %>
+      </div>
+      <!--正文-->
+      <section class="mdui-card-content itp-page-content article" role="article">
+        <%- page.content %>
+      </section>
+      <!--评论-->
+      <% if ( theme.comment.use ) { %>
+      <div class="itp-m3-card itp-m3-post-comment_area" id="comment">
+        <%- partial('_partial/comment') %>
       </div>
       <% } %>
     </div>
-    <!--正文-->
-    <section class="mdui-card-content itp-page-content article" role="article">
-      <%- page.content %>
-    </section>
-    <div class="padding-70"></div>
-    <!--评论-->
-    <div class="itp-m3-card itp-m3-post-comment_area" id="comment">
-      <%- partial('_partial/comment') %>
-    </div>
+    <% if (theme.schemes==='m3' ) { %>
+    <style>
+      body {
+        background-color: #fff;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #121212;
+        }
+      }
+
+      .links-item {
+        display: flex;
+        height: 68px;
+        border-radius: 34px;
+      }
+
+      .links-title,
+      .links-desrc {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+
+      .links-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    </style>
+    <% } %>
   </div>
-</div>
-<% if (theme.schemes==='m3' ) { %>
-<style>
-  body {
-    background-color: #fff;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #121212;
-    }
-  }
-
-  .links-item {
-    display: flex;
-    height: 68px;
-  }
-
-  .links-title,.links-desrc {
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-  }
-
-  .links-avatar{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-  }
-</style>
-<% } %>
-</div>
-</div>
+</section>
