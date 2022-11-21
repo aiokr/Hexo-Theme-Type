@@ -9,7 +9,8 @@
           <a class="album-item lazy" id="<%- i %>" rel="<%- page.photos[i] %>" href="javascript:void(0);" onClick="changeimg(event)" data-src="<%- page.photos[i] %>" aria-label="the photo <%- i %>"></a>
           <% } %>
         </div>
-
+        <div class="text-center opacity-30 text-xs pt-2"><%- __('album_tips') %>
+        </div>
       </div>
       <div class="album-info">
         <div class="album-info-main">
@@ -35,7 +36,7 @@
       <%- page.content %>
     </div>
     <% if ( theme.comment.use ) { %>
-    <div id="comment" class="album-comment">
+    <div id="comment" class="itp-m3-card album-comment">
       <%- partial('_partial/comment') %>
     </div>
     <% } %>
@@ -83,15 +84,9 @@
       background-color: #fff;
     }
 
-    .content-area {
-      padding: 16px;
-    }
-
     .album-comment {
-      padding: 12px 0;
       max-width: 800px;
       margin: 0 auto;
-      padding-top: 70px;
     }
 
     @media (max-width: 768px) {
@@ -101,6 +96,7 @@
 
       .pic-area {
         grid-column: span 3 / span 3;
+        padding: 16px;
       }
 
       .album-info {
@@ -116,8 +112,8 @@
     @media (min-width: 768px) {
       .content-area {
         max-width: 92%;
-        padding-top: 118px;
         margin: 0 auto;
+        padding: 135px 16px 16px 16px;
       }
 
       .pic-area {
@@ -146,7 +142,7 @@
     .album-info {
       flex-direction: column;
       justify-content: space-between;
-      color: #222831;
+      color: var(--main-black);
     }
 
     .album-title {

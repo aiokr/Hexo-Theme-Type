@@ -7,7 +7,7 @@
         向那些永远停留在这个冬天里的人致哀
       </div>-->
       <div class="itp-index">
-        <% if( (theme.social_link.use === true) && (theme.schemes =='column' ) && (page.current === 1) && (is_home()) ) { %>
+        <% if( (theme.cover_links_switch === true) && (theme.schemes =='column' ) && (page.current === 1) && (is_home()) ) { %>
         <section id="index-links">
           <div class="mdui-row-lg-3 mdui-row-md-3 mdui-row-sm-3 mdui-row-xs-1" style="padding-bottom: 10px;">
             <% for (var a in theme.cover_links) { %>
@@ -98,7 +98,7 @@
         </div>
       </div>
     </div>
-    <% if( (theme.social_link.use === true) && (theme.schemes =='m3' ) && (page.current === 1) && (is_home()) ) { %>
+    <% if( (theme.cover_links_switch === true) && (theme.schemes =='m3' ) && (page.current === 1) && (is_home()) ) { %>
     <div class="itp-m3-card-content" style="padding: 12px;">
       <% for (var a in theme.cover_links) { %>
       <a href="<%= theme.cover_links[a].link %>" class="itp-m3-chip-bold"><%= theme.cover_links[a].title %></a>
@@ -150,7 +150,7 @@
         <% } %>
       </div>
       <!--首页微信号二维码弹窗-->
-      <% if( (theme.social_link.use === true) && (page.current === 1) && (is_home()) ) { %>
+      <% if( (theme.cover_links_switch === true) && (page.current === 1) && (is_home()) ) { %>
       <% if (theme.social_link.wechat_public.switch == true) { %>
       <!-- Wechat MP QRCode -->
       <div class="m3-index-pop" style="display: none;" id="mp-wechat">

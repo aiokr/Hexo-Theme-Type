@@ -57,6 +57,15 @@
     <% } %>
   </a>
   <% } %>
+  <% if (theme.search_btn == true){ %>
+  <a href="/search/" class="itp-float-bar-item rounded">
+    <% if (theme.nav_style=='icon' ){ %>
+    <iconpark-icon class="navicon" name="search"></iconpark-icon>
+    <%} else if (theme.nav_style =='text' ){ %>
+    <span><%- __('search')%></span>
+    <% } %>
+  </a>
+  <% } %>
   <%} else if (page.layout =='post' ){ %>
   <!--只在 **文章** 页面显示-->
   <a class="itp-float-bar-item rounded" onclick="scrollto(comment)" title="comment">
@@ -66,7 +75,7 @@
     <span><%- __('post_comment')%></span>
     <% } %>
   </a>
-  <a class="itp-float-bar-item rounded" id="open_toc" title="Table of contents">
+  <a class="itp-float-bar-item rounded" id="open_toc" onclick="OpenToc()" title="Table of contents">
     <% if (theme.nav_style=='icon' ){ %>
     <iconpark-icon class="navicon" name="list"></iconpark-icon>
     <%} else if (theme.nav_style =='text' ){ %>
@@ -106,6 +115,6 @@
   .navicon {
     font-size: 18px;
     padding-top: 18px;
-    color: #222831;
+    color: var(--main-black);
   }
 </style>

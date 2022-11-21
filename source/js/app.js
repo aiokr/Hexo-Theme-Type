@@ -32,7 +32,7 @@ function scrollto(comment) {
 }
 
 //点击底部弹出图层
-$(function () {
+function OpenToc() {
   $('#open_toc').click(function () {
     $('.itp-toc-layer').addClass('itp-float-layer-pull-up');
     $('.itp-float-layer-bg').removeClass('layer-bg-nodisplay');
@@ -43,11 +43,11 @@ $(function () {
     );
     $('.itp-float-layer-bg').addClass('layer-bg-nodisplay');
   });
-});
+}
 
 $('.itp-layer-toc-text').replaceWith(function () {
   return (
-    "<div class ='itp-layer-toc-text' id='close_btn'>" +
+    "<div class ='itp-layer-toc-text' id='close_btn' style='color: #fff;'>" +
     this.innerHTML +
     '</div>'
   );
@@ -100,14 +100,6 @@ $(".itp-column-toc ol").replaceWith(function () {
 
 */
 
-$('.categories .archive-link23').replaceWith(function () {
-  return (
-    "<div class='mdui-chip'><span class='mdui-chip-title'>" +
-    this.innerHTML +
-    '</span></div>'
-  );
-});
-
 $('img')
   .not(
     'footer img,.drawer-img, .mdui-card-header-avatar,.itp-mag-content img,.itp-post-author-avatar img,.itp-post-gallery img,.vavatar img,.nofancy'
@@ -131,9 +123,6 @@ $('.itp-mag-content img').each(function () {
 window.onload = function () {
   $('div.lazy').lazyload();
   $('a.lazy').lazyload();
-  NProgress.start();
-  NProgress.set(0.4);
-  NProgress.done();
 };
 
 console.log(
