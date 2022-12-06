@@ -123,6 +123,7 @@ $('.itp-mag-content img').each(function () {
 window.onload = function () {
   $('div.lazy').lazyload();
   $('a.lazy').lazyload();
+  $('img.lazy').lazyload();
 };
 
 console.log(

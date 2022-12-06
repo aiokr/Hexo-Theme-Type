@@ -107,7 +107,8 @@
 .itp-m3-card-cover,
 .itp-m3-card-cover-layer {
     @media screen and (min-width: $toggle_desktop) {
-        border-radius: var(--radius) !important;
+        border-top-left-radius: var(--radius) !important;
+        border-top-right-radius: var(--radius) !important;
     }
 
     @media screen and (max-width: $toggle_desktop) {

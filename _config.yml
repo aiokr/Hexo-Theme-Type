@@ -94,7 +94,7 @@ cover_links:
   - title: Gallery
     link: /gallery/
   - title: Type docs
-    link: /type-readme/
+    link: /type/
   - title: RSS Feed
     link: /atom.xml
     descr: 'iTypen.APP'
@@ -131,7 +131,7 @@ footer_logo:
   vercel: '../img/vercel-logotype-dark.svg'
   self:
     link: '../about/'
-    src: 'https://imgur.lzmun.com/picgo/after2022/tripper2whitefull.png_avatar'
+    src: 'https://imgur.lzmun.com/picgo/after2022/tripper2white.png_avatar'
 
 # ---------------------------------------------------------------
 # Posts Settings 文章设置
@@ -207,7 +207,7 @@ umami_analytics:
 
 # Vercel Audiences Analytics
 vercel_analytics:
-  use: true
+  use: false
 
 # chart.js
 # https://www.chartjs.org/

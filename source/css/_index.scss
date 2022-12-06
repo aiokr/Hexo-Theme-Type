@@ -150,7 +150,7 @@
 }
 
 .itp-post-entry-image-cover {
-    height: calc($content-width * 8 / 16);
+    aspect-ratio: 16 / 9;
     background-position: center;
     background-size: cover;
 }
