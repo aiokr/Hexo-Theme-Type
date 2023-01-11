@@ -44,9 +44,9 @@
     var imageBox = document.getElementById("imgbox"); // imageBox 是放置大图片的图框
     imgno = 0; // 进入页面时，设定初始的图片编号为0 // 定义新变量时不使用 var 则为全局变量、
     function changeimg() { //changeimg 函数用于获取图片链接和替换大图图片，在鼠标点击图片列表时调用
-      var imgLink = event.target.getAttribute('rel');
-      imgno = event.target.getAttribute('id');
-      imageBox.style.backgroundImage = "url(" + imgLink + ")";
+      var imgLink = event.target.getAttribute('rel'); //获取被点击的图片链接
+      imgno = event.target.getAttribute('id'); //获取图片编号
+      imageBox.style.backgroundImage = "url(" + imgLink + ")"; //替换图片
     };
     window.onkeydown = function album_hotkey() {
       //[键盘快捷键] 左箭头 上一张
@@ -60,7 +60,7 @@
       };
       //[键盘快捷键] 右箭头 下一张
       if (event.keyCode === 39) {
-        imgcount = document.getElementsByClassName('album-item').length - 1
+        imgcount = document.getElementsByClassName('album-item').length - 1 //获取图片数量
         imgno = imgno + 1;
         if (imgno > imgcount) {
           imgno = imgcount

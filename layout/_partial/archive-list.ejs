@@ -11,12 +11,7 @@
   <% } else { %>
   <div class="h-auto px-3 py-1 hover:bg-gray-200 dark:hover:bg-gray-800 rounded transition-all">
     <a href="<%= url_for(post.path) %>" class="flex items-center">
-      <% if (post.style == 'photos') { %>
-        <iconpark-icon class="post-icon" name="gallery"></iconpark-icon>
-      <% } else { %>
-        <iconpark-icon class="post-icon" name="bookmark"></iconpark-icon>
-      <% } %>
-      <div class="px-3">
+      <div class="px-1">
         <div class="post-title text-tblack dark:text-white"><%= post.title %></div>
         <span class="text-sm leading-4 text-gray-400"><%= date(post.date, "YYYY-MM-DD") %></span>
         <% post.categories.each(function(categories){ %>
