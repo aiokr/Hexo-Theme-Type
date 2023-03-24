@@ -209,6 +209,11 @@ umami_analytics:
 vercel_analytics:
   use: false
 
+# Howxm
+howxm_analytics:
+  use: true
+  appid: 71bfe8d1-4930-430e-bc42-fa43202e93b4 
+
 # chart.js
 # https://www.chartjs.org/
 chart_js:
