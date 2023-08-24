@@ -93,8 +93,8 @@ cover_links_switch: true
 cover_links:
   - title: Gallery
     link: /gallery/
-  - title: RSS Feed
-    link: /atom.xml
+  - title: Search
+    link: /search/
 
 # Social link 社交链接
 social_link:
@@ -112,7 +112,7 @@ social_link:
 # Footer Settings 页脚设置
 # ---------------------------------------------------------------
 
-start_time: 2016 
+start_time: 2016
 # 如果设置 count 选项，需要运行 npm install hexo-symbols-count-time --save
 # 'count' need run 'npm install hexo-symbols-count-time --save'
 count: true
@@ -125,8 +125,8 @@ footer_logo:
   upyun: '../img/upyun.png'
   vercel: '../img/vercel-logotype-dark.svg'
   self:
-    link: '../about/'
-    src: 'https://imgur.lzmun.com/picgo/after2022/tripper2whitefull.png_avatar'
+    link: 
+    src: 
 
 # ---------------------------------------------------------------
 # Posts Settings 文章设置
@@ -166,7 +166,7 @@ comment:
     host:
     app_id: 
   waline:
-    serverurl: https://comment.tripper.press/
+    serverurl: 
 
 # Search 搜索
 # Use hexo-generator-search or hexo-algoliasearch
@@ -192,7 +192,7 @@ google_analytics:
   use: gtag
   ga_id: 
   ga_api: 
-  gtag_id: G-HFH67WJVKQ
+  gtag_id:
 
 # umami Analytics
 umami_analytics: 
@@ -202,7 +202,7 @@ umami_analytics:
 
 # Vercel Audiences Analytics
 vercel_analytics:
-  use: false
+  use: true
 
 # chart.js
 # https://www.chartjs.org/
@@ -223,10 +223,10 @@ cdn:
 # ---------------------------------------------------------------
 
 # PWA 尚是一个实验性功能，不建议您启用。
-# 如果需要启用，需要手动创立 manifest.json 文件
+# 如果需要启用，需要手动创立 manifest.json 文件，并在生成网站是复制到 public 目录下。
 # 暂时没有提供 service-worker.js 文件
 pwa: 
-  use: false
+  use: true
   theme_color: '#71afdd'
 
 # Google 搜索增强
